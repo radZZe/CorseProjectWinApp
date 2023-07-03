@@ -23,6 +23,7 @@ struct RequestsEntity {
 };
 
 
+
 int isEqualElements(RequestsEntity* first, RequestsEntity* second) {
 
     //1 => frist = second   0 => first != second
@@ -90,6 +91,7 @@ RequestsEntity* inputEntityData(string inputString) {
 
 
 vector <RequestsEntity*> readFromFile(string path) {
+    setlocale(LC_ALL, "Russian");
     string str;
     int n = 0;
     ifstream file(path);
