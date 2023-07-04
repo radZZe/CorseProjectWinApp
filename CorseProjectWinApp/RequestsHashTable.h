@@ -35,7 +35,7 @@ public:
     void remove(RequestsEntity* value);
     void shiftElements(int secondHash, int delIndex, RequestsEntity* value);
     void removeCollision(int secondHash, int firstHash, RequestsEntity* value);
-    int search(RequestsEntity* value);
+    vector<int> search(RequestsEntity* value);
     void print();
 };
 

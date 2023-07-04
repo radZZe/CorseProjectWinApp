@@ -8,5 +8,6 @@ public:
 	static string text;
 	static vector<RequestsEntity*>data;
 	static RequestsHashTable requestsHashTable;
+	static int countComparisons;
 };
 

@@ -5,6 +5,7 @@
 #include <cmath>
 #include "ReaderRequests.h"
 #include "RequestsHashTable.h"
+//#include "DataStorage.h"
 using namespace std;
 
 
@@ -126,7 +127,6 @@ bool RequestsHashTable::isEqualFirstHash(RequestsEntity* first, RequestsEntity* 
 
 RequestsHashTable::~RequestsHashTable() {
     cout << endl;
-    cout << "HashTable was deleted";
     data.clear();
     data.shrink_to_fit();
 }
@@ -221,17 +221,22 @@ void RequestsHashTable::removeCollision(int secondHash, int firstHash, RequestsE
     data[tempIndex]->status = 0;
 }
 
-int RequestsHashTable::search(RequestsEntity* value) {
+vector<int> RequestsHashTable::search(RequestsEntity* value) {
+    int counterComparisons = 0;
     int counter = 0;
     int key = dataToKey(value->serviceName, value->serviceType, value->passport);
     int firstIndex = firstHashFunction(key);
     int index = firstIndex;
     int secondHash = doubleHashFunc(key);
     int resultIndex = index;
+    vector<int> result;
     if (data[index]->status != 0) {
         if (isEqualElements(data[index]->value, value)) {
+            counterComparisons++;
             cout << "Element was found | index = " << index << endl;
-            return index;
+            result.push_back(counterComparisons);
+            result.push_back(index);
+            return result;
         }
         else {
             while (data[index]->status != 0 && counter < size) {
@@ -240,26 +245,36 @@ int RequestsHashTable::search(RequestsEntity* value) {
                     break;
                 }
                 index = secondHashFunction(counter, firstIndex, secondHash);
+                counterComparisons++;
                 counter++;
             }
             if (counter >= size) {
                 cout << "ELement was not found" << endl;
-                return -1;
+                result.push_back(counterComparisons);
+                result.push_back(-1);
+                return result;
             }
             else {
                 cout << "Element was found | index = " << resultIndex << endl;
                 if (resultIndex != firstIndex) {
-                    return resultIndex;
+                    
+                    result.push_back(counterComparisons);
+                    result.push_back(resultIndex);
+                    return result;
                 }
                 else {
-                    return -1;
+                    result.push_back(counterComparisons);
+                    result.push_back(-1);
+                    return result;
                 }
 
             }
         }
     }
     else {
-        return -1;
+        result.push_back(counterComparisons);
+        result.push_back(-1);
+        return result;
     }
 }
 

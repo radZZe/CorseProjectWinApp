@@ -1,6 +1,9 @@
 #pragma once
 #include <vector>
 #include "DataStorage.h"
+#include <msclr\marshal_cppstd.h>
+
+
 
 namespace CorseProjectWinApp {
 
@@ -8,6 +11,7 @@ namespace CorseProjectWinApp {
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
+	using namespace msclr::interop;
 	using namespace System::Data;
 	using namespace System::Drawing;
 
@@ -56,18 +60,29 @@ namespace CorseProjectWinApp {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ RequestsDataGrid;
 	private: System::Windows::Forms::Button^ searchByServiceNameBTN;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ tBNumberPassport;
+	private: System::Windows::Forms::TextBox^ tBSeriesPassport;
+	private: System::Windows::Forms::TextBox^ tBServiceName;
+	private: System::Windows::Forms::TextBox^ tBServiceType;
+
+
 	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ tBDate;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::Label^ numberOfComparisons;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ countComparisons;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ resultSearch;
+
 
 
 
@@ -87,16 +102,21 @@ namespace CorseProjectWinApp {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->requestsPage = (gcnew System::Windows::Forms::TabPage());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->tBSeriesPassport = (gcnew System::Windows::Forms::TextBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->countComparisons = (gcnew System::Windows::Forms::Label());
+			this->numberOfComparisons = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->tBDate = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tBServiceName = (gcnew System::Windows::Forms::TextBox());
+			this->tBServiceType = (gcnew System::Windows::Forms::TextBox());
+			this->tBNumberPassport = (gcnew System::Windows::Forms::TextBox());
 			this->searchByServiceNameBTN = (gcnew System::Windows::Forms::Button());
 			this->RequestsDataGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->searchByTypeOfServiceBTN = (gcnew System::Windows::Forms::Button());
@@ -106,8 +126,7 @@ namespace CorseProjectWinApp {
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->resultSearch = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->requestsPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
@@ -125,24 +144,28 @@ namespace CorseProjectWinApp {
 			this->tabControl1->Location = System::Drawing::Point(-5, -3);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(746, 495);
+			this->tabControl1->Size = System::Drawing::Size(746, 527);
 			this->tabControl1->SizeMode = System::Windows::Forms::TabSizeMode::FillToRight;
 			this->tabControl1->TabIndex = 0;
 			// 
 			// requestsPage
 			// 
+			this->requestsPage->Controls->Add(this->resultSearch);
+			this->requestsPage->Controls->Add(this->label2);
+			this->requestsPage->Controls->Add(this->tBSeriesPassport);
+			this->requestsPage->Controls->Add(this->label6);
+			this->requestsPage->Controls->Add(this->countComparisons);
+			this->requestsPage->Controls->Add(this->numberOfComparisons);
 			this->requestsPage->Controls->Add(this->label5);
-			this->requestsPage->Controls->Add(this->textBox5);
+			this->requestsPage->Controls->Add(this->tBDate);
 			this->requestsPage->Controls->Add(this->button3);
 			this->requestsPage->Controls->Add(this->button2);
 			this->requestsPage->Controls->Add(this->label4);
 			this->requestsPage->Controls->Add(this->label3);
-			this->requestsPage->Controls->Add(this->label2);
 			this->requestsPage->Controls->Add(this->label1);
-			this->requestsPage->Controls->Add(this->textBox4);
-			this->requestsPage->Controls->Add(this->textBox3);
-			this->requestsPage->Controls->Add(this->textBox2);
-			this->requestsPage->Controls->Add(this->textBox1);
+			this->requestsPage->Controls->Add(this->tBServiceName);
+			this->requestsPage->Controls->Add(this->tBServiceType);
+			this->requestsPage->Controls->Add(this->tBNumberPassport);
 			this->requestsPage->Controls->Add(this->searchByServiceNameBTN);
 			this->requestsPage->Controls->Add(this->RequestsDataGrid);
 			this->requestsPage->Controls->Add(this->searchByTypeOfServiceBTN);
@@ -152,10 +175,68 @@ namespace CorseProjectWinApp {
 			this->requestsPage->Location = System::Drawing::Point(4, 22);
 			this->requestsPage->Name = L"requestsPage";
 			this->requestsPage->Padding = System::Windows::Forms::Padding(3);
-			this->requestsPage->Size = System::Drawing::Size(738, 469);
+			this->requestsPage->Size = System::Drawing::Size(738, 501);
 			this->requestsPage->TabIndex = 0;
 			this->requestsPage->Text = L"Заявки";
 			this->requestsPage->UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(478, 294);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(91, 13);
+			this->label2->TabIndex = 23;
+			this->label2->Text = L"Номер паспорта";
+			// 
+			// tBSeriesPassport
+			// 
+			this->tBSeriesPassport->Location = System::Drawing::Point(350, 310);
+			this->tBSeriesPassport->Name = L"tBSeriesPassport";
+			this->tBSeriesPassport->Size = System::Drawing::Size(100, 20);
+			this->tBSeriesPassport->TabIndex = 22;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(200, 460);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(59, 13);
+			this->label6->TabIndex = 21;
+			this->label6->Text = L"Результат";
+			// 
+			// countComparisons
+			// 
+			this->countComparisons->AutoSize = true;
+			this->countComparisons->Location = System::Drawing::Point(146, 460);
+			this->countComparisons->Name = L"countComparisons";
+			this->countComparisons->Size = System::Drawing::Size(0, 13);
+			this->countComparisons->TabIndex = 20;
+			// 
+			// numberOfComparisons
+			// 
+			this->numberOfComparisons->AutoSize = true;
+			this->numberOfComparisons->Location = System::Drawing::Point(14, 460);
+			this->numberOfComparisons->Name = L"numberOfComparisons";
+			this->numberOfComparisons->Size = System::Drawing::Size(129, 13);
+			this->numberOfComparisons->TabIndex = 19;
+			this->numberOfComparisons->Text = L"Количество сравнений: ";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(608, 294);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(33, 13);
+			this->label5->TabIndex = 18;
+			this->label5->Text = L"Дата";
+			// 
+			// tBDate
+			// 
+			this->tBDate->Location = System::Drawing::Point(611, 310);
+			this->tBDate->Name = L"tBDate";
+			this->tBDate->Size = System::Drawing::Size(100, 20);
+			this->tBDate->TabIndex = 17;
 			// 
 			// button3
 			// 
@@ -193,15 +274,6 @@ namespace CorseProjectWinApp {
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"Тип услуги";
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(478, 294);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(91, 13);
-			this->label2->TabIndex = 12;
-			this->label2->Text = L"Номер паспорта";
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -211,33 +283,26 @@ namespace CorseProjectWinApp {
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"Серия паспорта";
 			// 
-			// textBox4
+			// tBServiceName
 			// 
-			this->textBox4->Location = System::Drawing::Point(508, 378);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(167, 20);
-			this->textBox4->TabIndex = 10;
+			this->tBServiceName->Location = System::Drawing::Point(508, 378);
+			this->tBServiceName->Name = L"tBServiceName";
+			this->tBServiceName->Size = System::Drawing::Size(167, 20);
+			this->tBServiceName->TabIndex = 10;
 			// 
-			// textBox3
+			// tBServiceType
 			// 
-			this->textBox3->Location = System::Drawing::Point(350, 377);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(133, 20);
-			this->textBox3->TabIndex = 9;
+			this->tBServiceType->Location = System::Drawing::Point(350, 377);
+			this->tBServiceType->Name = L"tBServiceType";
+			this->tBServiceType->Size = System::Drawing::Size(133, 20);
+			this->tBServiceType->TabIndex = 9;
 			// 
-			// textBox2
+			// tBNumberPassport
 			// 
-			this->textBox2->Location = System::Drawing::Point(481, 310);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
-			this->textBox2->TabIndex = 8;
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(350, 311);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 7;
+			this->tBNumberPassport->Location = System::Drawing::Point(481, 310);
+			this->tBNumberPassport->Name = L"tBNumberPassport";
+			this->tBNumberPassport->Size = System::Drawing::Size(100, 20);
+			this->tBNumberPassport->TabIndex = 8;
 			// 
 			// searchByServiceNameBTN
 			// 
@@ -305,7 +370,7 @@ namespace CorseProjectWinApp {
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(738, 469);
+			this->tabPage2->Size = System::Drawing::Size(738, 501);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Клиенты";
 			this->tabPage2->UseVisualStyleBackColor = true;
@@ -315,7 +380,7 @@ namespace CorseProjectWinApp {
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Size = System::Drawing::Size(738, 469);
+			this->tabPage1->Size = System::Drawing::Size(738, 501);
 			this->tabPage1->TabIndex = 2;
 			this->tabPage1->Text = L"Услуги";
 			this->tabPage1->UseVisualStyleBackColor = true;
@@ -329,28 +394,22 @@ namespace CorseProjectWinApp {
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
-			// label5
+			// resultSearch
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(608, 294);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(33, 13);
-			this->label5->TabIndex = 18;
-			this->label5->Text = L"Дата";
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(611, 310);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
-			this->textBox5->TabIndex = 17;
+			this->resultSearch->AutoSize = true;
+			this->resultSearch->Location = System::Drawing::Point(266, 460);
+			this->resultSearch->Name = L"resultSearch";
+			this->resultSearch->Size = System::Drawing::Size(0, 13);
+			this->resultSearch->TabIndex = 24;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(742, 492);
+			this->AutoSize = true;
+			this->ClientSize = System::Drawing::Size(742, 524);
 			this->Controls->Add(this->tabControl1);
+			this->Location = System::Drawing::Point(350, 311);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::RequestsScreen_Load);
@@ -388,8 +447,30 @@ namespace CorseProjectWinApp {
 		}
 	}
 private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender, System::EventArgs^ e) {
+	DataStorage dataStorage = DataStorage();
+	int seriesPassport = Int32::Parse(this->tBSeriesPassport->Text);
+	int numberPassport = Int32::Parse(this->tBNumberPassport->Text);
+	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string  serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	date date = inputDateData(marshal_as<std::string>(this->tBDate->Text));
+	Passport passport = Passport();
+	passport.number = numberPassport;
+	passport.series = seriesPassport;
+	RequestsEntity* entity = new RequestsEntity();
+	entity->date = date;
+	entity->passport = passport;
+	entity->serviceName = serviceName;
+	entity->serviceType = serviceType;
 	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
 	requestsHashTable.print();
+	vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
+	this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
+	if (result_searchByTypeAndNameOfService[1] != -1) {
+		this->resultSearch->Text = gcnew String("Найден");
+	}
+	else {
+		this->resultSearch->Text = gcnew String("Не найден");
+	}
 
 };
 
