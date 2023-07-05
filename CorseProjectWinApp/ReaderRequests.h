@@ -10,9 +10,9 @@ struct Passport {
 };
 
 struct date {
-    int day;
-    int month;
-    int year;
+    string day;
+    string month;
+    string year;
 };
 
 struct RequestsEntity {

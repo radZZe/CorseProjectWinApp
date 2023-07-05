@@ -82,6 +82,9 @@ namespace CorseProjectWinApp {
 	private: System::Windows::Forms::Label^ countComparisons;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ resultSearch;
+	private: System::Windows::Forms::Button^ saveBtn;
+
+
 
 
 
@@ -102,6 +105,8 @@ namespace CorseProjectWinApp {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->requestsPage = (gcnew System::Windows::Forms::TabPage());
+			this->saveBtn = (gcnew System::Windows::Forms::Button());
+			this->resultSearch = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->tBSeriesPassport = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -126,7 +131,6 @@ namespace CorseProjectWinApp {
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->resultSearch = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->requestsPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
@@ -150,6 +154,7 @@ namespace CorseProjectWinApp {
 			// 
 			// requestsPage
 			// 
+			this->requestsPage->Controls->Add(this->saveBtn);
 			this->requestsPage->Controls->Add(this->resultSearch);
 			this->requestsPage->Controls->Add(this->label2);
 			this->requestsPage->Controls->Add(this->tBSeriesPassport);
@@ -179,6 +184,24 @@ namespace CorseProjectWinApp {
 			this->requestsPage->TabIndex = 0;
 			this->requestsPage->Text = L"Заявки";
 			this->requestsPage->UseVisualStyleBackColor = true;
+			// 
+			// saveBtn
+			// 
+			this->saveBtn->Location = System::Drawing::Point(611, 460);
+			this->saveBtn->Name = L"saveBtn";
+			this->saveBtn->Size = System::Drawing::Size(75, 23);
+			this->saveBtn->TabIndex = 25;
+			this->saveBtn->Text = L"Сохранить";
+			this->saveBtn->UseVisualStyleBackColor = true;
+			this->saveBtn->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
+			// resultSearch
+			// 
+			this->resultSearch->AutoSize = true;
+			this->resultSearch->Location = System::Drawing::Point(266, 460);
+			this->resultSearch->Name = L"resultSearch";
+			this->resultSearch->Size = System::Drawing::Size(0, 13);
+			this->resultSearch->TabIndex = 24;
 			// 
 			// label2
 			// 
@@ -354,6 +377,7 @@ namespace CorseProjectWinApp {
 			this->passportSearchBTN->TabIndex = 2;
 			this->passportSearchBTN->Text = L"Поиск по паспорту";
 			this->passportSearchBTN->UseVisualStyleBackColor = true;
+			this->passportSearchBTN->Click += gcnew System::EventHandler(this, &MyForm::passportSearchBTN_Click);
 			// 
 			// searchByTypeAndNameOfServiceBTN
 			// 
@@ -394,14 +418,6 @@ namespace CorseProjectWinApp {
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
-			// resultSearch
-			// 
-			this->resultSearch->AutoSize = true;
-			this->resultSearch->Location = System::Drawing::Point(266, 460);
-			this->resultSearch->Name = L"resultSearch";
-			this->resultSearch->Size = System::Drawing::Size(0, 13);
-			this->resultSearch->TabIndex = 24;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -436,7 +452,7 @@ namespace CorseProjectWinApp {
 			row["Паспорт"] = gcnew String(passport.c_str());
 			row["Название услуги"] = gcnew String(data[i]->serviceName.c_str());
 			row["Тип услуги"] = gcnew String(data[i]->serviceType.c_str());
-			string date = to_string(data[i]->date.day)+"." + to_string(data[i]->date.month) + "." + to_string(data[i]->date.year);
+			string date = data[i]->date.day+"." + data[i]->date.month + "." + data[i]->date.year;
 			row["Дата"] = gcnew String(date.c_str());
 			tabl->Rows->Add(row);
 		}
@@ -474,5 +490,17 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 
 };
 
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void passportSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	DataStorage dataStorage = DataStorage();
+	treeNode* avlTree = DataStorage::avlTree;
+	vector<RequestsEntity*> data = DataStorage::data;
+	bool heightChanged = false;
+	for (int i = 0; i < data.size(); i++) {
+		     addNode(avlTree, data[i], heightChanged);
+	}
+	printTree(avlTree, nullptr);
+}
 };
 }

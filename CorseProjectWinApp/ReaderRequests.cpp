@@ -10,9 +10,9 @@ struct Passport {
 };
 
 struct date {
-    int day;
-    int month;
-    int year;
+    string day;
+    string month;
+    string year;
 };
 
 struct RequestsEntity {
@@ -54,9 +54,9 @@ date inputDateData(string inputString) {
             numbers.push_back(i);
         }
     }
-    date.day = stoi(inputString.substr(0, numbers.at(0)));
-    date.month = stoi(inputString.substr(numbers[0] + 1, (numbers[1] - 1) - numbers[0]));
-    date.year = stoi(inputString.substr(numbers[1] + 1, (inputString.length() - 1) - numbers[1]));
+    date.day = inputString.substr(0, numbers.at(0));
+    date.month = inputString.substr(numbers[0] + 1, (numbers[1] - 1) - numbers[0]);
+    date.year = inputString.substr(numbers[1] + 1, (inputString.length() - 1) - numbers[1]);
     return date;
 }
 

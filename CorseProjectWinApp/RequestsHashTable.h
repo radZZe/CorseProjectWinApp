@@ -20,7 +20,7 @@ class RequestsHashTable { // Статическая
 public:
     int size;
     vector<RequestsHashTableEntry*> data;
-    int dataToKey(string serviceName, string serviceType, Passport passport);
+    int dataToKey(string serviceName, string serviceType, Passport passport, date date);
     int isPrime(int num);
     int countDigits(long int key);
     int getNthDigit(long int num, int pos);

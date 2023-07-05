@@ -1,0 +1,579 @@
+#include "AvlTree.h"
+
+
+
+int _compareDate(date first, date second) {
+    // 1 = 1 > 2     -1 = 1 < 2      0 = 1==2
+    if (first.year < second.year) {
+        return 1;
+    }
+    else if (first.year > second.year) {
+        return -1;
+    }
+    else {
+        if (first.month < second.month) {
+            return 1;
+        }
+        else if (first.month > second.month) {
+            return -1;
+        }
+        else {
+            if (first.day < second.day) {
+                return 1;
+            }
+            else if (first.day > second.day) {
+                return -1;
+            }
+            else {
+                return 0;
+            }
+        }
+    }
+}
+
+int _compareKeys(RequestsEntity* first, RequestsEntity* second) {
+    // 1 = 1 > 2     -1 = 1 < 2      0 = 1==2
+    if (first->passport.series > second->passport.series) {
+        return 1;
+    }
+    else if (first->passport.series < second->passport.series) {
+        return -1;
+    }
+    else {
+        if (first->passport.number > second->passport.number) {
+            return 1;
+        }
+        else if (first->passport.number < second->passport.number) {
+            return -1;
+        }
+        else {
+            if (first->serviceName > second->serviceName) {
+                return 1;
+            }
+            else if (first->serviceName < second->serviceName) {
+                return -1;
+            }
+            else {
+                if (first->serviceType > second->serviceType) {
+                    return 1;
+                }
+                else if (first->serviceType < second->serviceType) {
+                    return -1;
+                }
+                else {
+                    return _compareDate(first->date, second->date);
+                }
+            }
+        }
+    }
+}
+
+listNode* initList()
+{
+    listNode* head;
+    head = nullptr;
+    return head;
+};
+
+listNode* addElemToEnd(listNode*& head, RequestsEntity* value)
+{
+    listNode* newnode, * temp;
+    newnode = new listNode;
+    newnode->field = value;
+    newnode->ptr = head;
+    if (head != nullptr)
+    {
+        temp = head;
+        while (temp->ptr != head)
+        {
+            temp = temp->ptr;
+        }
+
+        temp->ptr = newnode;
+    }
+    else
+    {
+        head = new listNode;
+        head->field = value;
+        head->ptr = head;
+    }
+    return (head);
+}
+
+void  delElem(listNode*& head)
+{
+    if (head == nullptr)
+    {
+        cout << "Execution error, the list is empty!" << endl;
+        //return head;
+    }
+    else
+    {
+        listNode*& runner = head;
+        while (runner->ptr->ptr != head) {
+            runner = runner->ptr;
+        }
+        if (runner == head) {
+            head = nullptr;
+        }
+        else {
+            listNode*& temp = runner->ptr;
+            runner->ptr = head;
+            delete temp;
+        }
+    }
+}
+
+void listPrint(listNode* head)
+{
+    if (head == nullptr)
+    {
+        cout << "The list is empty";
+        cout << "\n";
+    }
+    else
+    {
+        listNode* p;
+        p = head;
+        do
+        {
+            cout << p->field->passport.series << p->field->passport.number << " " << p->field->serviceType << " " << p->field->serviceName << " " << p->field->date.day << "." << p->field->date.month << "." << p->field->date.year << " ";
+            p = p->ptr;
+        } while (p != head);
+    }
+    cout << "\n";
+}
+
+listNode* deleteList(struct listNode*& head)
+{
+    if (head == nullptr)
+    {
+        cout << "List is empty , deletion error !";
+        cout << "\n";
+        return head;
+    }
+    else
+    {
+        listNode* runner, * temp;
+        runner = head;
+        while (runner->ptr != head)
+        {
+            temp = runner;
+            runner = runner->ptr;
+            delete temp;
+        }
+        delete (runner);
+        head = nullptr;
+        return (head);
+    }
+}
+
+treeNode* initTree() {
+    treeNode* root;
+    root = nullptr;
+    return root;
+}
+
+void addNode(treeNode*& pointer, RequestsEntity* key, bool& heightChanged) {
+
+    treeNode* pointer1, * pointer2;
+    if (pointer == nullptr) {
+        heightChanged = true;
+        pointer = new treeNode;
+        pointer->leftChild = nullptr;
+        pointer->rightChild = nullptr;
+        pointer->balanceFactor = 0;
+        pointer->head = initList();
+        addElemToEnd(pointer->head, key);
+
+    }
+    else if (_compareKeys(pointer->head->field, key) == 1) {
+        addNode(pointer->leftChild, key, heightChanged);
+        if (heightChanged) { // выросла левая часть 
+            if (pointer->balanceFactor == 1) {
+                pointer->balanceFactor = 0;
+                heightChanged = false;
+            }
+            else if (pointer->balanceFactor == 0) {
+                pointer->balanceFactor = -1;
+            }
+            else {
+                pointer2 = new treeNode;
+                pointer1 = new treeNode;
+                pointer1 = pointer->leftChild;
+                if (pointer1->balanceFactor == -1) { //одиночная LL-ротация
+                    pointer->leftChild = pointer1->rightChild;
+                    pointer1->rightChild = pointer;
+                    pointer->balanceFactor = 0;
+                    pointer = pointer1;
+                }
+                else { //двойная LR ротация
+                    pointer2 = pointer1->rightChild;
+                    pointer1->rightChild = pointer2->leftChild;
+                    pointer2->leftChild = pointer1;
+                    pointer->leftChild = pointer2->rightChild;
+                    pointer2->rightChild = pointer;
+                    if (pointer2->balanceFactor == -1) pointer->balanceFactor = 1; else pointer->balanceFactor = 0;
+                    if (pointer2->balanceFactor == 1) pointer1->balanceFactor = -1; else pointer1->balanceFactor = 0;
+                    pointer = pointer2;
+                }
+                pointer->balanceFactor = 0;
+                heightChanged = false;
+            }
+        }
+    }
+    else if (_compareKeys(pointer->head->field, key) == -1) {
+        addNode(pointer->rightChild, key, heightChanged);
+        if (heightChanged) { //выросла правая часть 
+            if (pointer->balanceFactor == -1) {
+                pointer->balanceFactor = 0;
+                heightChanged = false;
+            }
+            else if (pointer->balanceFactor == 0) {
+                pointer->balanceFactor = 1;
+            }
+            else {
+                pointer2 = new treeNode;
+                pointer1 = new treeNode;
+                pointer1 = pointer->rightChild;
+                if (pointer1->balanceFactor == 1) { // одиночаня RR ротация 
+                    pointer->rightChild = pointer1->leftChild;
+                    pointer1->leftChild = pointer;
+                    pointer->balanceFactor = 0;
+                    pointer = pointer1;
+                }
+                else { // двойная RL ротация 
+                    pointer2 = pointer1->leftChild;
+                    pointer1->leftChild = pointer2->rightChild;
+                    pointer2->rightChild = pointer1;
+                    pointer->rightChild = pointer2->leftChild;
+                    pointer2->leftChild = pointer;
+                    if (pointer2->balanceFactor == 1) pointer->balanceFactor = -1; else pointer->balanceFactor = 0;
+                    if (pointer2->balanceFactor == -1) pointer1->balanceFactor = 1; else pointer1->balanceFactor = 0;
+                    pointer = pointer2;
+                }
+                pointer->balanceFactor = 0;
+                heightChanged = false;
+            }
+        }
+
+    }
+    else {
+        addElemToEnd(pointer->head, key);
+        heightChanged = false;
+    }
+
+
+
+}
+
+void _showTrunks(Trunk* p)
+{
+    if (p == nullptr) {
+        return;
+    }
+
+    _showTrunks(p->prev);
+    cout << p->str;
+}
+
+void printTree(treeNode* root, Trunk* prev)
+{
+    if (root != nullptr) {
+        string prev_str = "    ";
+        Trunk* trunk = new Trunk(prev, prev_str);
+
+        if (root->rightChild != nullptr) { //TODOs
+            printTree(root->rightChild, trunk);
+        }
+
+        listNode* temp = new listNode;
+        temp = root->head->ptr;
+        _showTrunks(trunk);
+        cout << temp->field->passport.series << temp->field->passport.number << " " << endl;
+        //cout << temp->field->passport.series << temp->field->passport.number << " " << temp->field->serviceType << " " << temp->field->serviceName << " " << temp->field->date.day << "." << temp->field->date.month << "." << temp->field->date.year << " " << endl;
+        while (temp != root->head) {
+            _showTrunks(trunk);
+            cout << temp->field->passport.series << temp->field->passport.number << " " << endl;
+            temp = temp->ptr;
+        }
+        //_showTrunks(trunk);
+        //cout << " " << root->head->field.firstField << " " << root->head->field.secondField << " " << root->head->field.thirdField << endl;
+
+        if (prev) {
+            prev->str = prev_str;
+        }
+
+        if (root->leftChild != nullptr) {
+            printTree(root->leftChild, trunk);
+        }
+    }
+    else {
+        cout << "Tree is empty" << endl;
+    }
+}
+
+void _deleteTree(treeNode*& pointer)
+{
+    if (pointer->leftChild != nullptr) {
+        _deleteTree(pointer->leftChild);
+    }
+    if (pointer->rightChild != nullptr) {
+        _deleteTree(pointer->rightChild);
+    }
+    delete pointer;
+    // после удления nullptr
+
+}
+
+treeNode* deleteTree(treeNode*& root) {
+    _deleteTree(root);
+    root = nullptr;
+    return root;
+}
+
+void _del_balanceLeft(treeNode*& node, bool& heightChanged) {
+    treeNode* pointer1, * pointer2;
+    if (node->balanceFactor == -1) node->balanceFactor = 0;
+    else if (node->balanceFactor == 0) {
+        node->balanceFactor = 1;
+        heightChanged = false;
+    }
+    else {
+        pointer1 = new treeNode;
+        pointer1 = node->rightChild;
+        if (pointer1->balanceFactor >= 0) {
+            node->rightChild = pointer1->leftChild;
+            pointer1->leftChild = node;
+            if (pointer1->balanceFactor == 0) {
+                node->balanceFactor = 1;
+                pointer1->balanceFactor = -1;
+                heightChanged = false;
+            }
+            else {
+                node->balanceFactor = 0;
+                pointer1->balanceFactor = 0;
+            }
+            node = pointer1;
+        }
+        else {
+            pointer2 = new treeNode;
+            pointer2 = pointer1->leftChild;
+            pointer1->leftChild = pointer2->rightChild;
+            pointer2->rightChild = pointer1;
+            node->rightChild = pointer2->leftChild;
+            pointer2->leftChild = node;
+            if (pointer2->balanceFactor == 1) {
+                node->balanceFactor = -1;
+            }
+            else {
+                node->balanceFactor = 0;
+            }
+            if (pointer2->balanceFactor == -1) {
+                pointer1->balanceFactor = 1;
+            }
+            else {
+                pointer1->balanceFactor = 0;
+            }
+            node = pointer2;
+            pointer2->balanceFactor = 0;
+        }
+    }
+}
+
+void _del_balanceRight(treeNode*& node, bool& heightChanged) {
+    treeNode* pointer1, * pointer2;
+    if (node->balanceFactor == 1) node->balanceFactor = 0;
+    else if (node->balanceFactor == 0) {
+        node->balanceFactor = -1;
+        heightChanged = false;
+    }
+    else {
+        pointer1 = new treeNode;
+        pointer1 = node->leftChild;
+        if (pointer1->balanceFactor <= 0) {
+            node->leftChild = pointer1->rightChild;
+            pointer1->rightChild = node;
+            if (pointer1->balanceFactor == 0) {
+                node->balanceFactor = -1;
+                pointer1->balanceFactor = 1;
+                heightChanged = false;
+            }
+            else {
+                node->balanceFactor = 0;
+                pointer1->balanceFactor = 0;
+            }
+            node = pointer1;
+        }
+        else {
+            pointer2 = new treeNode;
+            pointer2 = pointer1->rightChild;
+            pointer1->rightChild = pointer2->leftChild;
+            pointer2->leftChild = pointer1;
+            node->leftChild = pointer2->rightChild;
+            pointer2->rightChild = node;
+            if (pointer2->balanceFactor == -1) node->balanceFactor = 1; else node->balanceFactor = 0;
+            if (pointer2->balanceFactor == 1) pointer1->balanceFactor = -1; else pointer1->balanceFactor = 0;
+            node = pointer2;
+            pointer2->balanceFactor = 0;
+        }
+    }
+}
+
+void _delWhenTwoChild(treeNode*& node, bool& heightChanged, treeNode*& delNode) {
+    // минимальный справа 
+    if (node->leftChild != nullptr) {
+        _delWhenTwoChild(node->leftChild, heightChanged, delNode);
+        if (heightChanged) {
+            _del_balanceLeft(node, heightChanged);
+        }
+    }
+    else {
+        delNode->head->field = node->head->field;
+        delNode = node;
+        node = node->rightChild;
+        heightChanged = true;
+
+    }
+}
+
+void delNode(treeNode*& pointer, RequestsEntity* key, bool& heightChanged) {
+    treeNode* temp = new treeNode;
+    if (pointer == nullptr);//нет в дереве
+    else if (_compareKeys(pointer->head->field, key) == 1) {// > 
+        delNode(pointer->leftChild, key, heightChanged);
+        if (heightChanged) {
+            _del_balanceLeft(pointer, heightChanged);
+        }
+
+    }
+    else if (_compareKeys(pointer->head->field, key) == -1) {// <
+        delNode(pointer->rightChild, key, heightChanged);
+        if (heightChanged) {
+            _del_balanceRight(pointer, heightChanged);
+        }
+    }
+    else {
+        temp = pointer;
+        if (temp->rightChild == nullptr) {
+            pointer = temp->leftChild;
+            heightChanged = true;
+            delete temp;
+            temp = nullptr;
+        }
+        else if (temp->leftChild == nullptr) {
+
+            pointer = temp->rightChild;
+            heightChanged = true;
+            delete temp;
+            temp = nullptr;
+        }
+        else {
+            _delWhenTwoChild(temp->rightChild, heightChanged, temp);
+            if (heightChanged) _del_balanceRight(pointer, heightChanged);
+        }
+    }
+}
+
+void _nodeCounter(treeNode* pointer, int& count) {
+    if (pointer->leftChild != nullptr) {
+        _nodeCounter(pointer->leftChild, count);
+    }
+    if (pointer->rightChild != nullptr) {
+        _nodeCounter(pointer->rightChild, count);
+    }
+    count++;
+
+
+}
+
+void whichSubtreeIsBigger(treeNode* pointer) {
+    if (pointer != nullptr) {
+        int countLeft = 0;
+        int countRight = 0;
+        if (pointer->leftChild != nullptr) {
+            _nodeCounter(pointer->leftChild, countLeft);
+        }
+        if (pointer->rightChild != nullptr) {
+            _nodeCounter(pointer->rightChild, countRight);
+        }
+
+        if (countLeft > countRight) {
+            cout << "The left subtree is bigger " << endl;
+        }
+        else if (countLeft < countRight) {
+            cout << "The right subtree is bigger " << endl;
+        }
+        else {
+            cout << "Right and left subtree are equal" << endl;
+        }
+    }
+    else {
+        cout << "The tree is empty  " << endl;
+    }
+
+
+}
+
+bool searchTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
+    if (pointer != NULL) {
+        if (_compareKeys(pointer->head->field, givenValue) == 1) {
+            if (pointer->leftChild != nullptr) {
+                searchTreeNode(pointer->leftChild, givenValue);
+            }
+            else {
+                return 0;
+            }
+        }
+        else if (_compareKeys(pointer->head->field, givenValue) == -1) {
+            if (pointer->rightChild != nullptr) {
+                searchTreeNode(pointer->rightChild, givenValue);
+            }
+            else {
+                return 0;
+            }
+        }
+        else {
+            return 1;
+        }
+    }
+    else {
+        cout << "test" << endl;
+        return 0;
+    }
+
+}
+
+bool searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
+    
+}
+
+bool searchByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
+
+}
+
+bool searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
+
+}
+
+bool searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
+
+}
+
+//int main()
+//{
+  //  bool heightChanged = false;
+ //   treeNode* root = initTree();
+ //   vector<RequestsEntity*> data = readFromFile("stdrequests.txt");
+  //  for (int i = 0; i < data.size(); i++) {
+  //      addNode(root, data[i], heightChanged);
+ //   }
+ //   addNode(root, data[1], heightChanged);
+ //   addNode(root, data[2], heightChanged);
+ //   printTree(root, nullptr);
+ //  cout << endl;
+ //   cout << endl;
+  //  cout << endl;
+  //  //  delNode(root, data[2], heightChanged);
+  //  printTree(root, nullptr);
+//}
