@@ -11,6 +11,7 @@ using namespace std;
 
 RequestsHashTableEntry::RequestsHashTableEntry(RequestsEntity* value, int status) {
     this->value = value;
+    this->status = status;
 }
 
 RequestsHashTable::RequestsHashTable(int size) {
@@ -95,7 +96,7 @@ int RequestsHashTable::secondHashFunction(int j, int first, int second) { // вто
     return (first + j * second) % this->size;
 }
 
-int  RequestsHashTable::dataToKey(string serviceName, string serviceType, Passport passport) {
+int  RequestsHashTable::dataToKey(string serviceName, string serviceType, Passport passport,date date) {
     int result = 0;
     for (int i = 0; i < serviceName.size(); i++) {
         result += abs(serviceName[i]);
@@ -113,11 +114,14 @@ int  RequestsHashTable::dataToKey(string serviceName, string serviceType, Passpo
         char num = passportNumber[i];
         result += num;
     }
+    result += stoi(date.day);
+    result += stoi(date.month);
+    result += stoi(date.year);
     return result;
 };
 
 bool RequestsHashTable::isEqualFirstHash(RequestsEntity* first, RequestsEntity* second) {
-    if (firstHashFunction(dataToKey(first->serviceName, first->serviceType, first->passport)) == firstHashFunction(dataToKey(second->serviceName, second->serviceType, second->passport))) {
+    if (firstHashFunction(dataToKey(first->serviceName, first->serviceType, first->passport,first->date)) == firstHashFunction(dataToKey(second->serviceName, second->serviceType, second->passport,second->date))) {
         return true;
     }
     else {
@@ -133,7 +137,7 @@ RequestsHashTable::~RequestsHashTable() {
 
 void RequestsHashTable::insert(RequestsEntity* value) {
     int counter = 0;
-    int key = dataToKey(value->serviceName, value->serviceType, value->passport);
+    int key = dataToKey(value->serviceName, value->serviceType, value->passport,value->date);
     int index = firstHashFunction(key);
     if (data[index]->status != 1) {
         data[index]->value = value;
@@ -173,7 +177,7 @@ void RequestsHashTable::insertCollision(int _counter, int _index, int _key, Requ
 
 void RequestsHashTable::remove(RequestsEntity* value) {
     int counter = 1;
-    int key = dataToKey(value->serviceName, value->serviceType, value->passport);
+    int key = dataToKey(value->serviceName, value->serviceType, value->passport,value->date);
     int firstHash = firstHashFunction(key);
     int secondHash = doubleHashFunc(key);
     if (isEqualElements(data[firstHash]->value, value)) {
@@ -224,7 +228,7 @@ void RequestsHashTable::removeCollision(int secondHash, int firstHash, RequestsE
 vector<int> RequestsHashTable::search(RequestsEntity* value) {
     int counterComparisons = 0;
     int counter = 0;
-    int key = dataToKey(value->serviceName, value->serviceType, value->passport);
+    int key = dataToKey(value->serviceName, value->serviceType, value->passport,value->date);
     int firstIndex = firstHashFunction(key);
     int index = firstIndex;
     int secondHash = doubleHashFunc(key);
@@ -281,7 +285,8 @@ vector<int> RequestsHashTable::search(RequestsEntity* value) {
 void RequestsHashTable::print() {
     for (int i = 0; i < size; i++) {
         if (data[i]->status != 0) {
-            cout << "index: " << i << "| value: " << data[i]->value->passport.series << " " << data[i]->value->passport.number << " " << data[i]->value->serviceType << " " << data[i]->value->serviceName << " " << to_string(data[i]->value->date.day) + "." + to_string(data[i]->value->date.month) + "." + to_string(data[i]->value->date.year) << " |status:1" << " |firstHash = " << firstHashFunction(dataToKey(data[i]->value->serviceName, data[i]->value->serviceType, data[i]->value->passport));
+            cout << "index: " << i << "| value: " << data[i]->value->passport.series << " " << data[i]->value->passport.number << " " << data[i]->value->serviceType << " " << data[i]->value->serviceName << " " << data[i]->value->date.day + "." + data[i]->value->date.month + "." + data[i]->value->date.year << " |status:1" << " |firstHash = " << firstHashFunction(dataToKey(data[i]->value->serviceName, data[i]->value->serviceType, data[i]->value->passport,data[i]->value->date));
+            cout << "index: " << i << " date" << data[i]->value->date.day + "." + data[i]->value->date.month + "." + data[i]->value->date.year;
             cout << endl;
         }
         else {
