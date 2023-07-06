@@ -3,10 +3,15 @@
 #include <vector>
 #include <string> 
 #include <fstream>
-#include "AvlTree.h"
 using namespace std;
 
 vector<RequestsEntity*> DataStorage::data = readFromFile("stdrequests.txt");
 RequestsHashTable DataStorage::requestsHashTable = RequestsHashTable(data.size());
 int DataStorage::countComparisons = 0;
 treeNode* DataStorage::avlTree = nullptr;
+bool DataStorage::resultSerch = false;
+void DataStorage::removeElement(RequestsEntity* value) {
+	auto it = find(this->data.begin(), this->data.end(), value);
+	this->data.erase(it);
+
+}

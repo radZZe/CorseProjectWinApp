@@ -31,40 +31,16 @@ int _compareDate(date first, date second) {
     }
 }
 
-int _compareKeys(RequestsEntity* first, RequestsEntity* second) {
+int _compareKeys(listNodeElem* first, listNodeElem* second) {
     // 1 = 1 > 2     -1 = 1 < 2      0 = 1==2
-    if (first->passport.series > second->passport.series) {
+    if (first->value > second->value) {
         return 1;
     }
-    else if (first->passport.series < second->passport.series) {
+    else if (first->value < second->value) {
         return -1;
     }
     else {
-        if (first->passport.number > second->passport.number) {
-            return 1;
-        }
-        else if (first->passport.number < second->passport.number) {
-            return -1;
-        }
-        else {
-            if (first->serviceName > second->serviceName) {
-                return 1;
-            }
-            else if (first->serviceName < second->serviceName) {
-                return -1;
-            }
-            else {
-                if (first->serviceType > second->serviceType) {
-                    return 1;
-                }
-                else if (first->serviceType < second->serviceType) {
-                    return -1;
-                }
-                else {
-                    return _compareDate(first->date, second->date);
-                }
-            }
-        }
+        return 0;
     }
 }
 
@@ -75,7 +51,7 @@ listNode* initList()
     return head;
 };
 
-listNode* addElemToEnd(listNode*& head, RequestsEntity* value)
+listNode* addElemToEnd(listNode*& head, listNodeElem* value)
 {
     listNode* newnode, * temp;
     newnode = new listNode;
@@ -137,7 +113,7 @@ void listPrint(listNode* head)
         p = head;
         do
         {
-            cout << p->field->passport.series << p->field->passport.number << " " << p->field->serviceType << " " << p->field->serviceName << " " << p->field->date.day << "." << p->field->date.month << "." << p->field->date.year << " ";
+            cout <<p->field->value << " ";
             p = p->ptr;
         } while (p != head);
     }
@@ -174,7 +150,7 @@ treeNode* initTree() {
     return root;
 }
 
-void addNode(treeNode*& pointer, RequestsEntity* key, bool& heightChanged) {
+void addNode(treeNode*& pointer, listNodeElem* key, bool& heightChanged) {
 
     treeNode* pointer1, * pointer2;
     if (pointer == nullptr) {
@@ -290,11 +266,11 @@ void printTree(treeNode* root, Trunk* prev)
         listNode* temp = new listNode;
         temp = root->head->ptr;
         _showTrunks(trunk);
-        cout << temp->field->passport.series << temp->field->passport.number << " " << endl;
+        cout << temp->field->value << endl;
         //cout << temp->field->passport.series << temp->field->passport.number << " " << temp->field->serviceType << " " << temp->field->serviceName << " " << temp->field->date.day << "." << temp->field->date.month << "." << temp->field->date.year << " " << endl;
         while (temp != root->head) {
             _showTrunks(trunk);
-            cout << temp->field->passport.series << temp->field->passport.number << " " << endl;
+            cout << temp->field->value << endl;
             temp = temp->ptr;
         }
         //_showTrunks(trunk);
@@ -437,7 +413,7 @@ void _delWhenTwoChild(treeNode*& node, bool& heightChanged, treeNode*& delNode) 
     }
 }
 
-void delNode(treeNode*& pointer, RequestsEntity* key, bool& heightChanged) {
+void delNode(treeNode*& pointer, listNodeElem* key, bool& heightChanged) {
     treeNode* temp = new treeNode;
     if (pointer == nullptr);//нет в дереве
     else if (_compareKeys(pointer->head->field, key) == 1) {// > 
@@ -515,49 +491,85 @@ void whichSubtreeIsBigger(treeNode* pointer) {
 
 }
 
-bool searchTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
+
+int searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue,int& count) {
+    listNodeElem* value = new listNodeElem();
+    value->value = to_string(givenValue->passport.series) + to_string(givenValue->passport.number);
     if (pointer != NULL) {
-        if (_compareKeys(pointer->head->field, givenValue) == 1) {
+        if (_compareKeys(pointer->head->field, value) == 1) {
+            count++;
             if (pointer->leftChild != nullptr) {
-                searchTreeNode(pointer->leftChild, givenValue);
+                searchByPassportTreeNode(pointer->leftChild, givenValue, count);
             }
             else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
                 return 0;
             }
         }
-        else if (_compareKeys(pointer->head->field, givenValue) == -1) {
+        else if (_compareKeys(pointer->head->field, value) == -1) {
+            count++;
             if (pointer->rightChild != nullptr) {
-                searchTreeNode(pointer->rightChild, givenValue);
+                searchByPassportTreeNode(pointer->rightChild, givenValue,count);
             }
             else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
                 return 0;
             }
         }
         else {
-            return 1;
+            if (isEqualElements(givenValue, DataStorage::data[pointer->head->field->index])) {
+                count++;
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = true;
+                return 0;
+            }
+            else {
+                listNode* temp = pointer->head;
+                while (temp->ptr->field->index != pointer->head->field->index) {
+                    if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                        count++;
+                        DataStorage::countComparisons = count;
+                        DataStorage::resultSerch = true;
+                        return 0;;
+                    }
+                    temp = temp->ptr;
+                }
+                if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                    count++;
+                    DataStorage::countComparisons = count;
+                    DataStorage::resultSerch = true;
+                    return 0;
+                }
+                if (pointer->leftChild != nullptr) {
+                    searchByPassportTreeNode(pointer->leftChild, givenValue,count);
+                }
+                if (pointer->rightChild != nullptr) {
+                    searchByPassportTreeNode(pointer->rightChild, givenValue,count);
+                }
+            }
+            
         }
     }
     else {
-        cout << "test" << endl;
+        DataStorage::countComparisons = count;
+        DataStorage::resultSerch = false;
         return 0;
     }
-
 }
 
-bool searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
-    
+int searchByDateTreeNode(treeNode* pointer, listNodeElem* givenValue) {
+
+    return 0;
 }
 
-bool searchByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
-
+int searchByServiceNameTreeNode(treeNode* pointer, listNodeElem* givenValue) {
+    return 0;
 }
 
-bool searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
-
-}
-
-bool searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue) {
-
+int searchByServiceTypeTreeNode(treeNode* pointer, listNodeElem* givenValue) {
+    return 0;
 }
 
 //int main()
