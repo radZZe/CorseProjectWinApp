@@ -11,5 +11,7 @@ public:
 	static RequestsHashTable requestsHashTable;
 	static int countComparisons;
 	static treeNode* avlTree;
+	static bool resultSerch;
+	void removeElement(RequestsEntity* value);
 };
 

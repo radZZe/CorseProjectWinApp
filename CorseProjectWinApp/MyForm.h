@@ -193,7 +193,7 @@ namespace CorseProjectWinApp {
 			this->saveBtn->TabIndex = 25;
 			this->saveBtn->Text = L"Сохранить";
 			this->saveBtn->UseVisualStyleBackColor = true;
-			this->saveBtn->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			this->saveBtn->Click += gcnew System::EventHandler(this, &MyForm::save_btn);
 			// 
 			// resultSearch
 			// 
@@ -269,6 +269,7 @@ namespace CorseProjectWinApp {
 			this->button3->TabIndex = 16;
 			this->button3->Text = L"Удалить";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::remove_element);
 			// 
 			// button2
 			// 
@@ -463,12 +464,50 @@ namespace CorseProjectWinApp {
 		}
 	}
 private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender, System::EventArgs^ e) {
-	DataStorage dataStorage = DataStorage();
-	int seriesPassport = Int32::Parse(this->tBSeriesPassport->Text);
-	int numberPassport = Int32::Parse(this->tBNumberPassport->Text);
 	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
 	string  serviceType = marshal_as<std::string>(this->tBServiceType->Text);
-	date date = inputDateData(marshal_as<std::string>(this->tBDate->Text));
+	string dateString = marshal_as<std::string>(this->tBDate->Text);
+	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
+	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+		MessageBox::Show(this, "некорректные данные", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		int seriesPassport = stoi(seriesPassportText);
+		int numberPassport = stoi(numberPassportText);
+		date date = inputDateData(dateString);
+		Passport passport = Passport();
+		passport.number = numberPassport;
+		passport.series = seriesPassport;
+		RequestsEntity* entity = new RequestsEntity();
+		entity->date = date;
+		entity->passport = passport;
+		entity->serviceName = serviceName;
+		entity->serviceType = serviceType;
+		RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+		requestsHashTable.print();
+		vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
+		this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
+		if (result_searchByTypeAndNameOfService[1] != -1) {
+			this->resultSearch->Text = gcnew String("Найден");
+		}
+		else {
+			this->resultSearch->Text = gcnew String("Не найден");
+		}
+	}
+	
+
+};
+
+private: System::Void passportSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string  serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	string dateString = marshal_as<std::string>(this->tBDate->Text);
+	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
+	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	int seriesPassport = stoi(seriesPassportText);
+	int numberPassport = stoi(numberPassportText);
+	date date = inputDateData(dateString);
 	Passport passport = Passport();
 	passport.number = numberPassport;
 	passport.series = seriesPassport;
@@ -477,30 +516,53 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 	entity->passport = passport;
 	entity->serviceName = serviceName;
 	entity->serviceType = serviceType;
-	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
-	requestsHashTable.print();
-	vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
-	this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
-	if (result_searchByTypeAndNameOfService[1] != -1) {
-		this->resultSearch->Text = gcnew String("Найден");
-	}
-	else {
-		this->resultSearch->Text = gcnew String("Не найден");
-	}
-
-};
-
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void passportSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
-	DataStorage dataStorage = DataStorage();
 	treeNode* avlTree = DataStorage::avlTree;
 	vector<RequestsEntity*> data = DataStorage::data;
 	bool heightChanged = false;
 	for (int i = 0; i < data.size(); i++) {
-		     addNode(avlTree, data[i], heightChanged);
+		string valueText = to_string(data[i]->passport.series) + to_string(data[i]->passport.number);
+		listNodeElem* value = new listNodeElem();
+		value->index = i;
+		value->value = valueText;
+		     addNode(avlTree, value, heightChanged);
+
+	}
+	int count = 0;
+	searchByPassportTreeNode(avlTree, entity, count);
+	bool result_searchByPassportTreeNode = DataStorage::resultSerch;
+	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+	if (result_searchByPassportTreeNode) {
+		this->resultSearch->Text = gcnew String("Найден");
+	}
+	else  {
+		this->resultSearch->Text = gcnew String("Не найден");
 	}
 	printTree(avlTree, nullptr);
+}
+private: System::Void save_btn(System::Object^ sender, System::EventArgs^ e) {
+	vector<RequestsEntity*> data = DataStorage::data;
+	writeData(data, "stdrequests.txt");
+	MessageBox::Show(this, "Сохранено", "Сохранение", MessageBoxButtons::OK, MessageBoxIcon::Information);
+}
+private: System::Void remove_element(System::Object^ sender, System::EventArgs^ e) {
+	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string  serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	string dateString = marshal_as<std::string>(this->tBDate->Text);
+	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
+	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	int seriesPassport = stoi(seriesPassportText);
+	int numberPassport = stoi(numberPassportText);
+	date date = inputDateData(dateString);
+	Passport passport = Passport();
+	passport.number = numberPassport;
+	passport.series = seriesPassport;
+	RequestsEntity* entity = new RequestsEntity();
+	entity->date = date;
+	entity->passport = passport;
+	entity->serviceName = serviceName;
+	entity->serviceType = serviceType;
+	DataStorage dataStorage = DataStorage();
+	dataStorage.removeElement(entity);
 }
 };
 }

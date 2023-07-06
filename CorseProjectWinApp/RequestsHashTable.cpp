@@ -87,7 +87,7 @@ int RequestsHashTable::doubleHashFunc(int  key) {
         return 1 + (key % (this->size - 2));
     }
     else {
-        int test = 1 + (key % (this->size - 1));
+        int test = 1 + (key % this->size);
         return test;
     }
 }
