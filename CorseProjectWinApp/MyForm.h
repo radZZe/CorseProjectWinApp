@@ -336,6 +336,7 @@ namespace CorseProjectWinApp {
 			this->searchByServiceNameBTN->TabIndex = 6;
 			this->searchByServiceNameBTN->Text = L"Поиск по названию услуги";
 			this->searchByServiceNameBTN->UseVisualStyleBackColor = true;
+			this->searchByServiceNameBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceNameBTN_Click);
 			// 
 			// RequestsDataGrid
 			// 
@@ -360,6 +361,7 @@ namespace CorseProjectWinApp {
 			this->searchByTypeOfServiceBTN->TabIndex = 4;
 			this->searchByTypeOfServiceBTN->Text = L"Поиск по типу услуги";
 			this->searchByTypeOfServiceBTN->UseVisualStyleBackColor = true;
+			this->searchByTypeOfServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByTypeOfServiceBTN_Click);
 			// 
 			// dateSearchBTN
 			// 
@@ -369,6 +371,7 @@ namespace CorseProjectWinApp {
 			this->dateSearchBTN->TabIndex = 3;
 			this->dateSearchBTN->Text = L"Поиск по дате";
 			this->dateSearchBTN->UseVisualStyleBackColor = true;
+			this->dateSearchBTN->Click += gcnew System::EventHandler(this, &MyForm::dateSearchBTN_Click);
 			// 
 			// passportSearchBTN
 			// 
@@ -495,13 +498,11 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 			this->resultSearch->Text = gcnew String("Не найден");
 		}
 	}
-	
-
 };
 
 private: System::Void passportSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
-	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
-	string  serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
@@ -538,6 +539,7 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 		this->resultSearch->Text = gcnew String("Не найден");
 	}
 	printTree(avlTree, nullptr);
+	cout << endl;
 }
 private: System::Void save_btn(System::Object^ sender, System::EventArgs^ e) {
 	vector<RequestsEntity*> data = DataStorage::data;
@@ -563,6 +565,131 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 	entity->serviceType = serviceType;
 	DataStorage dataStorage = DataStorage();
 	dataStorage.removeElement(entity);
+}
+private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	string dateString = marshal_as<std::string>(this->tBDate->Text);
+	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
+	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	int seriesPassport = stoi(seriesPassportText);
+	int numberPassport = stoi(numberPassportText);
+	date date = inputDateData(dateString);
+	Passport passport = Passport();
+	passport.number = numberPassport;
+	passport.series = seriesPassport;
+	RequestsEntity* entity = new RequestsEntity();
+	entity->date = date;
+	entity->passport = passport;
+	entity->serviceName = serviceName;
+	entity->serviceType = serviceType;
+	treeNode* avlTree = DataStorage::avlTree;
+	vector<RequestsEntity*> data = DataStorage::data;
+	bool heightChanged = false;
+	for (int i = 0; i < data.size(); i++) {
+		string valueText = data[i]->date.day + "." + data[i]->date.month + "." + data[i]->date.year;
+		listNodeElem* value = new listNodeElem();
+		value->index = i;
+		value->value = valueText;
+		addNode(avlTree, value, heightChanged);
+
+	}
+	int count = 0;
+	searchByDateTreeNode(avlTree, entity, count);
+	bool result_searchByDateTreeNode = DataStorage::resultSerch;
+	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+	if (result_searchByDateTreeNode) {
+		this->resultSearch->Text = gcnew String("Найден");
+	}
+	else {
+		this->resultSearch->Text = gcnew String("Не найден");
+	}
+	printTree(avlTree, nullptr);
+	cout << endl;
+
+}
+private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	string dateString = marshal_as<std::string>(this->tBDate->Text);
+	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
+	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	int seriesPassport = stoi(seriesPassportText);
+	int numberPassport = stoi(numberPassportText);
+	date date = inputDateData(dateString);
+	Passport passport = Passport();
+	passport.number = numberPassport;
+	passport.series = seriesPassport;
+	RequestsEntity* entity = new RequestsEntity();
+	entity->date = date;
+	entity->passport = passport;
+	entity->serviceName = serviceName;
+	entity->serviceType = serviceType;
+	treeNode* avlTree = DataStorage::avlTree;
+	vector<RequestsEntity*> data = DataStorage::data;
+	bool heightChanged = false;
+	for (int i = 0; i < data.size(); i++) {
+		string valueText = data[i]->serviceType;
+		listNodeElem* value = new listNodeElem();
+		value->index = i;
+		value->value = valueText;
+		addNode(avlTree, value, heightChanged);
+
+	}
+	int count = 0;
+	searchByServiceTypeTreeNode(avlTree, entity, count);
+	bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
+	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+	if (result_searchByServiceTypeTreeNode) {
+		this->resultSearch->Text = gcnew String("Найден");
+	}
+	else {
+		this->resultSearch->Text = gcnew String("Не найден");
+	}
+	printTree(avlTree, nullptr);
+	cout << endl;
+
+}
+private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	string dateString = marshal_as<std::string>(this->tBDate->Text);
+	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
+	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	int seriesPassport = stoi(seriesPassportText);
+	int numberPassport = stoi(numberPassportText);
+	date date = inputDateData(dateString);
+	Passport passport = Passport();
+	passport.number = numberPassport;
+	passport.series = seriesPassport;
+	RequestsEntity* entity = new RequestsEntity();
+	entity->date = date;
+	entity->passport = passport;
+	entity->serviceName = serviceName;
+	entity->serviceType = serviceType;
+	treeNode* avlTree = DataStorage::avlTree;
+	vector<RequestsEntity*> data = DataStorage::data;
+	bool heightChanged = false;
+	for (int i = 0; i < data.size(); i++) {
+		string valueText = data[i]->serviceName;
+		listNodeElem* value = new listNodeElem();
+		value->index = i;
+		value->value = valueText;
+		addNode(avlTree, value, heightChanged);
+
+	}
+	int count = 0;
+	searchByServiceNameTreeNode(avlTree, entity, count);
+	bool result_searchByServiceNameTreeNode = DataStorage::resultSerch;
+	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+	if (result_searchByServiceNameTreeNode) {
+		this->resultSearch->Text = gcnew String("Найден");
+	}
+	else {
+		this->resultSearch->Text = gcnew String("Не найден");
+	}
+	printTree(avlTree, nullptr);
+	cout << endl;
 }
 };
 }
