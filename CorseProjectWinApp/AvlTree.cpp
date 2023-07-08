@@ -559,17 +559,205 @@ int searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue,int& 
     }
 }
 
-int searchByDateTreeNode(treeNode* pointer, listNodeElem* givenValue) {
+int searchByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count) {
+    listNodeElem* value = new listNodeElem();
+    value->value = givenValue->date.day + '.' + givenValue->date.month + '.' + givenValue->date.year;
+    if (pointer != NULL) {
+        if (_compareKeys(pointer->head->field, value) == 1) {
+            count++;
+            if (pointer->leftChild != nullptr) {
+                searchByDateTreeNode(pointer->leftChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else if (_compareKeys(pointer->head->field, value) == -1) {
+            count++;
+            if (pointer->rightChild != nullptr) {
+                searchByDateTreeNode(pointer->rightChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else {
+            if (isEqualElements(givenValue, DataStorage::data[pointer->head->field->index])) {
+                count++;
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = true;
+                return 0;
+            }
+            else {
+                listNode* temp = pointer->head;
+                while (temp->ptr->field->index != pointer->head->field->index) {
+                    if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                        count++;
+                        DataStorage::countComparisons = count;
+                        DataStorage::resultSerch = true;
+                        return 0;;
+                    }
+                    temp = temp->ptr;
+                }
+                if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                    count++;
+                    DataStorage::countComparisons = count;
+                    DataStorage::resultSerch = true;
+                    return 0;
+                }
+                if (pointer->leftChild != nullptr) {
+                    searchByDateTreeNode(pointer->leftChild, givenValue, count);
+                }
+                if (pointer->rightChild != nullptr) {
+                    searchByDateTreeNode(pointer->rightChild, givenValue, count);
+                }
+            }
 
-    return 0;
+        }
+    }
+    else {
+        DataStorage::countComparisons = count;
+        DataStorage::resultSerch = false;
+        return 0;
+    }
 }
 
-int searchByServiceNameTreeNode(treeNode* pointer, listNodeElem* givenValue) {
-    return 0;
+int searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count) {
+    listNodeElem* value = new listNodeElem();
+    value->value = givenValue->serviceName;
+    if (pointer != NULL) {
+        if (_compareKeys(pointer->head->field, value) == 1) {
+            count++;
+            if (pointer->leftChild != nullptr) {
+                searchByDateTreeNode(pointer->leftChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else if (_compareKeys(pointer->head->field, value) == -1) {
+            count++;
+            if (pointer->rightChild != nullptr) {
+                searchByDateTreeNode(pointer->rightChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else {
+            if (isEqualElements(givenValue, DataStorage::data[pointer->head->field->index])) {
+                count++;
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = true;
+                return 0;
+            }
+            else {
+                listNode* temp = pointer->head;
+                while (temp->ptr->field->index != pointer->head->field->index) {
+                    if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                        count++;
+                        DataStorage::countComparisons = count;
+                        DataStorage::resultSerch = true;
+                        return 0;;
+                    }
+                    temp = temp->ptr;
+                }
+                if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                    count++;
+                    DataStorage::countComparisons = count;
+                    DataStorage::resultSerch = true;
+                    return 0;
+                }
+                if (pointer->leftChild != nullptr) {
+                    searchByDateTreeNode(pointer->leftChild, givenValue, count);
+                }
+                if (pointer->rightChild != nullptr) {
+                    searchByDateTreeNode(pointer->rightChild, givenValue, count);
+                }
+            }
+
+        }
+    }
+    else {
+        DataStorage::countComparisons = count;
+        DataStorage::resultSerch = false;
+        return 0;
+    }
 }
 
-int searchByServiceTypeTreeNode(treeNode* pointer, listNodeElem* givenValue) {
-    return 0;
+int searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count) {
+    listNodeElem* value = new listNodeElem();
+    value->value = givenValue->serviceType;
+    if (pointer != NULL) {
+        if (_compareKeys(pointer->head->field, value) == 1) {
+            count++;
+            if (pointer->leftChild != nullptr) {
+                searchByDateTreeNode(pointer->leftChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else if (_compareKeys(pointer->head->field, value) == -1) {
+            count++;
+            if (pointer->rightChild != nullptr) {
+                searchByDateTreeNode(pointer->rightChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else {
+            if (isEqualElements(givenValue, DataStorage::data[pointer->head->field->index])) {
+                count++;
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = true;
+                return 0;
+            }
+            else {
+                listNode* temp = pointer->head;
+                while (temp->ptr->field->index != pointer->head->field->index) {
+                    if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                        count++;
+                        DataStorage::countComparisons = count;
+                        DataStorage::resultSerch = true;
+                        return 0;;
+                    }
+                    temp = temp->ptr;
+                }
+                if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
+                    count++;
+                    DataStorage::countComparisons = count;
+                    DataStorage::resultSerch = true;
+                    return 0;
+                }
+                if (pointer->leftChild != nullptr) {
+                    searchByDateTreeNode(pointer->leftChild, givenValue, count);
+                }
+                if (pointer->rightChild != nullptr) {
+                    searchByDateTreeNode(pointer->rightChild, givenValue, count);
+                }
+            }
+
+        }
+    }
+    else {
+        DataStorage::countComparisons = count;
+        DataStorage::resultSerch = false;
+        return 0;
+    }
 }
 
 //int main()

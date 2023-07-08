@@ -84,10 +84,10 @@ int RequestsHashTable::firstHashFunction(int key)
 
 int RequestsHashTable::doubleHashFunc(int  key) {
     if (isPrime(this->size)) {
-        return 1 + (key % (this->size - 2));
+        return (1 + key) % (this->size - 2);
     }
     else {
-        int test = 1 + (key % this->size);
+        int test = (1 + key ) % (this->size-1);
         return test;
     }
 }
@@ -156,15 +156,15 @@ void RequestsHashTable::insertCollision(int _counter, int _index, int _key, Requ
     int index = _index;
     int key = _key;
     int secondHash = doubleHashFunc(key);
-    index = secondHash;
-    while ((counter <= size) && ((data[index]->status == 1)) && data[index]->status != 0) {
+    index = secondHashFunction(counter, _index, secondHash);
+    while ((counter <= size) && (data[index]->status != 0)) {
         //cout << "INSERT: try =" << counter << " index = " << index << "value key = " << value->key.firstField << " " << value->key.secondField << " " << value->key.thirdField << endl;
         if (isEqualElements(data[index]->value, value)) {
             cout << "EXCEPTION : such an element is already in place " << endl;
             break;
         }
-        index = secondHashFunction(counter, _index, secondHash);
         counter++;
+        index = secondHashFunction(counter, _index, secondHash);
     }
     if (counter > size) {
         cout << "EXCEPTION : stack overflow " << endl;
