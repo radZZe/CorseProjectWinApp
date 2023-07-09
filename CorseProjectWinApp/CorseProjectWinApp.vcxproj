@@ -121,17 +121,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AvlTree.cpp" />
+    <ClCompile Include="ClientsHashTable.cpp" />
     <ClCompile Include="DataStorage.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="RBTClients.cpp" />
+    <ClCompile Include="ReaderClients.cpp" />
     <ClCompile Include="ReaderRequests.cpp" />
     <ClCompile Include="RequestsHashTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AvlTree.h" />
+    <ClInclude Include="ClientsHashTable.h" />
     <ClInclude Include="DataStorage.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="RBT.h" />
+    <ClInclude Include="ReaderClients.h" />
     <ClInclude Include="ReaderRequests.h" />
     <ClInclude Include="RequestsHashTable.h" />
   </ItemGroup>
@@ -139,6 +145,9 @@
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="stdclients.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

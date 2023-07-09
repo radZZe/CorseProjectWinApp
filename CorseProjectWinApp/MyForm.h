@@ -55,7 +55,8 @@ namespace CorseProjectWinApp {
 	private: System::Windows::Forms::Button^ searchByTypeAndNameOfServiceBTN;
 
 
-	private: System::Windows::Forms::TabPage^ tabPage2;
+	private: System::Windows::Forms::TabPage^ clientsPage;
+	
 	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ RequestsDataGrid;
@@ -83,6 +84,19 @@ namespace CorseProjectWinApp {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ resultSearch;
 	private: System::Windows::Forms::Button^ saveBtn;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
 
@@ -128,13 +142,28 @@ namespace CorseProjectWinApp {
 			this->dateSearchBTN = (gcnew System::Windows::Forms::Button());
 			this->passportSearchBTN = (gcnew System::Windows::Forms::Button());
 			this->searchByTypeAndNameOfServiceBTN = (gcnew System::Windows::Forms::Button());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->clientsPage = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->requestsPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
+			this->clientsPage->SuspendLayout();
 			this->tabPage1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -143,7 +172,7 @@ namespace CorseProjectWinApp {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->tabControl1->Controls->Add(this->requestsPage);
-			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Controls->Add(this->clientsPage);
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Location = System::Drawing::Point(-5, -3);
 			this->tabControl1->Name = L"tabControl1";
@@ -352,6 +381,7 @@ namespace CorseProjectWinApp {
 			this->RequestsDataGrid->RowTemplate->ReadOnly = true;
 			this->RequestsDataGrid->Size = System::Drawing::Size(732, 276);
 			this->RequestsDataGrid->TabIndex = 5;
+			this->RequestsDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::RequestsDataGrid_CellContentClick);
 			// 
 			// searchByTypeOfServiceBTN
 			// 
@@ -393,15 +423,28 @@ namespace CorseProjectWinApp {
 			this->searchByTypeAndNameOfServiceBTN->UseVisualStyleBackColor = true;
 			this->searchByTypeAndNameOfServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByTypeAndNameOfService_Click);
 			// 
-			// tabPage2
+			// clientsPage
 			// 
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(738, 501);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Клиенты";
-			this->tabPage2->UseVisualStyleBackColor = true;
+			this->clientsPage->Controls->Add(this->button7);
+			this->clientsPage->Controls->Add(this->button6);
+			this->clientsPage->Controls->Add(this->label10);
+			this->clientsPage->Controls->Add(this->label9);
+			this->clientsPage->Controls->Add(this->label8);
+			this->clientsPage->Controls->Add(this->label7);
+			this->clientsPage->Controls->Add(this->textBox7);
+			this->clientsPage->Controls->Add(this->textBox6);
+			this->clientsPage->Controls->Add(this->textBox2);
+			this->clientsPage->Controls->Add(this->textBox1);
+			this->clientsPage->Controls->Add(this->dataGridView1);
+			this->clientsPage->Controls->Add(this->button5);
+			this->clientsPage->Controls->Add(this->button4);
+			this->clientsPage->Location = System::Drawing::Point(4, 22);
+			this->clientsPage->Name = L"clientsPage";
+			this->clientsPage->Padding = System::Windows::Forms::Padding(3);
+			this->clientsPage->Size = System::Drawing::Size(738, 501);
+			this->clientsPage->TabIndex = 1;
+			this->clientsPage->Text = L"Клиенты";
+			this->clientsPage->UseVisualStyleBackColor = true;
 			// 
 			// tabPage1
 			// 
@@ -422,6 +465,116 @@ namespace CorseProjectWinApp {
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(102, 362);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(133, 23);
+			this->button4->TabIndex = 0;
+			this->button4->Text = L"button4";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(102, 411);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(133, 23);
+			this->button5->TabIndex = 1;
+			this->button5->Text = L"button5";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(3, 3);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(728, 276);
+			this->dataGridView1->TabIndex = 2;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(480, 321);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(171, 20);
+			this->textBox1->TabIndex = 3;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(480, 365);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(171, 20);
+			this->textBox2->TabIndex = 4;
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(480, 414);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(171, 20);
+			this->textBox6->TabIndex = 5;
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(480, 463);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(171, 20);
+			this->textBox7->TabIndex = 6;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(481, 305);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(35, 13);
+			this->label7->TabIndex = 7;
+			this->label7->Text = L"label7";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(483, 351);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(35, 13);
+			this->label8->TabIndex = 8;
+			this->label8->Text = L"label8";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(483, 400);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(35, 13);
+			this->label9->TabIndex = 9;
+			this->label9->Text = L"label9";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(484, 448);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(41, 13);
+			this->label10->TabIndex = 10;
+			this->label10->Text = L"label10";
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(102, 318);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(133, 23);
+			this->button6->TabIndex = 11;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(102, 460);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(133, 23);
+			this->button7->TabIndex = 12;
+			this->button7->Text = L"button7";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -437,7 +590,10 @@ namespace CorseProjectWinApp {
 			this->requestsPage->ResumeLayout(false);
 			this->requestsPage->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->EndInit();
+			this->clientsPage->ResumeLayout(false);
+			this->clientsPage->PerformLayout();
 			this->tabPage1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -690,6 +846,10 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	}
 	printTree(avlTree, nullptr);
 	cout << endl;
+}
+private: System::Void RequestsDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
