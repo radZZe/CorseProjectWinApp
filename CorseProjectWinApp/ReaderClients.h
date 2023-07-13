@@ -40,6 +40,8 @@ struct List_node {
 };
 
 struct Node {
+	List_node* data;
+	Node* parent;
 	Node* left;
 	Node* right;
 	int color;// 1 - Black
