@@ -42,7 +42,10 @@
     <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesHashTable.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesRBTree.cpp">
+    <ClCompile Include="ReaderServices.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ServicesRBTree.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,8 +74,15 @@
     <ClInclude Include="ClientsHashTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="ReaderServices.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicesRBTree.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="stdclients.txt" />
+    <Text Include="stdservices.txt" />
   </ItemGroup>
 </Project>
