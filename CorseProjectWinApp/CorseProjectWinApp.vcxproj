@@ -120,8 +120,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesHashTable.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesRBTree.cpp" />
+    <ClCompile Include="ServicesHashTable.cpp" />
+    <ClCompile Include="ServicesRBTree.cpp" />
     <ClCompile Include="AvlTree.cpp" />
     <ClCompile Include="ClientsHashTable.cpp" />
     <ClCompile Include="DataStorage.cpp" />
@@ -131,7 +131,6 @@
     <ClCompile Include="ReaderRequests.cpp" />
     <ClCompile Include="ReaderServices.cpp" />
     <ClCompile Include="RequestsHashTable.cpp" />
-    <ClCompile Include="ServicesRBTree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AvlTree.h" />
