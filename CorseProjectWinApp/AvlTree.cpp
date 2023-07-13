@@ -463,35 +463,6 @@ void _nodeCounter(treeNode* pointer, int& count) {
 
 }
 
-void whichSubtreeIsBigger(treeNode* pointer) {
-    if (pointer != nullptr) {
-        int countLeft = 0;
-        int countRight = 0;
-        if (pointer->leftChild != nullptr) {
-            _nodeCounter(pointer->leftChild, countLeft);
-        }
-        if (pointer->rightChild != nullptr) {
-            _nodeCounter(pointer->rightChild, countRight);
-        }
-
-        if (countLeft > countRight) {
-            cout << "The left subtree is bigger " << endl;
-        }
-        else if (countLeft < countRight) {
-            cout << "The right subtree is bigger " << endl;
-        }
-        else {
-            cout << "Right and left subtree are equal" << endl;
-        }
-    }
-    else {
-        cout << "The tree is empty  " << endl;
-    }
-
-
-}
-
-
 int searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue,int& count) {
     listNodeElem* value = new listNodeElem();
     value->value = to_string(givenValue->passport.series) + to_string(givenValue->passport.number);
@@ -528,16 +499,18 @@ int searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue,int& 
             else {
                 listNode* temp = pointer->head;
                 while (temp->ptr->field->index != pointer->head->field->index) {
+                    count++;
                     if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                        count++;
+                        
                         DataStorage::countComparisons = count;
                         DataStorage::resultSerch = true;
                         return 0;;
                     }
                     temp = temp->ptr;
                 }
+                count++;
                 if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                    count++;
+                    
                     DataStorage::countComparisons = count;
                     DataStorage::resultSerch = true;
                     return 0;
@@ -595,16 +568,18 @@ int searchByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& cou
             else {
                 listNode* temp = pointer->head;
                 while (temp->ptr->field->index != pointer->head->field->index) {
+                    count++;
                     if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                        count++;
+                        
                         DataStorage::countComparisons = count;
                         DataStorage::resultSerch = true;
                         return 0;;
                     }
                     temp = temp->ptr;
                 }
+                count++;
                 if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                    count++;
+                    
                     DataStorage::countComparisons = count;
                     DataStorage::resultSerch = true;
                     return 0;
@@ -633,7 +608,7 @@ int searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, i
         if (_compareKeys(pointer->head->field, value) == 1) {
             count++;
             if (pointer->leftChild != nullptr) {
-                searchByDateTreeNode(pointer->leftChild, givenValue, count);
+                searchByServiceNameTreeNode(pointer->leftChild, givenValue, count);
             }
             else {
                 DataStorage::countComparisons = count;
@@ -644,7 +619,7 @@ int searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, i
         else if (_compareKeys(pointer->head->field, value) == -1) {
             count++;
             if (pointer->rightChild != nullptr) {
-                searchByDateTreeNode(pointer->rightChild, givenValue, count);
+                searchByServiceNameTreeNode(pointer->rightChild, givenValue, count);
             }
             else {
                 DataStorage::countComparisons = count;
@@ -662,25 +637,27 @@ int searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, i
             else {
                 listNode* temp = pointer->head;
                 while (temp->ptr->field->index != pointer->head->field->index) {
+                    count++;
                     if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                        count++;
+                        
                         DataStorage::countComparisons = count;
                         DataStorage::resultSerch = true;
                         return 0;;
                     }
                     temp = temp->ptr;
                 }
+                count++;
                 if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                    count++;
+                    
                     DataStorage::countComparisons = count;
                     DataStorage::resultSerch = true;
                     return 0;
                 }
                 if (pointer->leftChild != nullptr) {
-                    searchByDateTreeNode(pointer->leftChild, givenValue, count);
+                    searchByServiceNameTreeNode(pointer->leftChild, givenValue, count);
                 }
                 if (pointer->rightChild != nullptr) {
-                    searchByDateTreeNode(pointer->rightChild, givenValue, count);
+                    searchByServiceNameTreeNode(pointer->rightChild, givenValue, count);
                 }
             }
 
@@ -700,7 +677,7 @@ int searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, i
         if (_compareKeys(pointer->head->field, value) == 1) {
             count++;
             if (pointer->leftChild != nullptr) {
-                searchByDateTreeNode(pointer->leftChild, givenValue, count);
+                searchByServiceTypeTreeNode(pointer->leftChild, givenValue, count);
             }
             else {
                 DataStorage::countComparisons = count;
@@ -711,7 +688,7 @@ int searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, i
         else if (_compareKeys(pointer->head->field, value) == -1) {
             count++;
             if (pointer->rightChild != nullptr) {
-                searchByDateTreeNode(pointer->rightChild, givenValue, count);
+                searchByServiceTypeTreeNode(pointer->rightChild, givenValue, count);
             }
             else {
                 DataStorage::countComparisons = count;
@@ -729,30 +706,29 @@ int searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, i
             else {
                 listNode* temp = pointer->head;
                 while (temp->ptr->field->index != pointer->head->field->index) {
+                    count++;
                     if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                        count++;
                         DataStorage::countComparisons = count;
                         DataStorage::resultSerch = true;
-                        return 0;;
+                        return 0;
                     }
                     temp = temp->ptr;
                 }
-                if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-                    count++;
+                count++;
+                if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) 
                     DataStorage::countComparisons = count;
                     DataStorage::resultSerch = true;
                     return 0;
                 }
                 if (pointer->leftChild != nullptr) {
-                    searchByDateTreeNode(pointer->leftChild, givenValue, count);
+                    searchByServiceTypeTreeNode(pointer->leftChild, givenValue, count);
                 }
                 if (pointer->rightChild != nullptr) {
-                    searchByDateTreeNode(pointer->rightChild, givenValue, count);
+                    searchByServiceTypeTreeNode(pointer->rightChild, givenValue, count);
                 }
             }
 
         }
-    }
     else {
         DataStorage::countComparisons = count;
         DataStorage::resultSerch = false;

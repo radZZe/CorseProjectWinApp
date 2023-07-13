@@ -87,7 +87,7 @@ int RequestsHashTable::doubleHashFunc(int  key) {
         return (1 + key) % (this->size - 2);
     }
     else {
-        int test = (1 + key ) % (this->size-1);
+        int test = (1 + key ) % this->size;
         return test;
     }
 }
@@ -286,7 +286,6 @@ void RequestsHashTable::print() {
     for (int i = 0; i < size; i++) {
         if (data[i]->status != 0) {
             cout << "index: " << i << "| value: " << data[i]->value->passport.series << " " << data[i]->value->passport.number << " " << data[i]->value->serviceType << " " << data[i]->value->serviceName << " " << data[i]->value->date.day + "." + data[i]->value->date.month + "." + data[i]->value->date.year << " |status:1" << " |firstHash = " << firstHashFunction(dataToKey(data[i]->value->serviceName, data[i]->value->serviceType, data[i]->value->passport,data[i]->value->date));
-            cout << "index: " << i << " date" << data[i]->value->date.day + "." + data[i]->value->date.month + "." + data[i]->value->date.year;
             cout << endl;
         }
         else {
