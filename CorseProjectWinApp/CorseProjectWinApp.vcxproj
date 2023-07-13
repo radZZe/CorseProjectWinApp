@@ -129,7 +129,9 @@
     <ClCompile Include="RBTClients.cpp" />
     <ClCompile Include="ReaderClients.cpp" />
     <ClCompile Include="ReaderRequests.cpp" />
+    <ClCompile Include="ReaderServices.cpp" />
     <ClCompile Include="RequestsHashTable.cpp" />
+    <ClCompile Include="ServicesRBTree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AvlTree.h" />
@@ -141,7 +143,9 @@
     <ClInclude Include="RBT.h" />
     <ClInclude Include="ReaderClients.h" />
     <ClInclude Include="ReaderRequests.h" />
+    <ClInclude Include="ReaderServices.h" />
     <ClInclude Include="RequestsHashTable.h" />
+    <ClInclude Include="ServicesRBTree.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -150,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="stdclients.txt" />
+    <Text Include="stdservices.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
