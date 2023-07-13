@@ -120,6 +120,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesHashTable.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesRBTree.cpp" />
     <ClCompile Include="AvlTree.cpp" />
     <ClCompile Include="ClientsHashTable.cpp" />
     <ClCompile Include="DataStorage.cpp" />
