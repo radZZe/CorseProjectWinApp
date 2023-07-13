@@ -1,68 +1,79 @@
 #pragma once
-#include <iostream>
+#include <string>
 #include <vector>
-#include <string> 
-#include <fstream>
-using namespace std;
-struct listNodeElem {
-    string value;
-    int index;
-};
-struct listNode
-{
-    listNodeElem* field;
-    listNode* ptr;
-};
-struct treeNode {
-    treeNode* leftChild;
-    treeNode* rightChild;
-    int balanceFactor;
-    listNode* head;
-    // список
-};
-struct Trunk
-{
-    Trunk* prev;
-    string str;
 
-    Trunk(Trunk* prev, string str)
-    {
-        this->prev = prev;
-        this->str = str;
-    }
+using namespace std;
+
+struct Key {
+	int first;
+	int second;
+	int third;
+};
+
+struct Fullname {
+	string name;
+	string surname;
+	string lastname;
+};
+
+struct GroupNumber {
+	string degree;
+	int number;
+	string speciality;
+};
+
+struct Entity {
+	Key key;
+	Fullname fullname;
+	GroupNumber groupnumber;
+};
+
+struct Element {
+	Entity* entity;
+	int status;
+};
+
+struct List_node {
+	Key keys;
+	List_node* next;
+	int cnt;
+};
+
+struct Node {
+	List_node* data;
+	Node* parent;
+	Node* left;
+	Node* right;
+	int color;// 1 - Black
 };
 
 struct Passport {
-    int series;
-    int number;
+	int series;
+	int number;
 };
 
 struct date {
-    string day;
-    string month;
-    string year;
+	string day;
+	string month;
+	string year;
 };
 
-struct RequestsEntity {
-    Passport passport;
-    string serviceType;
-    string serviceName;
-    date date;
-}; 
+struct ClientsEntity {
+	Passport passport;
+	Fullname fullname;
+	string email;
+	string job;
+};
 
+bool isEqualElements(ClientsEntity* first, ClientsEntity* second);
+//date inputDateData(string input);
 
-int isEqualElements(RequestsEntity* first, RequestsEntity* second);
+Passport inputPassportData(string input);
 
+Fullname inputFullnameData(string input);
 
-date inputDateData(string inputString);
+ClientsEntity* inputEntityData(string input);
 
-Passport inputPassportData(string inputString);
+vector<ClientsEntity*> readFromFile(string path);
 
-RequestsEntity* inputEntityData(string inputString);
-
-
-vector <RequestsEntity*> readFromFile(string path);
-
-
-void writeData(vector<RequestsEntity*> value, string dir);
-
+void writeData(vector<ClientsEntity*> value, string path);

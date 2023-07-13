@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataClientsStorage.cpp" />
     <ClCompile Include="ServicesHashTable.cpp" />
     <ClCompile Include="ServicesRBTree.cpp" />
     <ClCompile Include="AvlTree.cpp" />
@@ -135,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="AvlTree.h" />
     <ClInclude Include="ClientsHashTable.h" />
+    <ClInclude Include="DataClientsStorage.h" />
     <ClInclude Include="DataStorage.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
