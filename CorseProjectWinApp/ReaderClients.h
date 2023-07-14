@@ -33,8 +33,14 @@ struct Element {
 	int status;
 };
 
+struct RBTData
+{
+	string value;
+	int index;
+};
+
 struct List_node {
-	string key;
+	RBTData key;
 	List_node* next;
 	int cnt;
 };

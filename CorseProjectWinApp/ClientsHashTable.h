@@ -26,5 +26,4 @@ private:
     int resolve(int hash, Entity* entity, string type);
     int secondaryHashFunction(int hash, int j);
     bool isEqualByEntity(Entity* first, Entity* second);
-
 };

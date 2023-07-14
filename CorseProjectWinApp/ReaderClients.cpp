@@ -11,7 +11,7 @@ using namespace std;
 
 
 ClientPassport inputPassportClients(string input) {
-    // Passport  newPassport;
+    ClientPassport passport;
     vector <int> numbers;
     for (int i = 0; i < input.length(); i++) {
         if (input[i] == '.') {
@@ -19,8 +19,11 @@ ClientPassport inputPassportClients(string input) {
         }
     }
     int series = stoi(input.substr(0, 4));
-    int number = stoi(input.substr(4 + 1, (input.length() - 1) - 4));
-    return { series,number };
+    int number = stoi(input.substr(4 + 1, (input.length()) - 4));
+    //return { series,number };
+    passport.number = number;
+    passport.series = series;
+    return passport;
 };
 
 bool isEqualElementsClients(ClientsEntity* first, ClientsEntity* second) {

@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <Windows.h>
+//#include <Windows.h>
 #include "RBT.h"
 #include "DataClientsStorage.h"
 
 
 using namespace std;
 
-HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+//HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 /*struct Key {
 	int f;
@@ -81,17 +81,18 @@ bool in(List_node* root, string value)
 	List_node* temp = root;
 	while (temp->next != root)
 	{
-		if (comparator(temp->key, value) == 0) { return true; }
+		if (comparator(temp->key.value, value) == 0) { return true; }
 		temp = temp->next;
 	}
-	if (comparator(temp->key, value) == 0) { return true; }
+	if (comparator(temp->key.value, value) == 0) { return true; }
 	return false;
 }
 
-List_node* list_insert(List_node*& root, string value)
+List_node* list_insert(List_node*& root, RBTData value)
 {
 	List_node* element = new(List_node);
-	element->key = value;
+	element->key.value = value.value;
+	element->key.index = value.index;
 	element->cnt = 1;
 	element->next = element;
 
@@ -100,10 +101,10 @@ List_node* list_insert(List_node*& root, string value)
 	}
 	else {
 		List_node* temp = root;
-		while ((temp->next != root) && (comparator(temp->key, value) != 0)) {
+		while ((temp->next != root) && (comparator(temp->key.value, value.value) != 0)) {
 			temp = temp->next;
 		}
-		if (comparator(temp->key, value) == 0) {
+		if (comparator(temp->key.value, value.value) == 0) {
 			temp->cnt++;
 		}
 		else {
@@ -117,19 +118,19 @@ List_node* list_insert(List_node*& root, string value)
 List_node* list_erase(List_node*& root, string value)
 {
 	if (root != nullptr) {
-		if ((root->cnt == 1) && (comparator(root->key, value) == 0))
+		if ((root->cnt == 1) && (comparator(root->key.value, value) == 0))
 		{
 			root->cnt--;
 			delete root;
 			root = nullptr;
 			return root;
 		}
-		if ((root->cnt >= 2) && (comparator(root->key, value) == 0))
+		if ((root->cnt >= 2) && (comparator(root->key.value, value) == 0))
 		{
 			root->cnt--;
 			return root;
 		}
-		if ((root->next != root) && (comparator(root->key, value) == 0) && (root->cnt == 1))
+		if ((root->next != root) && (comparator(root->key.value, value) == 0) && (root->cnt == 1))
 		{
 			List_node* temp = root;
 			while (temp->next != root) { temp = temp->next; }
@@ -142,7 +143,7 @@ List_node* list_erase(List_node*& root, string value)
 		}
 		List_node* temp = root;
 		while (temp->next != root) {
-			if (comparator(temp->next->key, value) == 0) {
+			if (comparator(temp->next->key.value, value) == 0) {
 				if (temp->next->cnt >= 2) {
 					temp->next->cnt--;
 					return root;
@@ -168,12 +169,12 @@ int counter(List_node* root, string value)
 	List_node* temp = root;
 	while (temp->next != root)
 	{
-		if (comparator(temp->key, value) == 0) {
+		if (comparator(temp->key.value, value) == 0) {
 			return temp->cnt;
 		}
 		temp = temp->next;
 	}
-	if (comparator(temp->key, value) == 0) {
+	if (comparator(temp->key.value, value) == 0) {
 		return temp->cnt;
 	}
 	return 0;
@@ -188,10 +189,10 @@ void print_list(List_node* root)
 	else {
 		List_node* temp = root;
 		while (temp->next != root) {
-			cout << temp->key << " (" << temp->cnt << ") " << "->";
+			cout << temp->key.value << " (" << temp->cnt << ") " << "->";
 			temp = temp->next;
 		}
-		cout << temp->key << " (" << temp->cnt << ") ";
+		cout << temp->key.value << " (" << temp->cnt << ") ";
 	}
 }
 
@@ -242,13 +243,17 @@ Node* null_init() {
 	return nullnode;
 }
 
-bool pre_search(Node* root, Node* nullnode, string value) {
+bool pre_search(Node* root, Node* nullnode, string value, int& count) {
 	Node* temp = root;
+	DataClientsStorage::resultSearch = false;
 	while (temp != nullnode) {
-		if (comparator(temp->data->key, value) == 0) { return true; }
-		if (comparator(value, temp->data->key) == 1) { temp = temp->right; }
+		count++;
+		DataClientsStorage::countComparisons = count;
+		if (comparator(temp->data->key.value, value) == 0) { DataClientsStorage::resultSearch = true; return true; }
+		if (comparator(value, temp->data->key.value) == 1) { temp = temp->right; }
 		else { temp = temp->left; }
 	}
+	DataClientsStorage::resultSearch = false;
 	return false;
 }
 
@@ -338,9 +343,10 @@ void insert_balance(Node*& element, Node*& root, Node* nullnode) {
 
 }
 
-Node* insert(Node*& root, Node* nullnode, string input) {
+Node* insert(Node*& root, Node* nullnode, RBTData input) {
 	//Key keychik = parse_key(input);
-	if (!pre_search(root, nullnode, input)) {
+	int local = 0;
+	if (!pre_search(root, nullnode, input.value,local)) {
 		Node* element = new Node;
 		element->parent = nullptr;
 		element->left = nullnode;
@@ -352,7 +358,7 @@ Node* insert(Node*& root, Node* nullnode, string input) {
 		Node* runner = root;
 		while (runner != nullnode) {
 			parent_buffer = runner;
-			if (comparator(element->data->key, runner->data->key) == -1) {
+			if (comparator(element->data->key.value, runner->data->key.value) == -1) {
 				runner = runner->left;
 			}
 			else { runner = runner->right; }
@@ -361,7 +367,7 @@ Node* insert(Node*& root, Node* nullnode, string input) {
 		if (parent_buffer == nullptr) {
 			root = element;
 		}
-		else if (comparator(element->data->key, parent_buffer->data->key) == -1) {
+		else if (comparator(element->data->key.value, parent_buffer->data->key.value) == -1) {
 			parent_buffer->left = element;
 		}
 		else { parent_buffer->right = element; }
@@ -377,8 +383,8 @@ Node* insert(Node*& root, Node* nullnode, string input) {
 	else {
 		Node* temp = root;
 		while (temp != nullnode) {
-			if (comparator(temp->data->key, input) == 0) { list_insert(temp->data, input); break; }
-			if (comparator(input, temp->data->key) == 1) { temp = temp->right; }
+			if (comparator(temp->data->key.value, input.value) == 0) { list_insert(temp->data, input); break; }
+			if (comparator(input.value, temp->data->key.value) == 1) { temp = temp->right; }
 			else { temp = temp->left; }
 		}
 	}
@@ -495,8 +501,8 @@ Node* erase(Node*& root, Node* nullnode, string input) {
 	Node* element;
 	Node* y;
 	while (temp != nullnode) {
-		if (comparator(temp->data->key, input) == 0) { z = temp; }
-		if ((comparator(temp->data->key, input) == 0) || (comparator(temp->data->key, input) == -1)) { temp = temp->right; }
+		if (comparator(temp->data->key.value, input) == 0) { z = temp; }
+		if ((comparator(temp->data->key.value, input) == 0) || (comparator(temp->data->key.value, input) == -1)) { temp = temp->right; }
 		else { temp = temp->left; }
 	}
 
@@ -568,7 +574,7 @@ void pre_memory_pull_up(Node*& root, Node* nullnode) {
 	if (root->right != nullnode) {
 		pre_memory_pull_up(root->right, nullnode);
 	}
-	memory_erase(root, nullnode, root->data->key);
+	memory_erase(root, nullnode, root->data->key.value);
 
 }
 void memory_pull_up(Node*& root, Node* nullnode)
@@ -591,9 +597,9 @@ void print(Node* root, Node* nullnode, int h, int ln) {
 			}
 		}
 		else {
-			SetConsoleTextAttribute(hConsole, 12);
+			//SetConsoleTextAttribute(hConsole, 12);
 			cout << 'R';
-			SetConsoleTextAttribute(hConsole, 15);
+			//SetConsoleTextAttribute(hConsole, 15);
 			for (size_t i = 0; i < ln; i++)
 			{
 				cout << '\n';

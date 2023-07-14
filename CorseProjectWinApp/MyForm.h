@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <iostream>
 #include "DataStorage.h"
 #include "DataClientsStorage.h"
 #include <msclr\marshal_cppstd.h>
@@ -130,25 +131,25 @@ namespace CorseProjectWinApp {
 
     private: System::Windows::Forms::Button^ button4;
     private: System::Windows::Forms::Label^ label7;
-    private: System::Windows::Forms::TextBox^ textBox1;
+    private: System::Windows::Forms::TextBox^ tBClientPassSeries;
     private: System::Windows::Forms::Label^ label8;
     private: System::Windows::Forms::Label^ label9;
     private: System::Windows::Forms::Label^ label10;
-    private: System::Windows::Forms::TextBox^ textBox2;
+    private: System::Windows::Forms::TextBox^ tBClientEmail;
     private: System::Windows::Forms::Button^ button5;
     private: System::Windows::Forms::Button^ button6;
     private: System::Windows::Forms::Label^ label14;
     private: System::Windows::Forms::Label^ label18;
     private: System::Windows::Forms::Label^ label19;
-    private: System::Windows::Forms::TextBox^ textBox6;
-    private: System::Windows::Forms::TextBox^ textBox7;
-    private: System::Windows::Forms::TextBox^ textBox9;
-    private: System::Windows::Forms::Button^ button7;
+    private: System::Windows::Forms::TextBox^ tBClientFullname;
+    private: System::Windows::Forms::TextBox^ tBClientJob;
+    private: System::Windows::Forms::TextBox^ tBClientPassNum;
+    private: System::Windows::Forms::Button^ btnSearchByClientEmail;
     private: System::Windows::Forms::DataGridView^ ClientsDataGrid;
-    private: System::Windows::Forms::Button^ button15;
-    private: System::Windows::Forms::Button^ button16;
-    private: System::Windows::Forms::Button^ button17;
-    private: System::Windows::Forms::Button^ button18;
+    private: System::Windows::Forms::Button^ btnSearchBuClientFullname;
+    private: System::Windows::Forms::Button^ btnSearchByClientJob;
+    private: System::Windows::Forms::Button^ btnSearchByClientPassport;
+    private: System::Windows::Forms::Button^ btnSearchByClient;
     private: System::Windows::Forms::Button^ button19;
     private: System::Windows::Forms::Button^ button20;
     private: System::Windows::Forms::Button^ button21;
@@ -156,6 +157,8 @@ namespace CorseProjectWinApp {
     private: System::Windows::Forms::Label^ countServices;
     private: System::Windows::Forms::Label^ countComparationsServices;
     private: System::Windows::Forms::Label^ resultSearchServices2;
+private: System::Windows::Forms::Label^ resultSearchClient;
+private: System::Windows::Forms::Label^ countOfCompareClients;
 
 
 
@@ -205,28 +208,29 @@ namespace CorseProjectWinApp {
             this->passportSearchBTN = (gcnew System::Windows::Forms::Button());
             this->searchByTypeAndNameOfServiceBTN = (gcnew System::Windows::Forms::Button());
             this->clientsPage = (gcnew System::Windows::Forms::TabPage());
+            this->resultSearchClient = (gcnew System::Windows::Forms::Label());
             this->button20 = (gcnew System::Windows::Forms::Button());
             this->button4 = (gcnew System::Windows::Forms::Button());
             this->label7 = (gcnew System::Windows::Forms::Label());
-            this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+            this->tBClientPassSeries = (gcnew System::Windows::Forms::TextBox());
             this->label8 = (gcnew System::Windows::Forms::Label());
             this->label9 = (gcnew System::Windows::Forms::Label());
             this->label10 = (gcnew System::Windows::Forms::Label());
-            this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+            this->tBClientEmail = (gcnew System::Windows::Forms::TextBox());
             this->button5 = (gcnew System::Windows::Forms::Button());
             this->button6 = (gcnew System::Windows::Forms::Button());
             this->label14 = (gcnew System::Windows::Forms::Label());
             this->label18 = (gcnew System::Windows::Forms::Label());
             this->label19 = (gcnew System::Windows::Forms::Label());
-            this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-            this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-            this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-            this->button7 = (gcnew System::Windows::Forms::Button());
+            this->tBClientFullname = (gcnew System::Windows::Forms::TextBox());
+            this->tBClientJob = (gcnew System::Windows::Forms::TextBox());
+            this->tBClientPassNum = (gcnew System::Windows::Forms::TextBox());
+            this->btnSearchByClientEmail = (gcnew System::Windows::Forms::Button());
             this->ClientsDataGrid = (gcnew System::Windows::Forms::DataGridView());
-            this->button15 = (gcnew System::Windows::Forms::Button());
-            this->button16 = (gcnew System::Windows::Forms::Button());
-            this->button17 = (gcnew System::Windows::Forms::Button());
-            this->button18 = (gcnew System::Windows::Forms::Button());
+            this->btnSearchBuClientFullname = (gcnew System::Windows::Forms::Button());
+            this->btnSearchByClientJob = (gcnew System::Windows::Forms::Button());
+            this->btnSearchByClientPassport = (gcnew System::Windows::Forms::Button());
+            this->btnSearchByClient = (gcnew System::Windows::Forms::Button());
             this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
             this->resultSearchServices2 = (gcnew System::Windows::Forms::Label());
             this->countComparationsServices = (gcnew System::Windows::Forms::Label());
@@ -250,6 +254,7 @@ namespace CorseProjectWinApp {
             this->searchServiceByTermBtb = (gcnew System::Windows::Forms::Button());
             this->button11 = (gcnew System::Windows::Forms::Button());
             this->ServicesDataGrid = (gcnew System::Windows::Forms::DataGridView());
+            this->countOfCompareClients = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
             this->requestsPage->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
@@ -351,7 +356,7 @@ namespace CorseProjectWinApp {
             // resultSearch
             // 
             this->resultSearch->AutoSize = true;
-                this->resultSearch->Location = System::Drawing::Point(266, 460);
+            this->resultSearch->Location = System::Drawing::Point(266, 460);
             this->resultSearch->Name = L"resultSearch";
             this->resultSearch->Size = System::Drawing::Size(0, 13);
             this->resultSearch->TabIndex = 24;
@@ -550,28 +555,30 @@ namespace CorseProjectWinApp {
             // 
             // clientsPage
             // 
+            this->clientsPage->Controls->Add(this->countOfCompareClients);
+            this->clientsPage->Controls->Add(this->resultSearchClient);
             this->clientsPage->Controls->Add(this->button20);
             this->clientsPage->Controls->Add(this->button4);
             this->clientsPage->Controls->Add(this->label7);
-            this->clientsPage->Controls->Add(this->textBox1);
+            this->clientsPage->Controls->Add(this->tBClientPassSeries);
             this->clientsPage->Controls->Add(this->label8);
             this->clientsPage->Controls->Add(this->label9);
             this->clientsPage->Controls->Add(this->label10);
-            this->clientsPage->Controls->Add(this->textBox2);
+            this->clientsPage->Controls->Add(this->tBClientEmail);
             this->clientsPage->Controls->Add(this->button5);
             this->clientsPage->Controls->Add(this->button6);
             this->clientsPage->Controls->Add(this->label14);
             this->clientsPage->Controls->Add(this->label18);
             this->clientsPage->Controls->Add(this->label19);
-            this->clientsPage->Controls->Add(this->textBox6);
-            this->clientsPage->Controls->Add(this->textBox7);
-            this->clientsPage->Controls->Add(this->textBox9);
-            this->clientsPage->Controls->Add(this->button7);
+            this->clientsPage->Controls->Add(this->tBClientFullname);
+            this->clientsPage->Controls->Add(this->tBClientJob);
+            this->clientsPage->Controls->Add(this->tBClientPassNum);
+            this->clientsPage->Controls->Add(this->btnSearchByClientEmail);
             this->clientsPage->Controls->Add(this->ClientsDataGrid);
-            this->clientsPage->Controls->Add(this->button15);
-            this->clientsPage->Controls->Add(this->button16);
-            this->clientsPage->Controls->Add(this->button17);
-            this->clientsPage->Controls->Add(this->button18);
+            this->clientsPage->Controls->Add(this->btnSearchBuClientFullname);
+            this->clientsPage->Controls->Add(this->btnSearchByClientJob);
+            this->clientsPage->Controls->Add(this->btnSearchByClientPassport);
+            this->clientsPage->Controls->Add(this->btnSearchByClient);
             this->clientsPage->Location = System::Drawing::Point(4, 22);
             this->clientsPage->Name = L"clientsPage";
             this->clientsPage->Padding = System::Windows::Forms::Padding(3);
@@ -579,6 +586,15 @@ namespace CorseProjectWinApp {
             this->clientsPage->TabIndex = 1;
             this->clientsPage->Text = L"Клиенты";
             this->clientsPage->UseVisualStyleBackColor = true;
+            // 
+            // resultSearchClient
+            // 
+            this->resultSearchClient->AutoSize = true;
+            this->resultSearchClient->Location = System::Drawing::Point(266, 467);
+            this->resultSearchClient->Name = L"resultSearchClient";
+            this->resultSearchClient->Size = System::Drawing::Size(41, 13);
+            this->resultSearchClient->TabIndex = 48;
+            this->resultSearchClient->Text = L"label20";
             // 
             // button20
             // 
@@ -607,12 +623,12 @@ namespace CorseProjectWinApp {
             this->label7->TabIndex = 45;
             this->label7->Text = L"Номер паспорта";
             // 
-            // textBox1
+            // tBClientPassSeries
             // 
-            this->textBox1->Location = System::Drawing::Point(355, 317);
-            this->textBox1->Name = L"textBox1";
-            this->textBox1->Size = System::Drawing::Size(100, 20);
-            this->textBox1->TabIndex = 44;
+            this->tBClientPassSeries->Location = System::Drawing::Point(355, 317);
+            this->tBClientPassSeries->Name = L"tBClientPassSeries";
+            this->tBClientPassSeries->Size = System::Drawing::Size(100, 20);
+            this->tBClientPassSeries->TabIndex = 44;
             // 
             // label8
             // 
@@ -624,8 +640,8 @@ namespace CorseProjectWinApp {
             this->label8->Text = L"Результат";
             // 
             // label9
-            //
-                this->label9->AutoSize = true;
+            // 
+            this->label9->AutoSize = true;
             this->label9->Location = System::Drawing::Point(14, 467);
             this->label9->Name = L"label9";
             this->label9->Size = System::Drawing::Size(129, 13);
@@ -642,13 +658,13 @@ namespace CorseProjectWinApp {
             this->label10->Text = L"Электронная почта";
             this->label10->Click += gcnew System::EventHandler(this, &MyForm::label10_Click);
             // 
-            // textBox2
+            // tBClientEmail
             // 
-            this->textBox2->Location = System::Drawing::Point(355, 425);
-            this->textBox2->Name = L"textBox2";
-            this->textBox2->Size = System::Drawing::Size(200, 20);
-            this->textBox2->TabIndex = 40;
-            this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
+            this->tBClientEmail->Location = System::Drawing::Point(355, 425);
+            this->tBClientEmail->Name = L"tBClientEmail";
+            this->tBClientEmail->Size = System::Drawing::Size(200, 20);
+            this->tBClientEmail->TabIndex = 40;
+            this->tBClientEmail->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
             // 
             // button5
             // 
@@ -696,35 +712,36 @@ namespace CorseProjectWinApp {
             this->label19->Text = L"Серия паспорта";
             this->label19->Click += gcnew System::EventHandler(this, &MyForm::label19_Click);
             // 
-            // textBox6
+            // tBClientFullname
             // 
-            this->textBox6->Location = System::Drawing::Point(550, 369);
-            this->textBox6->Name = L"textBox6";
-            this->textBox6->Size = System::Drawing::Size(186, 20);
-            this->textBox6->TabIndex = 34;
+            this->tBClientFullname->Location = System::Drawing::Point(550, 369);
+            this->tBClientFullname->Name = L"tBClientFullname";
+            this->tBClientFullname->Size = System::Drawing::Size(186, 20);
+            this->tBClientFullname->TabIndex = 34;
             // 
-            // textBox7
+            // tBClientJob
             // 
-            this->textBox7->Location = System::Drawing::Point(355, 368);
-            this->textBox7->Name = L"textBox7";
-            this->textBox7->Size = System::Drawing::Size(145, 20);
-            this->textBox7->TabIndex = 33;
+            this->tBClientJob->Location = System::Drawing::Point(355, 368);
+            this->tBClientJob->Name = L"tBClientJob";
+            this->tBClientJob->Size = System::Drawing::Size(145, 20);
+            this->tBClientJob->TabIndex = 33;
             // 
-            // textBox9
+            // tBClientPassNum
             // 
-            this->textBox9->Location = System::Drawing::Point(481, 317);
-            this->textBox9->Name = L"textBox9";
-            this->textBox9->Size = System::Drawing::Size(100, 20);
-            this->textBox9->TabIndex = 32;
+            this->tBClientPassNum->Location = System::Drawing::Point(481, 317);
+            this->tBClientPassNum->Name = L"tBClientPassNum";
+            this->tBClientPassNum->Size = System::Drawing::Size(100, 20);
+            this->tBClientPassNum->TabIndex = 32;
             // 
-            // button7
+            // btnSearchByClientEmail
             // 
-            this->button7->Location = System::Drawing::Point(13, 420);
-            this->button7->Name = L"button7";
-            this->button7->Size = System::Drawing::Size(199, 23);
-            this->button7->TabIndex = 31;
-            this->button7->Text = L"Поиск по электронной почте";
-            this->button7->UseVisualStyleBackColor = true;
+            this->btnSearchByClientEmail->Location = System::Drawing::Point(13, 420);
+            this->btnSearchByClientEmail->Name = L"btnSearchByClientEmail";
+            this->btnSearchByClientEmail->Size = System::Drawing::Size(199, 23);
+            this->btnSearchByClientEmail->TabIndex = 31;
+            this->btnSearchByClientEmail->Text = L"Поиск по электронной почте";
+            this->btnSearchByClientEmail->UseVisualStyleBackColor = true;
+            this->btnSearchByClientEmail->Click += gcnew System::EventHandler(this, &MyForm::btnSearchByClientEmail_Click);
             // 
             // ClientsDataGrid
             // 
@@ -742,41 +759,44 @@ namespace CorseProjectWinApp {
             this->ClientsDataGrid->Size = System::Drawing::Size(882, 276);
             this->ClientsDataGrid->TabIndex = 30;
             // 
-            // button15
+            // btnSearchBuClientFullname
             // 
-            this->button15->Location = System::Drawing::Point(13, 382);
-            this->button15->Name = L"button15";
-            this->button15->Size = System::Drawing::Size(157, 23);
-            this->button15->TabIndex = 29;
-            this->button15->Text = L"Поиск по ФИО";
-            this->button15->UseVisualStyleBackColor = true;
+            this->btnSearchBuClientFullname->Location = System::Drawing::Point(13, 382);
+            this->btnSearchBuClientFullname->Name = L"btnSearchBuClientFullname";
+            this->btnSearchBuClientFullname->Size = System::Drawing::Size(157, 23);
+            this->btnSearchBuClientFullname->TabIndex = 29;
+            this->btnSearchBuClientFullname->Text = L"Поиск по ФИО";
+            this->btnSearchBuClientFullname->UseVisualStyleBackColor = true;
+            this->btnSearchBuClientFullname->Click += gcnew System::EventHandler(this, &MyForm::btnSearchBuClientFullname_Click);
             // 
-            // button16
+            // btnSearchByClientJob
             // 
-            this->button16->Location = System::Drawing::Point(146, 342);
-            this->button16->Name = L"button16";
-            this->button16->Size = System::Drawing::Size(161, 23);
-            this->button16->TabIndex = 28;
-            this->button16->Text = L"Поиск по должности";
-            this->button16->UseVisualStyleBackColor = true;
+            this->btnSearchByClientJob->Location = System::Drawing::Point(146, 342);
+            this->btnSearchByClientJob->Name = L"btnSearchByClientJob";
+            this->btnSearchByClientJob->Size = System::Drawing::Size(161, 23);
+            this->btnSearchByClientJob->TabIndex = 28;
+            this->btnSearchByClientJob->Text = L"Поиск по должности";
+            this->btnSearchByClientJob->UseVisualStyleBackColor = true;
+            this->btnSearchByClientJob->Click += gcnew System::EventHandler(this, &MyForm::btnSearchByClientJob_Click);
             // 
-            // button17
+            // btnSearchByClientPassport
             // 
-            this->button17->Location = System::Drawing::Point(13, 342);
-            this->button17->Name = L"button17";
-            this->button17->Size = System::Drawing::Size(127, 23);
-            this->button17->TabIndex = 27;
-            this->button17->Text = L"Поиск по паспорту";
-            this->button17->UseVisualStyleBackColor = true;
+            this->btnSearchByClientPassport->Location = System::Drawing::Point(13, 342);
+            this->btnSearchByClientPassport->Name = L"btnSearchByClientPassport";
+            this->btnSearchByClientPassport->Size = System::Drawing::Size(127, 23);
+            this->btnSearchByClientPassport->TabIndex = 27;
+            this->btnSearchByClientPassport->Text = L"Поиск по паспорту";
+            this->btnSearchByClientPassport->UseVisualStyleBackColor = true;
+            this->btnSearchByClientPassport->Click += gcnew System::EventHandler(this, &MyForm::searchByClientPassport_Click);
             // 
-            // button18
+            // btnSearchByClient
             // 
-            this->button18->Location = System::Drawing::Point(13, 301);
-            this->button18->Name = L"button18";
-            this->button18->Size = System::Drawing::Size(232, 23);
-            this->button18->TabIndex = 26;
-            this->button18->Text = L"Поиск по полной информации";
-            this->button18->UseVisualStyleBackColor = true;
+            this->btnSearchByClient->Location = System::Drawing::Point(13, 301);
+            this->btnSearchByClient->Name = L"btnSearchByClient";
+            this->btnSearchByClient->Size = System::Drawing::Size(232, 23);
+            this->btnSearchByClient->TabIndex = 26;
+            this->btnSearchByClient->Text = L"Поиск по полной информации";
+            this->btnSearchByClient->UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -814,7 +834,7 @@ namespace CorseProjectWinApp {
             // 
             this->resultSearchServices2->AutoSize = true;
             this->resultSearchServices2->Location = System::Drawing::Point(250, 461);
-                this->resultSearchServices2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+            this->resultSearchServices2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->resultSearchServices2->Name = L"resultSearchServices2";
             this->resultSearchServices2->Size = System::Drawing::Size(0, 13);
             this->resultSearchServices2->TabIndex = 43;
@@ -918,8 +938,8 @@ namespace CorseProjectWinApp {
             this->button13->UseVisualStyleBackColor = true;
             // 
             // button14
-            //
-                this->button14->Location = System::Drawing::Point(353, 403);
+            // 
+            this->button14->Location = System::Drawing::Point(353, 403);
             this->button14->Name = L"button14";
             this->button14->Size = System::Drawing::Size(75, 23);
             this->button14->TabIndex = 29;
@@ -1012,6 +1032,15 @@ namespace CorseProjectWinApp {
             this->ServicesDataGrid->RowTemplate->ReadOnly = true;
             this->ServicesDataGrid->Size = System::Drawing::Size(888, 276);
             this->ServicesDataGrid->TabIndex = 6;
+            // 
+            // label20
+            // 
+            this->countOfCompareClients->AutoSize = true;
+            this->countOfCompareClients->Location = System::Drawing::Point(153, 466);
+            this->countOfCompareClients->Name = L"label20";
+            this->countOfCompareClients->Size = System::Drawing::Size(41, 13);
+            this->countOfCompareClients->TabIndex = 49;
+            this->countOfCompareClients->Text = L"label20";
             // 
             // MyForm
             // 
@@ -1110,7 +1139,7 @@ namespace CorseProjectWinApp {
             rowClients["ФИО"] = gcnew String((dataClients[i]->fullname.surname + ' ' + dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
             rowClients["Должность"] = gcnew String(dataClients[i]->job.c_str());
             rowClients["email"] = gcnew String(dataClients[i]->email.c_str());
-            string passportClient = to_string(dataClients[i]->passport.number) + ' ' + to_string(dataClients[i]->passport.series);
+            string passportClient = to_string(dataClients[i]->passport.series) + ' ' + to_string(dataClients[i]->passport.number);
             //rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
             rowClients["Паспорт"] = gcnew String(passportClient.c_str());
             tablClients->Rows->Add(rowClients);
@@ -1604,5 +1633,180 @@ namespace CorseProjectWinApp {
         }
 
     }
-    };
+    private:System::Void searchByClientPassport_Click(System::Object^ sender, System::EventArgs^ e)
+    {
+        string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+        Fullname fullname = inputFullnameData(fullnamestr);
+        ClientPassport passport = ClientPassport();
+        int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+        int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+        passport.number = passnum;
+        passport.series = passseries;
+        string email = marshal_as<std::string>(this->tBClientEmail->Text);
+        string job = marshal_as<std::string>(this->tBClientJob->Text);
+        ClientsEntity* client = new ClientsEntity();
+        client->passport = passport;
+        client->fullname = fullname;
+        client->email = email;
+        client->job = job;
+        DataClientsStorage::rbtPassport = root_init(DataClientsStorage::rbtNullnode);
+        Node* rbt = DataClientsStorage::rbtPassport;
+        vector<ClientsEntity*> clients = DataClientsStorage::data;
+        for (int i = 0; i < clients.size(); i++) {
+            string series = to_string(clients[i]->passport.series);
+            string number = to_string(clients[i]->passport.number);
+            string valueText = series + number;
+            RBTData value;
+            value.index = i;
+            value.value = valueText;
+            insert(rbt, DataClientsStorage::rbtNullnode, value);   
+        }
+        int count = 0;
+        RBTData searchable;
+        searchable.value = to_string(client->passport.series) + to_string(client->passport.number);
+        searchable.index = 0;
+        pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+        bool result = DataClientsStorage::resultSearch;
+        this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+        DataStorage::countComparisons = 0;
+        if (result) {
+            this->resultSearchClient->Text = gcnew String("Найден");
+        }
+        else {
+            this->resultSearchClient->Text = gcnew String("Не найден");
+        }
+        print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
+        cout << endl;
+    }
+private: System::Void btnSearchByClientJob_Click(System::Object^ sender, System::EventArgs^ e) {
+    string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+    Fullname fullname = inputFullnameData(fullnamestr);
+    ClientPassport passport = ClientPassport();
+    int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+    int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+    passport.number = passnum;
+    passport.series = passseries;
+    string email = marshal_as<std::string>(this->tBClientEmail->Text);
+    string job = marshal_as<std::string>(this->tBClientJob->Text);
+    ClientsEntity* client = new ClientsEntity();
+    client->passport = passport;
+    client->fullname = fullname;
+    client->email = email;
+    client->job = job;
+    DataClientsStorage::rbtJob = root_init(DataClientsStorage::rbtNullnode);
+    Node* rbt = DataClientsStorage::rbtJob;
+    vector<ClientsEntity*> clients = DataClientsStorage::data;
+    for (int i = 0; i < clients.size(); i++) {
+        string valueText = clients[i]->job;
+        RBTData value;
+        value.index = i;
+        value.value = valueText;
+        insert(rbt, DataClientsStorage::rbtNullnode, value);
+        print(rbt, DataClientsStorage::rbtNullnode, 4, 4);
+    }
+    int count = 0;
+    RBTData searchable;
+    searchable.value = client->job;
+    searchable.index = 0;
+    pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+    bool result = DataClientsStorage::resultSearch;
+    this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+    DataStorage::countComparisons = 0;
+    if (result) {
+        this->resultSearchClient->Text = gcnew String("Найден");
+    }
+    else {
+        this->resultSearchClient->Text = gcnew String("Не найден");
+    }
+    print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
+    cout << endl;
+}
+
+private: System::Void btnSearchBuClientFullname_Click(System::Object^ sender, System::EventArgs^ e) {
+    string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+    Fullname fullname = inputFullnameData(fullnamestr);
+    ClientPassport passport = ClientPassport();
+    int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+    int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+    passport.number = passnum;
+    passport.series = passseries;
+    string email = marshal_as<std::string>(this->tBClientEmail->Text);
+    string job = marshal_as<std::string>(this->tBClientJob->Text);
+    ClientsEntity* client = new ClientsEntity();
+    client->passport = passport;
+    client->fullname = fullname;
+    client->email = email;
+    client->job = job;
+    DataClientsStorage::rbtFullname = root_init(DataClientsStorage::rbtNullnode);
+    Node* rbt = DataClientsStorage::rbtFullname;
+    vector<ClientsEntity*> clients = DataClientsStorage::data;
+    for (int i = 0; i < clients.size(); i++) {
+        string valueText = clients[i]->fullname.surname +' ' + clients[i]->fullname.name + ' '+ clients[i]->fullname.lastname;
+        RBTData value;
+        value.index = i;
+        value.value = valueText;
+        insert(rbt, DataClientsStorage::rbtNullnode, value);
+    }
+    int count = 0;
+    RBTData searchable;
+    searchable.value = fullnamestr;
+    searchable.index = 0;
+    pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+    bool result = DataClientsStorage::resultSearch;
+    this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+    DataStorage::countComparisons = 0;
+    if (result) {
+        this->resultSearchClient->Text = gcnew String("Найден");
+    }
+    else {
+        this->resultSearchClient->Text = gcnew String("Не найден");
+    }
+    print(rbt, DataClientsStorage::rbtNullnode, 4, 4);
+    cout << endl;
+}
+
+private: System::Void btnSearchByClientEmail_Click(System::Object^ sender, System::EventArgs^ e) {
+    string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+    Fullname fullname = inputFullnameData(fullnamestr);
+    ClientPassport passport = ClientPassport();
+    int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+    int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+    passport.number = passnum;
+    passport.series = passseries;
+    string email = marshal_as<std::string>(this->tBClientEmail->Text);
+    string job = marshal_as<std::string>(this->tBClientJob->Text);
+    ClientsEntity* client = new ClientsEntity();
+    client->passport = passport;
+    client->fullname = fullname;
+    client->email = email;
+    client->job = job;
+    DataClientsStorage::rbtEmail = root_init(DataClientsStorage::rbtNullnode);
+    Node* rbt = DataClientsStorage::rbtEmail;
+    vector<ClientsEntity*> clients = DataClientsStorage::data;
+    for (int i = 0; i < clients.size(); i++) {
+        string valueText = clients[i]->email;
+        RBTData value;
+        value.index = i;
+        value.value = valueText;
+        insert(rbt, DataClientsStorage::rbtNullnode, value);
+    }
+    int count = 0;
+    RBTData searchable;
+    searchable.value = client->email;
+    searchable.index = 0;
+    pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+    bool result = DataClientsStorage::resultSearch;
+    this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+    DataStorage::countComparisons = 0;
+    if (result) {
+        this->resultSearchClient->Text = gcnew String("Найден");
+    }
+    else {
+        this->resultSearchClient->Text = gcnew String("Не найден");
+    }
+    print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
+    cout << endl;
+}
+
+};
 }
