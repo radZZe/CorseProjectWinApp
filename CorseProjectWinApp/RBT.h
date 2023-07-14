@@ -28,4 +28,3 @@ int get_height(Node* root);
 void pre_memory_pull_up(Node*& root, Node* nullnode);
 void memory_pull_up(Node*& root, Node* nullnode);
 void print(Node* root, Node* nullnode, int h, int ln);
-

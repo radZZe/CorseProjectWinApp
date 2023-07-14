@@ -126,7 +126,7 @@ vector <ClientsEntity*> readFromFileClients(string path) {
     return data;
 }
 
-void writeData(vector<ClientsEntity*>  value, string path){}
+void writeData(vector<ClientsEntity*>  value, string path) {}
 //void writeData(vector<ClientsEntity*>  value, string path) {
 //    ofstream  fout(path);
 //    fout << value.size() << "\n";
