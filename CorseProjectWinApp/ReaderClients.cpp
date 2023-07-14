@@ -29,6 +29,10 @@ ClientPassport inputPassportClients(string input) {
 bool isEqualElementsClients(ClientsEntity* first, ClientsEntity* second) {
 
     //1 => frist = second   0 => first != second
+    if (first == nullptr || second == nullptr)
+    {
+        return false;
+    }
     if (first->passport.series + first->passport.number == second->passport.number + second->passport.series)
     {
         if (first->fullname.surname + first->fullname.name + first->fullname.lastname == second->fullname.surname + second->fullname.name + second->fullname.lastname)

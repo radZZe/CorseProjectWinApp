@@ -196,31 +196,31 @@ void print_list(List_node* root)
 	}
 }
 
-Key parse_key(string input) {
-	Key new_key;
-	int dots_cnt = 0;
-	for (int i = 0; input.length(); i++) {
-		if (input[i] == '.') {
-			dots_cnt++;
-			continue;
-		}
-		else {
-			if (dots_cnt == 0) {
-				new_key.first = stoi(input.substr(i, 2));
-				i++;
-			}
-			else if (dots_cnt == 1) {
-				new_key.second = stoi(input.substr(i, 2));
-				i++;
-			}
-			else {
-				new_key.third = stoi(input.substr(i, 2));
-				break;
-			}
-		}
-	}
-	return new_key;
-};
+//Key parse_key(string input) {
+//	Key new_key;
+//	int dots_cnt = 0;
+//	for (int i = 0; input.length(); i++) {
+//		if (input[i] == '.') {
+//			dots_cnt++;
+//			continue;
+//		}
+//		else {
+//			if (dots_cnt == 0) {
+//				new_key.first = stoi(input.substr(i, 2));
+//				i++;
+//			}
+//			else if (dots_cnt == 1) {
+//				new_key.second = stoi(input.substr(i, 2));
+//				i++;
+//			}
+//			else {
+//				new_key.third = stoi(input.substr(i, 2));
+//				break;
+//			}
+//		}
+//	}
+//	return new_key;
+//};
 
 //struct Node {
 //	List_node* data;

@@ -137,7 +137,7 @@ namespace CorseProjectWinApp {
     private: System::Windows::Forms::Label^ label10;
     private: System::Windows::Forms::TextBox^ tBClientEmail;
     private: System::Windows::Forms::Button^ button5;
-    private: System::Windows::Forms::Button^ button6;
+    private: System::Windows::Forms::Button^ btnAddClient;
     private: System::Windows::Forms::Label^ label14;
     private: System::Windows::Forms::Label^ label18;
     private: System::Windows::Forms::Label^ label19;
@@ -208,6 +208,7 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             this->passportSearchBTN = (gcnew System::Windows::Forms::Button());
             this->searchByTypeAndNameOfServiceBTN = (gcnew System::Windows::Forms::Button());
             this->clientsPage = (gcnew System::Windows::Forms::TabPage());
+            this->countOfCompareClients = (gcnew System::Windows::Forms::Label());
             this->resultSearchClient = (gcnew System::Windows::Forms::Label());
             this->button20 = (gcnew System::Windows::Forms::Button());
             this->button4 = (gcnew System::Windows::Forms::Button());
@@ -218,7 +219,7 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             this->label10 = (gcnew System::Windows::Forms::Label());
             this->tBClientEmail = (gcnew System::Windows::Forms::TextBox());
             this->button5 = (gcnew System::Windows::Forms::Button());
-            this->button6 = (gcnew System::Windows::Forms::Button());
+            this->btnAddClient = (gcnew System::Windows::Forms::Button());
             this->label14 = (gcnew System::Windows::Forms::Label());
             this->label18 = (gcnew System::Windows::Forms::Label());
             this->label19 = (gcnew System::Windows::Forms::Label());
@@ -254,7 +255,6 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             this->searchServiceByTermBtb = (gcnew System::Windows::Forms::Button());
             this->button11 = (gcnew System::Windows::Forms::Button());
             this->ServicesDataGrid = (gcnew System::Windows::Forms::DataGridView());
-            this->countOfCompareClients = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
             this->requestsPage->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
@@ -566,7 +566,7 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             this->clientsPage->Controls->Add(this->label10);
             this->clientsPage->Controls->Add(this->tBClientEmail);
             this->clientsPage->Controls->Add(this->button5);
-            this->clientsPage->Controls->Add(this->button6);
+            this->clientsPage->Controls->Add(this->btnAddClient);
             this->clientsPage->Controls->Add(this->label14);
             this->clientsPage->Controls->Add(this->label18);
             this->clientsPage->Controls->Add(this->label19);
@@ -586,6 +586,15 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             this->clientsPage->TabIndex = 1;
             this->clientsPage->Text = L"Клиенты";
             this->clientsPage->UseVisualStyleBackColor = true;
+            // 
+            // countOfCompareClients
+            // 
+            this->countOfCompareClients->AutoSize = true;
+            this->countOfCompareClients->Location = System::Drawing::Point(153, 466);
+            this->countOfCompareClients->Name = L"countOfCompareClients";
+            this->countOfCompareClients->Size = System::Drawing::Size(41, 13);
+            this->countOfCompareClients->TabIndex = 49;
+            this->countOfCompareClients->Text = L"label20";
             // 
             // resultSearchClient
             // 
@@ -677,12 +686,13 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             // 
             // button6
             // 
-            this->button6->Location = System::Drawing::Point(348, 461);
-            this->button6->Name = L"button6";
-            this->button6->Size = System::Drawing::Size(75, 23);
-            this->button6->TabIndex = 38;
-            this->button6->Text = L"Добавить";
-            this->button6->UseVisualStyleBackColor = true;
+            this->btnAddClient->Location = System::Drawing::Point(348, 461);
+            this->btnAddClient->Name = L"btnAddClient";
+            this->btnAddClient->Size = System::Drawing::Size(75, 23);
+            this->btnAddClient->TabIndex = 38;
+            this->btnAddClient->Text = L"Добавить";
+            this->btnAddClient->UseVisualStyleBackColor = true;
+            this->btnAddClient->Click += gcnew System::EventHandler(this, &MyForm::btnAddClient_Click);
             // 
             // label14
             // 
@@ -797,6 +807,7 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             this->btnSearchByClient->TabIndex = 26;
             this->btnSearchByClient->Text = L"Поиск по полной информации";
             this->btnSearchByClient->UseVisualStyleBackColor = true;
+            this->btnSearchByClient->Click += gcnew System::EventHandler(this, &MyForm::btnSearchByClient_Click);
             // 
             // tabPage1
             // 
@@ -1033,15 +1044,6 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
             this->ServicesDataGrid->Size = System::Drawing::Size(888, 276);
             this->ServicesDataGrid->TabIndex = 6;
             // 
-            // label20
-            // 
-            this->countOfCompareClients->AutoSize = true;
-            this->countOfCompareClients->Location = System::Drawing::Point(153, 466);
-            this->countOfCompareClients->Name = L"label20";
-            this->countOfCompareClients->Size = System::Drawing::Size(41, 13);
-            this->countOfCompareClients->TabIndex = 49;
-            this->countOfCompareClients->Text = L"label20";
-            // 
             // MyForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1125,9 +1127,13 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
         }
 
 
-
-
+        
         vector<ClientsEntity*> dataClients = DataClientsStorage::data;
+        ClientsHashTable clientHashTable = DataClientsStorage::clientsHashTable;
+        for (int i = 0; i < dataClients.size(); i++) {
+            clientHashTable.insert(dataClients[i]);
+        }
+        clientHashTable.print();
         DataTable^ tablClients = gcnew DataTable();
         ClientsDataGrid->DataSource = tablClients;
         tablClients->Columns->Add("ФИО");
@@ -1136,7 +1142,7 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
         tablClients->Columns->Add("Паспорт");
         for (int i = 0; i < dataClients.size(); i++) {
             DataRow^ rowClients = tablClients->NewRow();
-            rowClients["ФИО"] = gcnew String((dataClients[i]->fullname.surname + ' ' + dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
+            rowClients["ФИО"] = gcnew String((dataClients[i]->fullname.surname + dataClients[i]->fullname.name + dataClients[i]->fullname.lastname).c_str());
             rowClients["Должность"] = gcnew String(dataClients[i]->job.c_str());
             rowClients["email"] = gcnew String(dataClients[i]->email.c_str());
             string passportClient = to_string(dataClients[i]->passport.series) + ' ' + to_string(dataClients[i]->passport.number);
@@ -1808,5 +1814,57 @@ private: System::Void btnSearchByClientEmail_Click(System::Object^ sender, Syste
     cout << endl;
 }
 
+private: System::Void btnSearchByClient_Click(System::Object^ sender, System::EventArgs^ e) {
+    string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+    Fullname fullname = inputFullnameData(fullnamestr);
+    ClientPassport passport = ClientPassport();
+    int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+    int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+    passport.number = passnum;
+    passport.series = passseries;
+    string email = marshal_as<std::string>(this->tBClientEmail->Text);
+    string job = marshal_as<std::string>(this->tBClientJob->Text);
+    ClientsEntity* client = new ClientsEntity();
+    client->passport = passport;
+    client->fullname = fullname;
+    client->email = email;
+    client->job = job;
+    DataClientsStorage::rbtClient = root_init(DataClientsStorage::rbtNullnode);
+    Node* rbt = DataClientsStorage::rbtClient;
+    vector<ClientsEntity*> clients = DataClientsStorage::data;
+    for (int i = 0; i < clients.size(); i++) {
+        string valueText = clients[i]->fullname.surname + ' ' + clients[i]->fullname.name + ' ' 
+            + clients[i]->fullname.lastname +' '+clients[i]->job +' ' + clients[i]->email 
+            +' '+ to_string(clients[i]->passport.series) + to_string(clients[i]->passport.number);
+        RBTData value;
+        value.index = i;
+        value.value = valueText;
+        insert(rbt, DataClientsStorage::rbtNullnode, value);
+    }
+    int count = 0;
+    RBTData searchable;
+    searchable.value = client->fullname.surname + ' ' + client->fullname.name +' '+ client->fullname.lastname
+        + ' ' + client->job + ' ' + client->email
+        + ' ' + to_string(client->passport.series) + to_string(client->passport.number);
+    searchable.index = 0;
+    pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+    bool result = DataClientsStorage::resultSearch;
+    this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+    DataStorage::countComparisons = 0;
+    if (result) {
+        this->resultSearchClient->Text = gcnew String("Найден");
+    }
+    else {
+        this->resultSearchClient->Text = gcnew String("Не найден");
+    }
+    cout << searchable.value<<"\n";
+    print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
+    cout << endl;
+    
+}
+private: System::Void btnAddClient_Click(System::Object^ sender, System::EventArgs^ e) {
+    DataClientsStorage::clientsHashTable.print();
+    DataStorage::requestsHashTable.print();
+}
 };
 }

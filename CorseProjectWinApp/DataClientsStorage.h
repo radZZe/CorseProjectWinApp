@@ -7,7 +7,6 @@
 static class DataClientsStorage
 {
 public:
-	static string text;
 	static vector<ClientsEntity*>data;
 	static ClientsHashTable clientsHashTable;
 	static int countComparisons;
