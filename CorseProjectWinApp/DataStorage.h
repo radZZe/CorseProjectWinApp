@@ -1,4 +1,5 @@
 #pragma once
+#include "ServicesHashTable.h"
 #include "RequestsHashTable.h"
 #include "ServicesRBTree.h"
 #include "AvlTree.h"
@@ -25,5 +26,6 @@ public:
 	static int indexSearch;
 	static bool resultSerch;
 	void removeElement(RequestsEntity* value);
+	static ServicesHashTable servicesHashTable;
 };
 

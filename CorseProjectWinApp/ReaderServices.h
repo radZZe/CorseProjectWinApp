@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <vector>
 #include <string> 
@@ -42,6 +43,13 @@ struct ServiceEntity
     int term;
 };
 
+struct tableEntity
+{
+    ServiceEntity* value;
+    int status;
+    int index;
+};
+
 
 int isEqualElements(ServiceEntity* first, ServiceEntity* second);
 
@@ -50,3 +58,5 @@ ServiceEntity* inputServicesEntityData(string inputString);
 vector <ServiceEntity*> readServicesFromFile(string path);
 
 void writeData(vector<ServiceEntity*>  value, string dir);
+
+bool isEqualServices(ServiceEntity* first, ServiceEntity* second);
