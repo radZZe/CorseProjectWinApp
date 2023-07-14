@@ -8,22 +8,7 @@
 
 using namespace std;
 
-
-
-ClientPassport inputPassportClients(string input) {
-    // Passport  newPassport;
-    vector <int> numbers;
-    for (int i = 0; i < input.length(); i++) {
-        if (input[i] == '.') {
-            numbers.push_back(i);
-        }
-    }
-    int series = stoi(input.substr(0, 4));
-    int number = stoi(input.substr(4 + 1, (input.length() - 1) - 4));
-    return { series,number };
-};
-
-bool isEqualElementsClients(ClientsEntity* first, ClientsEntity* second) {
+bool isEqualElements(ClientsEntity* first, ClientsEntity* second) {
 
     //1 => frist = second   0 => first != second
     if (first->passport.series + first->passport.number == second->passport.number + second->passport.series)
@@ -81,14 +66,23 @@ Fullname inputFullnameData(string input)
             lastname += input[i];
         }
     }
-    return { name,surname,lastname };
+    return { surname,name,lastname };
 }
 
+Passport inputPassportData(string input) {
+    Passport  newPassport;
+    vector <int> numbers;
+    for (int i = 0; i < input.length(); i++) {
+        if (input[i] == '.') {
+            numbers.push_back(i);
+        }
+    }
+    newPassport.series = stoi(input.substr(0, 4));
+    newPassport.number = stoi(input.substr(4 + 1, (input.length() - 1) - 4));
+    return newPassport;
+};
 
-
-
-
-ClientsEntity* inputEntityDataClients(string input) {
+ClientsEntity* inputEntityData(string input) {
     ClientsEntity* entity;
     entity = new ClientsEntity();
     vector <int> numbers;
@@ -100,12 +94,12 @@ ClientsEntity* inputEntityDataClients(string input) {
     entity->fullname = inputFullnameData(input.substr(0, numbers.at(0)));
     entity->job = input.substr(numbers[0] + 1, (numbers[1] - 1) - numbers[0]);
     entity->email = input.substr(numbers[1] + 1, ((numbers[2] - 1) - numbers[1]));
-    entity->passport = inputPassportClients(input.substr(numbers[2] + 1, (input.length() - 1) - numbers[2]));
+    entity->passport = inputPassportData(input.substr(numbers[2] + 1, (input.length() - 1) - numbers[2]));
     return entity;
 }
 
 
-vector <ClientsEntity*> readFromFileClients(string path) {
+vector <ClientsEntity*> readFromFile(string path) {
     setlocale(LC_ALL, "Russian");
     string str;
     int n = 0;
@@ -119,21 +113,21 @@ vector <ClientsEntity*> readFromFileClients(string path) {
     for (int i = 0; i < n; i++) {
         getline(file, str);
         ClientsEntity* newEntity = new ClientsEntity();
-        newEntity = inputEntityDataClients(str);
+        newEntity = inputEntityData(str);
         data[i] = newEntity;
     }
     file.close();
     return data;
 }
 
-void writeData(vector<ClientsEntity*>  value, string path){}
-//void writeData(vector<ClientsEntity*>  value, string path) {
-//    ofstream  fout(path);
-//    fout << value.size() << "\n";
-//    for (int i = 0; i < value.size(); i++) {
-//        fout << value[i]->passport.series << value[i]->passport.number << "$" << value[i]->serviceType << "$" << value[i]->serviceName << "$" << value[i]->date.day << "." << value[i]->date.month << "." << value[i]->date.year << "\n";
-//    }
-//
-//    fout.close();
-//
-//}
+
+void writeData(vector<ClientsEntity*>  value, string path) {
+    ofstream  fout(path);
+    fout << value.size() << "\n";
+    for (int i = 0; i < value.size(); i++) {
+        fout << value[i]->passport.series << value[i]->passport.number << "$" << value[i]->serviceType << "$" << value[i]->serviceName << "$" << value[i]->date.day << "." << value[i]->date.month << "." << value[i]->date.year << "\n";
+    }
+
+    fout.close();
+
+}
