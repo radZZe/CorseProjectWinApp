@@ -1,3 +1,4 @@
+#pragma once
 #include "ReaderServices.h"
 using namespace std;
 
@@ -66,5 +67,43 @@ void writeData(vector<ServiceEntity*>  value, string dir) {
     }
 
     fout.close();
+
+}
+
+bool isEqualServices(ServiceEntity* first, ServiceEntity* second)
+{
+    if (first == nullptr || second == nullptr)
+    {
+        return 0;
+    }
+    else if (first->serviceType == second->serviceType)
+    {
+        if (first->serviceName == second->serviceName)
+        {
+            if (first->division == second->division)
+            {
+                if (first->term == second->term)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
 
 }

@@ -48,6 +48,9 @@
     <ClCompile Include="ServicesHashTable.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="DataClientsStorage.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -79,6 +82,12 @@
     </ClInclude>
     <ClInclude Include="ServicesRBTree.h">
       <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DataClientsStorage.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicesHashTable.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
