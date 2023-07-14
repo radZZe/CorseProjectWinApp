@@ -492,9 +492,9 @@ void ClientsHashTable::erase(ClientsEntity* entity)
 
 }
 
-//ClientsHashTable::~ClientsHashTable()
-//{
-//    cout << "\nHash table removed\n";
-//    table.clear();
-//    table.shrink_to_fit();
-//}
+ClientsHashTable::~ClientsHashTable()
+{
+    cout << "\nHash table removed\n";
+    table.clear();
+    table.shrink_to_fit();
+}

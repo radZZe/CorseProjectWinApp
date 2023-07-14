@@ -18,7 +18,7 @@ public:
     void print();
     void erase(ClientsEntity* entity);
     bool find(Fullname fullname, string job, string email, ClientPassport passport); 
-    //~ClientsHashTable();
+    ~ClientsHashTable();
 private:
     int size;
     vector<ClientsHashTableEntry*>table;
