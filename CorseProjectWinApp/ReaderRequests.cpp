@@ -97,7 +97,7 @@ Passport inputPassportData(string inputString) {
         }
     }
     newPassport.series = stoi(inputString.substr(0, 4));
-    newPassport.number = stoi(inputString.substr(4 + 1, (inputString.length() - 1) - 4));
+    newPassport.number = stoi(inputString.substr(4 , (inputString.length() ) - 4));
     return newPassport;
 };
 

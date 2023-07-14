@@ -38,5 +38,6 @@ public:
     void removeCollision(int secondHash, int firstHash, RequestsEntity* value);
     vector<int> search(RequestsEntity* value);
     void print();
+    void debugPrint(ofstream& fout);
 };
 

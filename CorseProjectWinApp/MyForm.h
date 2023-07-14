@@ -73,7 +73,8 @@ namespace CorseProjectWinApp {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ addRequestsBTN;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
 
@@ -172,7 +173,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 #pragma region Windows Form Designer generated code
 
 		/// <summary>
-		/// O?aaoaiue iaoia aey iiaaa??ee eiino?oeoi?a ó ia eciaiyeoa 
+		/// O?aaoaiue iaoia aey iiaaa??ee eiino?oeoi?a ‚Äî ia eciaiyeoa 
 		/// niaa??eiia yoiai iaoiaa n iiiiuu? ?aaaeoi?a eiaa.
 		/// </summary>
 		void InitializeComponent(void)
@@ -192,7 +193,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->tBDate = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->addRequestsBTN = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -291,7 +292,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->requestsPage->Controls->Add(this->label5);
 			this->requestsPage->Controls->Add(this->tBDate);
 			this->requestsPage->Controls->Add(this->button3);
-			this->requestsPage->Controls->Add(this->button2);
+			this->requestsPage->Controls->Add(this->addRequestsBTN);
 			this->requestsPage->Controls->Add(this->label4);
 			this->requestsPage->Controls->Add(this->label3);
 			this->requestsPage->Controls->Add(this->label1);
@@ -310,7 +311,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->requestsPage->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->requestsPage->Size = System::Drawing::Size(1187, 750);
 			this->requestsPage->TabIndex = 0;
-			this->requestsPage->Text = L"«‡ˇ‚ÍË";
+			this->requestsPage->Text = L"√á√†√ø√¢√™√®";
 			this->requestsPage->UseVisualStyleBackColor = true;
 			// 
 			// resultSearchServices
@@ -336,8 +337,9 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button19->Name = L"button19";
 			this->button19->Size = System::Drawing::Size(153, 28);
 			this->button19->TabIndex = 26;
-			this->button19->Text = L"ŒÍÌÓ ÓÚÎ‡‰ÍË";
+			this->button19->Text = L"√é√™√≠√Æ √Æ√≤√´√†√§√™√®";
 			this->button19->UseVisualStyleBackColor = true;
+			this->button19->Click += gcnew System::EventHandler(this, &MyForm::button19_Click);
 			// 
 			// saveBtn
 			// 
@@ -346,7 +348,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->saveBtn->Name = L"saveBtn";
 			this->saveBtn->Size = System::Drawing::Size(100, 28);
 			this->saveBtn->TabIndex = 25;
-			this->saveBtn->Text = L"—Óı‡ÌËÚ¸";
+			this->saveBtn->Text = L"√ë√Æ√µ√∞√†√≠√®√≤√º";
 			this->saveBtn->UseVisualStyleBackColor = true;
 			this->saveBtn->Click += gcnew System::EventHandler(this, &MyForm::save_btn);
 			// 
@@ -367,7 +369,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(115, 16);
 			this->label2->TabIndex = 23;
-			this->label2->Text = L"ÕÓÏÂ Ô‡ÒÔÓÚ‡";
+			this->label2->Text = L"√ç√Æ√¨√•√∞ √Ø√†√±√Ø√Æ√∞√≤√†";
 			// 
 			// tBSeriesPassport
 			// 
@@ -385,7 +387,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(77, 16);
 			this->label6->TabIndex = 21;
-			this->label6->Text = L"–ÂÁÛÎ¸Ú‡Ú";
+			this->label6->Text = L"√ê√•√ß√≥√´√º√≤√†√≤";
 			// 
 			// countComparisons
 			// 
@@ -404,7 +406,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->numberOfComparisons->Name = L"numberOfComparisons";
 			this->numberOfComparisons->Size = System::Drawing::Size(159, 16);
 			this->numberOfComparisons->TabIndex = 19;
-			this->numberOfComparisons->Text = L" ÓÎË˜ÂÒÚ‚Ó Ò‡‚ÌÂÌËÈ";
+			this->numberOfComparisons->Text = L"√ä√Æ√´√®√∑√•√±√≤√¢√Æ √±√∞√†√¢√≠√•√≠√®√©";
 			// 
 			// label5
 			// 
@@ -414,7 +416,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(39, 16);
 			this->label5->TabIndex = 18;
-			this->label5->Text = L"ƒ‡Ú‡";
+			this->label5->Text = L"√Ñ√†√≤√†";
 			// 
 			// tBDate
 			// 
@@ -431,19 +433,19 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 16;
-			this->button3->Text = L"”‰‡ÎËÚ¸";
+			this->button3->Text = L"√ì√§√†√´√®√≤√º";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::remove_element);
 			// 
-			// button2
+			// addRequestsBTN
 			// 
-			this->button2->Location = System::Drawing::Point(467, 507);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 28);
-			this->button2->TabIndex = 15;
-			this->button2->Text = L"ƒÓ·‡‚ËÚ¸";
-			this->button2->UseVisualStyleBackColor = true;
+			this->addRequestsBTN->Location = System::Drawing::Point(350, 412);
+			this->addRequestsBTN->Name = L"addRequestsBTN";
+			this->addRequestsBTN->Size = System::Drawing::Size(75, 23);
+			this->addRequestsBTN->TabIndex = 15;
+			this->addRequestsBTN->Text = L"√Ñ√Æ√°√†√¢√®√≤√º";
+			this->addRequestsBTN->UseVisualStyleBackColor = true;
+			this->addRequestsBTN->Click += gcnew System::EventHandler(this, &MyForm::addRequestsBTN_Click);
 			// 
 			// label4
 			// 
@@ -453,7 +455,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(121, 16);
 			this->label4->TabIndex = 14;
-			this->label4->Text = L"Õ‡Á‚‡ÌËÂ ÛÒÎÛ„Ë";
+			this->label4->Text = L"√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®";
 			// 
 			// label3
 			// 
@@ -463,7 +465,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(80, 16);
 			this->label3->TabIndex = 13;
-			this->label3->Text = L"“ËÔ ÛÒÎÛ„Ë";
+			this->label3->Text = L"√í√®√Ø √≥√±√´√≥√£√®";
 			// 
 			// label1
 			// 
@@ -473,7 +475,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(112, 16);
 			this->label1->TabIndex = 11;
-			this->label1->Text = L"—ÂËˇ Ô‡ÒÔÓÚ‡";
+			this->label1->Text = L"√ë√•√∞√®√ø √Ø√†√±√Ø√Æ√∞√≤√†";
 			// 
 			// tBServiceName
 			// 
@@ -506,7 +508,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->searchByServiceNameBTN->Name = L"searchByServiceNameBTN";
 			this->searchByServiceNameBTN->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceNameBTN->TabIndex = 6;
-			this->searchByServiceNameBTN->Text = L"œÓËÒÍ ÔÓ Ì‡Á‚‡ÌË˛ ÛÒÎÛ„Ë";
+			this->searchByServiceNameBTN->Text = L"√è√Æ√®√±√™ √Ø√Æ √≠√†√ß√¢√†√≠√®√æ √≥√±√´√≥√£√®";
 			this->searchByServiceNameBTN->UseVisualStyleBackColor = true;
 			this->searchByServiceNameBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceNameBTN_Click);
 			// 
@@ -535,7 +537,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->searchByTypeOfServiceBTN->Name = L"searchByTypeOfServiceBTN";
 			this->searchByTypeOfServiceBTN->Size = System::Drawing::Size(209, 28);
 			this->searchByTypeOfServiceBTN->TabIndex = 4;
-			this->searchByTypeOfServiceBTN->Text = L"œÓËÒÍ ÔÓ ÚËÔÛ ÛÒÎÛ„Ë";
+			this->searchByTypeOfServiceBTN->Text = L"√è√Æ√®√±√™ √Ø√Æ √≤√®√Ø√≥ √≥√±√´√≥√£√®";
 			this->searchByTypeOfServiceBTN->UseVisualStyleBackColor = true;
 			this->searchByTypeOfServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByTypeOfServiceBTN_Click);
 			// 
@@ -546,7 +548,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->dateSearchBTN->Name = L"dateSearchBTN";
 			this->dateSearchBTN->Size = System::Drawing::Size(132, 28);
 			this->dateSearchBTN->TabIndex = 3;
-			this->dateSearchBTN->Text = L"œÓËÒÍ ÔÓ ‰‡ÚÂ";
+			this->dateSearchBTN->Text = L"√è√Æ√®√±√™ √Ø√Æ √§√†√≤√•";
 			this->dateSearchBTN->UseVisualStyleBackColor = true;
 			this->dateSearchBTN->Click += gcnew System::EventHandler(this, &MyForm::dateSearchBTN_Click);
 			// 
@@ -557,7 +559,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->passportSearchBTN->Name = L"passportSearchBTN";
 			this->passportSearchBTN->Size = System::Drawing::Size(169, 28);
 			this->passportSearchBTN->TabIndex = 2;
-			this->passportSearchBTN->Text = L"œÓËÒÍ ÔÓ Ô‡ÒÔÓÚÛ";
+			this->passportSearchBTN->Text = L"√è√Æ√®√±√™ √Ø√Æ √Ø√†√±√Ø√Æ√∞√≤√≥";
 			this->passportSearchBTN->UseVisualStyleBackColor = true;
 			this->passportSearchBTN->Click += gcnew System::EventHandler(this, &MyForm::passportSearchBTN_Click);
 			// 
@@ -568,7 +570,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->searchByTypeAndNameOfServiceBTN->Name = L"searchByTypeAndNameOfServiceBTN";
 			this->searchByTypeAndNameOfServiceBTN->Size = System::Drawing::Size(309, 28);
 			this->searchByTypeAndNameOfServiceBTN->TabIndex = 1;
-			this->searchByTypeAndNameOfServiceBTN->Text = L"œÓËÒÍ ÔÓ ÚËÔÛ Ë Ì‡Á‚‡ÌË˛ ÛÒÎÛ„Ë";
+			this->searchByTypeAndNameOfServiceBTN->Text = L"√è√Æ√®√±√™ √Ø√Æ √≤√®√Ø√≥ √® √≠√†√ß√¢√†√≠√®√æ √≥√±√´√≥√£√®";
 			this->searchByTypeAndNameOfServiceBTN->UseVisualStyleBackColor = true;
 			this->searchByTypeAndNameOfServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByTypeAndNameOfService_Click);
 			// 
@@ -602,7 +604,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->clientsPage->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->clientsPage->Size = System::Drawing::Size(1187, 750);
 			this->clientsPage->TabIndex = 1;
-			this->clientsPage->Text = L" ÎËÂÌÚ˚";
+			this->clientsPage->Text = L"√ä√´√®√•√≠√≤√ª";
 			this->clientsPage->UseVisualStyleBackColor = true;
 			// 
 			// button20
@@ -612,7 +614,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(153, 28);
 			this->button20->TabIndex = 47;
-			this->button20->Text = L"ŒÍÌÓ ÓÚÎ‡‰ÍË";
+			this->button20->Text = L"√é√™√≠√Æ √Æ√≤√´√†√§√™√®";
 			this->button20->UseVisualStyleBackColor = true;
 			// 
 			// button4
@@ -622,7 +624,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(100, 28);
 			this->button4->TabIndex = 46;
-			this->button4->Text = L"—Óı‡ÌËÚ¸";
+			this->button4->Text = L"√ë√Æ√µ√∞√†√≠√®√≤√º";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// label7
@@ -633,7 +635,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(115, 16);
 			this->label7->TabIndex = 45;
-			this->label7->Text = L"ÕÓÏÂ Ô‡ÒÔÓÚ‡";
+			this->label7->Text = L"√ç√Æ√¨√•√∞ √Ø√†√±√Ø√Æ√∞√≤√†";
 			// 
 			// textBox1
 			// 
@@ -651,7 +653,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(77, 16);
 			this->label8->TabIndex = 43;
-			this->label8->Text = L"–ÂÁÛÎ¸Ú‡Ú";
+			this->label8->Text = L"√ê√•√ß√≥√´√º√≤√†√≤";
 			// 
 			// label9
 			// 
@@ -661,7 +663,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(165, 16);
 			this->label9->TabIndex = 42;
-			this->label9->Text = L" ÓÎË˜ÂÒÚ‚Ó Ò‡‚ÌÂÌËÈ: ";
+			this->label9->Text = L"√ä√Æ√´√®√∑√•√±√≤√¢√Æ √±√∞√†√¢√≠√•√≠√®√©: ";
 			// 
 			// label10
 			// 
@@ -671,7 +673,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(136, 16);
 			this->label10->TabIndex = 41;
-			this->label10->Text = L"›ÎÂÍÚÓÌÌ‡ˇ ÔÓ˜Ú‡";
+			this->label10->Text = L"√ù√´√•√™√≤√∞√Æ√≠√≠√†√ø √Ø√Æ√∑√≤√†";
 			this->label10->Click += gcnew System::EventHandler(this, &MyForm::label10_Click);
 			// 
 			// textBox2
@@ -690,7 +692,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(100, 28);
 			this->button5->TabIndex = 39;
-			this->button5->Text = L"”‰‡ÎËÚ¸";
+			this->button5->Text = L"√ì√§√†√´√®√≤√º";
 			this->button5->UseVisualStyleBackColor = true;
 			// 
 			// button6
@@ -700,7 +702,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(100, 28);
 			this->button6->TabIndex = 38;
-			this->button6->Text = L"ƒÓ·‡‚ËÚ¸";
+			this->button6->Text = L"√Ñ√Æ√°√†√¢√®√≤√º";
 			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// label14
@@ -711,7 +713,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(38, 16);
 			this->label14->TabIndex = 37;
-			this->label14->Text = L"‘»Œ";
+			this->label14->Text = L"√î√à√é";
 			// 
 			// label18
 			// 
@@ -721,7 +723,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(78, 16);
 			this->label18->TabIndex = 36;
-			this->label18->Text = L"ƒÓÎÊÌÓÒÚ¸";
+			this->label18->Text = L"√Ñ√Æ√´√¶√≠√Æ√±√≤√º";
 			// 
 			// label19
 			// 
@@ -731,7 +733,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(112, 16);
 			this->label19->TabIndex = 35;
-			this->label19->Text = L"—ÂËˇ Ô‡ÒÔÓÚ‡";
+			this->label19->Text = L"√ë√•√∞√®√ø √Ø√†√±√Ø√Æ√∞√≤√†";
 			this->label19->Click += gcnew System::EventHandler(this, &MyForm::label19_Click);
 			// 
 			// textBox6
@@ -765,7 +767,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(265, 28);
 			this->button7->TabIndex = 31;
-			this->button7->Text = L"œÓËÒÍ ÔÓ ˝ÎÂÍÚÓÌÌÓÈ ÔÓ˜ÚÂ";
+			this->button7->Text = L"√è√Æ√®√±√™ √Ø√Æ √Ω√´√•√™√≤√∞√Æ√≠√≠√Æ√© √Ø√Æ√∑√≤√•";
 			this->button7->UseVisualStyleBackColor = true;
 			// 
 			// ClientsDataGrid
@@ -792,7 +794,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button15->Name = L"button15";
 			this->button15->Size = System::Drawing::Size(209, 28);
 			this->button15->TabIndex = 29;
-			this->button15->Text = L"œÓËÒÍ ÔÓ ‘»Œ";
+			this->button15->Text = L"√è√Æ√®√±√™ √Ø√Æ √î√à√é";
 			this->button15->UseVisualStyleBackColor = true;
 			// 
 			// button16
@@ -802,7 +804,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button16->Name = L"button16";
 			this->button16->Size = System::Drawing::Size(215, 28);
 			this->button16->TabIndex = 28;
-			this->button16->Text = L"œÓËÒÍ ÔÓ ‰ÓÎÊÌÓÒÚË";
+			this->button16->Text = L"√è√Æ√®√±√™ √Ø√Æ √§√Æ√´√¶√≠√Æ√±√≤√®";
 			this->button16->UseVisualStyleBackColor = true;
 			// 
 			// button17
@@ -812,7 +814,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button17->Name = L"button17";
 			this->button17->Size = System::Drawing::Size(169, 28);
 			this->button17->TabIndex = 27;
-			this->button17->Text = L"œÓËÒÍ ÔÓ Ô‡ÒÔÓÚÛ";
+			this->button17->Text = L"√è√Æ√®√±√™ √Ø√Æ √Ø√†√±√Ø√Æ√∞√≤√≥";
 			this->button17->UseVisualStyleBackColor = true;
 			// 
 			// button18
@@ -822,7 +824,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button18->Name = L"button18";
 			this->button18->Size = System::Drawing::Size(309, 28);
 			this->button18->TabIndex = 26;
-			this->button18->Text = L"œÓËÒÍ ÔÓ ÔÓÎÌÓÈ ËÌÙÓÏ‡ˆËË";
+			this->button18->Text = L"√è√Æ√®√±√™ √Ø√Æ √Ø√Æ√´√≠√Æ√© √®√≠√¥√Æ√∞√¨√†√∂√®√®";
 			this->button18->UseVisualStyleBackColor = true;
 			// 
 			// tabPage1
@@ -854,7 +856,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Size = System::Drawing::Size(1187, 750);
 			this->tabPage1->TabIndex = 2;
-			this->tabPage1->Text = L"”ÒÎÛ„Ë";
+			this->tabPage1->Text = L"√ì√±√´√≥√£√®";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// resultSearchServices2
@@ -880,7 +882,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button21->Name = L"button21";
 			this->button21->Size = System::Drawing::Size(153, 28);
 			this->button21->TabIndex = 41;
-			this->button21->Text = L"ŒÍÌÓ ÓÚÎ‡‰ÍË";
+			this->button21->Text = L"√é√™√≠√Æ √Æ√≤√´√†√§√™√®";
 			this->button21->UseVisualStyleBackColor = true;
 			// 
 			// label13
@@ -891,7 +893,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(113, 16);
 			this->label13->TabIndex = 40;
-			this->label13->Text = L"œÓ‰‡Á‰ÂÎÂÌËÂ";
+			this->label13->Text = L"√è√Æ√§√∞√†√ß√§√•√´√•√≠√®√•";
 			// 
 			// label15
 			// 
@@ -901,7 +903,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(121, 16);
 			this->label15->TabIndex = 38;
-			this->label15->Text = L"Õ‡Á‚‡ÌËÂ ÛÒÎÛ„Ë";
+			this->label15->Text = L"√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®";
 			// 
 			// label16
 			// 
@@ -911,7 +913,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(123, 16);
 			this->label16->TabIndex = 37;
-			this->label16->Text = L"—ÓÍ ËÒÔÓÎÌÂÌËˇ ";
+			this->label16->Text = L"√ë√∞√Æ√™ √®√±√Ø√Æ√´√≠√•√≠√®√ø ";
 			// 
 			// label17
 			// 
@@ -921,7 +923,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(80, 16);
 			this->label17->TabIndex = 36;
-			this->label17->Text = L"“ËÔ ÛÒÎÛ„Ë";
+			this->label17->Text = L"√í√®√Ø √≥√±√´√≥√£√®";
 			this->label17->Click += gcnew System::EventHandler(this, &MyForm::label17_Click);
 			// 
 			// button12
@@ -931,8 +933,9 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(100, 28);
 			this->button12->TabIndex = 35;
-			this->button12->Text = L"—Óı‡ÌËÚ¸";
+			this->button12->Text = L"√ë√Æ√µ√∞√†√≠√®√≤√º";
 			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
 			// 
 			// tBType
 			// 
@@ -950,7 +953,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(77, 16);
 			this->label11->TabIndex = 33;
-			this->label11->Text = L"–ÂÁÛÎ¸Ú‡Ú";
+			this->label11->Text = L"√ê√•√ß√≥√´√º√≤√†√≤";
 			// 
 			// label12
 			// 
@@ -960,7 +963,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(165, 16);
 			this->label12->TabIndex = 32;
-			this->label12->Text = L" ÓÎË˜ÂÒÚ‚Ó Ò‡‚ÌÂÌËÈ: ";
+			this->label12->Text = L"√ä√Æ√´√®√∑√•√±√≤√¢√Æ √±√∞√†√¢√≠√•√≠√®√©: ";
 			// 
 			// button13
 			// 
@@ -969,7 +972,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button13->Name = L"button13";
 			this->button13->Size = System::Drawing::Size(100, 28);
 			this->button13->TabIndex = 30;
-			this->button13->Text = L"”‰‡ÎËÚ¸";
+			this->button13->Text = L"√ì√§√†√´√®√≤√º";
 			this->button13->UseVisualStyleBackColor = true;
 			// 
 			// button14
@@ -979,7 +982,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->button14->Name = L"button14";
 			this->button14->Size = System::Drawing::Size(100, 28);
 			this->button14->TabIndex = 29;
-			this->button14->Text = L"ƒÓ·‡‚ËÚ¸";
+			this->button14->Text = L"√Ñ√Æ√°√†√¢√®√≤√º";
 			this->button14->UseVisualStyleBackColor = true;
 			// 
 			// tBName
@@ -1013,7 +1016,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->searchByServiceName->Name = L"searchByServiceName";
 			this->searchByServiceName->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceName->TabIndex = 11;
-			this->searchByServiceName->Text = L"œÓËÒÍ ÔÓ Ì‡Á‚‡ÌË˛ ÛÒÎÛ„Ë";
+			this->searchByServiceName->Text = L"√è√Æ√®√±√™ √Ø√Æ √≠√†√ß√¢√†√≠√®√æ √≥√±√´√≥√£√®";
 			this->searchByServiceName->UseVisualStyleBackColor = true;
 			this->searchByServiceName->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceName_Click);
 			// 
@@ -1024,7 +1027,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->searchByServiceTypeBtn->Name = L"searchByServiceTypeBtn";
 			this->searchByServiceTypeBtn->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceTypeBtn->TabIndex = 10;
-			this->searchByServiceTypeBtn->Text = L"œÓËÒÍ ÔÓ ÚËÔÛ ÛÒÎÛ„Ë ";
+			this->searchByServiceTypeBtn->Text = L"√è√Æ√®√±√™ √Ø√Æ √≤√®√Ø√≥ √≥√±√´√≥√£√® ";
 			this->searchByServiceTypeBtn->UseVisualStyleBackColor = true;
 			this->searchByServiceTypeBtn->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceTypeBtn_Click);
 			// 
@@ -1035,7 +1038,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->divisionSearchBtn->Name = L"divisionSearchBtn";
 			this->divisionSearchBtn->Size = System::Drawing::Size(253, 28);
 			this->divisionSearchBtn->TabIndex = 9;
-			this->divisionSearchBtn->Text = L"œÓËÒÍ ÔÓ ÔÓ‰‡Á‰ÂÎÂÌË˛";
+			this->divisionSearchBtn->Text = L"√è√Æ√®√±√™ √Ø√Æ √Ø√Æ√§√∞√†√ß√§√•√´√•√≠√®√æ";
 			this->divisionSearchBtn->UseVisualStyleBackColor = true;
 			this->divisionSearchBtn->Click += gcnew System::EventHandler(this, &MyForm::divisionSearchBtn_Click);
 			// 
@@ -1047,7 +1050,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->searchServiceByTermBtb->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->searchServiceByTermBtb->Size = System::Drawing::Size(229, 28);
 			this->searchServiceByTermBtb->TabIndex = 8;
-			this->searchServiceByTermBtb->Text = L"œÓËÒÍ ÔÓ ÒÓÍÛ ËÒÔÓÎÌÂÌËˇ";
+			this->searchServiceByTermBtb->Text = L"√è√Æ√®√±√™ √Ø√Æ √±√∞√Æ√™√≥ √®√±√Ø√Æ√´√≠√•√≠√®√ø";
 			this->searchServiceByTermBtb->UseVisualStyleBackColor = true;
 			this->searchServiceByTermBtb->Click += gcnew System::EventHandler(this, &MyForm::searchServiceByTermBtb_Click);
 			// 
@@ -1058,7 +1061,7 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			this->searchByNameAndType->Name = L"searchByNameAndType";
 			this->searchByNameAndType->Size = System::Drawing::Size(309, 28);
 			this->searchByNameAndType->TabIndex = 7;
-			this->searchByNameAndType->Text = L"œÓËÒÍ ÔÓ ÚËÔÛ Ë Ì‡Á‚‡ÌË˛ ÛÒÎÛ„Ë";
+			this->searchByNameAndType->Text = L"√è√Æ√®√±√™ √Ø√Æ √≤√®√Ø√≥ √® √≠√†√ß√¢√†√≠√®√æ √≥√±√´√≥√£√®";
 			this->searchByNameAndType->UseVisualStyleBackColor = true;
 			this->searchByNameAndType->Click += gcnew System::EventHandler(this, &MyForm::searchByNameAndType_Click);
 			// 
@@ -1105,41 +1108,40 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 
 		}
 	private: System::Void FormLoad(System::Object^ sender, System::EventArgs^ e) {
-		vector<RequestsEntity*> data = DataStorage::data;
 		treeNode*& avlTreePassport = DataStorage::avlTreePassport;
 		treeNode*& avlTreeDate = DataStorage::avlTreeDate;
 		treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
 		treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
 		bool heightChanged = false;
 		RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
-		for (int i = 0; i < data.size(); i++) {
-			requestsHashTable.insert(data[i]);
+		for (int i = 0; i < DataStorage::data.size(); i++) {
+			requestsHashTable.insert(DataStorage::data[i]);
 		}
-		for (int i = 0; i < data.size(); i++) {
-			string valueText = to_string(data[i]->passport.series) + to_string(data[i]->passport.number);
+		for (int i = 0; i < DataStorage::data.size(); i++) {
+			string valueText = to_string(DataStorage::data[i]->passport.series) + to_string(DataStorage::data[i]->passport.number);
 			listNodeElem* value = new listNodeElem();
 			value->index = i;
 			value->value = valueText;
 			addNode(avlTreePassport, value, heightChanged);
 
 		}
-		for (int i = 0; i < data.size(); i++) {
-			string valueText = data[i]->date.day + "." + data[i]->date.month + "." + data[i]->date.year;
+		for (int i = 0; i < DataStorage::data.size(); i++) {
+			string valueText = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
 			listNodeElem* value = new listNodeElem();
 			value->index = i;
 			value->value = valueText;
 			addNode(avlTreeDate, value, heightChanged);
 
 		}
-		for (int i = 0; i < data.size(); i++) {
-			string valueText = data[i]->serviceType;
+		for (int i = 0; i < DataStorage::data.size(); i++) {
+			string valueText = DataStorage::data[i]->serviceType;
 			listNodeElem* value = new listNodeElem();
 			value->index = i;
 			value->value = valueText;
 			addNode(avlTreeServiceType, value, heightChanged);
 		}
-		for (int i = 0; i < data.size(); i++) {
-			string valueText = data[i]->serviceName;
+		for (int i = 0; i < DataStorage::data.size(); i++) {
+			string valueText = DataStorage::data[i]->serviceName;
 			listNodeElem* value = new listNodeElem();
 			value->index = i;
 			value->value = valueText;
@@ -1147,19 +1149,20 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 
 		}
 		DataTable^ tabl = gcnew DataTable();
+		tabl->Rows->Clear();
 		RequestsDataGrid->DataSource = tabl;
-		tabl->Columns->Add("œ‡ÒÔÓÚ");
-		tabl->Columns->Add("Õ‡Á‚‡ÌËÂ ÛÒÎÛ„Ë");
-		tabl->Columns->Add("“ËÔ ÛÒÎÛ„Ë");
-		tabl->Columns->Add("ƒ‡Ú‡");
-		for (int i = 0; i < data.size(); i++) {
+		tabl->Columns->Add("√è√†√±√Ø√Æ√∞√≤");
+		tabl->Columns->Add("√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®");
+		tabl->Columns->Add("√í√®√Ø √≥√±√´√≥√£√®");
+		tabl->Columns->Add("√Ñ√†√≤√†");
+		for (int i = 0; i < DataStorage::data.size(); i++) {
 			DataRow^ row = tabl->NewRow();
-			string passport = to_string(data[i]->passport.series) + " " + to_string(data[i]->passport.number);
-			row["œ‡ÒÔÓÚ"] = gcnew String(passport.c_str());
-			row["Õ‡Á‚‡ÌËÂ ÛÒÎÛ„Ë"] = gcnew String(data[i]->serviceName.c_str());
-			row["“ËÔ ÛÒÎÛ„Ë"] = gcnew String(data[i]->serviceType.c_str());
-			string date = data[i]->date.day+"." + data[i]->date.month + "." + data[i]->date.year;
-			row["ƒ‡Ú‡"] = gcnew String(date.c_str());
+			string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
+			row["√è√†√±√Ø√Æ√∞√≤"] = gcnew String(passport.c_str());
+			row["√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+			row["√í√®√Ø √≥√±√´√≥√£√®"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+			string date = DataStorage::data[i]->date.day+"." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
+			row["√Ñ√†√≤√†"] = gcnew String(date.c_str());
 			tabl->Rows->Add(row);
 		}
 
@@ -1169,18 +1172,18 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 		vector<ClientsEntity*> dataClients = DataClientsStorage::data;
 		DataTable^ tablClients = gcnew DataTable();
 		ClientsDataGrid->DataSource = tablClients;
-		tablClients->Columns->Add("‘»Œ");
-		tablClients->Columns->Add("ƒÓÎÊÌÓÒÚ¸");
+		tablClients->Columns->Add("√î√à√é");
+		tablClients->Columns->Add("√Ñ√Æ√´√¶√≠√Æ√±√≤√º");
 		tablClients->Columns->Add("email");
-		tablClients->Columns->Add("œ‡ÒÔÓÚ");
+		tablClients->Columns->Add("√è√†√±√Ø√Æ√∞√≤");
 		for (int i = 0; i < dataClients.size(); i++) {
 			DataRow^ rowClients = tablClients->NewRow();
-			rowClients["‘»Œ"] = gcnew String((dataClients[i]->fullname.surname + ' ' + dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
-			rowClients["ƒÓÎÊÌÓÒÚ¸"] = gcnew String(dataClients[i]->job.c_str());
+			rowClients["√î√à√é"] = gcnew String((dataClients[i]->fullname.surname + ' ' + dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
+			rowClients["√Ñ√Æ√´√¶√≠√Æ√±√≤√º"] = gcnew String(dataClients[i]->job.c_str());
 			rowClients["email"] = gcnew String(dataClients[i]->email.c_str());
 			string passportClient = to_string(dataClients[i]->passport.number) + ' ' + to_string(dataClients[i]->passport.series);
 			//rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
-			rowClients["œ‡ÒÔÓÚ"] = gcnew String(passportClient.c_str());
+			rowClients["√è√†√±√Ø√Æ√∞√≤"] = gcnew String(passportClient.c_str());
 			tablClients->Rows->Add(rowClients);
 		}
 
@@ -1188,17 +1191,17 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 		vector<ServiceEntity*> dataServices = DataStorage::dataServices;
 		DataTable^ tablServices = gcnew DataTable();
 		ServicesDataGrid->DataSource = tablServices;
-		tablServices->Columns->Add("“ËÔ ÛÒÎÛ„Ë");
-		tablServices->Columns->Add("œÓ‰‡Á‰ÂÎÂÌËÂ");
-		tablServices->Columns->Add("Õ‡Á‚‡ÌËÂ ÛÒÎÛ„Ë");
-		tablServices->Columns->Add("—ÓÍ ËÒÔÓÎÌÂÌËˇ");
+		tablServices->Columns->Add("√í√®√Ø √≥√±√´√≥√£√®");
+		tablServices->Columns->Add("√è√Æ√§√∞√†√ß√§√•√´√•√≠√®√•");
+		tablServices->Columns->Add("√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®");
+		tablServices->Columns->Add("√ë√∞√Æ√™ √®√±√Ø√Æ√´√≠√•√≠√®√ø");
 		for (int i = 0; i < dataServices.size(); i++) {
 			DataRow^ rowServices = tablServices->NewRow();
-			rowServices["“ËÔ ÛÒÎÛ„Ë"] = gcnew String(dataServices[i]->serviceType.c_str());
-			rowServices["œÓ‰‡Á‰ÂÎÂÌËÂ"] = gcnew String(dataServices[i]->division.c_str());
-			rowServices["Õ‡Á‚‡ÌËÂ ÛÒÎÛ„Ë"] = gcnew String(dataServices[i]->serviceName.c_str());
+			rowServices["√í√®√Ø √≥√±√´√≥√£√®"] = gcnew String(dataServices[i]->serviceType.c_str());
+			rowServices["√è√Æ√§√∞√†√ß√§√•√´√•√≠√®√•"] = gcnew String(dataServices[i]->division.c_str());
+			rowServices["√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®"] = gcnew String(dataServices[i]->serviceName.c_str());
 			string term = to_string(dataServices[i]->term);
-			rowServices["—ÓÍ ËÒÔÓÎÌÂÌËˇ"] = gcnew String(term.c_str());
+			rowServices["√ë√∞√Æ√™ √®√±√Ø√Æ√´√≠√•√≠√®√ø"] = gcnew String(term.c_str());
 			tablServices->Rows->Add(rowServices);
 		}
 		
@@ -1218,8 +1221,8 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 		treeNodeServices*& rbTreeTerm = DataStorage::rbTreeTerm;
 
 		ServiceEntity* serviceEntity = new ServiceEntity();
-		serviceEntity->division = "œÓ‰‡Á‰ÂÎÂÌËÂ";
-		serviceEntity->serviceName = "Õ‡Á‚‡ÌËÂ";
+		serviceEntity->division = "√è√Æ√§√∞√†√ß√§√•√´√•√≠√®√•";
+		serviceEntity->serviceName = "√ç√†√ß√¢√†√≠√®√•";
 		serviceEntity->term = 1;
 		serviceEntity->serviceType = "serviceType";
 
@@ -1259,70 +1262,92 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	int seriesPassport;
+	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
-		int seriesPassport = stoi(seriesPassportText);
-		int numberPassport = stoi(numberPassportText);
-		date date = inputDateData(dateString);
-		Passport passport = Passport();
-		passport.number = numberPassport;
-		int jopa = 4;
-		passport.series = seriesPassport;
-		RequestsEntity* entity = new RequestsEntity();
-		entity->date = date;
-		entity->passport = passport;
-		entity->serviceName = serviceName;
-		entity->serviceType = serviceType;
-		RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
-		requestsHashTable.print();
-		vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
-		this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
-		if (result_searchByTypeAndNameOfService[1] != -1) {
-			this->resultSearch->Text = gcnew String("Iaeaai");
+		try {
+			seriesPassport = stoi(seriesPassportText);
+			numberPassport = stoi(numberPassportText);
+			date date = inputDateData(dateString);
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			int jopa = 4;
+			passport.series = seriesPassport;
+			RequestsEntity* entity = new RequestsEntity();
+			entity->date = date;
+			entity->passport = passport;
+			entity->serviceName = serviceName;
+			entity->serviceType = serviceType;
+			RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+			requestsHashTable.print();
+			vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
+			this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
+			if (result_searchByTypeAndNameOfService[1] != -1) {
+				this->resultSearch->Text = gcnew String("√ç√†√©√§√•√≠");
+			}
+			else {
+				this->resultSearch->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
+			}
 		}
-		else {
-			this->resultSearch->Text = gcnew String("Ia iaeaai");
+		catch (exception& err) {
+			MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-};
 
+};
 private: System::Void passportSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
 	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
 	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
-	int seriesPassport = stoi(seriesPassportText);
-	int numberPassport = stoi(numberPassportText);
-	date date = inputDateData(dateString);
-	Passport passport = Passport();
-	passport.number = numberPassport;
-	passport.series = seriesPassport;
-	RequestsEntity* entity = new RequestsEntity();
-	entity->date = date;
-	entity->passport = passport;
-	entity->serviceName = serviceName;
-	entity->serviceType = serviceType;
-	treeNode* avlTreePassport = DataStorage::avlTreePassport;
-	int count = 0;
-	searchByPassportTreeNode(avlTreePassport, entity, count);
-	bool result_searchByPassportTreeNode = DataStorage::resultSerch;
-	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-	if (result_searchByPassportTreeNode) {
-		this->resultSearch->Text = gcnew String("Iaeaai");
+	int seriesPassport;
+	int numberPassport;
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
-	else  {
-		this->resultSearch->Text = gcnew String("Ia iaeaai");
+	else {
+		try {
+			seriesPassport = stoi(seriesPassportText);
+			numberPassport = stoi(numberPassportText);
+			date date = inputDateData(dateString);
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			passport.series = seriesPassport;
+			RequestsEntity* entity = new RequestsEntity();
+			entity->date = date;
+			entity->passport = passport;
+			entity->serviceName = serviceName;
+			entity->serviceType = serviceType;
+			treeNode* avlTreePassport = DataStorage::avlTreePassport;
+			int count = 0;
+			searchByPassportTreeNode(avlTreePassport, entity, count);
+			bool result_searchByPassportTreeNode = DataStorage::resultSerch;
+			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+			if (result_searchByPassportTreeNode) {
+				this->resultSearch->Text = gcnew String("√ç√†√©√§√•√≠");
+			}
+			else {
+				this->resultSearch->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
+			}
+			printTree(avlTreePassport, nullptr);
+			cout << endl;
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		
+		
 	}
-	printTree(avlTreePassport, nullptr);
-	cout << endl;
+	
 }
 private: System::Void save_btn(System::Object^ sender, System::EventArgs^ e) {
 	vector<RequestsEntity*> data = DataStorage::data;
-	writeData(data, "stdrequests.txt");
-	MessageBox::Show(this, "Aaiiua cayaie oniaoii nio?aiaiu", "Nio?aiaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	writeData(data, "stdrequests1.txt");
+	MessageBox::Show(this, "√Ñ√†√≠√≠√ª√• √ß√†√ø√¢√Æ√™ √≥√±√Ø√•√∏√≠√Æ √±√Æ√µ√∞√†√≠√•√≠√ª", "√ë√Æ√µ√∞√†√≠√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void remove_element(System::Object^ sender, System::EventArgs^ e) {
 	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
@@ -1330,51 +1355,81 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
-	int seriesPassport = stoi(seriesPassportText);
-	int numberPassport = stoi(numberPassportText);
-	date date = inputDateData(dateString);
-	Passport passport = Passport();
-	passport.number = numberPassport;
-	passport.series = seriesPassport;
-	RequestsEntity* entity = new RequestsEntity();
-	entity->date = date;
-	entity->passport = passport;
-	entity->serviceName = serviceName;
-	entity->serviceType = serviceType;
-	DataStorage dataStorage = DataStorage();
-	treeNode*& avlTreePassport = DataStorage::avlTreePassport;
-	treeNode*& avlTreeDate = DataStorage::avlTreeDate;
-	treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
-	treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
-	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
-	int count = 0;
-	searchByPassportTreeNode(avlTreePassport,entity,count);
-	bool result_searchByPassportTreeNode = DataStorage::resultSerch;
-	if (result_searchByPassportTreeNode) {
-		int index = DataStorage::indexSearch;
-		RequestsEntity* delElem = DataStorage::data[index];
-		RequestsEntity* lastElem = DataStorage::data.back();
-		listNodeElem* value = new listNodeElem();
-		string valueText = to_string(delElem->passport.series) + to_string(delElem->passport.number);
-		value->index = index;
-		value->value = valueText;
-		bool heightChanged = false;
-		requestsHashTable.remove(delElem);
-		updateByPassportTreeNode(avlTreePassport, lastElem, index);
-		updateServiceTypeTreeNode(avlTreeServiceType, lastElem, index);
-		updateServiceNameTreeNode(avlTreeServiceName, lastElem, index);
-		updateByDateTreeNode(avlTreeDate, lastElem, index);
-		delNode(avlTreePassport, value, heightChanged);
-
-		DataStorage::data[index] = lastElem;
-		DataStorage::data.pop_back();
-		MessageBox::Show(this, "Cayaea oniaoii oaaeaia", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::None);
-		vector<RequestsEntity*> dataTest = DataStorage::data;
-		int jopa = 3;
+	int seriesPassport;
+	int numberPassport;
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		try{
+			seriesPassport = stoi(seriesPassportText);
+			numberPassport = stoi(numberPassportText);
+			date date = inputDateData(dateString);
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			passport.series = seriesPassport;
+			RequestsEntity* entity = new RequestsEntity();
+			entity->date = date;
+			entity->passport = passport;
+			entity->serviceName = serviceName;
+			entity->serviceType = serviceType;
+			DataStorage dataStorage = DataStorage();
+			treeNode*& avlTreePassport = DataStorage::avlTreePassport;
+			treeNode*& avlTreeDate = DataStorage::avlTreeDate;
+			treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
+			treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
+			RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+			int count = 0;
+			searchByPassportTreeNode(avlTreePassport, entity, count);
+			bool result_searchByPassportTreeNode = DataStorage::resultSerch;
+			if (result_searchByPassportTreeNode) {
+				int index = DataStorage::indexSearch;
+				RequestsEntity* delElem = DataStorage::data[index];
+				RequestsEntity* lastElem = DataStorage::data.back();
+				listNodeElem* value = new listNodeElem();
+				string valueText = to_string(delElem->passport.series) + to_string(delElem->passport.number);
+				value->index = index;
+				value->value = valueText;
+				bool heightChanged = false;
+				requestsHashTable.remove(delElem);
+				updateByPassportTreeNode(avlTreePassport, lastElem, index);
+				updateServiceTypeTreeNode(avlTreeServiceType, lastElem, index);
+				updateServiceNameTreeNode(avlTreeServiceName, lastElem, index);
+				updateByDateTreeNode(avlTreeDate, lastElem, index);
+				delNode(avlTreePassport, value, heightChanged);
+				DataStorage::data[index] = lastElem;
+				DataStorage::data.pop_back();
+				MessageBox::Show(this, "√á√†√ø√¢√™√† √≥√±√Ø√•√∏√≠√Æ √≥√§√†√´√•√≠√†", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				DataTable^ tablTest = gcnew DataTable();
+				tablTest->Rows->Clear();
+				RequestsDataGrid->DataSource = tablTest;
+				tablTest->Columns->Add("√è√†√±√Ø√Æ√∞√≤");
+				tablTest->Columns->Add("√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®");
+				tablTest->Columns->Add("√í√®√Ø √≥√±√´√≥√£√®");
+				tablTest->Columns->Add("√Ñ√†√≤√†");
+				for (int i = 0; i < DataStorage::data.size(); i++) {
+					DataRow^ row = tablTest->NewRow();
+					string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
+					row["√è√†√±√Ø√Æ√∞√≤"] = gcnew String(passport.c_str());
+					row["√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+					row["√í√®√Ø √≥√±√´√≥√£√®"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+					string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
+					row["√Ñ√†√≤√†"] = gcnew String(date.c_str());
+					tablTest->Rows->Add(row);
+				}
+
+			}
+			else {
+				MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		
+		
 	}
+	
 	//dataStorage.removeElement(entity);
 }
 private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1383,30 +1438,44 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
-	int seriesPassport = stoi(seriesPassportText);
-	int numberPassport = stoi(numberPassportText);
-	date date = inputDateData(dateString);
-	Passport passport = Passport();
-	passport.number = numberPassport;
-	passport.series = seriesPassport;
-	RequestsEntity* entity = new RequestsEntity();
-	entity->date = date;
-	entity->passport = passport;
-	entity->serviceName = serviceName;
-	entity->serviceType = serviceType;
-	treeNode* avlTreeDate = DataStorage::avlTreeDate;
-	int count = 0;
-	searchByDateTreeNode(avlTreeDate, entity, count);
-	bool result_searchByDateTreeNode = DataStorage::resultSerch;
-	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-	if (result_searchByDateTreeNode) {
-		this->resultSearch->Text = gcnew String("Iaeaai");
+	int seriesPassport;
+	int numberPassport;
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
-		this->resultSearch->Text = gcnew String("Ia iaeaai");
+		try {
+			seriesPassport = stoi(seriesPassportText);
+			numberPassport = stoi(numberPassportText);
+			date date = inputDateData(dateString);
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			passport.series = seriesPassport;
+			RequestsEntity* entity = new RequestsEntity();
+			entity->date = date;
+			entity->passport = passport;
+			entity->serviceName = serviceName;
+			entity->serviceType = serviceType;
+			treeNode* avlTreeDate = DataStorage::avlTreeDate;
+			int count = 0;
+			searchByDateTreeNode(avlTreeDate, entity, count);
+			bool result_searchByDateTreeNode = DataStorage::resultSerch;
+			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+			if (result_searchByDateTreeNode) {
+				this->resultSearch->Text = gcnew String("√ç√†√©√§√•√≠");
+			}
+			else {
+				this->resultSearch->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
+			}
+			printTree(avlTreeDate, nullptr);
+			cout << endl;
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		
 	}
-	printTree(avlTreeDate, nullptr);
-	cout << endl;
+	
 
 }
 private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1415,30 +1484,45 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
-	int seriesPassport = stoi(seriesPassportText);
-	int numberPassport = stoi(numberPassportText);
-	date date = inputDateData(dateString);
-	Passport passport = Passport();
-	passport.number = numberPassport;
-	passport.series = seriesPassport;
-	RequestsEntity* entity = new RequestsEntity();
-	entity->date = date;
-	entity->passport = passport;
-	entity->serviceName = serviceName;
-	entity->serviceType = serviceType;
-	treeNode* avlTreeServiceType = DataStorage::avlTreeServiceType;
-	int count = 0;
-	searchByServiceTypeTreeNode(avlTreeServiceType, entity, count);
-	bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
-	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-	if (result_searchByServiceTypeTreeNode) {
-		this->resultSearch->Text = gcnew String("Iaeaai");
+	int seriesPassport;
+	int numberPassport;
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
-		this->resultSearch->Text = gcnew String("Ia iaeaai");
+		try {
+			seriesPassport = stoi(seriesPassportText);
+			numberPassport = stoi(numberPassportText);
+			date date = inputDateData(dateString);
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			passport.series = seriesPassport;
+			RequestsEntity* entity = new RequestsEntity();
+			entity->date = date;
+			entity->passport = passport;
+			entity->serviceName = serviceName;
+			entity->serviceType = serviceType;
+			treeNode* avlTreeServiceType = DataStorage::avlTreeServiceType;
+			int count = 0;
+			searchByServiceTypeTreeNode(avlTreeServiceType, entity, count);
+			bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
+			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+			if (result_searchByServiceTypeTreeNode) {
+				this->resultSearch->Text = gcnew String("√ç√†√©√§√•√≠");
+			}
+			else {
+				this->resultSearch->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
+			}
+			printTree(avlTreeServiceType, nullptr);
+			cout << endl;
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		
+		
 	}
-	printTree(avlTreeServiceType, nullptr);
-	cout << endl;
+	
 
 }
 private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1447,31 +1531,46 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
-	int seriesPassport = stoi(seriesPassportText);
-	int numberPassport = stoi(numberPassportText);
-	date date = inputDateData(dateString);
-	Passport passport = Passport();
-	passport.number = numberPassport;
-	passport.series = seriesPassport;
-	RequestsEntity* entity = new RequestsEntity();
-	entity->date = date;
-	entity->passport = passport;
-	entity->serviceName = serviceName;
-	entity->serviceType = serviceType;
-	treeNode* avlTreeServiceName = DataStorage::avlTreeServiceName;
-	bool heightChanged = false;
-	int count = 0;
-	searchByServiceNameTreeNode(avlTreeServiceName, entity, count);
-	bool result_searchByServiceNameTreeNode = DataStorage::resultSerch;
-	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-	if (result_searchByServiceNameTreeNode) {
-		this->resultSearch->Text = gcnew String("Iaeaai");
+	int seriesPassport;
+	int numberPassport;
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
-		this->resultSearch->Text = gcnew String("Ia iaeaai");
+		try {
+			seriesPassport = stoi(seriesPassportText);
+			numberPassport = stoi(numberPassportText);
+			date date = inputDateData(dateString);
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			passport.series = seriesPassport;
+			RequestsEntity* entity = new RequestsEntity();
+			entity->date = date;
+			entity->passport = passport;
+			entity->serviceName = serviceName;
+			entity->serviceType = serviceType;
+			treeNode* avlTreeServiceName = DataStorage::avlTreeServiceName;
+			bool heightChanged = false;
+			int count = 0;
+			searchByServiceNameTreeNode(avlTreeServiceName, entity, count);
+			bool result_searchByServiceNameTreeNode = DataStorage::resultSerch;
+			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+			if (result_searchByServiceNameTreeNode) {
+				this->resultSearch->Text = gcnew String("√ç√†√©√§√•√≠");
+			}
+			else {
+				this->resultSearch->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
+			}
+			printTree(avlTreeServiceName, nullptr);
+			cout << endl;
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		
+		
 	}
-	printTree(avlTreeServiceName, nullptr);
-	cout << endl;
+	
 }
 private: System::Void RequestsDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
@@ -1495,7 +1594,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "ÕÂÍÓÂÍÚÌ˚Â ‰‡ÌÌ˚Â, ÔÓ‚Â¸ÚÂ Ô‡‚ËÎ¸ÌÓÒÚ¸ ‚‚Â‰ÂÌÌ˚ı ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√•, √Ø√∞√Æ√¢√•√∞√º√≤√• √Ø√∞√†√¢√®√´√º√≠√Æ√±√≤√º √¢√¢√•√§√•√≠√≠√ª√µ √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1503,7 +1602,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "ÕÂ‚ÂÌ˚È ÚËÔ ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "√ç√•√¢√•√∞√≠√ª√© √≤√®√Ø √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		ServiceEntity* entity = new ServiceEntity();
@@ -1524,10 +1623,10 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Õ‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√†√©√§√•√≠");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("ÕÂ Ì‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1541,7 +1640,7 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "ÕÂÍÓÂÍÚÌ˚Â ‰‡ÌÌ˚Â, ÔÓ‚Â¸ÚÂ Ô‡‚ËÎ¸ÌÓÒÚ¸ ‚‚Â‰ÂÌÌ˚ı ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√•, √Ø√∞√Æ√¢√•√∞√º√≤√• √Ø√∞√†√¢√®√´√º√≠√Æ√±√≤√º √¢√¢√•√§√•√≠√≠√ª√µ √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1549,7 +1648,7 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "ÕÂ‚ÂÌ˚È ÚËÔ ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "√ç√•√¢√•√∞√≠√ª√© √≤√®√Ø √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		serviceTerm = stoi(serviceTermStr);
@@ -1572,10 +1671,10 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Õ‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√†√©√§√•√≠");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("ÕÂ Ì‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1589,7 +1688,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "ÕÂÍÓÂÍÚÌ˚Â ‰‡ÌÌ˚Â, ÔÓ‚Â¸ÚÂ Ô‡‚ËÎ¸ÌÓÒÚ¸ ‚‚Â‰ÂÌÌ˚ı ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√•, √Ø√∞√Æ√¢√•√∞√º√≤√• √Ø√∞√†√¢√®√´√º√≠√Æ√±√≤√º √¢√¢√•√§√•√≠√≠√ª√µ √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1597,7 +1696,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "ÕÂ‚ÂÌ˚È ÚËÔ ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "√ç√•√¢√•√∞√≠√ª√© √≤√®√Ø √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		 serviceTerm = stoi(serviceTermStr);
@@ -1620,10 +1719,10 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Õ‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√†√©√§√•√≠");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("ÕÂ Ì‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1637,7 +1736,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "ÕÂÍÓÂÍÚÌ˚Â ‰‡ÌÌ˚Â, ÔÓ‚Â¸ÚÂ Ô‡‚ËÎ¸ÌÓÒÚ¸ ‚‚Â‰ÂÌÌ˚ı ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√•, √Ø√∞√Æ√¢√•√∞√º√≤√• √Ø√∞√†√¢√®√´√º√≠√Æ√±√≤√º √¢√¢√•√§√•√≠√≠√ª√µ √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1645,7 +1744,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "ÕÂ‚ÂÌ˚È ÚËÔ ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "√ç√•√¢√•√∞√≠√ª√© √≤√®√Ø √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		Passport passport = Passport();
 		ServiceEntity* entity = new ServiceEntity();
@@ -1666,10 +1765,10 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Õ‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√†√©√§√•√≠");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("ÕÂ Ì‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1684,7 +1783,7 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "ÕÂÍÓÂÍÚÌ˚Â ‰‡ÌÌ˚Â, ÔÓ‚Â¸ÚÂ Ô‡‚ËÎ¸ÌÓÒÚ¸ ‚‚Â‰ÂÌÌ˚ı ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√•, √Ø√∞√Æ√¢√•√∞√º√≤√• √Ø√∞√†√¢√®√´√º√≠√Æ√±√≤√º √¢√¢√•√§√•√≠√≠√ª√µ √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1692,7 +1791,7 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "ÕÂ‚ÂÌ˚È ÚËÔ ‰‡ÌÌ˚ı", "Œ¯Ë·Í‡", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "√ç√•√¢√•√∞√≠√ª√© √≤√®√Ø √§√†√≠√≠√ª√µ", "√é√∏√®√°√™√†", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		ServiceEntity* entity = new ServiceEntity();
 		entity->division = serviceDivision;
@@ -1706,12 +1805,104 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
 		vector<int> res = servicesHashTable.findItem(entity);
 		this->countComparationsServices->Text = gcnew String(to_string(res[0]).c_str());
 		if (isEqualServices(data[res[2]], entity)) {
-			this->resultSearchServices2->Text = gcnew String("Õ‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√†√©√§√•√≠");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("ÕÂ Ì‡È‰ÂÌ");
+			this->resultSearchServices2->Text = gcnew String("√ç√• √≠√†√©√§√•√≠");
 		}
 		DataStorage::resultSerch = false;
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
+	treeNode*& avlTreePassport = DataStorage::avlTreePassport;
+	treeNode*& avlTreeDate = DataStorage::avlTreeDate;
+	treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
+	treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
+	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+	ofstream fout("debugRequests.txt");
+	requestsHashTable.debugPrint(fout);
+	debugPrintAvlTree(avlTreePassport, nullptr, fout);
+	debugPrintAvlTree(avlTreeDate, nullptr, fout);
+	debugPrintAvlTree(avlTreeServiceType, nullptr, fout);
+	debugPrintAvlTree(avlTreeServiceName, nullptr, fout);
+	fout.close();
+	MessageBox::Show(this, "√ë√≤√∞√≥√™√≤√≥√∞√ª √§√†√≠√≠√ª√µ √±√Æ√µ√∞√†√≠√•√≠√ª √¢ √¥√†√©√´ debugRequests.txt", "√é√≤√´√†√§√™√†", MessageBoxButtons::OK, MessageBoxIcon::Information);
+}
+private: System::Void addRequestsBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	// √Ñ√Æ√°√†√¢√®√≤√º √¢√†√´√®√§√†√∂√®√æ √Ø√Æ √§√•√∞√•√¢√≥ √§√•√≠√®√±√† √® √µ√•√∏ √≤√†√°√´√®√∂√• √†√≠√≤√†√®√™√±√†
+	vector<RequestsEntity*> data = DataStorage::data;
+	treeNode*& avlTreePassport = DataStorage::avlTreePassport;
+	treeNode*& avlTreeDate = DataStorage::avlTreeDate;
+	treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
+	treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
+	bool heightChanged = false;
+	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
+	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
+	string dateString = marshal_as<std::string>(this->tBDate->Text);
+	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
+	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
+	int seriesPassport;
+	int numberPassport;
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+		MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		try {
+			seriesPassport = stoi(seriesPassportText);
+			numberPassport = stoi(numberPassportText);
+			date date = inputDateData(dateString);
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			passport.series = seriesPassport;
+			RequestsEntity* entity = new RequestsEntity();
+			entity->date = date;
+			entity->passport = passport;
+			entity->serviceName = serviceName;
+			entity->serviceType = serviceType;
+			bool heightChanged = false;
+			DataStorage::data.push_back(entity);
+			requestsHashTable.insert(entity);
+			listNodeElem* valuePasport = new listNodeElem();
+			valuePasport->index = DataStorage::data.size() - 1 ;
+			valuePasport->value = to_string(entity->passport.series) + to_string(entity->passport.number);
+			addNode(avlTreePassport, valuePasport, heightChanged);
+			listNodeElem* valueDate = new listNodeElem();
+			valueDate->index = DataStorage::data.size() - 1;
+			valueDate->value = entity->date.day + "." + entity->date.month + "." + entity->date.year;
+			addNode(avlTreeDate, valueDate, heightChanged);
+			listNodeElem* valueServiceType = new listNodeElem();
+			valueServiceType->index = DataStorage::data.size() - 1;
+			valueServiceType->value = entity->serviceType;
+			addNode(avlTreeServiceType, valueServiceType, heightChanged);
+			listNodeElem* valueServiceName = new listNodeElem();
+			valueServiceName->index = DataStorage::data.size() - 1;
+			valueServiceName->value = entity->serviceName;
+			addNode(avlTreeServiceName, valueServiceName, heightChanged);
+			MessageBox::Show(this, "√á√†√ø√¢√™√† √≥√±√Ø√•√∏√≠√Æ √§√Æ√°√†√¢√´√•√≠√†", "√Ñ√Æ√°√†√¢√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			DataTable^ tablTest2 = gcnew DataTable();
+			tablTest2->Rows->Clear();
+			RequestsDataGrid->DataSource = tablTest2;
+			tablTest2->Columns->Add("√è√†√±√Ø√Æ√∞√≤");
+			tablTest2->Columns->Add("√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®");
+			tablTest2->Columns->Add("√í√®√Ø √≥√±√´√≥√£√®");
+			tablTest2->Columns->Add("√Ñ√†√≤√†");
+			for (int i = 0; i < DataStorage::data.size(); i++) {
+				DataRow^ row = tablTest2->NewRow();
+				string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
+				row["√è√†√±√Ø√Æ√∞√≤"] = gcnew String(passport.c_str());
+				row["√ç√†√ß√¢√†√≠√®√• √≥√±√´√≥√£√®"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+				row["√í√®√Ø √≥√±√´√≥√£√®"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+				string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
+				row["√Ñ√†√≤√†"] = gcnew String(date.c_str());
+				tablTest2->Rows->Add(row);
+			}
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "√ç√•√™√Æ√∞√∞√•√™√≤√≠√ª√• √§√†√≠√≠√ª√• , √Ø√∞√Æ√¢√•√∞√º√≤√• √¢√¢√•√§√•√≠√≠√≥√æ √®√≠√¥√Æ√∞√¨√†√∂√®√æ √Æ √ß√†√ø√¢√™√•", "√ì√§√†√´√•√≠√®√•", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
 	}
 }
 };
