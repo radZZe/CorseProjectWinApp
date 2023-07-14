@@ -23,9 +23,9 @@ treeNodeServices* initTree(treeNodeServices* leaf);
 
 treeNodeServices* findMaxLeft(treeNodeServices* rootLeft, treeNodeServices* leaf);
 
-void printTree(treeNodeServices*& root, int h, treeNodeServices*& leaf);
+void printTreeA(treeNodeServices*& root, int h, treeNodeServices*& leaf);
 
-bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf);
+bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int& count);
 
 void leftRotate(treeNodeServices*& root, treeNodeServices* x, treeNodeServices*& leaf);
 void rightRotate(treeNodeServices*& root, treeNodeServices* x, treeNodeServices*& leaf);

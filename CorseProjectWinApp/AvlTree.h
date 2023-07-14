@@ -26,3 +26,7 @@ int searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue, int&
 int searchByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count);
 int searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count);
 int searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count);
+int updateByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& index);
+int updateServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& index);
+int updateServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& index);
+int updateByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& index);

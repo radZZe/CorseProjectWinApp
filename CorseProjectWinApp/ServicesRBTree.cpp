@@ -22,7 +22,6 @@ bool isLastElement(listServices*& head)
 {
     if (head == nullptr)
     {
-        cout << "The list is empty";
         return false;
     }
     else
@@ -138,6 +137,30 @@ listServices* deleteList(struct listServices*& head)
     return (head);
 }
 
+bool searchServiceInList(listServices* head,  treeNodeElemServices* element) {
+    bool flag = false;
+    listServices* runner;
+    runner = head;
+    if (head == nullptr) {
+        return false;
+    }
+    else {
+        while (runner->next != head && flag == false) {
+            if (runner->data.value == element->value) {
+                flag = true;
+                return flag;
+            }
+            else {
+                runner = runner->next;
+            }
+        }
+        if (head->previous->data.value == element->value) {
+            flag = true;
+        }
+    }
+    return flag;
+}
+
 listServices* deleteRepeatedElement(listServices*& head)
 {
     if (head->next == head)
@@ -161,6 +184,7 @@ treeNodeServices* initTree(treeNodeServices* leaf)
 {
     treeNodeServices* root;
     root = leaf;
+    DataStorage::rbTreeDivision = root;
     return root;
 }
 
@@ -173,7 +197,7 @@ treeNodeServices* findMaxLeft(treeNodeServices* rootLeft, treeNodeServices* leaf
     return rootLeft;
 }
 
-void printTree(treeNodeServices*& root, int h, treeNodeServices*& leaf)
+void printTreeA(treeNodeServices*& root, int h, treeNodeServices*& leaf)
 {
     if (root == nullptr)
     {
@@ -183,22 +207,23 @@ void printTree(treeNodeServices*& root, int h, treeNodeServices*& leaf)
     {
         if (root != leaf && root != nullptr)
         {
-            printTree(root->right, h + 4, leaf);
+            printTreeA(root->right, h + 4, leaf);
             for (int i = 1; i <= h; i++)
             {
                 cout << "  ";
             }
             cout << root->key->data.value << " " << root->key->data.index << " " << root->color << '\n';
-            printTree(root->left, h + 4, leaf);
+            printTreeA(root->left, h + 4, leaf);
         }
     }
 }
 
-bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf)
+bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int &count)
 {
     treeNodeServices* temp = root;
     if (root == nullptr)
     {
+        DataStorage::resultSerch = false;
         cout << "The tree does not exist";
         return false;
     }
@@ -206,14 +231,12 @@ bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServi
     {
         while (temp != leaf)
         {
+            count++;
+            DataStorage::countComparisons = count;
             if (compareData(temp->key->data, element) == 0)
             {
-                if (temp->key->data.index == element.index) {
-                    return true;
-                }
-                else {
-
-                }
+                DataStorage::resultSerch = true;
+                return true;
 
             }
             else if (compareData(temp->key->data, element) == -1)
@@ -225,6 +248,7 @@ bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServi
                 temp = temp->left;
             }
         }
+        DataStorage::resultSerch = false;
         return false;
     }
 }
@@ -339,12 +363,12 @@ treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, 
 
     if (root == nullptr)
     {
-        cout << "The tree does not exist";
         return root;
     }
     else
     {
-        if (search(root, element, leaf))
+        int count = DataStorage::countComparisons;
+        if (search(root, element, leaf, count))
         {
             treeNodeServices* temp = root;
             while (temp != leaf)
@@ -509,12 +533,13 @@ void deleteElement(treeNodeServices*& root, treeNodeElemServices value, treeNode
 {
     treeNodeServices* temp = root;
     treeNodeServices* z = leaf;
+    int count = DataStorage::countComparisons;
 
     if (root == nullptr)
     {
         cout << "The tree does not exist";
     }
-    else if (search(root, value, leaf) == false)
+    else if (search(root, value, leaf, count) == false)
     {
         cout << "The node with given data does not exist";
     }
