@@ -6,7 +6,11 @@ vector<ServiceEntity*> DataStorage::dataServices = readServicesFromFile("stdserv
 RequestsHashTable DataStorage::requestsHashTable = RequestsHashTable(data.size());
 int DataStorage::countComparisons = 0;
 treeNode* DataStorage::avlTree = nullptr;
-treeNodeServices* DataStorage::rbTreeA = nullptr;
+treeNodeServices* DataStorage::rbTreeDivision = nullptr;
+treeNodeServices* DataStorage::rbTreeName = nullptr;
+treeNodeServices* DataStorage::rbTreeType = nullptr;
+treeNodeServices* DataStorage::rbTreeTerm = nullptr;
+treeNodeServices* DataStorage::rbTreeLeaf = nullptr;
 bool DataStorage::resultSerch = false;
 void DataStorage::removeElement(RequestsEntity* value) {
 	auto it = find(this->data.begin(), this->data.end(), value);

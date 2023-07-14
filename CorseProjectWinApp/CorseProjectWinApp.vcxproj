@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ServicesHashTable.cpp" />
     <ClCompile Include="ServicesRBTree.cpp" />
     <ClCompile Include="AvlTree.cpp" />
     <ClCompile Include="ClientsHashTable.cpp" />
