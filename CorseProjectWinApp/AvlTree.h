@@ -13,6 +13,7 @@ listNode* deleteList(struct listNode*& head);
 treeNode* initTree();
 void addNode(treeNode*& pointer, listNodeElem* key, bool& heightChanged);
 void _showTrunks(Trunk* p);
+void _showTrunksDebug(Trunk* p, ofstream& fout);
 void printTree(treeNode* root, Trunk* prev);
 void _deleteTree(treeNode*& pointer);
 treeNode* deleteTree(treeNode*& root);
@@ -30,3 +31,4 @@ int updateByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue, int&
 int updateServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& index);
 int updateServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& index);
 int updateByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& index);
+void debugPrintAvlTree(treeNode* root, Trunk* prev, ofstream& fout);
