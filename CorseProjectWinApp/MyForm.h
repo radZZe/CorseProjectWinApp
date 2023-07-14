@@ -1104,7 +1104,46 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 		}
 	private: System::Void FormLoad(System::Object^ sender, System::EventArgs^ e) {
 		vector<RequestsEntity*> data = DataStorage::data;
+		treeNode*& avlTreePassport = DataStorage::avlTreePassport;
+		treeNode*& avlTreeDate = DataStorage::avlTreeDate;
+		treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
+		treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
+		bool heightChanged = false;
 		RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+		for (int i = 0; i < data.size(); i++) {
+			requestsHashTable.insert(data[i]);
+		}
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = to_string(data[i]->passport.series) + to_string(data[i]->passport.number);
+			listNodeElem* value = new listNodeElem();
+			value->index = i;
+			value->value = valueText;
+			addNode(avlTreePassport, value, heightChanged);
+
+		}
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = data[i]->date.day + "." + data[i]->date.month + "." + data[i]->date.year;
+			listNodeElem* value = new listNodeElem();
+			value->index = i;
+			value->value = valueText;
+			addNode(avlTreeDate, value, heightChanged);
+
+		}
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = data[i]->serviceType;
+			listNodeElem* value = new listNodeElem();
+			value->index = i;
+			value->value = valueText;
+			addNode(avlTreeServiceType, value, heightChanged);
+		}
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = data[i]->serviceName;
+			listNodeElem* value = new listNodeElem();
+			value->index = i;
+			value->value = valueText;
+			addNode(avlTreeServiceName, value, heightChanged);
+
+		}
 		DataTable^ tabl = gcnew DataTable();
 		RequestsDataGrid->DataSource = tabl;
 		tabl->Columns->Add("Паспорт");
@@ -1120,11 +1159,6 @@ private: System::Windows::Forms::Label^ resultSearchServices2;
 			string date = data[i]->date.day+"." + data[i]->date.month + "." + data[i]->date.year;
 			row["Дата"] = gcnew String(date.c_str());
 			tabl->Rows->Add(row);
-		}
-
-		for (int i = 0; i < data.size(); i++) {
-
-			requestsHashTable.insert(data[i]);
 		}
 
 		vector<ServiceEntity*> dataServices = DataStorage::dataServices;
@@ -1197,19 +1231,9 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 	entity->passport = passport;
 	entity->serviceName = serviceName;
 	entity->serviceType = serviceType;
-	treeNode* avlTree = DataStorage::avlTree;
-	vector<RequestsEntity*> data = DataStorage::data;
-	bool heightChanged = false;
-	for (int i = 0; i < data.size(); i++) {
-		string valueText = to_string(data[i]->passport.series) + to_string(data[i]->passport.number);
-		listNodeElem* value = new listNodeElem();
-		value->index = i;
-		value->value = valueText;
-		     addNode(avlTree, value, heightChanged);
-
-	}
+	treeNode* avlTreePassport = DataStorage::avlTreePassport;
 	int count = 0;
-	searchByPassportTreeNode(avlTree, entity, count);
+	searchByPassportTreeNode(avlTreePassport, entity, count);
 	bool result_searchByPassportTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByPassportTreeNode) {
@@ -1218,7 +1242,7 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 	else  {
 		this->resultSearch->Text = gcnew String("Не найден");
 	}
-	printTree(avlTree, nullptr);
+	printTree(avlTreePassport, nullptr);
 	cout << endl;
 }
 private: System::Void save_btn(System::Object^ sender, System::EventArgs^ e) {
@@ -1244,7 +1268,40 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 	entity->serviceName = serviceName;
 	entity->serviceType = serviceType;
 	DataStorage dataStorage = DataStorage();
-	dataStorage.removeElement(entity);
+	treeNode*& avlTreePassport = DataStorage::avlTreePassport;
+	treeNode*& avlTreeDate = DataStorage::avlTreeDate;
+	treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
+	treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
+	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+	int count = 0;
+	searchByPassportTreeNode(avlTreePassport,entity,count);
+	bool result_searchByPassportTreeNode = DataStorage::resultSerch;
+	if (result_searchByPassportTreeNode) {
+		int index = DataStorage::indexSearch;
+		RequestsEntity* delElem = DataStorage::data[index];
+		RequestsEntity* lastElem = DataStorage::data.back();
+		listNodeElem* value = new listNodeElem();
+		string valueText = to_string(delElem->passport.series) + to_string(delElem->passport.number);
+		value->index = index;
+		value->value = valueText;
+		bool heightChanged = false;
+		requestsHashTable.remove(delElem);
+		updateByPassportTreeNode(avlTreePassport, lastElem, index);
+		updateServiceTypeTreeNode(avlTreeServiceType, lastElem, index);
+		updateServiceNameTreeNode(avlTreeServiceName, lastElem, index);
+		updateByDateTreeNode(avlTreeDate, lastElem, index);
+		delNode(avlTreePassport, value, heightChanged);
+
+		DataStorage::data[index] = lastElem;
+		DataStorage::data.pop_back();
+		MessageBox::Show(this, "Заявка успешно удалена", "Удаление", MessageBoxButtons::OK, MessageBoxIcon::None);
+		vector<RequestsEntity*> dataTest = DataStorage::data;
+		int jopa = 3;
+	}
+	else {
+		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	//dataStorage.removeElement(entity);
 }
 private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventArgs^ e) {
 	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
@@ -1263,19 +1320,9 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 	entity->passport = passport;
 	entity->serviceName = serviceName;
 	entity->serviceType = serviceType;
-	treeNode* avlTree = DataStorage::avlTree;
-	vector<RequestsEntity*> data = DataStorage::data;
-	bool heightChanged = false;
-	for (int i = 0; i < data.size(); i++) {
-		string valueText = data[i]->date.day + "." + data[i]->date.month + "." + data[i]->date.year;
-		listNodeElem* value = new listNodeElem();
-		value->index = i;
-		value->value = valueText;
-		addNode(avlTree, value, heightChanged);
-
-	}
+	treeNode* avlTreeDate = DataStorage::avlTreeDate;
 	int count = 0;
-	searchByDateTreeNode(avlTree, entity, count);
+	searchByDateTreeNode(avlTreeDate, entity, count);
 	bool result_searchByDateTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByDateTreeNode) {
@@ -1284,7 +1331,7 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 	else {
 		this->resultSearch->Text = gcnew String("Не найден");
 	}
-	printTree(avlTree, nullptr);
+	printTree(avlTreeDate, nullptr);
 	cout << endl;
 
 }
@@ -1305,19 +1352,9 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 	entity->passport = passport;
 	entity->serviceName = serviceName;
 	entity->serviceType = serviceType;
-	treeNode* avlTree = DataStorage::avlTree;
-	vector<RequestsEntity*> data = DataStorage::data;
-	bool heightChanged = false;
-	for (int i = 0; i < data.size(); i++) {
-		string valueText = data[i]->serviceType;
-		listNodeElem* value = new listNodeElem();
-		value->index = i;
-		value->value = valueText;
-		addNode(avlTree, value, heightChanged);
-
-	}
+	treeNode* avlTreeServiceType = DataStorage::avlTreeServiceType;
 	int count = 0;
-	searchByServiceTypeTreeNode(avlTree, entity, count);
+	searchByServiceTypeTreeNode(avlTreeServiceType, entity, count);
 	bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByServiceTypeTreeNode) {
@@ -1326,7 +1363,7 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 	else {
 		this->resultSearch->Text = gcnew String("Не найден");
 	}
-	printTree(avlTree, nullptr);
+	printTree(avlTreeServiceType, nullptr);
 	cout << endl;
 
 }
@@ -1347,19 +1384,10 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	entity->passport = passport;
 	entity->serviceName = serviceName;
 	entity->serviceType = serviceType;
-	treeNode* avlTree = DataStorage::avlTree;
-	vector<RequestsEntity*> data = DataStorage::data;
+	treeNode* avlTreeServiceName = DataStorage::avlTreeServiceName;
 	bool heightChanged = false;
-	for (int i = 0; i < data.size(); i++) {
-		string valueText = data[i]->serviceName;
-		listNodeElem* value = new listNodeElem();
-		value->index = i;
-		value->value = valueText;
-		addNode(avlTree, value, heightChanged);
-
-	}
 	int count = 0;
-	searchByServiceNameTreeNode(avlTree, entity, count);
+	searchByServiceNameTreeNode(avlTreeServiceName, entity, count);
 	bool result_searchByServiceNameTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByServiceNameTreeNode) {
@@ -1368,7 +1396,7 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	else {
 		this->resultSearch->Text = gcnew String("Не найден");
 	}
-	printTree(avlTree, nullptr);
+	printTree(avlTreeServiceName, nullptr);
 	cout << endl;
 }
 private: System::Void RequestsDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
