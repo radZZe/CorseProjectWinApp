@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int comparator(string first, string second);
+int comparator(Key first, Key second);
 List_node* list_init();
 bool in(List_node* root, Key value);
 List_node* list_insert(List_node*& root, Key value);

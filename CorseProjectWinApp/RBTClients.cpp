@@ -3,8 +3,6 @@
 #include <algorithm>
 #include <Windows.h>
 #include "RBT.h"
-#include "DataClientsStorage.h"
-
 
 using namespace std;
 
@@ -22,49 +20,33 @@ struct List_node {
 	int cnt;
 }*/;
 
-//int comparator(Key first, Key second) {
-//	if (first.first > second.first) {
-//		return 1;
-//	}
-//	else if (first.first < second.first) {
-//		return -1;
-//	}
-//	else {
-//		if (first.second > second.second) {
-//			return 1;
-//		}
-//		else if (first.second < second.second) {
-//			return -1;
-//		}
-//		else {
-//			if (first.third > second.third) {
-//				return 1;
-//			}
-//			else if (first.third < second.third) {
-//				return -1;
-//			}
-//			else {
-//				return 0;
-//			}
-//		}
-//	}
-//}
-
-int comparator(string first, string second)
-{
-	if (first > second)
-	{
+int comparator(Key first, Key second) {
+	if (first.first > second.first) {
 		return 1;
 	}
-	else if (first < second)
-	{
+	else if (first.first < second.first) {
 		return -1;
 	}
 	else {
-		return 0;
+		if (first.second > second.second) {
+			return 1;
+		}
+		else if (first.second < second.second) {
+			return -1;
+		}
+		else {
+			if (first.third > second.third) {
+				return 1;
+			}
+			else if (first.third < second.third) {
+				return -1;
+			}
+			else {
+				return 0;
+			}
+		}
 	}
 }
-
 
 List_node* list_init()
 {
@@ -72,7 +54,7 @@ List_node* list_init()
 	return root;
 }
 
-bool in(List_node* root, string value)
+bool in(List_node* root, Key value)
 {
 	if (root == nullptr)
 	{
@@ -81,17 +63,17 @@ bool in(List_node* root, string value)
 	List_node* temp = root;
 	while (temp->next != root)
 	{
-		if (comparator(temp->key, value) == 0) { return true; }
+		if (comparator(temp->keys, value) == 0) { return true; }
 		temp = temp->next;
 	}
-	if (comparator(temp->key, value) == 0) { return true; }
+	if (comparator(temp->keys, value) == 0) { return true; }
 	return false;
 }
 
-List_node* list_insert(List_node*& root, string value)
+List_node* list_insert(List_node*& root, Key value)
 {
 	List_node* element = new(List_node);
-	element->key = value;
+	element->keys = value;
 	element->cnt = 1;
 	element->next = element;
 
@@ -100,10 +82,10 @@ List_node* list_insert(List_node*& root, string value)
 	}
 	else {
 		List_node* temp = root;
-		while ((temp->next != root) && (comparator(temp->key, value) != 0)) {
+		while ((temp->next != root) && (comparator(temp->keys, value) != 0)) {
 			temp = temp->next;
 		}
-		if (comparator(temp->key, value) == 0) {
+		if (comparator(temp->keys, value) == 0) {
 			temp->cnt++;
 		}
 		else {
@@ -114,22 +96,22 @@ List_node* list_insert(List_node*& root, string value)
 	return root;
 }
 
-List_node* list_erase(List_node*& root, string value)
+List_node* list_erase(List_node*& root, Key value)
 {
 	if (root != nullptr) {
-		if ((root->cnt == 1) && (comparator(root->key, value) == 0))
+		if ((root->cnt == 1) && (comparator(root->keys, value) == 0))
 		{
 			root->cnt--;
 			delete root;
 			root = nullptr;
 			return root;
 		}
-		if ((root->cnt >= 2) && (comparator(root->key, value) == 0))
+		if ((root->cnt >= 2) && (comparator(root->keys, value) == 0))
 		{
 			root->cnt--;
 			return root;
 		}
-		if ((root->next != root) && (comparator(root->key, value) == 0) && (root->cnt == 1))
+		if ((root->next != root) && (comparator(root->keys, value) == 0) && (root->cnt == 1))
 		{
 			List_node* temp = root;
 			while (temp->next != root) { temp = temp->next; }
@@ -142,7 +124,7 @@ List_node* list_erase(List_node*& root, string value)
 		}
 		List_node* temp = root;
 		while (temp->next != root) {
-			if (comparator(temp->next->key, value) == 0) {
+			if (comparator(temp->next->keys, value) == 0) {
 				if (temp->next->cnt >= 2) {
 					temp->next->cnt--;
 					return root;
@@ -160,7 +142,7 @@ List_node* list_erase(List_node*& root, string value)
 	}
 }
 
-int counter(List_node* root, string value)
+int counter(List_node* root, Key value)
 {
 	if (root == nullptr) {
 		return 0;
@@ -168,12 +150,12 @@ int counter(List_node* root, string value)
 	List_node* temp = root;
 	while (temp->next != root)
 	{
-		if (comparator(temp->key, value) == 0) {
+		if (comparator(temp->keys, value) == 0) {
 			return temp->cnt;
 		}
 		temp = temp->next;
 	}
-	if (comparator(temp->key, value) == 0) {
+	if (comparator(temp->keys, value) == 0) {
 		return temp->cnt;
 	}
 	return 0;
@@ -188,10 +170,10 @@ void print_list(List_node* root)
 	else {
 		List_node* temp = root;
 		while (temp->next != root) {
-			cout << temp->key << " (" << temp->cnt << ") " << "->";
+			cout << temp->keys.first << '.' << temp->keys.second << '.' << temp->keys.third << " (" << temp->cnt << ") " << "->";
 			temp = temp->next;
 		}
-		cout << temp->key <<  " (" << temp->cnt << ") ";
+		cout << temp->keys.first << '.' << temp->keys.second << '.' << temp->keys.third << " (" << temp->cnt << ") ";
 	}
 }
 
@@ -242,11 +224,11 @@ Node* null_init() {
 	return nullnode;
 }
 
-bool pre_search(Node* root, Node* nullnode, string value) {
+bool pre_search(Node* root, Node* nullnode, Key value) {
 	Node* temp = root;
 	while (temp != nullnode) {
-		if (comparator(temp->data->key, value) == 0) { return true; }
-		if (comparator(value, temp->data->key) == 1) { temp = temp->right; }
+		if (comparator(temp->data->keys, value) == 0) { return true; }
+		if (comparator(value, temp->data->keys) == 1) { temp = temp->right; }
 		else { temp = temp->left; }
 	}
 	return false;
@@ -339,20 +321,20 @@ void insert_balance(Node*& element, Node*& root, Node* nullnode) {
 }
 
 Node* insert(Node*& root, Node* nullnode, string input) {
-	//Key keychik = parse_key(input);
-	if (!pre_search(root, nullnode, input)) {
+	Key key = parse_key(input);
+	if (!pre_search(root, nullnode, key)) {
 		Node* element = new Node;
 		element->parent = nullptr;
 		element->left = nullnode;
 		element->right = nullnode;
 		element->color = 0;// red
 		element->data = list_init();
-		list_insert(element->data, input);
+		list_insert(element->data, key);
 		Node* parent_buffer = nullptr;
 		Node* runner = root;
 		while (runner != nullnode) {
 			parent_buffer = runner;
-			if (comparator(element->data->key, runner->data->key) == -1) {
+			if (comparator(element->data->keys, runner->data->keys) == -1) {
 				runner = runner->left;
 			}
 			else { runner = runner->right; }
@@ -361,7 +343,7 @@ Node* insert(Node*& root, Node* nullnode, string input) {
 		if (parent_buffer == nullptr) {
 			root = element;
 		}
-		else if (comparator(element->data->key, parent_buffer->data->key) == -1) {
+		else if (comparator(element->data->keys, parent_buffer->data->keys) == -1) {
 			parent_buffer->left = element;
 		}
 		else { parent_buffer->right = element; }
@@ -377,8 +359,8 @@ Node* insert(Node*& root, Node* nullnode, string input) {
 	else {
 		Node* temp = root;
 		while (temp != nullnode) {
-			if (comparator(temp->data->key, input) == 0) { list_insert(temp->data, input); break; }
-			if (comparator(input, temp->data->key) == 1) { temp = temp->right; }
+			if (comparator(temp->data->keys, key) == 0) { list_insert(temp->data, key); break; }
+			if (comparator(key, temp->data->keys) == 1) { temp = temp->right; }
 			else { temp = temp->left; }
 		}
 	}
@@ -464,7 +446,7 @@ Node* right_min(Node* element, Node* nullnode) {
 	return element;
 }
 
-Node* memory_erase(Node*& root, Node* nullnode, string input) {
+Node* memory_erase(Node*& root, Node* nullnode, Key key) {
 	//Key key = parse_key(input);
 	Node* temp = root;
 	//Node* z = nullnode;
@@ -474,9 +456,9 @@ Node* memory_erase(Node*& root, Node* nullnode, string input) {
 		return root;
 	}
 	while (temp->data->cnt > 1) {
-		list_erase(temp->data, input);
+		list_erase(temp->data, key);
 	}
-	list_erase(temp->data, input);
+	list_erase(temp->data, key);
 	temp->left = nullptr;
 	temp->right = nullptr;
 	temp->parent = nullptr;
@@ -489,14 +471,14 @@ Node* memory_erase(Node*& root, Node* nullnode, string input) {
 
 Node* erase(Node*& root, Node* nullnode, string input) {
 	if (root == nullptr) { cout << "Element is not exist" << '\n'; return nullptr; }
-	//Key key = parse_key(input);
+	Key key = parse_key(input);
 	Node* temp = root;
 	Node* z = nullnode;
 	Node* element;
 	Node* y;
 	while (temp != nullnode) {
-		if (comparator(temp->data->key, input) == 0) { z = temp; }
-		if ((comparator(temp->data->key, input) == 0) || (comparator(temp->data->key, input) == -1)) { temp = temp->right; }
+		if (comparator(temp->data->keys, key) == 0) { z = temp; }
+		if ((comparator(temp->data->keys, key) == 0) || (comparator(temp->data->keys, key) == -1)) { temp = temp->right; }
 		else { temp = temp->left; }
 	}
 
@@ -505,7 +487,7 @@ Node* erase(Node*& root, Node* nullnode, string input) {
 		return root;
 	}
 	if (z->data->cnt > 1) {
-		list_erase(z->data, input);
+		list_erase(z->data, key);
 	}
 	else {
 		y = z;
@@ -536,7 +518,7 @@ Node* erase(Node*& root, Node* nullnode, string input) {
 			y->left->parent = y;
 			y->color = z->color;
 		}
-		list_erase(z->data, input);
+		list_erase(z->data, key);
 		delete z;
 		if (y_original_color == 1) {
 			erase_balance(root, nullnode, element);
@@ -568,7 +550,7 @@ void pre_memory_pull_up(Node*& root, Node* nullnode) {
 	if (root->right != nullnode) {
 		pre_memory_pull_up(root->right, nullnode);
 	}
-	memory_erase(root, nullnode, root->data->key);
+	memory_erase(root, nullnode, root->data->keys);
 
 }
 void memory_pull_up(Node*& root, Node* nullnode)
@@ -626,80 +608,3 @@ void print(Node* root, Node* nullnode, int h, int ln) {
 		return;
 	}
 }
-
-//int searchByPassport(Node* root, Node* nullnode, ClientsEntity* value, int& count)
-//{
-//	List_node* list = list_init();
-//	list->key = value->passport.number + value->passport.series;
-//	Node* temp = root;
-//	if (root == nullptr)
-//	{
-//		cout << "The tree does not exist";
-//		return false;
-//	}
-//	else
-//	{
-//		while (temp != nullnode)
-//		{
-//			if (comparator(temp->data->key, list->key) == 1) {
-//				count++;
-//				if (temp->left != nullnode) {
-//					searchByPassport(temp->left,nullnode, value, count);
-//				}
-//				else {
-//					DataClientsStorage::countComparisons = count;
-//					DataClientsStorage::resultSearch = false;
-//					return 0;
-//				}
-//			}
-//			else if (comparator(temp->data->key,list->key) == -1) {
-//				count++;
-//				if (temp->right != nullnode) {
-//					searchByPassport(temp->right, nullnode, value, count);
-//				}
-//				else {
-//					DataClientsStorage::countComparisons = count;
-//					DataClientsStorage::resultSearch = false;
-//					return 0;
-//				}
-//			}
-//			else {
-//				if (isEqualElements(value, DataClientsStorage::data[temp->data->key->index])) {
-//					count++;
-//					DataClientsStorage::countComparisons = count;
-//					DataClientsStorage::resultSerch = true;
-//					return 0;
-//				}
-//				else {
-//					listNode* temp = pointer->head;
-//					while (temp->ptr->field->index != pointer->head->field->index) {
-//						count++;
-//						if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-//
-//							DataStorage::countComparisons = count;
-//							DataStorage::resultSerch = true;
-//							return 0;;
-//						}
-//						temp = temp->ptr;
-//					}
-//					count++;
-//					if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-//
-//						DataStorage::countComparisons = count;
-//						DataStorage::resultSerch = true;
-//						return 0;
-//					}
-//					if (pointer->leftChild != nullptr) {
-//						searchByPassportTreeNode(pointer->leftChild, givenValue, count);
-//					}
-//					if (pointer->rightChild != nullptr) {
-//						searchByPassportTreeNode(pointer->rightChild, givenValue, count);
-//					}
-//				}
-//
-//			}
-//		}
-//		return false;
-//	}
-//}
-
