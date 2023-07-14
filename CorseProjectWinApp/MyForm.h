@@ -1108,6 +1108,7 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 		date date = inputDateData(dateString);
 		Passport passport = Passport();
 		passport.number = numberPassport;
+		int jopa = 4;
 		passport.series = seriesPassport;
 		RequestsEntity* entity = new RequestsEntity();
 		entity->date = date;

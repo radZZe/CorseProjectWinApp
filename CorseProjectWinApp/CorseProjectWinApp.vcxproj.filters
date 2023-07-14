@@ -39,10 +39,10 @@
     <ClCompile Include="ReaderClients.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesHashTable.cpp">
+    <ClCompile Include="ServicesRBTree.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Нужное\лабы\ServicesRBTree.cpp">
+    <ClCompile Include="ReaderServices.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
