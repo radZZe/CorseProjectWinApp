@@ -16,7 +16,7 @@ namespace CorseProjectWinApp {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -27,13 +27,13 @@ namespace CorseProjectWinApp {
 			InitializeComponent();
 			
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		
 		~MyForm()
@@ -150,15 +150,15 @@ private: System::Windows::Forms::Button^ button21;
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -287,7 +287,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->requestsPage->Padding = System::Windows::Forms::Padding(3);
 			this->requestsPage->Size = System::Drawing::Size(738, 501);
 			this->requestsPage->TabIndex = 0;
-			this->requestsPage->Text = L"Заявки";
+			this->requestsPage->Text = L"Р—Р°СЏРІРєРё";
 			this->requestsPage->UseVisualStyleBackColor = true;
 			// 
 			// saveBtn
@@ -296,7 +296,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->saveBtn->Name = L"saveBtn";
 			this->saveBtn->Size = System::Drawing::Size(75, 23);
 			this->saveBtn->TabIndex = 25;
-			this->saveBtn->Text = L"Сохранить";
+			this->saveBtn->Text = L"РЎРѕС…СЂР°РЅРёС‚СЊ";
 			this->saveBtn->UseVisualStyleBackColor = true;
 			this->saveBtn->Click += gcnew System::EventHandler(this, &MyForm::save_btn);
 			// 
@@ -315,7 +315,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(91, 13);
 			this->label2->TabIndex = 23;
-			this->label2->Text = L"Номер паспорта";
+			this->label2->Text = L"РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р°";
 			// 
 			// tBSeriesPassport
 			// 
@@ -331,7 +331,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(59, 13);
 			this->label6->TabIndex = 21;
-			this->label6->Text = L"Результат";
+			this->label6->Text = L"Р РµР·СѓР»СЊС‚Р°С‚";
 			// 
 			// countComparisons
 			// 
@@ -348,7 +348,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->numberOfComparisons->Name = L"numberOfComparisons";
 			this->numberOfComparisons->Size = System::Drawing::Size(129, 13);
 			this->numberOfComparisons->TabIndex = 19;
-			this->numberOfComparisons->Text = L"Количество сравнений: ";
+			this->numberOfComparisons->Text = L"РљРѕР»РёС‡РµСЃС‚РІРѕ СЃСЂР°РІРЅРµРЅРёР№: ";
 			// 
 			// label5
 			// 
@@ -357,7 +357,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(33, 13);
 			this->label5->TabIndex = 18;
-			this->label5->Text = L"Дата";
+			this->label5->Text = L"Р”Р°С‚Р°";
 			// 
 			// tBDate
 			// 
@@ -372,7 +372,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 16;
-			this->button3->Text = L"Удалить";
+			this->button3->Text = L"РЈРґР°Р»РёС‚СЊ";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::remove_element);
 			// 
@@ -382,7 +382,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 15;
-			this->button2->Text = L"Добавить";
+			this->button2->Text = L"Р”РѕР±Р°РІРёС‚СЊ";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// label4
@@ -392,7 +392,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(93, 13);
 			this->label4->TabIndex = 14;
-			this->label4->Text = L"Название услуги";
+			this->label4->Text = L"РќР°Р·РІР°РЅРёРµ СѓСЃР»СѓРіРё";
 			// 
 			// label3
 			// 
@@ -401,7 +401,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(62, 13);
 			this->label3->TabIndex = 13;
-			this->label3->Text = L"Тип услуги";
+			this->label3->Text = L"РўРёРї СѓСЃР»СѓРіРё";
 			// 
 			// label1
 			// 
@@ -410,7 +410,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(88, 13);
 			this->label1->TabIndex = 11;
-			this->label1->Text = L"Серия паспорта";
+			this->label1->Text = L"РЎРµСЂРёСЏ РїР°СЃРїРѕСЂС‚Р°";
 			// 
 			// tBServiceName
 			// 
@@ -439,7 +439,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->searchByServiceNameBTN->Name = L"searchByServiceNameBTN";
 			this->searchByServiceNameBTN->Size = System::Drawing::Size(157, 23);
 			this->searchByServiceNameBTN->TabIndex = 6;
-			this->searchByServiceNameBTN->Text = L"Поиск по названию услуги";
+			this->searchByServiceNameBTN->Text = L"РџРѕРёСЃРє РїРѕ РЅР°Р·РІР°РЅРёСЋ СѓСЃР»СѓРіРё";
 			this->searchByServiceNameBTN->UseVisualStyleBackColor = true;
 			this->searchByServiceNameBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceNameBTN_Click);
 			// 
@@ -465,7 +465,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->searchByTypeOfServiceBTN->Name = L"searchByTypeOfServiceBTN";
 			this->searchByTypeOfServiceBTN->Size = System::Drawing::Size(157, 23);
 			this->searchByTypeOfServiceBTN->TabIndex = 4;
-			this->searchByTypeOfServiceBTN->Text = L"Поиск по типу услуги";
+			this->searchByTypeOfServiceBTN->Text = L"РџРѕРёСЃРє РїРѕ С‚РёРїСѓ СѓСЃР»СѓРіРё";
 			this->searchByTypeOfServiceBTN->UseVisualStyleBackColor = true;
 			this->searchByTypeOfServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByTypeOfServiceBTN_Click);
 			// 
@@ -475,7 +475,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->dateSearchBTN->Name = L"dateSearchBTN";
 			this->dateSearchBTN->Size = System::Drawing::Size(99, 23);
 			this->dateSearchBTN->TabIndex = 3;
-			this->dateSearchBTN->Text = L"Поиск по дате";
+			this->dateSearchBTN->Text = L"РџРѕРёСЃРє РїРѕ РґР°С‚Рµ";
 			this->dateSearchBTN->UseVisualStyleBackColor = true;
 			this->dateSearchBTN->Click += gcnew System::EventHandler(this, &MyForm::dateSearchBTN_Click);
 			// 
@@ -485,7 +485,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->passportSearchBTN->Name = L"passportSearchBTN";
 			this->passportSearchBTN->Size = System::Drawing::Size(127, 23);
 			this->passportSearchBTN->TabIndex = 2;
-			this->passportSearchBTN->Text = L"Поиск по паспорту";
+			this->passportSearchBTN->Text = L"РџРѕРёСЃРє РїРѕ РїР°СЃРїРѕСЂС‚Сѓ";
 			this->passportSearchBTN->UseVisualStyleBackColor = true;
 			this->passportSearchBTN->Click += gcnew System::EventHandler(this, &MyForm::passportSearchBTN_Click);
 			// 
@@ -495,7 +495,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->searchByTypeAndNameOfServiceBTN->Name = L"searchByTypeAndNameOfServiceBTN";
 			this->searchByTypeAndNameOfServiceBTN->Size = System::Drawing::Size(232, 23);
 			this->searchByTypeAndNameOfServiceBTN->TabIndex = 1;
-			this->searchByTypeAndNameOfServiceBTN->Text = L"Поиск по типу и названию услуги";
+			this->searchByTypeAndNameOfServiceBTN->Text = L"РџРѕРёСЃРє РїРѕ С‚РёРїСѓ Рё РЅР°Р·РІР°РЅРёСЋ СѓСЃР»СѓРіРё";
 			this->searchByTypeAndNameOfServiceBTN->UseVisualStyleBackColor = true;
 			this->searchByTypeAndNameOfServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByTypeAndNameOfService_Click);
 			// 
@@ -528,7 +528,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->clientsPage->Padding = System::Windows::Forms::Padding(3);
 			this->clientsPage->Size = System::Drawing::Size(738, 501);
 			this->clientsPage->TabIndex = 1;
-			this->clientsPage->Text = L"Клиенты";
+			this->clientsPage->Text = L"РљР»РёРµРЅС‚С‹";
 			this->clientsPage->UseVisualStyleBackColor = true;
 			// 
 			// tabPage1
@@ -557,7 +557,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Size = System::Drawing::Size(738, 501);
 			this->tabPage1->TabIndex = 2;
-			this->tabPage1->Text = L"Услуги";
+			this->tabPage1->Text = L"РЈСЃР»СѓРіРё";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// label13
@@ -567,7 +567,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(87, 13);
 			this->label13->TabIndex = 40;
-			this->label13->Text = L"Подразделение";
+			this->label13->Text = L"РџРѕРґСЂР°Р·РґРµР»РµРЅРёРµ";
 			// 
 			// label15
 			// 
@@ -576,7 +576,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(93, 13);
 			this->label15->TabIndex = 38;
-			this->label15->Text = L"Название услуги";
+			this->label15->Text = L"РќР°Р·РІР°РЅРёРµ СѓСЃР»СѓРіРё";
 			// 
 			// label16
 			// 
@@ -585,7 +585,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(95, 13);
 			this->label16->TabIndex = 37;
-			this->label16->Text = L"Срок исполнения";
+			this->label16->Text = L"РЎСЂРѕРє РёСЃРїРѕР»РЅРµРЅРёСЏ";
 			// 
 			// label17
 			// 
@@ -594,7 +594,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(62, 13);
 			this->label17->TabIndex = 36;
-			this->label17->Text = L"Тип услуги";
+			this->label17->Text = L"РўРёРї СѓСЃР»СѓРіРё";
 			this->label17->Click += gcnew System::EventHandler(this, &MyForm::label17_Click);
 			// 
 			// button12
@@ -603,7 +603,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(75, 23);
 			this->button12->TabIndex = 35;
-			this->button12->Text = L"Сохранить";
+			this->button12->Text = L"РЎРѕС…СЂР°РЅРёС‚СЊ";
 			this->button12->UseVisualStyleBackColor = true;
 			// 
 			// textBox8
@@ -620,7 +620,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(59, 13);
 			this->label11->TabIndex = 33;
-			this->label11->Text = L"Результат";
+			this->label11->Text = L"Р РµР·СѓР»СЊС‚Р°С‚";
 			// 
 			// label12
 			// 
@@ -629,7 +629,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(129, 13);
 			this->label12->TabIndex = 32;
-			this->label12->Text = L"Количество сравнений: ";
+			this->label12->Text = L"РљРѕР»РёС‡РµСЃС‚РІРѕ СЃСЂР°РІРЅРµРЅРёР№: ";
 			// 
 			// button13
 			// 
@@ -637,7 +637,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button13->Name = L"button13";
 			this->button13->Size = System::Drawing::Size(75, 23);
 			this->button13->TabIndex = 30;
-			this->button13->Text = L"Удалить";
+			this->button13->Text = L"РЈРґР°Р»РёС‚СЊ";
 			this->button13->UseVisualStyleBackColor = true;
 			// 
 			// button14
@@ -646,7 +646,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button14->Name = L"button14";
 			this->button14->Size = System::Drawing::Size(75, 23);
 			this->button14->TabIndex = 29;
-			this->button14->Text = L"Добавить";
+			this->button14->Text = L"Р”РѕР±Р°РІРёС‚СЊ";
 			this->button14->UseVisualStyleBackColor = true;
 			// 
 			// textBox10
@@ -676,7 +676,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(157, 23);
 			this->button1->TabIndex = 11;
-			this->button1->Text = L"Поиск по названию услуги";
+			this->button1->Text = L"РџРѕРёСЃРє РїРѕ РЅР°Р·РІР°РЅРёСЋ СѓСЃР»СѓРіРё";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// button8
@@ -685,7 +685,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(157, 23);
 			this->button8->TabIndex = 10;
-			this->button8->Text = L"Поиск по типу услуги";
+			this->button8->Text = L"РџРѕРёСЃРє РїРѕ С‚РёРїСѓ СѓСЃР»СѓРіРё";
 			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// button9
@@ -694,7 +694,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(190, 23);
 			this->button9->TabIndex = 9;
-			this->button9->Text = L"Поиск по подразделению";
+			this->button9->Text = L"РџРѕРёСЃРє РїРѕ РїРѕРґСЂР°Р·РґРµР»РµРЅРёСЋ";
 			this->button9->UseVisualStyleBackColor = true;
 			// 
 			// button10
@@ -703,7 +703,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(172, 23);
 			this->button10->TabIndex = 8;
-			this->button10->Text = L"Поиск по сроку исполнения";
+			this->button10->Text = L"РџРѕРёСЃРє РїРѕ СЃСЂРѕРєСѓ РёСЃРїРѕР»РЅРµРЅРёСЏ";
 			this->button10->UseVisualStyleBackColor = true;
 			// 
 			// button11
@@ -712,7 +712,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(232, 23);
 			this->button11->TabIndex = 7;
-			this->button11->Text = L"Поиск по типу и названию услуги";
+			this->button11->Text = L"РџРѕРёСЃРє РїРѕ С‚РёРїСѓ Рё РЅР°Р·РІР°РЅРёСЋ СѓСЃР»СѓРіРё";
 			this->button11->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView2
@@ -736,7 +736,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 46;
-			this->button4->Text = L"Сохранить";
+			this->button4->Text = L"РЎРѕС…СЂР°РЅРёС‚СЊ";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// label7
@@ -746,7 +746,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(91, 13);
 			this->label7->TabIndex = 45;
-			this->label7->Text = L"Номер паспорта";
+			this->label7->Text = L"РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р°";
 			// 
 			// textBox1
 			// 
@@ -762,7 +762,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(59, 13);
 			this->label8->TabIndex = 43;
-			this->label8->Text = L"Результат";
+			this->label8->Text = L"Р РµР·СѓР»СЊС‚Р°С‚";
 			// 
 			// label9
 			// 
@@ -771,7 +771,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(129, 13);
 			this->label9->TabIndex = 42;
-			this->label9->Text = L"Количество сравнений: ";
+			this->label9->Text = L"РљРѕР»РёС‡РµСЃС‚РІРѕ СЃСЂР°РІРЅРµРЅРёР№: ";
 			// 
 			// label10
 			// 
@@ -780,7 +780,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(104, 13);
 			this->label10->TabIndex = 41;
-			this->label10->Text = L"Электронная почта";
+			this->label10->Text = L"Р­Р»РµРєС‚СЂРѕРЅРЅР°СЏ РїРѕС‡С‚Р°";
 			this->label10->Click += gcnew System::EventHandler(this, &MyForm::label10_Click);
 			// 
 			// textBox2
@@ -797,7 +797,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(75, 23);
 			this->button5->TabIndex = 39;
-			this->button5->Text = L"Удалить";
+			this->button5->Text = L"РЈРґР°Р»РёС‚СЊ";
 			this->button5->UseVisualStyleBackColor = true;
 			// 
 			// button6
@@ -806,7 +806,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(75, 23);
 			this->button6->TabIndex = 38;
-			this->button6->Text = L"Добавить";
+			this->button6->Text = L"Р”РѕР±Р°РІРёС‚СЊ";
 			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// label14
@@ -816,7 +816,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(34, 13);
 			this->label14->TabIndex = 37;
-			this->label14->Text = L"ФИО";
+			this->label14->Text = L"Р¤РРћ";
 			// 
 			// label18
 			// 
@@ -825,7 +825,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(65, 13);
 			this->label18->TabIndex = 36;
-			this->label18->Text = L"Должность";
+			this->label18->Text = L"Р”РѕР»Р¶РЅРѕСЃС‚СЊ";
 			// 
 			// label19
 			// 
@@ -834,7 +834,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(88, 13);
 			this->label19->TabIndex = 35;
-			this->label19->Text = L"Серия паспорта";
+			this->label19->Text = L"РЎРµСЂРёСЏ РїР°СЃРїРѕСЂС‚Р°";
 			this->label19->Click += gcnew System::EventHandler(this, &MyForm::label19_Click);
 			// 
 			// textBox6
@@ -864,7 +864,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(199, 23);
 			this->button7->TabIndex = 31;
-			this->button7->Text = L"Поиск по электронной почте";
+			this->button7->Text = L"РџРѕРёСЃРє РїРѕ СЌР»РµРєС‚СЂРѕРЅРЅРѕР№ РїРѕС‡С‚Рµ";
 			this->button7->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView1
@@ -881,6 +881,34 @@ private: System::Windows::Forms::Button^ button21;
 			this->dataGridView1->RowTemplate->ReadOnly = true;
 			this->dataGridView1->Size = System::Drawing::Size(732, 276);
 			this->dataGridView1->TabIndex = 30;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->dataGridView1->Location = System::Drawing::Point(4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->ReadOnly = true;
+			this->dataGridView1->Size = System::Drawing::Size(1178, 340);
+			this->dataGridView1->TabIndex = 30;
+
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->dataGridView1->Location = System::Drawing::Point(4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->ReadOnly = true;
+			this->dataGridView1->Size = System::Drawing::Size(1178, 340);
+			this->dataGridView1->TabIndex = 30;
+
 			// 
 			// button15
 			// 
@@ -888,7 +916,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button15->Name = L"button15";
 			this->button15->Size = System::Drawing::Size(157, 23);
 			this->button15->TabIndex = 29;
-			this->button15->Text = L"Поиск по ФИО";
+			this->button15->Text = L"РџРѕРёСЃРє РїРѕ Р¤РРћ";
 			this->button15->UseVisualStyleBackColor = true;
 			// 
 			// button16
@@ -897,7 +925,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button16->Name = L"button16";
 			this->button16->Size = System::Drawing::Size(161, 23);
 			this->button16->TabIndex = 28;
-			this->button16->Text = L"Поиск по должности";
+			this->button16->Text = L"РџРѕРёСЃРє РїРѕ РґРѕР»Р¶РЅРѕСЃС‚Рё";
 			this->button16->UseVisualStyleBackColor = true;
 			// 
 			// button17
@@ -906,7 +934,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button17->Name = L"button17";
 			this->button17->Size = System::Drawing::Size(127, 23);
 			this->button17->TabIndex = 27;
-			this->button17->Text = L"Поиск по паспорту";
+			this->button17->Text = L"РџРѕРёСЃРє РїРѕ РїР°СЃРїРѕСЂС‚Сѓ";
 			this->button17->UseVisualStyleBackColor = true;
 			// 
 			// button18
@@ -915,7 +943,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button18->Name = L"button18";
 			this->button18->Size = System::Drawing::Size(232, 23);
 			this->button18->TabIndex = 26;
-			this->button18->Text = L"Поиск по полной информации";
+			this->button18->Text = L"РџРѕРёСЃРє РїРѕ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё";
 			this->button18->UseVisualStyleBackColor = true;
 			// 
 			// button19
@@ -924,7 +952,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button19->Name = L"button19";
 			this->button19->Size = System::Drawing::Size(115, 23);
 			this->button19->TabIndex = 26;
-			this->button19->Text = L"Окно отладки";
+			this->button19->Text = L"РћРєРЅРѕ РѕС‚Р»Р°РґРєРё";
 			this->button19->UseVisualStyleBackColor = true;
 			// 
 			// button20
@@ -933,7 +961,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(115, 23);
 			this->button20->TabIndex = 47;
-			this->button20->Text = L"Окно отладки";
+			this->button20->Text = L"РћРєРЅРѕ РѕС‚Р»Р°РґРєРё";
 			this->button20->UseVisualStyleBackColor = true;
 			// 
 			// button21
@@ -942,7 +970,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->button21->Name = L"button21";
 			this->button21->Size = System::Drawing::Size(115, 23);
 			this->button21->TabIndex = 41;
-			this->button21->Text = L"Окно отладки";
+			this->button21->Text = L"РћРєРЅРѕ РѕС‚Р»Р°РґРєРё";
 			this->button21->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
@@ -974,18 +1002,18 @@ private: System::Windows::Forms::Button^ button21;
 		RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
 		DataTable^ tabl = gcnew DataTable();
 		RequestsDataGrid->DataSource = tabl;
-		tabl->Columns->Add("Паспорт");
-		tabl->Columns->Add("Название услуги");
-		tabl->Columns->Add("Тип услуги");
-		tabl->Columns->Add("Дата");
+		tabl->Columns->Add("РџР°СЃРїРѕСЂС‚");
+		tabl->Columns->Add("РќР°Р·РІР°РЅРёРµ СѓСЃР»СѓРіРё");
+		tabl->Columns->Add("РўРёРї СѓСЃР»СѓРіРё");
+		tabl->Columns->Add("Р”Р°С‚Р°");
 		for (int i = 0; i < data.size(); i++) {
 			DataRow^ row = tabl->NewRow();
 			string passport = to_string(data[i]->passport.series) + " " + to_string(data[i]->passport.number);
-			row["Паспорт"] = gcnew String(passport.c_str());
-			row["Название услуги"] = gcnew String(data[i]->serviceName.c_str());
-			row["Тип услуги"] = gcnew String(data[i]->serviceType.c_str());
+			row["РџР°СЃРїРѕСЂС‚"] = gcnew String(passport.c_str());
+			row["РќР°Р·РІР°РЅРёРµ СѓСЃР»СѓРіРё"] = gcnew String(data[i]->serviceName.c_str());
+			row["РўРёРї СѓСЃР»СѓРіРё"] = gcnew String(data[i]->serviceType.c_str());
 			string date = data[i]->date.day+"." + data[i]->date.month + "." + data[i]->date.year;
-			row["Дата"] = gcnew String(date.c_str());
+			row["Р”Р°С‚Р°"] = gcnew String(date.c_str());
 			tabl->Rows->Add(row);
 		}
 
@@ -1001,7 +1029,7 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 	string seriesPassportText = marshal_as<std::string>(this->tBSeriesPassport->Text);
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ , РїСЂРѕРІРµСЂСЊС‚Рµ РІРІРµРґРµРЅРЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ Р·Р°СЏРІРєРµ", "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int seriesPassport = stoi(seriesPassportText);
@@ -1020,10 +1048,10 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 		vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
 		this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
 		if (result_searchByTypeAndNameOfService[1] != -1) {
-			this->resultSearch->Text = gcnew String("Найден");
+			this->resultSearch->Text = gcnew String("РќР°Р№РґРµРЅ");
 		}
 		else {
-			this->resultSearch->Text = gcnew String("Не найден");
+			this->resultSearch->Text = gcnew String("РќРµ РЅР°Р№РґРµРЅ");
 		}
 	}
 };
@@ -1061,10 +1089,10 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 	bool result_searchByPassportTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByPassportTreeNode) {
-		this->resultSearch->Text = gcnew String("Найден");
+		this->resultSearch->Text = gcnew String("РќР°Р№РґРµРЅ");
 	}
 	else  {
-		this->resultSearch->Text = gcnew String("Не найден");
+		this->resultSearch->Text = gcnew String("РќРµ РЅР°Р№РґРµРЅ");
 	}
 	printTree(avlTree, nullptr);
 	cout << endl;
@@ -1072,7 +1100,7 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 private: System::Void save_btn(System::Object^ sender, System::EventArgs^ e) {
 	vector<RequestsEntity*> data = DataStorage::data;
 	writeData(data, "stdrequests.txt");
-	MessageBox::Show(this, "Данные заявок успешно сохранены", "Сохранение", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "Р”Р°РЅРЅС‹Рµ Р·Р°СЏРІРѕРє СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅС‹", "РЎРѕС…СЂР°РЅРµРЅРёРµ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void remove_element(System::Object^ sender, System::EventArgs^ e) {
 	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
@@ -1127,10 +1155,10 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 	bool result_searchByDateTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByDateTreeNode) {
-		this->resultSearch->Text = gcnew String("Найден");
+		this->resultSearch->Text = gcnew String("РќР°Р№РґРµРЅ");
 	}
 	else {
-		this->resultSearch->Text = gcnew String("Не найден");
+		this->resultSearch->Text = gcnew String("РќРµ РЅР°Р№РґРµРЅ");
 	}
 	printTree(avlTree, nullptr);
 	cout << endl;
@@ -1169,10 +1197,10 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 	bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByServiceTypeTreeNode) {
-		this->resultSearch->Text = gcnew String("Найден");
+		this->resultSearch->Text = gcnew String("РќР°Р№РґРµРЅ");
 	}
 	else {
-		this->resultSearch->Text = gcnew String("Не найден");
+		this->resultSearch->Text = gcnew String("РќРµ РЅР°Р№РґРµРЅ");
 	}
 	printTree(avlTree, nullptr);
 	cout << endl;
@@ -1211,10 +1239,10 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	bool result_searchByServiceNameTreeNode = DataStorage::resultSerch;
 	this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 	if (result_searchByServiceNameTreeNode) {
-		this->resultSearch->Text = gcnew String("Найден");
+		this->resultSearch->Text = gcnew String("РќР°Р№РґРµРЅ");
 	}
 	else {
-		this->resultSearch->Text = gcnew String("Не найден");
+		this->resultSearch->Text = gcnew String("РќРµ РЅР°Р№РґРµРЅ");
 	}
 	printTree(avlTree, nullptr);
 	cout << endl;
