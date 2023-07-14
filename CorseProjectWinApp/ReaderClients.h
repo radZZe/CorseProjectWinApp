@@ -34,7 +34,7 @@ struct Element {
 };
 
 struct List_node {
-	Key keys;
+	string key;
 	List_node* next;
 	int cnt;
 };
@@ -47,33 +47,38 @@ struct Node {
 	int color;// 1 - Black
 };
 
-struct Passport {
-	int series;
-	int number;
-};
+//struct ClientsPassport {
+//	int series;
+//	int number;
+//};
 
-struct date {
-	string day;
-	string month;
-	string year;
+//struct date {
+//	string day;
+//	string month;
+//	string year;
+//};
+
+struct ClientPassport {
+	int number;
+	int series;
 };
 
 struct ClientsEntity {
-	Passport passport;
+	ClientPassport passport;
 	Fullname fullname;
 	string email;
 	string job;
 };
 
-bool isEqualElements(ClientsEntity* first, ClientsEntity* second);
+bool isEqualElementsClients(ClientsEntity* first, ClientsEntity* second);
 //date inputDateData(string input);
 
-Passport inputPassportData(string input);
+ClientPassport inputPassportClients(string input);
 
 Fullname inputFullnameData(string input);
 
-ClientsEntity* inputEntityData(string input);
+ClientsEntity* inputEntityDataClients(string input);
 
-vector<ClientsEntity*> readFromFile(string path);
+vector<ClientsEntity*> readFromFileClients(string path);
 
 void writeData(vector<ClientsEntity*> value, string path);

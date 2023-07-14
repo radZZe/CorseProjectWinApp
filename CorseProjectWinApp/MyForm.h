@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "DataStorage.h"
+#include "DataClientsStorage.h"
 #include <msclr\marshal_cppstd.h>
 
 
@@ -140,7 +141,7 @@ namespace CorseProjectWinApp {
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ ClientsDataGrid;
 	private: System::Windows::Forms::Button^ button15;
 	private: System::Windows::Forms::Button^ button16;
 	private: System::Windows::Forms::Button^ button17;
@@ -212,7 +213,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->ClientsDataGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->button17 = (gcnew System::Windows::Forms::Button());
@@ -242,7 +243,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->requestsPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
 			this->clientsPage->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ClientsDataGrid))->BeginInit();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ServicesDataGrid))->BeginInit();
 			this->SuspendLayout();
@@ -560,7 +561,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->clientsPage->Controls->Add(this->textBox7);
 			this->clientsPage->Controls->Add(this->textBox9);
 			this->clientsPage->Controls->Add(this->button7);
-			this->clientsPage->Controls->Add(this->dataGridView1);
+			this->clientsPage->Controls->Add(this->ClientsDataGrid);
 			this->clientsPage->Controls->Add(this->button15);
 			this->clientsPage->Controls->Add(this->button16);
 			this->clientsPage->Controls->Add(this->button17);
@@ -739,20 +740,20 @@ private: System::Windows::Forms::Button^ button21;
 			// 
 			// dataGridView1
 			// 
-			this->dataGridView1->AllowUserToAddRows = false;
-			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->dataGridView1->Location = System::Drawing::Point(4, 4);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->ReadOnly = true;
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->ReadOnly = true;
-			this->dataGridView1->Size = System::Drawing::Size(979, 340);
-			this->dataGridView1->TabIndex = 30;
+			this->ClientsDataGrid->AllowUserToAddRows = false;
+			this->ClientsDataGrid->AllowUserToDeleteRows = false;
+			this->ClientsDataGrid->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->ClientsDataGrid->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ClientsDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->ClientsDataGrid->Dock = System::Windows::Forms::DockStyle::Top;
+			this->ClientsDataGrid->Location = System::Drawing::Point(4, 4);
+			this->ClientsDataGrid->Margin = System::Windows::Forms::Padding(4);
+			this->ClientsDataGrid->Name = L"dataGridView1";
+			this->ClientsDataGrid->ReadOnly = true;
+			this->ClientsDataGrid->RowHeadersWidth = 51;
+			this->ClientsDataGrid->RowTemplate->ReadOnly = true;
+			this->ClientsDataGrid->Size = System::Drawing::Size(979, 340);
+			this->ClientsDataGrid->TabIndex = 30;
 			// 
 			// button15
 			// 
@@ -1043,7 +1044,7 @@ private: System::Windows::Forms::Button^ button21;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->EndInit();
 			this->clientsPage->ResumeLayout(false);
 			this->clientsPage->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ClientsDataGrid))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ServicesDataGrid))->EndInit();
@@ -1073,6 +1074,24 @@ private: System::Windows::Forms::Button^ button21;
 		for (int i = 0; i < data.size(); i++) {
 
 			requestsHashTable.insert(data[i]);
+		}
+
+		vector<ClientsEntity*> dataClients = DataClientsStorage::data;
+		DataTable^ tablClients = gcnew DataTable();
+		ClientsDataGrid->DataSource = tablClients;
+		tablClients->Columns->Add("ФИО");
+		tablClients->Columns->Add("Должность");
+		tablClients->Columns->Add("Почта");
+		tablClients->Columns->Add("Паспортные данные");
+		for (int i = 0; i < dataClients.size(); i++) {
+			DataRow^ rowClients = tablClients->NewRow();
+			rowClients["ФИО"] = gcnew String((dataClients[i]->fullname.surname + ' ' + dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
+			rowClients["Должность"] = gcnew String(dataClients[i]->job.c_str());
+			rowClients["Почта"] = gcnew String(dataClients[i]->email.c_str());
+			string passportClient = to_string(dataClients[i]->passport.number) + ' ' + to_string(dataClients[i]->passport.series);
+			//rowClients["Паспортные данные"] = gcnew String(passport.c_str());
+			rowClients["Паспортные данные"] = gcnew String(passportClient.c_str());
+			tablClients->Rows->Add(rowClients);
 		}
 
 		vector<ServiceEntity*> dataServices = DataStorage::dataServices;
