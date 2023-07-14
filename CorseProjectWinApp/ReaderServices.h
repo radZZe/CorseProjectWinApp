@@ -11,6 +11,12 @@ struct treeNodeElemServices
     int index;
 };
 
+struct treeNodeElemServicesInt
+{
+    int value;
+    int index;
+};
+
 struct listServices
 {
     struct treeNodeElemServices data;

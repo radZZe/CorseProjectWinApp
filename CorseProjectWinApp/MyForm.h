@@ -115,12 +115,15 @@ namespace CorseProjectWinApp {
 	private: System::Windows::Forms::TextBox^ tBTerm;
 
 	private: System::Windows::Forms::TextBox^ tBDivision;
+	private: System::Windows::Forms::Button^ searchByServiceName;
 
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button8;
+
+	private: System::Windows::Forms::Button^ searchByServiceTypeBtn;
+
 	private: System::Windows::Forms::Button^ divisionSearchBtn;
+private: System::Windows::Forms::Button^ searchServiceByTermBtb;
 
-	private: System::Windows::Forms::Button^ button10;
+
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::DataGridView^ ServicesDataGrid;
 
@@ -148,6 +151,10 @@ namespace CorseProjectWinApp {
 private: System::Windows::Forms::Button^ button19;
 private: System::Windows::Forms::Button^ button20;
 private: System::Windows::Forms::Button^ button21;
+private: System::Windows::Forms::Label^ resultSearchServices;
+private: System::Windows::Forms::Label^ countServices;
+private: System::Windows::Forms::Label^ countComparationsServices;
+private: System::Windows::Forms::Label^ resultSearchServices2;
 
 
 
@@ -170,6 +177,8 @@ private: System::Windows::Forms::Button^ button21;
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->requestsPage = (gcnew System::Windows::Forms::TabPage());
+			this->resultSearchServices = (gcnew System::Windows::Forms::Label());
+			this->countServices = (gcnew System::Windows::Forms::Label());
 			this->button19 = (gcnew System::Windows::Forms::Button());
 			this->saveBtn = (gcnew System::Windows::Forms::Button());
 			this->resultSearch = (gcnew System::Windows::Forms::Label());
@@ -218,6 +227,8 @@ private: System::Windows::Forms::Button^ button21;
 			this->button17 = (gcnew System::Windows::Forms::Button());
 			this->button18 = (gcnew System::Windows::Forms::Button());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->resultSearchServices2 = (gcnew System::Windows::Forms::Label());
+			this->countComparationsServices = (gcnew System::Windows::Forms::Label());
 			this->button21 = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
@@ -232,10 +243,10 @@ private: System::Windows::Forms::Button^ button21;
 			this->tBName = (gcnew System::Windows::Forms::TextBox());
 			this->tBTerm = (gcnew System::Windows::Forms::TextBox());
 			this->tBDivision = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->searchByServiceName = (gcnew System::Windows::Forms::Button());
+			this->searchByServiceTypeBtn = (gcnew System::Windows::Forms::Button());
 			this->divisionSearchBtn = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->searchServiceByTermBtb = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->ServicesDataGrid = (gcnew System::Windows::Forms::DataGridView());
 			this->tabControl1->SuspendLayout();
@@ -259,12 +270,14 @@ private: System::Windows::Forms::Button^ button21;
 			this->tabControl1->Margin = System::Windows::Forms::Padding(4);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(995, 649);
+			this->tabControl1->Size = System::Drawing::Size(1194, 779);
 			this->tabControl1->SizeMode = System::Windows::Forms::TabSizeMode::FillToRight;
 			this->tabControl1->TabIndex = 0;
 			// 
 			// requestsPage
 			// 
+			this->requestsPage->Controls->Add(this->resultSearchServices);
+			this->requestsPage->Controls->Add(this->countServices);
 			this->requestsPage->Controls->Add(this->button19);
 			this->requestsPage->Controls->Add(this->saveBtn);
 			this->requestsPage->Controls->Add(this->resultSearch);
@@ -293,10 +306,27 @@ private: System::Windows::Forms::Button^ button21;
 			this->requestsPage->Margin = System::Windows::Forms::Padding(4);
 			this->requestsPage->Name = L"requestsPage";
 			this->requestsPage->Padding = System::Windows::Forms::Padding(4);
-			this->requestsPage->Size = System::Drawing::Size(987, 620);
+			this->requestsPage->Size = System::Drawing::Size(1186, 750);
 			this->requestsPage->TabIndex = 0;
 			this->requestsPage->Text = L"Заявки";
 			this->requestsPage->UseVisualStyleBackColor = true;
+			this->requestsPage->Click += gcnew System::EventHandler(this, &MyForm::requestsPage_Click);
+			// 
+			// resultSearchServices
+			// 
+			this->resultSearchServices->AutoSize = true;
+			this->resultSearchServices->Location = System::Drawing::Point(351, 566);
+			this->resultSearchServices->Name = L"resultSearchServices";
+			this->resultSearchServices->Size = System::Drawing::Size(0, 16);
+			this->resultSearchServices->TabIndex = 28;
+			// 
+			// countServices
+			// 
+			this->countServices->AutoSize = true;
+			this->countServices->Location = System::Drawing::Point(191, 566);
+			this->countServices->Name = L"countServices";
+			this->countServices->Size = System::Drawing::Size(0, 16);
+			this->countServices->TabIndex = 27;
 			// 
 			// button19
 			// 
@@ -493,7 +523,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->RequestsDataGrid->ReadOnly = true;
 			this->RequestsDataGrid->RowHeadersWidth = 51;
 			this->RequestsDataGrid->RowTemplate->ReadOnly = true;
-			this->RequestsDataGrid->Size = System::Drawing::Size(979, 340);
+			this->RequestsDataGrid->Size = System::Drawing::Size(1178, 340);
 			this->RequestsDataGrid->TabIndex = 5;
 			this->RequestsDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::RequestsDataGrid_CellContentClick);
 			// 
@@ -569,7 +599,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->clientsPage->Margin = System::Windows::Forms::Padding(4);
 			this->clientsPage->Name = L"clientsPage";
 			this->clientsPage->Padding = System::Windows::Forms::Padding(4);
-			this->clientsPage->Size = System::Drawing::Size(987, 620);
+			this->clientsPage->Size = System::Drawing::Size(1186, 750);
 			this->clientsPage->TabIndex = 1;
 			this->clientsPage->Text = L"Клиенты";
 			this->clientsPage->UseVisualStyleBackColor = true;
@@ -751,7 +781,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->ReadOnly = true;
-			this->dataGridView1->Size = System::Drawing::Size(979, 340);
+			this->dataGridView1->Size = System::Drawing::Size(1178, 340);
 			this->dataGridView1->TabIndex = 30;
 			// 
 			// button15
@@ -796,6 +826,8 @@ private: System::Windows::Forms::Button^ button21;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->resultSearchServices2);
+			this->tabPage1->Controls->Add(this->countComparationsServices);
 			this->tabPage1->Controls->Add(this->button21);
 			this->tabPage1->Controls->Add(this->label13);
 			this->tabPage1->Controls->Add(this->label15);
@@ -810,19 +842,36 @@ private: System::Windows::Forms::Button^ button21;
 			this->tabPage1->Controls->Add(this->tBName);
 			this->tabPage1->Controls->Add(this->tBTerm);
 			this->tabPage1->Controls->Add(this->tBDivision);
-			this->tabPage1->Controls->Add(this->button1);
-			this->tabPage1->Controls->Add(this->button8);
+			this->tabPage1->Controls->Add(this->searchByServiceName);
+			this->tabPage1->Controls->Add(this->searchByServiceTypeBtn);
 			this->tabPage1->Controls->Add(this->divisionSearchBtn);
-			this->tabPage1->Controls->Add(this->button10);
+			this->tabPage1->Controls->Add(this->searchServiceByTermBtb);
 			this->tabPage1->Controls->Add(this->button11);
 			this->tabPage1->Controls->Add(this->ServicesDataGrid);
 			this->tabPage1->Location = System::Drawing::Point(4, 25);
 			this->tabPage1->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Size = System::Drawing::Size(987, 620);
+			this->tabPage1->Size = System::Drawing::Size(1186, 750);
 			this->tabPage1->TabIndex = 2;
 			this->tabPage1->Text = L"Услуги";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			this->tabPage1->Click += gcnew System::EventHandler(this, &MyForm::tabPage1_Click);
+			// 
+			// resultSearchServices2
+			// 
+			this->resultSearchServices2->AutoSize = true;
+			this->resultSearchServices2->Location = System::Drawing::Point(333, 567);
+			this->resultSearchServices2->Name = L"resultSearchServices2";
+			this->resultSearchServices2->Size = System::Drawing::Size(0, 16);
+			this->resultSearchServices2->TabIndex = 43;
+			// 
+			// countComparationsServices
+			// 
+			this->countComparationsServices->AutoSize = true;
+			this->countComparationsServices->Location = System::Drawing::Point(182, 567);
+			this->countComparationsServices->Name = L"countComparationsServices";
+			this->countComparationsServices->Size = System::Drawing::Size(0, 16);
+			this->countComparationsServices->TabIndex = 42;
 			// 
 			// button21
 			// 
@@ -896,7 +945,7 @@ private: System::Windows::Forms::Button^ button21;
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(271, 567);
+			this->label11->Location = System::Drawing::Point(249, 567);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(77, 16);
@@ -957,25 +1006,27 @@ private: System::Windows::Forms::Button^ button21;
 			this->tBDivision->Size = System::Drawing::Size(132, 22);
 			this->tBDivision->TabIndex = 26;
 			// 
-			// button1
+			// searchByServiceName
 			// 
-			this->button1->Location = System::Drawing::Point(21, 511);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(209, 28);
-			this->button1->TabIndex = 11;
-			this->button1->Text = L"Поиск по названию услуги";
-			this->button1->UseVisualStyleBackColor = true;
+			this->searchByServiceName->Location = System::Drawing::Point(21, 511);
+			this->searchByServiceName->Margin = System::Windows::Forms::Padding(4);
+			this->searchByServiceName->Name = L"searchByServiceName";
+			this->searchByServiceName->Size = System::Drawing::Size(209, 28);
+			this->searchByServiceName->TabIndex = 11;
+			this->searchByServiceName->Text = L"Поиск по названию услуги";
+			this->searchByServiceName->UseVisualStyleBackColor = true;
+			this->searchByServiceName->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceName_Click);
 			// 
-			// button8
+			// searchByServiceTypeBtn
 			// 
-			this->button8->Location = System::Drawing::Point(17, 463);
-			this->button8->Margin = System::Windows::Forms::Padding(4);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(209, 28);
-			this->button8->TabIndex = 10;
-			this->button8->Text = L"Поиск по типу услуги";
-			this->button8->UseVisualStyleBackColor = true;
+			this->searchByServiceTypeBtn->Location = System::Drawing::Point(17, 463);
+			this->searchByServiceTypeBtn->Margin = System::Windows::Forms::Padding(4);
+			this->searchByServiceTypeBtn->Name = L"searchByServiceTypeBtn";
+			this->searchByServiceTypeBtn->Size = System::Drawing::Size(209, 28);
+			this->searchByServiceTypeBtn->TabIndex = 10;
+			this->searchByServiceTypeBtn->Text = L"Поиск по типу услуги";
+			this->searchByServiceTypeBtn->UseVisualStyleBackColor = true;
+			this->searchByServiceTypeBtn->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceTypeBtn_Click);
 			// 
 			// divisionSearchBtn
 			// 
@@ -988,15 +1039,16 @@ private: System::Windows::Forms::Button^ button21;
 			this->divisionSearchBtn->UseVisualStyleBackColor = true;
 			this->divisionSearchBtn->Click += gcnew System::EventHandler(this, &MyForm::divisionSearchBtn_Click);
 			// 
-			// button10
+			// searchServiceByTermBtb
 			// 
-			this->button10->Location = System::Drawing::Point(17, 427);
-			this->button10->Margin = System::Windows::Forms::Padding(4);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(229, 28);
-			this->button10->TabIndex = 8;
-			this->button10->Text = L"Поиск по сроку исполнения";
-			this->button10->UseVisualStyleBackColor = true;
+			this->searchServiceByTermBtb->Location = System::Drawing::Point(17, 427);
+			this->searchServiceByTermBtb->Margin = System::Windows::Forms::Padding(4);
+			this->searchServiceByTermBtb->Name = L"searchServiceByTermBtb";
+			this->searchServiceByTermBtb->Size = System::Drawing::Size(229, 28);
+			this->searchServiceByTermBtb->TabIndex = 8;
+			this->searchServiceByTermBtb->Text = L"Поиск по сроку исполнения";
+			this->searchServiceByTermBtb->UseVisualStyleBackColor = true;
+			this->searchServiceByTermBtb->Click += gcnew System::EventHandler(this, &MyForm::searchServiceByTermBtb_Click);
 			// 
 			// button11
 			// 
@@ -1022,7 +1074,7 @@ private: System::Windows::Forms::Button^ button21;
 			this->ServicesDataGrid->ReadOnly = true;
 			this->ServicesDataGrid->RowHeadersWidth = 51;
 			this->ServicesDataGrid->RowTemplate->ReadOnly = true;
-			this->ServicesDataGrid->Size = System::Drawing::Size(987, 340);
+			this->ServicesDataGrid->Size = System::Drawing::Size(1186, 340);
 			this->ServicesDataGrid->TabIndex = 6;
 			// 
 			// MyForm
@@ -1367,16 +1419,233 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 	string serviceType = marshal_as<std::string>(this->tBType->Text);
 	string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
-	int serviceTerm = stoi(serviceTermStr);
-	Passport passport = Passport();
-	ServiceEntity* entity = new ServiceEntity();
-	entity->division = serviceDivision;
-	entity->serviceName = serviceName;
-	entity->term = serviceTerm;
-	entity->serviceType = serviceType;
-	treeNodeServices* rbTreeA = DataStorage::rbTreeA;
-	vector<ServiceEntity*> data = DataStorage::dataServices;
 
+	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
+		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		int serviceTerm;
+		try {
+			serviceTerm = stoi(serviceTermStr);
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+		serviceTerm = stoi(serviceTermStr);
+		Passport passport = Passport();
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = serviceDivision;
+		entity->serviceName = serviceName;
+		entity->term = serviceTerm;
+		entity->serviceType = serviceType;
+		DataStorage::rbTreeLeaf = initLeaf();
+		treeNodeServices* leaf = DataStorage::rbTreeLeaf;
+		DataStorage::rbTreeDivision = initTree(leaf);
+		treeNodeServices* rbTreeDivision = DataStorage::rbTreeDivision;
+		vector<ServiceEntity*> data = DataStorage::dataServices;
+
+
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = data[i]->division;
+			treeNodeElemServices value;
+			value.index = i;
+			value.value = valueText;
+			insert(rbTreeDivision, value, leaf);
+		}
+		int count = 0;
+		treeNodeElemServices searchable;
+		searchable.value = entity->division;
+		searchable.index = 0;
+		search(rbTreeDivision, searchable, leaf, count);
+		bool result = DataStorage::resultSerch;
+		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+		DataStorage::countComparisons = 0;
+		if (result) {
+			this->resultSearchServices2->Text = gcnew String("Найден");
+		}
+		else {
+			this->resultSearchServices2->Text = gcnew String("Не найден");
+		}
+		printTreeA(rbTreeDivision, 8, leaf);
+		cout << endl;
+	}
+}
+private: System::Void requestsPage_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	string serviceName = marshal_as<std::string>(this->tBName->Text);
+	string serviceType = marshal_as<std::string>(this->tBType->Text);
+	string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
+	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
+
+	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
+		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		int serviceTerm;
+		try {
+			serviceTerm = stoi(serviceTermStr);
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+		serviceTerm = stoi(serviceTermStr);
+		Passport passport = Passport();
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = serviceDivision;
+		entity->serviceName = serviceName;
+		entity->term = serviceTerm;
+		entity->serviceType = serviceType;
+		DataStorage::rbTreeLeaf = initLeaf();
+		treeNodeServices* leaf = DataStorage::rbTreeLeaf;
+		DataStorage::rbTreeType = initTree(leaf);
+		treeNodeServices* rbTreeDivision = DataStorage::rbTreeType;
+		vector<ServiceEntity*> data = DataStorage::dataServices;
+
+
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = data[i]->serviceType;
+			treeNodeElemServices value;
+			value.index = i;
+			value.value = valueText;
+			insert(rbTreeDivision, value, leaf);
+		}
+		int count = 0;
+		treeNodeElemServices searchable;
+		searchable.value = entity->serviceType;
+		searchable.index = 0;
+		search(rbTreeDivision, searchable, leaf, count);
+		bool result = DataStorage::resultSerch;
+		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+		DataStorage::countComparisons = 0;
+		if (result) {
+			this->resultSearchServices2->Text = gcnew String("Найден");
+		}
+		else {
+			this->resultSearchServices2->Text = gcnew String("Не найден");
+		}
+		printTreeA(rbTreeDivision, 8, leaf);
+		cout << endl;
+	}
+}
+
+private: System::Void searchByServiceName_Click(System::Object^ sender, System::EventArgs^ e) {
+	string serviceName = marshal_as<std::string>(this->tBName->Text);
+	string serviceType = marshal_as<std::string>(this->tBType->Text);
+	string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
+	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
+
+	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
+		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		int serviceTerm;
+		try {
+			serviceTerm = stoi(serviceTermStr);
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+		 serviceTerm = stoi(serviceTermStr);
+		Passport passport = Passport();
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = serviceDivision;
+		entity->serviceName = serviceName;
+		entity->term = serviceTerm;
+		entity->serviceType = serviceType;
+		DataStorage::rbTreeLeaf = initLeaf();
+		treeNodeServices* leaf = DataStorage::rbTreeLeaf;
+		DataStorage::rbTreeName = initTree(leaf);
+		treeNodeServices* rbTreeDivision = DataStorage::rbTreeName;
+		vector<ServiceEntity*> data = DataStorage::dataServices;
+
+
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = data[i]->serviceName;
+			treeNodeElemServices value;
+			value.index = i;
+			value.value = valueText;
+			insert(rbTreeDivision, value, leaf);
+		}
+		int count = 0;
+		treeNodeElemServices searchable;
+		searchable.value = entity->serviceName;
+		searchable.index = 0;
+		search(rbTreeDivision, searchable, leaf, count);
+		bool result = DataStorage::resultSerch;
+		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+		DataStorage::countComparisons = 0;
+		if (result) {
+			this->resultSearchServices2->Text = gcnew String("Найден");
+		}
+		else {
+			this->resultSearchServices2->Text = gcnew String("Не найден");
+		}
+		printTreeA(rbTreeDivision, 8, leaf);
+		cout << endl;
+	}
+}
+
+private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, System::EventArgs^ e) {
+	string serviceName = marshal_as<std::string>(this->tBName->Text);
+	string serviceType = marshal_as<std::string>(this->tBType->Text);
+	string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
+	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
+
+	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
+		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		int serviceTerm;
+		try {
+			serviceTerm = stoi(serviceTermStr);
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		Passport passport = Passport();
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = serviceDivision;
+		entity->serviceName = serviceName;
+		entity->term = serviceTerm;
+		entity->serviceType = serviceType;
+		DataStorage::rbTreeLeaf = initLeaf();
+		treeNodeServices* leaf = DataStorage::rbTreeLeaf;
+		DataStorage::rbTreeTerm = initTree(leaf);
+		treeNodeServices* rbTreeDivision = DataStorage::rbTreeTerm;
+		vector<ServiceEntity*> data = DataStorage::dataServices;
+
+
+		for (int i = 0; i < data.size(); i++) {
+			string valueText = to_string(data[i]->term);
+			treeNodeElemServices value;
+			value.index = i;
+			value.value = valueText;
+			insert(rbTreeDivision, value, leaf);
+		}
+		int count = 0;
+		treeNodeElemServices searchable;
+		searchable.value = to_string(entity->term);
+		searchable.index = 0;
+		search(rbTreeDivision, searchable, leaf, count);
+		bool result = DataStorage::resultSerch;
+		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+		DataStorage::countComparisons = 0;
+		if (result) {
+			this->resultSearchServices2->Text = gcnew String("Найден");
+		}
+		else {
+			this->resultSearchServices2->Text = gcnew String("Не найден");
+		}
+		printTreeA(rbTreeDivision, 8, leaf);
+		cout << endl;
+	}
 	
 }
 };

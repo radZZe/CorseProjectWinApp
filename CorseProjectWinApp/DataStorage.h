@@ -12,6 +12,11 @@ public:
 	static vector<ServiceEntity*>dataServices;
 	static RequestsHashTable requestsHashTable;
 	static int countComparisons;
+	static treeNodeServices* rbTreeDivision;
+	static treeNodeServices* rbTreeType;
+	static treeNodeServices* rbTreeName;
+	static treeNodeServices* rbTreeTerm;
+	static treeNodeServices* rbTreeLeaf;
 	static treeNode* avlTreePassport;
 	static treeNode* avlTreeDate;
 	static treeNode* avlTreeServiceName;
