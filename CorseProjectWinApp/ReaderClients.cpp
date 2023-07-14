@@ -11,7 +11,7 @@ using namespace std;
 
 
 ClientPassport inputPassportClients(string input) {
-    // Passport  newPassport;
+    ClientPassport passport;
     vector <int> numbers;
     for (int i = 0; i < input.length(); i++) {
         if (input[i] == '.') {
@@ -19,13 +19,20 @@ ClientPassport inputPassportClients(string input) {
         }
     }
     int series = stoi(input.substr(0, 4));
-    int number = stoi(input.substr(4 + 1, (input.length() - 1) - 4));
-    return { series,number };
+    int number = stoi(input.substr(4 + 1, (input.length()) - 4));
+    //return { series,number };
+    passport.number = number;
+    passport.series = series;
+    return passport;
 };
 
 bool isEqualElementsClients(ClientsEntity* first, ClientsEntity* second) {
 
     //1 => frist = second   0 => first != second
+    if (first == nullptr || second == nullptr)
+    {
+        return false;
+    }
     if (first->passport.series + first->passport.number == second->passport.number + second->passport.series)
     {
         if (first->fullname.surname + first->fullname.name + first->fullname.lastname == second->fullname.surname + second->fullname.name + second->fullname.lastname)
@@ -126,7 +133,7 @@ vector <ClientsEntity*> readFromFileClients(string path) {
     return data;
 }
 
-void writeData(vector<ClientsEntity*>  value, string path){}
+void writeData(vector<ClientsEntity*>  value, string path) {}
 //void writeData(vector<ClientsEntity*>  value, string path) {
 //    ofstream  fout(path);
 //    fout << value.size() << "\n";

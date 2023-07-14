@@ -2,29 +2,36 @@
 #include <vector>
 #include "ReaderClients.h"
 
+class ClientsHashTableEntry {
+public:
+    ClientsEntity* value;
+    int status;
+    ClientsHashTableEntry(ClientsEntity* value, int status);
+};
+
 class ClientsHashTable
 {
 
 public:
     ClientsHashTable(int size);
-    ~ClientsHashTable();
-    void insert(Entity* entity);
+    void insert(ClientsEntity* entity);
     void print();
-    void erase(Entity* entity);
-    bool find(Fullname fullname, GroupNumber groupNumber);
+    void erase(ClientsEntity* entity);
+    bool find(Fullname fullname, string job, string email, ClientPassport passport); 
+    ~ClientsHashTable();
 private:
-    vector<Element*>table;
     int size;
+    vector<ClientsHashTableEntry*>table;
     int initsize;
     int occupancy;
     int count;
     //bool isEqualStudentsCodeAndGroupNumber(Fullname firstFullname, Fullname secondFullname, GroupNumber firstGroupNumber, GroupNumber secondGroupNumber);
     void expand();
-    int hashFunction(Fullname fullname, GroupNumber groupnumber);
+    int hashFunction(Fullname fullname, string job, string email, ClientPassport passport);
     //int resolveCollision(int hash,Entity* entity,string type);
-    int resolveExpandCollision(int hash, vector<Element*>table);
-    int resolve(int hash, Entity* entity, string type);
+    int resolveExpandCollision(int hash, vector<ClientsHashTableEntry*>table);
+    int resolve(int hash, ClientsEntity* entity, string type);
     int secondaryHashFunction(int hash, int j);
-    bool isEqualByEntity(Entity* first, Entity* second);
+    bool isEqualByEntity(ClientsEntity* first, ClientsEntity* second);
 
 };
