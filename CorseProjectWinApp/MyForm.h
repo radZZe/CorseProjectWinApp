@@ -1129,7 +1129,7 @@ private: System::Windows::Forms::Label^ countOfCompareClients;
 
         
         vector<ClientsEntity*> dataClients = DataClientsStorage::data;
-        ClientsHashTable clientHashTable = DataClientsStorage::clientsHashTable;
+        ClientsHashTable& clientHashTable = DataClientsStorage::clientsHashTable;
         for (int i = 0; i < dataClients.size(); i++) {
             clientHashTable.insert(dataClients[i]);
         }
@@ -1830,7 +1830,7 @@ private: System::Void btnSearchByClient_Click(System::Object^ sender, System::Ev
     client->email = email;
     client->job = job;
     DataClientsStorage::rbtClient = root_init(DataClientsStorage::rbtNullnode);
-    Node* rbt = DataClientsStorage::rbtClient;
+    Node*& rbt = DataClientsStorage::rbtClient;
     vector<ClientsEntity*> clients = DataClientsStorage::data;
     for (int i = 0; i < clients.size(); i++) {
         string valueText = clients[i]->fullname.surname + ' ' + clients[i]->fullname.name + ' ' 
@@ -1864,7 +1864,9 @@ private: System::Void btnSearchByClient_Click(System::Object^ sender, System::Ev
 }
 private: System::Void btnAddClient_Click(System::Object^ sender, System::EventArgs^ e) {
     DataClientsStorage::clientsHashTable.print();
+    //DataClientsStorage::rbtClient
     DataStorage::requestsHashTable.print();
+    print(DataClientsStorage::rbtClient, DataClientsStorage::rbtNullnode, 4, 4);
 }
 };
 }
