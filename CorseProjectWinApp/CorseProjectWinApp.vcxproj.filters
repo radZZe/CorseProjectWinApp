@@ -93,5 +93,7 @@
   <ItemGroup>
     <Text Include="stdclients.txt" />
     <Text Include="stdservices.txt" />
+    <Text Include="debugClients.txt" />
+    <Text Include="stdclients1.txt" />
   </ItemGroup>
 </Project>

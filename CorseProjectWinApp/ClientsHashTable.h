@@ -6,6 +6,7 @@ class ClientsHashTableEntry {
 public:
     ClientsEntity* value;
     int status;
+    int index;
     ClientsHashTableEntry(ClientsEntity* value, int status);
 };
 
@@ -14,10 +15,13 @@ class ClientsHashTable
 
 public:
     ClientsHashTable(int size);
-    void insert(ClientsEntity* entity);
+    void insert(ClientsEntity* entity, int index);
+    void deleteEntity(ClientsEntity* entity);
     void print();
+    void debugPrint(ofstream& fout);
     void erase(ClientsEntity* entity);
-    bool find(Fullname fullname, string job, string email, ClientPassport passport); 
+    bool find(Fullname fullname, string job, string email, ClientPassport passport);
+    void changeIndex(ClientsEntity* clientEntity, int index);
     ~ClientsHashTable();
 private:
     int size;
@@ -25,6 +29,7 @@ private:
     int initsize;
     int occupancy;
     int count;
+    int checkAnotherChainClient(int index);
     //bool isEqualStudentsCodeAndGroupNumber(Fullname firstFullname, Fullname secondFullname, GroupNumber firstGroupNumber, GroupNumber secondGroupNumber);
     void expand();
     int hashFunction(Fullname fullname, string job, string email, ClientPassport passport);
