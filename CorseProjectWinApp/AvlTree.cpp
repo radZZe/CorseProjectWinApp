@@ -253,6 +253,14 @@ void _showTrunks(Trunk* p)
     cout << p->str;
 }
 
+void _showTrunksDebug(Trunk* p, ofstream& fout) {
+    if (p == nullptr) {
+        return;
+    }
+    _showTrunksDebug(p->prev, fout);
+    fout << p->str;
+}
+
 void printTree(treeNode* root, Trunk* prev)
 {
     if (root != nullptr) {
@@ -955,6 +963,42 @@ int updateServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, int
     }
     else {
         return 0;
+    }
+}
+
+void debugPrintAvlTree(treeNode* root, Trunk* prev,ofstream& fout) {
+    if (root != nullptr) {
+        string prev_str = "    ";
+        Trunk* trunk = new Trunk(prev, prev_str);
+
+        if (root->rightChild != nullptr) { //TODOs
+            debugPrintAvlTree(root->rightChild, trunk,fout);
+        }
+
+        listNode* temp = new listNode;
+        temp = root->head;
+        _showTrunksDebug(trunk,fout);
+        fout << temp->field->value << " index: " << temp->field->index << endl;
+        temp = root->head->ptr;
+        //cout << temp->field->passport.series << temp->field->passport.number << " " << temp->field->serviceType << " " << temp->field->serviceName << " " << temp->field->date.day << "." << temp->field->date.month << "." << temp->field->date.year << " " << endl;
+        while (temp != root->head) {
+            _showTrunksDebug(trunk,fout);
+            fout << temp->field->value << " index: " << temp->field->index << endl;
+            temp = temp->ptr;
+        }
+        //_showTrunks(trunk);
+        //cout << " " << root->head->field.firstField << " " << root->head->field.secondField << " " << root->head->field.thirdField << endl;
+
+        if (prev) {
+            prev->str = prev_str;
+        }
+
+        if (root->leftChild != nullptr) {
+            debugPrintAvlTree(root->leftChild, trunk,fout);
+        }
+    }
+    else {
+        fout << "Tree is empty" << endl;
     }
 }
 

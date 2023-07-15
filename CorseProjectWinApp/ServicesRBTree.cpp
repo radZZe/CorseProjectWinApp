@@ -137,25 +137,28 @@ listServices* deleteList(struct listServices*& head)
     return (head);
 }
 
-bool searchServiceInList(listServices* head,  treeNodeElemServices* element) {
+bool searchServiceInList(listServices* head, ServiceEntity* element, int &count) {
     bool flag = false;
     listServices* runner;
     runner = head;
     if (head == nullptr) {
-        return false;
+       return false;
     }
     else {
         while (runner->next != head && flag == false) {
-            if (runner->data.value == element->value) {
+            count++;
+            if (isEqualServices(DataStorage::dataServices[runner->data.index], element)) {
                 flag = true;
+                DataStorage::resultSerch = true;
                 return flag;
             }
             else {
                 runner = runner->next;
             }
         }
-        if (head->previous->data.value == element->value) {
+        if (isEqualServices(DataStorage::dataServices[head->previous->data.index], element)) {
             flag = true;
+            DataStorage::resultSerch = true;
         }
     }
     return flag;
@@ -218,7 +221,7 @@ void printTreeA(treeNodeServices*& root, int h, treeNodeServices*& leaf)
     }
 }
 
-bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int &count)
+bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int &count, ServiceEntity* fullEntity)
 {
     treeNodeServices* temp = root;
     if (root == nullptr)
@@ -235,8 +238,7 @@ bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServi
             DataStorage::countComparisons = count;
             if (compareData(temp->key->data, element) == 0)
             {
-                DataStorage::resultSerch = true;
-                return true;
+                return searchServiceInList(temp->key, fullEntity, count);
 
             }
             else if (compareData(temp->key->data, element) == -1)
@@ -358,7 +360,7 @@ void insertFixup(treeNodeServices*& root, treeNodeServices*& z, treeNodeServices
     root->color = 'b';
 }
 
-treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf)
+treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, ServiceEntity* fullEntity)
 {
 
     if (root == nullptr)
@@ -368,7 +370,7 @@ treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, 
     else
     {
         int count = DataStorage::countComparisons;
-        if (search(root, element, leaf, count))
+        if (search(root, element, leaf, count, fullEntity))
         {
             treeNodeServices* temp = root;
             while (temp != leaf)
@@ -529,7 +531,7 @@ void deleteFixup(treeNodeServices*& root, treeNodeServices*& x, treeNodeServices
     x->color = 'b';
 }
 
-void deleteElement(treeNodeServices*& root, treeNodeElemServices value, treeNodeServices*& leaf)
+void deleteElement(treeNodeServices*& root, treeNodeElemServices value, treeNodeServices*& leaf, ServiceEntity* fullEntity)
 {
     treeNodeServices* temp = root;
     treeNodeServices* z = leaf;
@@ -539,7 +541,7 @@ void deleteElement(treeNodeServices*& root, treeNodeElemServices value, treeNode
     {
         cout << "The tree does not exist";
     }
-    else if (search(root, value, leaf, count) == false)
+    else if (search(root, value, leaf, count, fullEntity) == false)
     {
         cout << "The node with given data does not exist";
     }
@@ -608,14 +610,14 @@ void deleteElement(treeNodeServices*& root, treeNodeElemServices value, treeNode
     }
 }
 
-void deleteTree(treeNodeServices*& root, treeNodeServices* leaf)
+void deleteTree(treeNodeServices*& root, treeNodeServices* leaf, ServiceEntity* fullEntity)
 {
     if (root == nullptr)
     {
         return;
     }
-    deleteElement(root->left, root->left->key->data, leaf);
-    deleteElement(root->left, root->right->key->data, leaf);
+    deleteElement(root->left, root->left->key->data, leaf, fullEntity);
+    deleteElement(root->left, root->right->key->data, leaf, fullEntity);
     root = nullptr;
 }
 

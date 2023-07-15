@@ -146,6 +146,7 @@
     <ClInclude Include="ReaderRequests.h" />
     <ClInclude Include="ReaderServices.h" />
     <ClInclude Include="RequestsHashTable.h" />
+    <ClInclude Include="ServicesHashTable.h" />
     <ClInclude Include="ServicesRBTree.h" />
   </ItemGroup>
   <ItemGroup>
