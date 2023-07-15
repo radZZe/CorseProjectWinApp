@@ -343,7 +343,7 @@ void insert_balance(Node*& element, Node*& root, Node* nullnode) {
 
 }
 
-Node* insert(Node*& root, Node* nullnode, RBTData input) {
+Node* insertClient(Node*& root, Node* nullnode, RBTData input) {
 	//Key keychik = parse_key(input);
 	int local = 0;
 	if (!pre_search(root, nullnode, input.value,local)) {
