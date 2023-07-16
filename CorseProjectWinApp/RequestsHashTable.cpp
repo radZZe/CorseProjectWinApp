@@ -90,17 +90,45 @@ int RequestsHashTable::firstHashFunction(int key)
     }
 }
 
-int RequestsHashTable::doubleHashFunc(int  key) {
-
-    int prime = 31; // Простое число, можно выбрать другое простое число
-    int stepSize = prime - (key % prime); // Шаг размером prime минус остаток от деления ключа на prime
-
-    // Проверяем, что шаг размером stepSize и величина хеш-таблицы tableSize взаимно просты
-    while (gcd(stepSize, this->size) != 1) {
-        stepSize++; // Увеличиваем шаг, пока не найдём взаимно простые значения
+bool isPrime(int number) {
+    // Обработка случая, когда число меньше 2
+    if (number < 2) {
+        return false;
     }
 
-    return stepSize;
+    // Проверка делителей от 2 до sqrt(number)
+    for (int i = 2; i * i <= number; i++) {
+        if (number % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int RequestsHashTable::doubleHashFunc(int  key) {
+    int keySquare = key * key;
+    int startPos = 0;
+    int key2 = 0;
+    int m = this->size;
+    if (isPrime(m)) {
+        m = m - 2;
+    }
+    if (this->size <= 10) {
+        startPos = 5;
+        int key2 = getNthDigit(keySquare, startPos);
+        return (1 + key2) % m;
+    }
+    else if (this->size <= 100 && this->size > 10) {
+        startPos = 4;
+        int key2 = getNthDigit(keySquare, startPos) * 10 + getNthDigit(keySquare, startPos + 1);
+        return (1 + key2) % m;
+    }
+    else if (this->size <= 1000 && this->size > 100) {
+        startPos = 3;
+        int key2 = getNthDigit(keySquare, startPos) * 100 + getNthDigit(keySquare, startPos + 1) * 10 + getNthDigit(keySquare, startPos + 2);
+        return (1 + key2) % m;
+    }
 
 }
 
@@ -112,32 +140,24 @@ int RequestsHashTable::secondHashFunction(int j, int first, int second) { // вто
 int  RequestsHashTable::dataToKey(string serviceName, string serviceType, Passport passport,date date) {
     int result = 0;
     for (int i = 0; i < serviceName.size(); i++) {
-        cout << abs(serviceName[i]) << " + ";
         result += abs(serviceName[i]);
     }
     for (int i = 0; i < serviceType.size(); i++) {
-        cout << abs(serviceType[i]) << " + ";
         result += abs(serviceType[i]);
     }
     string passportSeries = to_string(passport.series);
     string passportNumber = to_string(passport.number);
     for (int i = 0; i < passportSeries.size(); i++) {
         char num = passportSeries[i];
-        cout << num << " + ";
         result += num;
     }
     for (int i = 0; i < passportNumber.size(); i++) {
         char num = passportNumber[i];
-        cout << num << " + ";
         result += num;
     }
     result += stoi(date.day);
-    cout << stoi(date.day) << " + ";
     result += stoi(date.month);
-    cout << stoi(date.month) << " + ";
     result += stoi(date.year);
-    cout << stoi(date.year) << " = ";
-    cout << result;
     return result;
 };
 
@@ -182,18 +202,20 @@ void RequestsHashTable::insertCollision(int _counter, int _index, int _key, Requ
         //cout << "INSERT: try =" << counter << " index = " << index << "value key = " << value->key.firstField << " " << value->key.secondField << " " << value->key.thirdField << endl;
         if (isEqualElements(data[index]->value, value)) {
             cout << "EXCEPTION : such an element is already in place " << endl;
-            break;
+            return;
         }
-        counter++;
         index = secondHashFunction(counter, _index, secondHash);
+        counter++;
+        if (counter > size) {
+            cout << "EXCEPTION : stack overflow " << endl;
+            return;
+        }
+
     }
-    if (counter > size) {
-        cout << "EXCEPTION : stack overflow " << endl;
-    }
-    else {
+    
         data[index]->value = value;
         data[index]->status = 1;
-    }
+    
 }
 
 void RequestsHashTable::remove(RequestsEntity* value) {
@@ -221,7 +243,7 @@ void RequestsHashTable::shiftElements(int secondHash, int delIndex, RequestsEnti
         }
         index = secondHashFunction(counter, delIndex, secondHash);
         counter++;
-    } while (counter <= size);
+    } while (counter <= size && data[index]->status!=0);
     data[delIndex]->value = data[tempIndex]->value;
     data[delIndex]->status = data[tempIndex]->status;
     data[tempIndex]->value = nullptr;
