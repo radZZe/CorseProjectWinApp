@@ -64,6 +64,15 @@ listServices* deleteListElement(listServices* head, treeNodeElemServices givenDa
                 runner = runner->next;
             }
         }
+        if (runner->data.value == givenData.value) {
+            listServices* save = new listServices;
+            save->next = runner->next->next;
+            delete runner->next;
+            runner->next = save->next;
+            runner->next->next->previous = runner;
+            runner = runner->next;
+            flag = false;
+        }
         return head;
     }
 }
