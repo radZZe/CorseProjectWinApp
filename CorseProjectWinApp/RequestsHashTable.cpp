@@ -31,6 +31,13 @@ int RequestsHashTable::isPrime(int num) {
     return 1;
 }
 
+int RequestsHashTable::gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
 int RequestsHashTable::countDigits(long int key)
 {
     int count = 0;
@@ -70,6 +77,7 @@ int RequestsHashTable::firstHashFunction(int key)
         startPos = 4;
         int result = getNthDigit(keySquare, startPos) * 10 + getNthDigit(keySquare, startPos + 1);
         //cout << "INSERT: firstHash =" << result << "dataToKey = " << key << endl;
+        int test = 5;
         if (result > this->size) result = result % this->size;
         return result;
     }
@@ -82,18 +90,51 @@ int RequestsHashTable::firstHashFunction(int key)
     }
 }
 
+bool isPrime(int number) {
+    // Обработка случая, когда число меньше 2
+    if (number < 2) {
+        return false;
+    }
+
+    // Проверка делителей от 2 до sqrt(number)
+    for (int i = 2; i * i <= number; i++) {
+        if (number % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 int RequestsHashTable::doubleHashFunc(int  key) {
-    if (isPrime(this->size)) {
-        return (1 + key) % (this->size - 2);
+    int keySquare = key * key;
+    int startPos = 0;
+    int key2 = 0;
+    int m = this->size;
+    if (isPrime(m)) {
+        m = m - 2;
     }
-    else {
-        int test = (1 + key ) % this->size;
-        return test;
+    if (this->size <= 10) {
+        startPos = 5;
+        int key2 = getNthDigit(keySquare, startPos);
+        return (1 + key2) % m;
     }
+    else if (this->size <= 100 && this->size > 10) {
+        startPos = 4;
+        int key2 = getNthDigit(keySquare, startPos) * 10 + getNthDigit(keySquare, startPos + 1);
+        return (1 + key2) % m;
+    }
+    else if (this->size <= 1000 && this->size > 100) {
+        startPos = 3;
+        int key2 = getNthDigit(keySquare, startPos) * 100 + getNthDigit(keySquare, startPos + 1) * 10 + getNthDigit(keySquare, startPos + 2);
+        return (1 + key2) % m;
+    }
+
 }
 
 int RequestsHashTable::secondHashFunction(int j, int first, int second) { // вторичная хеш функция 
-    return (first + j * second) % this->size;
+    int result = (first + j * second) % this->size;
+    return result;
 }
 
 int  RequestsHashTable::dataToKey(string serviceName, string serviceType, Passport passport,date date) {
@@ -161,18 +202,20 @@ void RequestsHashTable::insertCollision(int _counter, int _index, int _key, Requ
         //cout << "INSERT: try =" << counter << " index = " << index << "value key = " << value->key.firstField << " " << value->key.secondField << " " << value->key.thirdField << endl;
         if (isEqualElements(data[index]->value, value)) {
             cout << "EXCEPTION : such an element is already in place " << endl;
-            break;
+            return;
         }
-        counter++;
         index = secondHashFunction(counter, _index, secondHash);
+        counter++;
+        if (counter > size) {
+            cout << "EXCEPTION : stack overflow " << endl;
+            return;
+        }
+
     }
-    if (counter > size) {
-        cout << "EXCEPTION : stack overflow " << endl;
-    }
-    else {
+    
         data[index]->value = value;
         data[index]->status = 1;
-    }
+    
 }
 
 void RequestsHashTable::remove(RequestsEntity* value) {
@@ -194,11 +237,13 @@ void RequestsHashTable::shiftElements(int secondHash, int delIndex, RequestsEnti
     int counter = 1;
     do {
         if (data[index]->status != 0) {
-            if (isEqualFirstHash(data[index]->value, value)) tempIndex = index;
+            if (isEqualFirstHash(data[index]->value, value)) { 
+                tempIndex = index; 
+            }
         }
         index = secondHashFunction(counter, delIndex, secondHash);
         counter++;
-    } while (counter <= size && data[index]->status != 0);
+    } while (counter <= size && data[index]->status!=0);
     data[delIndex]->value = data[tempIndex]->value;
     data[delIndex]->status = data[tempIndex]->status;
     data[tempIndex]->value = nullptr;

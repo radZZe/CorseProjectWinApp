@@ -39,5 +39,6 @@ public:
     vector<int> search(RequestsEntity* value);
     void print();
     void debugPrint(ofstream& fout);
+    int gcd(int a, int b);
 };
 

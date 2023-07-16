@@ -249,9 +249,15 @@ bool pre_search(Node* root, Node* nullnode, string value, int& count) {
 	while (temp != nullnode) {
 		count++;
 		DataClientsStorage::countComparisons = count;
-		if (comparator(temp->data->key.value, value) == 0) { DataClientsStorage::resultSearch = true; return true; }
-		if (comparator(value, temp->data->key.value) == 1) { temp = temp->right; }
-		else { temp = temp->left; }
+		if (comparator(temp->data->key.value, value) == 0) { 
+			DataClientsStorage::resultSearch = true; 
+			return true; }
+		if (comparator(value, temp->data->key.value) == 1) { 
+			temp = temp->right; 
+		}
+		else { 
+			temp = temp->left; 
+		}
 	}
 	DataClientsStorage::resultSearch = false;
 	return false;
