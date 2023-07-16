@@ -1179,23 +1179,23 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(17, 377);
+			/*this->button6->Location = System::Drawing::Point(17, 377);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(157, 23);
 			this->button6->TabIndex = 51;
 			this->button6->Text = L"Ïîèñê ïî òèïó óñëóãè";
 			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);*/
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(150, 337);
+			/*this->button7->Location = System::Drawing::Point(150, 337);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(99, 23);
 			this->button7->TabIndex = 50;
 			this->button7->Text = L"Ïîèñê ïî äàòå";
 			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);*/
 			// 
 			// button8
 			// 
@@ -1209,13 +1209,13 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// button9
 			// 
-			this->button9->Location = System::Drawing::Point(17, 296);
+			/*this->button9->Location = System::Drawing::Point(17, 296);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(232, 23);
 			this->button9->TabIndex = 48;
 			this->button9->Text = L"Ïîèñê ïî òèïó è íàçâàíèþ óñëóãè";
 			this->button9->UseVisualStyleBackColor = true;
-			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);*/
 			// 
 			// MyForm
 			// 
@@ -2587,6 +2587,7 @@ private: System::Void saveDebugServices_Click(System::Object^ sender, System::Ev
 
 	fout.close();
 	MessageBox::Show(this, "�����-���������� ��������� � ���� debugRequests.txt", "�������", MessageBoxButtons::OK, MessageBoxIcon::Information);
+}
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
