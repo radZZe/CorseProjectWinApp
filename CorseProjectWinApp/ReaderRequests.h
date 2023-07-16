@@ -52,8 +52,10 @@ struct RequestsEntity {
 
 
 int isEqualElements(RequestsEntity* first, RequestsEntity* second);
+int isEqualElementsFIX(RequestsEntity* first, RequestsEntity* second);
 
-
+bool hasOnlyNonAlphanumeric(const std::string& str);
+bool hasOnlyDigitsAndDots(const std::string& str);
 date inputDateData(string inputString);
 
 Passport inputPassportData(string inputString);

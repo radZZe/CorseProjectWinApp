@@ -251,7 +251,6 @@ void addNode(treeNode*& pointer, listNodeElem* key, bool& heightChanged) {
                 heightChanged = false;
             }
         }
-
     }
     else {
         addElemToEnd(pointer->head, key);
@@ -570,6 +569,77 @@ int searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue,int& 
                 }
             }
             
+        }
+    }
+    else {
+        DataStorage::countComparisons = count;
+        DataStorage::resultSerch = false;
+        return 0;
+    }
+}
+
+int searchByPassportTreeNodeFIX(treeNode* pointer, RequestsEntity* givenValue, int& count) {
+    listNodeElem* value = new listNodeElem();
+    value->value = to_string(givenValue->passport.series) + to_string(givenValue->passport.number);
+    if (pointer != NULL) {
+        if (_compareKeys(pointer->head->field, value) == 1) {
+            count++;
+            if (pointer->leftChild != nullptr) {
+                searchByPassportTreeNodeFIX(pointer->leftChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else if (_compareKeys(pointer->head->field, value) == -1) {
+            count++;
+            if (pointer->rightChild != nullptr) {
+                searchByPassportTreeNodeFIX(pointer->rightChild, givenValue, count);
+            }
+            else {
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = false;
+                return 0;
+            }
+        }
+        else {
+            if (isEqualElementsFIX(givenValue, DataStorage::data[pointer->head->field->index])) {
+                count++;
+                DataStorage::indexSearch = pointer->head->field->index;
+                DataStorage::countComparisons = count;
+                DataStorage::resultSerch = true;
+                return 0;
+            }
+            else {
+                listNode* temp = pointer->head;
+                while (temp->ptr->field->index != pointer->head->field->index) {
+                    count++;
+                    if (isEqualElementsFIX(givenValue, DataStorage::data[temp->field->index])) {
+                        DataStorage::indexSearch = temp->field->index;
+                        DataStorage::countComparisons = count;
+                        DataStorage::resultSerch = true;
+                        return 0;;
+                    }
+                    temp = temp->ptr;
+                }
+                count++;
+                if (isEqualElementsFIX(givenValue, DataStorage::data[temp->field->index])) {
+
+                    DataStorage::indexSearch = temp->field->index;
+                    DataStorage::countComparisons = count;
+                    DataStorage::resultSerch = true;
+                    return 0;
+                }
+                if (pointer->leftChild != nullptr) {
+                    searchByPassportTreeNodeFIX(pointer->leftChild, givenValue, count);
+                }
+                if (pointer->rightChild != nullptr) {
+                    searchByPassportTreeNodeFIX(pointer->rightChild, givenValue, count);
+                }
+            }
+
         }
     }
     else {
