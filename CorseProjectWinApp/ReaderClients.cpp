@@ -5,6 +5,7 @@
 #include <vector>
 #include <string> 
 #include <fstream>
+#include <set>
 
 using namespace std;
 
@@ -19,7 +20,7 @@ ClientPassport inputPassportClients(string input) {
         }
     }
     int series = stoi(input.substr(0, 4));
-    int number = stoi(input.substr(4 + 1, (input.length()) - 4));
+    int number = stoi(input.substr(4 , (input.length()) - 2));
     //return { series,number };
     passport.number = number;
     passport.series = series;
@@ -77,15 +78,15 @@ Fullname inputFullnameData(string input)
         if (input[i] == ' ')countShifts++;
         if (countShifts == 0)
         {
-            surname += input[i];
+            if (input[i] != ' ')surname += input[i];
         }
         if (countShifts == 1)
         {
-            name += input[i];
+            if (input[i] != ' ')name += input[i];
         }
         if (countShifts == 2)
         {
-            lastname += input[i];
+            if (input[i] != ' ')lastname += input[i];
         }
     }
     return { name,surname,lastname };
@@ -107,7 +108,7 @@ ClientsEntity* inputEntityDataClients(string input) {
     entity->fullname = inputFullnameData(input.substr(0, numbers.at(0)));
     entity->job = input.substr(numbers[0] + 1, (numbers[1] - 1) - numbers[0]);
     entity->email = input.substr(numbers[1] + 1, ((numbers[2] - 1) - numbers[1]));
-    entity->passport = inputPassportClients(input.substr(numbers[2] + 1, (input.length() - 1) - numbers[2]));
+    entity->passport = inputPassportClients(input.substr(numbers[2] + 1, (input.length()-1) - numbers[2]));
     return entity;
 }
 
@@ -133,14 +134,68 @@ vector <ClientsEntity*> readFromFileClients(string path) {
     return data;
 }
 
-void writeData(vector<ClientsEntity*>  value, string path) {}
-//void writeData(vector<ClientsEntity*>  value, string path) {
-//    ofstream  fout(path);
-//    fout << value.size() << "\n";
-//    for (int i = 0; i < value.size(); i++) {
-//        fout << value[i]->passport.series << value[i]->passport.number << "$" << value[i]->serviceType << "$" << value[i]->serviceName << "$" << value[i]->date.day << "." << value[i]->date.month << "." << value[i]->date.year << "\n";
-//    }
-//
-//    fout.close();
-//
-//}
+bool isValidateData(int passportSeries, int passportNumber, string fullnamestr, string email, string job)
+{
+    try {
+        string passSerstr = to_string(passportSeries);
+        string passNumstr = to_string(passportNumber);
+        if (passNumstr.size() == 0 || passSerstr.size() == 0 || fullnamestr.size() == 0 || email.size() == 0 || job.size() == 0)
+        {
+            return false;
+        }
+        set<char>letters = { 'q','w','e','r','t','y','u','i','o','p','a','s',
+        'd','f','g','h','j','k','l','z','x','c','v','b','n','m','Q','W','E',
+        'R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z'
+        ,'X','C','V','B','N','M','0','1','2','3','4','5','6','7','8','9','-',
+        '_','!','#','$','%','^','&','*','(',')','+','=','[',']','{','}','<',
+        '>','?','/','|','~','\\','.' };
+        set<char>digits = { '0','1','2','3','4','5','6','7','8','9' };
+        bool isValidPassport = true;
+        for (size_t i = 0; i < passSerstr.size(); i++)
+        {
+            if (digits.find(passSerstr[i]) == digits.end())
+            {
+                isValidPassport = isValidPassport && false;
+            }
+        }
+        for (size_t i = 0; i < passNumstr.size(); i++)
+        {
+            if (digits.find(passNumstr[i]) == digits.end())
+            {
+                isValidPassport = isValidPassport && false;
+            }
+        }
+        bool flag = true;
+        for (int i = 0; i < email.size(); i++)
+        {
+            if (letters.find(email[i]) == letters.end()) {
+                flag = flag && false;
+            }
+        }
+        if (!flag)return false;
+        bool sobaka = false;
+        for (int i = 0; i < email.size(); i++)
+        {
+            if (email[i] == '@') sobaka = true;
+        }
+        flag = flag && sobaka && isValidPassport;
+        return flag;
+    }
+    catch (exception& err)
+    {
+        return false;
+    }
+    return false;
+}
+
+void writeDataClient(vector<ClientsEntity*>  value, string path) {
+    ofstream  fout(path);
+    fout << value.size() << "\n";
+    for (int i = 0; i < value.size(); i++) {
+        fout << value[i]->fullname.surname +" "+value[i]->fullname.name +" "+ value[i]->fullname.lastname 
+            << "$" << value[i]->job<< "$" << value[i]->email << "$" << value[i]->passport.series << "" << value[i]->passport.number <<"\n";
+    }
+
+    fout.close();
+
+}

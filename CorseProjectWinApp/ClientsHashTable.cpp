@@ -7,157 +7,6 @@
 
 using namespace std;
 
-Fullname parseFullname(string input) {
-    Fullname fullname;
-    vector <int> numbers;
-    for (int i = 0; i < input.length(); i++) {
-        if (input[i] == ' ') {
-            numbers.push_back(i);
-        }
-    }
-    fullname.name = input.substr(0, numbers.at(0));
-    fullname.surname = input.substr(numbers[0] + 1, (numbers[1] - 1) - numbers[0]);
-    fullname.lastname = input.substr(numbers[1] + 1, (input.length() - 1) - numbers[1]);
-    return fullname;
-}
-
-GroupNumber parseGroupNumber(string input) {
-    GroupNumber groupNumber;
-    vector <int> numbers;
-    for (int i = 0; i < input.length(); i++) {
-        if (input[i] == ' ') {
-            numbers.push_back(i);
-        }
-    }
-    groupNumber.degree = input.substr(0, numbers.at(0));
-    groupNumber.number = stoi(input.substr(numbers[0] + 1, (numbers[1] - 1) - numbers[0]));
-    groupNumber.speciality = input.substr(numbers[1] + 1, (input.length() - 1) - numbers[1]);
-    return groupNumber;
-}
-
-Key parseKey(string input) {
-    Key key;
-    vector <int> numbers;
-    for (int i = 0; i < input.length(); i++) {
-        if (input[i] == '.') {
-            numbers.push_back(i);
-        }
-    }
-    key.first = stoi(input.substr(0, numbers.at(0)));
-    key.second = stoi(input.substr(numbers[0] + 1, (numbers[1] - 1) - numbers[0]));
-    key.third = stoi(input.substr(numbers[1] + 1, (input.length() - 1) - numbers[1]));
-    return key;
-};
-
-Entity* parseEntity(string input) {
-    Entity* entity;
-    entity = new Entity();
-    vector <int> numbers;
-    for (int i = 0; i < input.length(); i++) {
-        if (input[i] == ' ') {
-            numbers.push_back(i);
-        }
-    }
-    entity->key = parseKey(input.substr(0, numbers[0]));
-    entity->fullname = parseFullname(input.substr(numbers[0] + 1, (numbers[3] - 1) - numbers[0]));
-    entity->groupnumber = parseGroupNumber(input.substr(numbers[3] + 1, (input.length() - 1) - numbers[3]));
-    return entity;
-}
-
-void generateFile(int n, string path)
-{
-    ofstream fout;
-    try
-    {
-        fout.open(path);
-        fout << n;
-        fout << '\n';
-        for (int i = 0; i < n; i++)
-        {
-            fout << to_string(rand() % 89 + 10) << '.' << to_string(rand() % 89 + 10) << '.' << to_string(rand() % 89 + 10) << ' ';
-            for (int i = 'a'; i < 't'; i++)
-                fout << char('a' + rand() % ('z' - 'a'));
-            fout << ' ';
-            for (int i = 'a'; i < 't'; i++)
-                fout << char('a' + rand() % ('z' - 'a'));
-            fout << ' ';
-            for (int i = 'a'; i < 't'; i++)
-                fout << char('a' + rand() % ('z' - 'a'));
-            fout << ' ';
-            if ((rand() % 100 + 1) % 2 == 1)
-            {
-                fout << 'M';
-            }
-            else
-                fout << 'B';
-            fout << ' ';
-            fout << rand() % 8999 + 1000;
-            fout << ' ';
-            for (int i = 'a'; i < 't'; i++)
-                fout << char('a' + rand() % ('z' - 'a'));
-            fout << '\n';
-        }
-        fout.close();
-    }
-    catch (exception e)
-    {
-        cout << e.what() << '\n';
-    }
-}
-
-vector<Entity*> readData(string path, int amount)
-{
-    string line;
-    ifstream file(path);
-    getline(file, line);
-    int n = stoi(line);
-    vector<Entity*> data(min(n, amount));
-
-    for (int i = 0; i < min(n, amount); i++)
-    {
-        getline(file, line);
-        Entity* entity = parseEntity(line);
-        data[i] = entity;
-    }
-    file.close();
-    return data;
-}
-
-string parseStudentCode(Entity* student) {
-    string s;
-    if (student->key.first < 10)
-    {
-        s = "0" + to_string(student->key.first);
-    }
-    else {
-        s = to_string(student->key.first);
-    }
-    if (student->key.second < 10)
-    {
-        s += ".0" + to_string(student->key.second);
-    }
-    else {
-        s += "." + to_string(student->key.second);
-    }
-    if (student->key.third < 10)
-    {
-        s += ".0" + to_string(student->key.third);
-    }
-    else {
-        s += "." + to_string(student->key.third);
-    }
-    return s;
-}
-
-
-
-
-void writeData(string data, string path) {
-    ofstream  fout(path, ios::binary | ios::app);
-    fout << data << "\n";
-    fout.close();
-}
-
 ClientsHashTableEntry::ClientsHashTableEntry(ClientsEntity* value, int status)
 {
     this->status = status;
@@ -175,55 +24,10 @@ ClientsHashTable::ClientsHashTable(int size) {
     this->table = vector<ClientsHashTableEntry*>(size,nullptr);
     for (int i = 0; i < size; i++) {
         ClientsHashTableEntry* emptyElement = new ClientsHashTableEntry(nullptr, 0);
+        emptyElement->index = -1;
         table[i] = emptyElement;
     }
 }
-
-//bool isEqualByStudentsCodeAndGroupNumber(Entity* first, Entity* second)
-//{
-//    if (first == nullptr || second == nullptr) {
-//        return false;
-//    }
-//    if (first->fullname.name + first->fullname.surname + first->fullname.lastname == second->fullname.name + second->fullname.surname + second->fullname.lastname)
-//    {
-//        if (first->groupnumber.degree == second->groupnumber.degree)
-//        {
-//            if (first->groupnumber.number == second->groupnumber.number)
-//            {
-//                if (first->groupnumber.speciality == second->groupnumber.speciality)
-//                {
-//                    return true;
-//                }
-//                else
-//                {
-//                    return false;
-//                }
-//            }
-//            else
-//            {
-//                return false;
-//            }
-//        }
-//        else
-//        {
-//            return false;
-//        }
-//    }
-//    else
-//    {
-//        return false;
-//    }
-//
-//}
-
-//bool ClientsHashTable::isEqualByValue(ClientsEntity* first, ClientsEntity* second)
-//{
-//    if (first->key.first == second->key.first && first->key.second == second->key.second && first->key.third == second->key.third && isEqualByStudentsCodeAndGroupNumber(first, second))
-//    {
-//        return true;
-//    }
-//    return false;
-//}
 
 int ClientsHashTable::hashFunction(Fullname fullname, string job, string email, ClientPassport passport)
 {
@@ -333,6 +137,7 @@ int ClientsHashTable::resolve(int hash, ClientsEntity* entity, string type)
 
 bool ClientsHashTable::find(Fullname fullname, string job, string email, ClientPassport passport) {
     ClientsHashTableEntry* temp = new ClientsHashTableEntry(nullptr,0);
+    temp->index = -1;
     temp->value->fullname = fullname;
     temp->value->job = job;
     temp->value->email = email;
@@ -347,17 +152,21 @@ bool ClientsHashTable::find(Fullname fullname, string job, string email, ClientP
         cout << "index: " << hash << "| value: " << table[hash]->value->fullname.surname << " "
             << table[hash]->value->fullname.name << " " << table[hash]->value->fullname.lastname << " "
             << table[hash]->value->job << " " << table[hash]->value->email << " " << table[hash]->value->passport.series
-            << " " <<table[hash]->value->passport.number << " |status: 1" << endl;
+            << " " <<table[hash]->value->passport.number << " |status: 1" << "|firstHash: "
+            << hashFunction(table[hash]->value->fullname, table[hash]->value->job, table[hash]->value->email, table[hash]->value->passport)
+            << " |secondHash: " << hash << " |Array index: " << table[hash]->index << '\n';
         return true;
     }
     else
     {
         int rehash = resolve(hash, temp->value, "FIND");
         if (table[rehash]->status == 1 && isEqualElementsClients(table[rehash]->value, temp->value)) {
-            cout << "index: " << hash << "| value: " << table[hash]->value->fullname.surname << " "
-                << table[hash]->value->fullname.name << " " << table[hash]->value->fullname.lastname << " "
-                << table[hash]->value->job << " " << table[hash]->value->email << " " << table[hash]->value->passport.series
-                << " " << table[hash]->value->passport.number << " |status: 1" << endl;
+            cout << "index: " << rehash << "| value: " << table[rehash]->value->fullname.surname << " "
+                << table[rehash]->value->fullname.name << " " << table[rehash]->value->fullname.lastname << " "
+                << table[rehash]->value->job << " " << table[rehash]->value->email << " " << table[hash]->value->passport.series
+                << " " << table[hash]->value->passport.number << " |status: 1" << "|firstHash: "
+                << hashFunction(table[rehash]->value->fullname, table[rehash]->value->job, table[rehash]->value->email, table[rehash]->value->passport)
+                << " |secondHash: " << rehash << " |Array index: " << table[rehash]->index << '\n';
             return true;
         }
         else {
@@ -380,7 +189,9 @@ void ClientsHashTable::print()
             cout << "index: " << i << "| value: " << table[i]->value->fullname.surname << " "
                 << table[i]->value->fullname.name << " " << table[i]->value->fullname.lastname << " "
                 << table[i]->value->job << " " << table[i]->value->email << " " << table[i]->value->passport.series
-                << " " << table[i]->value->passport.number << " |status: 1" << endl;
+                << " " << table[i]->value->passport.number << " |status: 1" <<"|firstHash: " 
+                <<hashFunction(table[i]->value->fullname, table[i]->value->job, table[i]->value->email, table[i]->value->passport) 
+                <<" |secondHash: " <<i <<" |Array index: " << table[i]->index<< '\n';
         }
         else
         {
@@ -388,6 +199,28 @@ void ClientsHashTable::print()
                 << " |status: 0" << endl;
         }
     }
+}
+
+void ClientsHashTable::changeIndex(ClientsEntity* clientEntity, int index)
+{
+    int hash = hashFunction(clientEntity->fullname, clientEntity->job, clientEntity->email, clientEntity->passport);
+    if (table[hash]->status == 0) 
+    {
+        return;
+    }
+    else if (table[hash]->value != nullptr && clientEntity != nullptr && isEqualElementsClients(table[hash]->value, clientEntity))
+    {
+        table[hash]->index = index;
+    }
+    else
+    {
+        int rehash = resolve(hash, clientEntity, "FIND");
+        if (table[rehash]->status == 1 && isEqualElementsClients(table[rehash]->value, clientEntity))
+        {
+            table[rehash]->index = index;
+        }
+    }
+
 }
 
 void ClientsHashTable::expand() {
@@ -411,12 +244,14 @@ void ClientsHashTable::expand() {
                 int hash = hashFunction(table[i]->value->fullname, table[i]->value->job, table[i]->value->email,table[i]->value->passport);
                 if (tempTable[hash]->status == 0) {
                     tempTable[hash]->value = table[i]->value;
+                    tempTable[hash]->index = table[i]->index;
                     tempTable[hash]->status = 1;
                 }
                 else {
                     int j = 1;
                     int rehash = resolveExpandCollision(hash, tempTable);
                     tempTable[rehash]->value = table[i]->value;
+                    tempTable[rehash]->index = table[i]->index;
                     tempTable[rehash]->status = 1;
                 }
             }
@@ -427,10 +262,11 @@ void ClientsHashTable::expand() {
     }
 }
 
-void ClientsHashTable::insert(ClientsEntity* entity) {
+void ClientsHashTable::insert(ClientsEntity* entity,int index) {
     int hash = hashFunction(entity->fullname,entity->job, entity->email, entity->passport);
     //int hash = 0;
     ClientsHashTableEntry* element = new ClientsHashTableEntry(entity,1);
+    element->index = index;
 
     if (table[hash]->status == 0) {
         table[hash] = element;
@@ -443,7 +279,7 @@ void ClientsHashTable::insert(ClientsEntity* entity) {
         if (rehash == -1) { cout << "Element is not unique\n"; return; }
         table[rehash] = element;
         this->count++;
-        this->occupancy = (count * 100) / size;
+        this->occupancy = (count * 100) / this->size;
     }
     expand();
 }
@@ -466,23 +302,30 @@ void ClientsHashTable::erase(ClientsEntity* entity)
         this->occupancy = (this->count / this->size) * 100;
         expand();
         j++;
+        int hash = hashFunction(entity->fullname, entity->job, entity->email, entity->passport);
         int next = secondaryHashFunction(hash, j);
         int valid = current;
         while (table[next]->status == 1) {
-            if (hashFunction(table[next]->value->fullname, table[next]->value->job, table[next]->value->email, table[next]->value->passport) == hash) { valid = next; }
-            j++;
-            next = secondaryHashFunction(hash, j);
+            if (j < this->size && hashFunction(table[next]->value->fullname, table[next]->value->job, table[next]->value->email, table[next]->value->passport) == hash)
+            {
+                valid = next;
+            }
+                j++;
+                next = secondaryHashFunction(hash, j);
+            
         }
         if (current != valid)
         {
             table[current]->value = table[valid]->value;
             table[valid]->value = nullptr;
             table[valid]->status = 0;
+            table[valid]->index = -1;
         }
         else
         {
             table[current]->value = nullptr;
             table[current]->status = 0;
+            table[current]->index = -1;
         }
     }
     else
@@ -490,6 +333,132 @@ void ClientsHashTable::erase(ClientsEntity* entity)
         cout << "The element to be removed was not in the table\n";
     }
 
+}
+
+void ClientsHashTable::deleteEntity(ClientsEntity* entityClient)
+{
+    this->count--;
+    this->occupancy = (this->count / this->size) * 100;
+    //resizeTable(calculateOccupancy(), item, "jopa", -1);
+    expand();
+    int hash = hashFunction(entityClient->fullname, entityClient->job, entityClient->email, entityClient->passport);;
+    int deletableIndx = -1;
+    int possible;
+
+    if (this->table[hash]->status == 1)
+    {
+        int step = 1;
+        int rehash = secondaryHashFunction(hash, step);
+        step++;
+        int nextRehash = secondaryHashFunction(hash, step);
+        int valid = -1;
+
+        if (isEqualElementsClients(entityClient, this->table[hash]->value))
+        {
+            valid = hash;
+            deletableIndx = valid;
+        }
+
+        if (this->table[rehash]->status == 1) {
+            if (hash == hashFunction(this->table[rehash]->value->fullname, this->table[rehash]->value->job, this->table[rehash]->value->email, this->table[rehash]->value->passport))
+            {
+                valid = rehash;
+                if (isEqualElementsClients(entityClient, this->table[valid]->value) == 1)
+                {
+                    deletableIndx = valid;
+                }
+            }
+        }
+
+
+        while (this->table[rehash]->status == 1 && this->table[nextRehash]->status == 1 && this->size > step)
+        {
+            step++;
+            rehash = nextRehash;
+            nextRehash = secondaryHashFunction(hash, step);
+
+            if (hash == hashFunction(this->table[rehash]->value->fullname, this->table[rehash]->value->job, this->table[rehash]->value->email, this->table[rehash]->value->passport))
+            {
+                valid = rehash;
+                if (isEqualElementsClients(entityClient, this->table[valid]->value) == 1)
+                {
+                    deletableIndx = valid;
+                }
+            }
+
+        }
+
+
+        if (deletableIndx != -1)
+        {
+
+            ClientsHashTableEntry* emptyEntity = new ClientsHashTableEntry(nullptr,0);
+
+            if (valid == deletableIndx)
+            {
+                int anotherValid = checkAnotherChainClient(deletableIndx);
+                if (anotherValid != -1) {
+                    this->table[deletableIndx] = this->table[anotherValid];
+                    this->table[anotherValid] = emptyEntity;
+                }
+                else {
+                    this->table[deletableIndx] = emptyEntity;
+                }
+            }
+            else
+            {
+                this->table[deletableIndx]->value = this->table[valid]->value;
+                this->table[valid] = emptyEntity;
+            }
+        }
+    }
+
+    if (deletableIndx == -1)
+    {
+        this->count++;
+        this->occupancy = (count * 100) / size;
+        cout << "Can't delete this element. The element is not in the table." << endl
+            << endl;
+        //resizeTable(calculateOccupancy(), item, "jopa", -1);
+        expand();
+
+    }
+}
+
+int ClientsHashTable::checkAnotherChainClient(int index) {
+    int step = 1;
+    int valid = -1;
+    int rehash = secondaryHashFunction(index, step);
+    while (this->table[rehash]->status == 1 && this->size > step) {
+        if (index == hashFunction(this->table[rehash]->value->fullname, this->table[rehash]->value->job, this->table[rehash]->value->email, this->table[rehash]->value->passport)) {
+            valid = rehash;
+        }
+        step++;
+        rehash = secondaryHashFunction(index, step);
+    }
+    return valid;
+}
+
+void ClientsHashTable::debugPrint(ofstream& fout)
+{
+    this->table;
+    for (int i = 0; i < size; i++)
+    {
+        if (table[i]->status != 0)
+        {
+            fout << "index: " << i << "| value: " << table[i]->value->fullname.surname << " "
+                << table[i]->value->fullname.name << " " << table[i]->value->fullname.lastname << " "
+                << table[i]->value->job << " " << table[i]->value->email << " " << table[i]->value->passport.series
+                << " " << table[i]->value->passport.number << " |status: 1" << "|firstHash: "
+                << hashFunction(table[i]->value->fullname, table[i]->value->job, table[i]->value->email, table[i]->value->passport)
+                << " |secondHash: " << i << " |Array index: " << table[i]->index << '\n';
+        }
+        else
+        {
+            fout << "index: " << i << "| value: - "
+                << " |status: 0" << endl;
+        }
+    }
 }
 
 ClientsHashTable::~ClientsHashTable()

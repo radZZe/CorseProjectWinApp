@@ -44,6 +44,7 @@ int _compareKeys(listNodeElem* first, listNodeElem* second) {
     }
 }
 
+
 listNode* initList()
 {
     listNode* head;
@@ -76,28 +77,46 @@ listNode* addElemToEnd(listNode*& head, listNodeElem* value)
     return (head);
 }
 
-void  delElem(listNode*& head)
-{
-    if (head == nullptr)
-    {
+
+void delListElem(listNode*& head, listNodeElem* value) {
+    if (head == nullptr) {
         cout << "Execution error, the list is empty!" << endl;
-        //return head;
+        return;
     }
-    else
-    {
-        listNode*& runner = head;
-        while (runner->ptr->ptr != head) {
-            runner = runner->ptr;
+
+    listNode* current = head;
+    listNode* previous = nullptr;
+
+    do {
+        if (current->field->index  == value->index) {
+            if (previous == nullptr) {
+                // Удаление головного элемента
+                if (current->ptr == head) {
+                    head = nullptr;
+                }
+                else {
+                    listNode* lastNode = current;
+                    while (lastNode->ptr != head) {
+                        lastNode = lastNode->ptr;
+                    }
+                    head = current->ptr;
+                    lastNode->ptr = head;
+                }
+                delete current;
+                return;
+            }
+            else {
+                // Удаление элемента из середины или конца списка
+                previous->ptr = current->ptr;
+                delete current;
+                return;
+            }
         }
-        if (runner == head) {
-            head = nullptr;
-        }
-        else {
-            listNode*& temp = runner->ptr;
-            runner->ptr = head;
-            delete temp;
-        }
-    }
+        previous = current;
+        current = current->ptr;
+    } while (current != head);
+
+    cout << "Element not found in the list!" << endl;
 }
 
 void listPrint(listNode* head)
@@ -421,41 +440,59 @@ void _delWhenTwoChild(treeNode*& node, bool& heightChanged, treeNode*& delNode) 
     }
 }
 
-void delNode(treeNode*& pointer, listNodeElem* key, bool& heightChanged) {
+void delNode(treeNode*& pointer, listNodeElem* key, bool& heightChanged, RequestsEntity* delElem) {
     treeNode* temp = new treeNode;
     if (pointer == nullptr);//нет в дереве
     else if (_compareKeys(pointer->head->field, key) == 1) {// > 
-        delNode(pointer->leftChild, key, heightChanged);
+        delNode(pointer->leftChild, key, heightChanged, delElem);
         if (heightChanged) {
             _del_balanceLeft(pointer, heightChanged);
         }
 
     }
     else if (_compareKeys(pointer->head->field, key) == -1) {// <
-        delNode(pointer->rightChild, key, heightChanged);
+        delNode(pointer->rightChild, key, heightChanged, delElem);
         if (heightChanged) {
             _del_balanceRight(pointer, heightChanged);
         }
     }
     else {
         temp = pointer;
-        if (temp->rightChild == nullptr) {
-            pointer = temp->leftChild;
-            heightChanged = true;
-            delete temp;
-            temp = nullptr;
-        }
-        else if (temp->leftChild == nullptr) {
+        listNode* tempList = pointer->head;
+        if (pointer->head->ptr != pointer->head) {
+            while (tempList->ptr->field->index != pointer->head->field->index) {
+                if (isEqualElements(delElem, DataStorage::data[tempList->field->index])) {
+                    delListElem(pointer->head, tempList->field);
+                    return;
+                }
+                tempList = tempList->ptr;
+            }
 
-            pointer = temp->rightChild;
-            heightChanged = true;
-            delete temp;
-            temp = nullptr;
+            if (isEqualElements(delElem, DataStorage::data[tempList->field->index])) {
+                delListElem(pointer->head, tempList->field);
+                return;
+            }
         }
         else {
-            _delWhenTwoChild(temp->rightChild, heightChanged, temp);
-            if (heightChanged) _del_balanceRight(pointer, heightChanged);
+            if (temp->rightChild == nullptr) {
+                pointer = temp->leftChild;
+                heightChanged = true;
+                delete temp;
+                temp = nullptr;
+            }
+            else if (temp->leftChild == nullptr) {
+
+                pointer = temp->rightChild;
+                heightChanged = true;
+                delete temp;
+                temp = nullptr;
+            }
+            else {
+                _delWhenTwoChild(temp->rightChild, heightChanged, temp);
+                if (heightChanged) _del_balanceRight(pointer, heightChanged);
+            }
         }
+        
     }
 }
 

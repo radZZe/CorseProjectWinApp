@@ -22,6 +22,7 @@ public:
     ServicesHashTable(int tableSize);
     ~ServicesHashTable();
     vector<int> findItem(ServiceEntity* data);
+    bool findItemByKey(ServiceEntity* item);
     void htInsertA(ServiceEntity* item, string type, int index);
     void deleteItem(ServiceEntity* item);
     void printTable();

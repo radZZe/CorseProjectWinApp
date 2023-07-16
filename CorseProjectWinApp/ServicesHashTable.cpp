@@ -328,6 +328,54 @@ vector<int> ServicesHashTable::findItem(ServiceEntity* item)
     
 }
 
+bool ServicesHashTable::findItemByKey(ServiceEntity* item) {
+    bool result;
+    int counter = 0;
+    int current = 0;
+    int step = 1;
+    int hash = hashFun(item);
+    
+    if (this->table[hash].status == 1) {
+        if ((item->serviceName + item->serviceType) != (this->table[hash].value->serviceName + this->table[hash].value->serviceType))
+        {
+            int rehash = secHashFun(hash, step);
+            if (this->table[rehash].status == 1) {
+                while (step < this->size && (item->serviceName + item->serviceType) != (this->table[rehash].value->serviceName + this->table[rehash].value->serviceType))
+                {
+                    step++;
+                    rehash = secHashFun(hash, step);
+                }
+                if (this->table[rehash].status == 0) {
+                    return false;
+                }
+                current = rehash;
+            }   
+        }
+        else
+        {
+            current = hash;
+        }
+        if (this->table[current].status == 1 && (item->serviceName + item->serviceType) == (this->table[current].value->serviceName + this->table[current].value->serviceType))
+        {
+            //DataStorage::resultSerch = true;
+            result = true;
+            return result;
+        }
+        else
+        {
+            result = false;
+            //DataStorage::resultSerch = false;
+            return result;
+        }
+    }
+    else {
+        result = false;
+        //DataStorage::resultSerch = false;
+        return result;
+    }
+    
+}
+
 void ServicesHashTable::resizeTable(int occupancy, ServiceEntity* item, string type, int index)
 {
     if ((occupancy < 25 && (this->size / 2) >= this->originSize) || occupancy > 75)

@@ -17,6 +17,7 @@ Node* DataClientsStorage::rbtJob = nullptr;
 Node* DataClientsStorage::rbtPassport = nullptr;
 Node* DataClientsStorage::rbtFullname = nullptr;
 Node* DataClientsStorage::rbtNullnode = null_init();
+int DataClientsStorage::index = -1;
 void DataClientsStorage::removeElement(ClientsEntity* value) {
 	auto it = find(this->data.begin(), this->data.end(), value);
 	this->data.erase(it);
