@@ -387,7 +387,7 @@ void insert_balance(Node*& element, Node*& root, Node* nullnode) {
 
 }
 
-Node* insert(Node*& root, Node* nullnode, RBTData input) {
+Node* insertClient(Node*& root, Node* nullnode, RBTData input) {
 	//Key keychik = parse_key(input);
 	int local = 0;
 	if (!pre_search(root, nullnode, input.value,local)) {
@@ -526,7 +526,7 @@ Node* memory_erase(Node*& root, Node* nullnode, RBTData value) {
 	while (temp->data->cnt > 1) {
 		list_erase(temp->data, value);
 	}
-	// если что переписать лист под удаление всех величин
+	// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	list_erase(temp->data, value);
 	temp->left = nullptr;
 	temp->right = nullptr;

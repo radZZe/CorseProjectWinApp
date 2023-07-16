@@ -18,7 +18,7 @@ bool pre_search(Node* root, Node* nullnode, string input,int& count);
 void rightRotate(Node* element, Node*& root, Node* nullnode);
 void leftRotate(Node* element, Node*& root, Node* nullnode);
 void insert_balance(Node*& element, Node*& root, Node* nullnode);
-Node* insert(Node*& root, Node* nullnode, RBTData input);
+Node* insertClient(Node*& root, Node* nullnode, RBTData input);
 void transplant(Node*& root, Node* nullnode, Node* u, Node* v);
 void erase_balance(Node*& root, Node* nullnode, Node* element);
 Node* right_min(Node* element, Node* nullnode);

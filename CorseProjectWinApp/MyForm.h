@@ -57,7 +57,7 @@ namespace CorseProjectWinApp {
     private: System::Windows::Forms::Button^ searchByTypeAndNameOfServiceBTN;
 
 
-    private: System::Windows::Forms::TabPage^ clientsPage;
+
 
     private: System::Windows::Forms::TabPage^ tabPage1;
 
@@ -80,14 +80,9 @@ namespace CorseProjectWinApp {
     private: System::Windows::Forms::TextBox^ tBServiceType;
 
 
-    private: System::Windows::Forms::TextBox^ textBox4;
-    private: System::Windows::Forms::TextBox^ tBDate;
-    private: System::Windows::Forms::TextBox^ textBox3;
-    private: System::Windows::Forms::Label^ label1;
-    private: System::Windows::Forms::Button^ button3;
+
+ 
     private: System::Windows::Forms::Button^ button2;
-    private: System::Windows::Forms::Label^ label4;
-    private: System::Windows::Forms::Label^ label3;
 
     private: System::Windows::Forms::Label^ label5;
     private: System::Windows::Forms::TextBox^ textBox5;
@@ -143,8 +138,6 @@ private: System::Windows::Forms::Button^ searchByNameAndType;
 	private: System::Windows::Forms::DataGridView^ ServicesDataGrid;
 
 
-    private: System::Windows::Forms::Button^ divisionSearchBtn;
-    private: System::Windows::Forms::Button^ searchServiceByTermBtb;
 
 
 	private: System::Windows::Forms::Button^ button11;    
@@ -180,14 +173,12 @@ private: System::Windows::Forms::Button^ button17;
     private: System::Windows::Forms::TextBox^ tBClientJob;
     private: System::Windows::Forms::TextBox^ tBClientPassNum;
     private: System::Windows::Forms::Button^ btnSearchByClientEmail;
-    private: System::Windows::Forms::DataGridView^ ClientsDataGrid;
+
     private: System::Windows::Forms::Button^ btnSearchBuClientFullname;
     private: System::Windows::Forms::Button^ btnSearchByClientJob;
     private: System::Windows::Forms::Button^ btnSearchByClientPassport;
     private: System::Windows::Forms::Button^ btnSearchByClient;
-    private: System::Windows::Forms::Button^ button19;
-    private: System::Windows::Forms::Button^ button20;
-    private: System::Windows::Forms::Button^ button21;
+	private: System::Windows::Forms::Button^ button19;    private: System::Windows::Forms::Button^ button21;
     private: System::Windows::Forms::Label^ resultSearchServices;
     private: System::Windows::Forms::Label^ countServices;
     private: System::Windows::Forms::Label^ countComparationsServices;
@@ -268,7 +259,6 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->debugClientButton = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -276,15 +266,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->ClientsDataGrid = (gcnew System::Windows::Forms::DataGridView());
-			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button16 = (gcnew System::Windows::Forms::Button());
-			this->button17 = (gcnew System::Windows::Forms::Button());
-			this->button18 = (gcnew System::Windows::Forms::Button());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->resultSearchServices2 = (gcnew System::Windows::Forms::Label());
 			this->countComparationsServices = (gcnew System::Windows::Forms::Label());
@@ -308,6 +290,11 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchServiceByTermBtb = (gcnew System::Windows::Forms::Button());
 			this->searchByNameAndType = (gcnew System::Windows::Forms::Button());
 			this->ServicesDataGrid = (gcnew System::Windows::Forms::DataGridView());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->requestsPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
@@ -325,11 +312,10 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->tabControl1->Controls->Add(this->requestsPage);
 			this->tabControl1->Controls->Add(this->clientsPage);
 			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Location = System::Drawing::Point(-7, -4);
-			this->tabControl1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabControl1->Location = System::Drawing::Point(-5, -3);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(1195, 779);
+			this->tabControl1->Size = System::Drawing::Size(896, 633);
 			this->tabControl1->SizeMode = System::Windows::Forms::TabSizeMode::FillToRight;
 			this->tabControl1->TabIndex = 0;
 			// 
@@ -361,8 +347,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->requestsPage->Controls->Add(this->dateSearchBTN);
 			this->requestsPage->Controls->Add(this->passportSearchBTN);
 			this->requestsPage->Controls->Add(this->searchByTypeAndNameOfServiceBTN);
-			this->requestsPage->Location = System::Drawing::Point(4, 25);
-			this->requestsPage->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->requestsPage->Location = System::Drawing::Point(4, 22);
 			this->requestsPage->Name = L"requestsPage";
 			this->requestsPage->Padding = System::Windows::Forms::Padding(3);
 			this->requestsPage->Size = System::Drawing::Size(888, 607);
@@ -373,25 +358,26 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// resultSearchServices
 			// 
 			this->resultSearchServices->AutoSize = true;
-			this->resultSearchServices->Location = System::Drawing::Point(351, 566);
+			this->resultSearchServices->Location = System::Drawing::Point(263, 460);
+			this->resultSearchServices->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->resultSearchServices->Name = L"resultSearchServices";
-			this->resultSearchServices->Size = System::Drawing::Size(0, 16);
+			this->resultSearchServices->Size = System::Drawing::Size(0, 13);
 			this->resultSearchServices->TabIndex = 28;
 			// 
 			// countServices
 			// 
 			this->countServices->AutoSize = true;
-			this->countServices->Location = System::Drawing::Point(191, 566);
+			this->countServices->Location = System::Drawing::Point(143, 460);
+			this->countServices->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->countServices->Name = L"countServices";
-			this->countServices->Size = System::Drawing::Size(0, 16);
+			this->countServices->Size = System::Drawing::Size(0, 13);
 			this->countServices->TabIndex = 27;
 			// 
 			// button19
 			// 
-			this->button19->Location = System::Drawing::Point(467, 566);
-			this->button19->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button19->Location = System::Drawing::Point(350, 460);
 			this->button19->Name = L"button19";
-			this->button19->Size = System::Drawing::Size(153, 28);
+			this->button19->Size = System::Drawing::Size(115, 23);
 			this->button19->TabIndex = 26;
 			this->button19->Text = L"Îêíî îòëàäêè";
 			this->button19->UseVisualStyleBackColor = true;
@@ -399,10 +385,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// saveBtn
 			// 
-			this->saveBtn->Location = System::Drawing::Point(815, 566);
-			this->saveBtn->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->saveBtn->Location = System::Drawing::Point(611, 460);
 			this->saveBtn->Name = L"saveBtn";
-			this->saveBtn->Size = System::Drawing::Size(100, 28);
+			this->saveBtn->Size = System::Drawing::Size(75, 23);
 			this->saveBtn->TabIndex = 25;
 			this->saveBtn->Text = L"Ñîõðàíèòü";
 			this->saveBtn->UseVisualStyleBackColor = true;
@@ -411,83 +396,74 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// resultSearch
 			// 
 			this->resultSearch->AutoSize = true;
-			this->resultSearch->Location = System::Drawing::Point(355, 566);
-			this->resultSearch->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->resultSearch->Location = System::Drawing::Point(266, 460);
 			this->resultSearch->Name = L"resultSearch";
-			this->resultSearch->Size = System::Drawing::Size(0, 16);
+			this->resultSearch->Size = System::Drawing::Size(0, 13);
 			this->resultSearch->TabIndex = 24;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(637, 362);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(478, 294);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(115, 16);
+			this->label2->Size = System::Drawing::Size(91, 13);
 			this->label2->TabIndex = 23;
 			this->label2->Text = L"Íîìåð ïàñïîðòà";
 			// 
 			// tBSeriesPassport
 			// 
-			this->tBSeriesPassport->Location = System::Drawing::Point(467, 382);
-			this->tBSeriesPassport->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBSeriesPassport->Location = System::Drawing::Point(350, 310);
 			this->tBSeriesPassport->Name = L"tBSeriesPassport";
-			this->tBSeriesPassport->Size = System::Drawing::Size(132, 22);
+			this->tBSeriesPassport->Size = System::Drawing::Size(100, 20);
 			this->tBSeriesPassport->TabIndex = 22;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(267, 566);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(200, 460);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(77, 16);
+			this->label6->Size = System::Drawing::Size(59, 13);
 			this->label6->TabIndex = 21;
 			this->label6->Text = L"Ðåçóëüòàò";
 			// 
 			// countComparisons
 			// 
 			this->countComparisons->AutoSize = true;
-			this->countComparisons->Location = System::Drawing::Point(195, 566);
-			this->countComparisons->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->countComparisons->Location = System::Drawing::Point(146, 460);
 			this->countComparisons->Name = L"countComparisons";
-			this->countComparisons->Size = System::Drawing::Size(0, 16);
+			this->countComparisons->Size = System::Drawing::Size(0, 13);
 			this->countComparisons->TabIndex = 20;
 			// 
 			// numberOfComparisons
 			// 
 			this->numberOfComparisons->AutoSize = true;
-			this->numberOfComparisons->Location = System::Drawing::Point(19, 566);
-			this->numberOfComparisons->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->numberOfComparisons->Location = System::Drawing::Point(14, 460);
 			this->numberOfComparisons->Name = L"numberOfComparisons";
-			this->numberOfComparisons->Size = System::Drawing::Size(159, 16);
+			this->numberOfComparisons->Size = System::Drawing::Size(123, 13);
 			this->numberOfComparisons->TabIndex = 19;
 			this->numberOfComparisons->Text = L"Êîëè÷åñòâî ñðàâíåíèé";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(811, 362);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(608, 294);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(39, 16);
+			this->label5->Size = System::Drawing::Size(33, 13);
 			this->label5->TabIndex = 18;
 			this->label5->Text = L"Äàòà";
 			// 
 			// tBDate
 			// 
-			this->tBDate->Location = System::Drawing::Point(815, 382);
-			this->tBDate->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBDate->Location = System::Drawing::Point(611, 310);
 			this->tBDate->Name = L"tBDate";
-			this->tBDate->Size = System::Drawing::Size(132, 22);
+			this->tBDate->Size = System::Drawing::Size(100, 20);
 			this->tBDate->TabIndex = 17;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(677, 508);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Location = System::Drawing::Point(508, 413);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(100, 28);
+			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 16;
 			this->button3->Text = L"Óäàëèòü";
 			this->button3->UseVisualStyleBackColor = true;
@@ -498,7 +474,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->addRequestsBTN->Location = System::Drawing::Point(350, 413);
 			this->addRequestsBTN->Margin = System::Windows::Forms::Padding(2);
 			this->addRequestsBTN->Name = L"addRequestsBTN";
-			this->addRequestsBTN->Size = System::Drawing::Size(75, 23);
+			this->addRequestsBTN->Size = System::Drawing::Size(72, 19);
 			this->addRequestsBTN->TabIndex = 15;
 			this->addRequestsBTN->Text = L"Äîáàâèòü";
 			this->addRequestsBTN->UseVisualStyleBackColor = true;
@@ -507,63 +483,56 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(673, 444);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(505, 361);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(121, 16);
+			this->label4->Size = System::Drawing::Size(93, 13);
 			this->label4->TabIndex = 14;
 			this->label4->Text = L"Íàçâàíèå óñëóãè";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(463, 444);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(347, 361);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(80, 16);
+			this->label3->Size = System::Drawing::Size(62, 13);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"Òèï óñëóãè";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(463, 362);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(347, 294);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(112, 16);
+			this->label1->Size = System::Drawing::Size(88, 13);
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"Ñåðèÿ ïàñïîðòà";
 			// 
 			// tBServiceName
 			// 
-			this->tBServiceName->Location = System::Drawing::Point(677, 465);
-			this->tBServiceName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBServiceName->Location = System::Drawing::Point(508, 378);
 			this->tBServiceName->Name = L"tBServiceName";
-			this->tBServiceName->Size = System::Drawing::Size(221, 22);
+			this->tBServiceName->Size = System::Drawing::Size(167, 20);
 			this->tBServiceName->TabIndex = 10;
 			// 
 			// tBServiceType
 			// 
-			this->tBServiceType->Location = System::Drawing::Point(467, 464);
-			this->tBServiceType->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBServiceType->Location = System::Drawing::Point(350, 377);
 			this->tBServiceType->Name = L"tBServiceType";
-			this->tBServiceType->Size = System::Drawing::Size(176, 22);
+			this->tBServiceType->Size = System::Drawing::Size(133, 20);
 			this->tBServiceType->TabIndex = 9;
 			// 
 			// tBNumberPassport
 			// 
-			this->tBNumberPassport->Location = System::Drawing::Point(641, 382);
-			this->tBNumberPassport->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBNumberPassport->Location = System::Drawing::Point(481, 310);
 			this->tBNumberPassport->Name = L"tBNumberPassport";
-			this->tBNumberPassport->Size = System::Drawing::Size(132, 22);
+			this->tBNumberPassport->Size = System::Drawing::Size(100, 20);
 			this->tBNumberPassport->TabIndex = 8;
 			// 
 			// searchByServiceNameBTN
 			// 
-			this->searchByServiceNameBTN->Location = System::Drawing::Point(17, 508);
-			this->searchByServiceNameBTN->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchByServiceNameBTN->Location = System::Drawing::Point(13, 413);
 			this->searchByServiceNameBTN->Name = L"searchByServiceNameBTN";
-			this->searchByServiceNameBTN->Size = System::Drawing::Size(209, 28);
+			this->searchByServiceNameBTN->Size = System::Drawing::Size(157, 23);
 			this->searchByServiceNameBTN->TabIndex = 6;
 			this->searchByServiceNameBTN->Text = L"Ïîèñê ïî íàçâàíèþ óñëóãè";
 			this->searchByServiceNameBTN->UseVisualStyleBackColor = true;
@@ -577,21 +546,19 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->RequestsDataGrid->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->RequestsDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->RequestsDataGrid->Dock = System::Windows::Forms::DockStyle::Top;
-			this->RequestsDataGrid->Location = System::Drawing::Point(4, 4);
-			this->RequestsDataGrid->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->RequestsDataGrid->Location = System::Drawing::Point(3, 3);
 			this->RequestsDataGrid->Name = L"RequestsDataGrid";
 			this->RequestsDataGrid->ReadOnly = true;
 			this->RequestsDataGrid->RowHeadersWidth = 51;
 			this->RequestsDataGrid->RowTemplate->ReadOnly = true;
-			this->RequestsDataGrid->Size = System::Drawing::Size(1179, 340);
+			this->RequestsDataGrid->Size = System::Drawing::Size(882, 276);
 			this->RequestsDataGrid->TabIndex = 5;
 			// 
 			// searchByTypeOfServiceBTN
 			// 
-			this->searchByTypeOfServiceBTN->Location = System::Drawing::Point(17, 462);
-			this->searchByTypeOfServiceBTN->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchByTypeOfServiceBTN->Location = System::Drawing::Point(13, 375);
 			this->searchByTypeOfServiceBTN->Name = L"searchByTypeOfServiceBTN";
-			this->searchByTypeOfServiceBTN->Size = System::Drawing::Size(209, 28);
+			this->searchByTypeOfServiceBTN->Size = System::Drawing::Size(157, 23);
 			this->searchByTypeOfServiceBTN->TabIndex = 4;
 			this->searchByTypeOfServiceBTN->Text = L"Ïîèñê ïî òèïó óñëóãè";
 			this->searchByTypeOfServiceBTN->UseVisualStyleBackColor = true;
@@ -599,10 +566,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// dateSearchBTN
 			// 
-			this->dateSearchBTN->Location = System::Drawing::Point(195, 412);
-			this->dateSearchBTN->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateSearchBTN->Location = System::Drawing::Point(146, 335);
 			this->dateSearchBTN->Name = L"dateSearchBTN";
-			this->dateSearchBTN->Size = System::Drawing::Size(132, 28);
+			this->dateSearchBTN->Size = System::Drawing::Size(99, 23);
 			this->dateSearchBTN->TabIndex = 3;
 			this->dateSearchBTN->Text = L"Ïîèñê ïî äàòå";
 			this->dateSearchBTN->UseVisualStyleBackColor = true;
@@ -610,10 +576,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// passportSearchBTN
 			// 
-			this->passportSearchBTN->Location = System::Drawing::Point(17, 412);
-			this->passportSearchBTN->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->passportSearchBTN->Location = System::Drawing::Point(13, 335);
 			this->passportSearchBTN->Name = L"passportSearchBTN";
-			this->passportSearchBTN->Size = System::Drawing::Size(169, 28);
+			this->passportSearchBTN->Size = System::Drawing::Size(127, 23);
 			this->passportSearchBTN->TabIndex = 2;
 			this->passportSearchBTN->Text = L"Ïîèñê ïî ïàñïîðòó";
 			this->passportSearchBTN->UseVisualStyleBackColor = true;
@@ -621,10 +586,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// searchByTypeAndNameOfServiceBTN
 			// 
-			this->searchByTypeAndNameOfServiceBTN->Location = System::Drawing::Point(17, 362);
-			this->searchByTypeAndNameOfServiceBTN->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchByTypeAndNameOfServiceBTN->Location = System::Drawing::Point(13, 294);
 			this->searchByTypeAndNameOfServiceBTN->Name = L"searchByTypeAndNameOfServiceBTN";
-			this->searchByTypeAndNameOfServiceBTN->Size = System::Drawing::Size(309, 28);
+			this->searchByTypeAndNameOfServiceBTN->Size = System::Drawing::Size(232, 23);
 			this->searchByTypeAndNameOfServiceBTN->TabIndex = 1;
 			this->searchByTypeAndNameOfServiceBTN->Text = L"Ïîèñê ïî òèïó è íàçâàíèþ óñëóãè";
 			this->searchByTypeAndNameOfServiceBTN->UseVisualStyleBackColor = true;
@@ -648,7 +612,6 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->clientsPage->Controls->Add(this->button20);
 			this->clientsPage->Controls->Add(this->debugClientButton);
 			this->clientsPage->Controls->Add(this->label7);
-			this->clientsPage->Controls->Add(this->textBox1);
 			this->clientsPage->Controls->Add(this->label8);
 			this->clientsPage->Controls->Add(this->label9);
 			this->clientsPage->Controls->Add(this->label10);
@@ -656,22 +619,13 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->clientsPage->Controls->Add(this->label14);
 			this->clientsPage->Controls->Add(this->label18);
 			this->clientsPage->Controls->Add(this->label19);
-			this->clientsPage->Controls->Add(this->textBox6);
-			this->clientsPage->Controls->Add(this->textBox7);
-			this->clientsPage->Controls->Add(this->textBox9);
-			this->clientsPage->Controls->Add(this->button7);
 			this->clientsPage->Controls->Add(this->ClientsDataGrid);
-			this->clientsPage->Controls->Add(this->button15);
-			this->clientsPage->Controls->Add(this->button16);
-			this->clientsPage->Controls->Add(this->button17);
-			this->clientsPage->Controls->Add(this->button18);
-			this->clientsPage->Location = System::Drawing::Point(4, 25);
-			this->clientsPage->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->clientsPage->Location = System::Drawing::Point(4, 22);
 			this->clientsPage->Name = L"clientsPage";
 			this->clientsPage->Padding = System::Windows::Forms::Padding(3);
 			this->clientsPage->Size = System::Drawing::Size(888, 607);
 			this->clientsPage->TabIndex = 1;
-			this->clientsPage->Text = L"Êëèåíòû";
+			this->clientsPage->Text = L"Eeeaiou";
 			this->clientsPage->UseVisualStyleBackColor = true;
 			// 
 			// btnAddClient
@@ -680,7 +634,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->btnAddClient->Name = L"btnAddClient";
 			this->btnAddClient->Size = System::Drawing::Size(100, 23);
 			this->btnAddClient->TabIndex = 60;
-			this->btnAddClient->Text = L"Добавить";
+			this->btnAddClient->Text = L"Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ";
 			this->btnAddClient->UseVisualStyleBackColor = true;
 			this->btnAddClient->Click += gcnew System::EventHandler(this, &MyForm::btnAddClient_Click);
 			// 
@@ -741,7 +695,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(157, 23);
 			this->button1->TabIndex = 52;
-			this->button1->Text = L"Поиск по ФИО";
+			this->button1->Text = L"ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð¤Ð˜Ðž";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -751,7 +705,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->btnSearchClientByEmail->Name = L"btnSearchClientByEmail";
 			this->btnSearchClientByEmail->Size = System::Drawing::Size(157, 23);
 			this->btnSearchClientByEmail->TabIndex = 51;
-			this->btnSearchClientByEmail->Text = L"Поиск по почте";
+			this->btnSearchClientByEmail->Text = L"ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð¿Ð¾Ñ‡Ñ‚Ðµ";
 			this->btnSearchClientByEmail->UseVisualStyleBackColor = true;
 			this->btnSearchClientByEmail->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
 			// 
@@ -761,7 +715,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->btnSearchByClientJob->Name = L"btnSearchByClientJob";
 			this->btnSearchByClientJob->Size = System::Drawing::Size(136, 23);
 			this->btnSearchByClientJob->TabIndex = 50;
-			this->btnSearchByClientJob->Text = L"Поиск по должности";
+			this->btnSearchByClientJob->Text = L"ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð´Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚Ð¸";
 			this->btnSearchByClientJob->UseVisualStyleBackColor = true;
 			this->btnSearchByClientJob->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);
 			// 
@@ -771,7 +725,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(127, 23);
 			this->button8->TabIndex = 49;
-			this->button8->Text = L"Поиск по паспорту";
+			this->button8->Text = L"ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð¿Ð°ÑÐ¿Ð¾Ñ€Ñ‚Ñƒ";
 			this->button8->UseVisualStyleBackColor = true;
 			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
 			// 
@@ -781,7 +735,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->btnSearchByClient->Name = L"btnSearchByClient";
 			this->btnSearchByClient->Size = System::Drawing::Size(232, 23);
 			this->btnSearchByClient->TabIndex = 48;
-			this->btnSearchByClient->Text = L"Поиск по полным данным";
+			this->btnSearchByClient->Text = L"ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð¿Ð¾Ð»Ð½Ñ‹Ð¼ Ð´Ð°Ð½Ð½Ñ‹Ð¼";
 			this->btnSearchByClient->UseVisualStyleBackColor = true;
 			this->btnSearchByClient->Click += gcnew System::EventHandler(this, &MyForm::btnSearchByClient_Click);
 			// 
@@ -789,9 +743,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			this->button20->Location = System::Drawing::Point(524, 429);
 			this->button20->Name = L"button20";
-			this->button20->Size = System::Drawing::Size(153, 28);
+			this->button20->Size = System::Drawing::Size(115, 23);
 			this->button20->TabIndex = 47;
-			this->button20->Text = L"Сохранить";
+			this->button20->Text = L"Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ";
 			this->button20->UseVisualStyleBackColor = true;
 			this->button20->Click += gcnew System::EventHandler(this, &MyForm::button20_Click);
 			// 
@@ -801,7 +755,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->debugClientButton->Name = L"debugClientButton";
 			this->debugClientButton->Size = System::Drawing::Size(115, 23);
 			this->debugClientButton->TabIndex = 46;
-			this->debugClientButton->Text = L"Окно отладки";
+			this->debugClientButton->Text = L"ÐžÐºÐ½Ð¾ Ð¾Ñ‚Ð»Ð°Ð´ÐºÐ¸";
 			this->debugClientButton->UseVisualStyleBackColor = true;
 			this->debugClientButton->Click += gcnew System::EventHandler(this, &MyForm::debugClientButton_Click);
 			// 
@@ -812,7 +766,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(91, 13);
 			this->label7->TabIndex = 45;
-			this->label7->Text = L"Номер паспорта";
+			this->label7->Text = L"ÐÐ¾Ð¼ÐµÑ€ Ð¿Ð°ÑÐ¿Ð¾Ñ€Ñ‚Ð°";
 			// 
 			// textBox1
 			// 
@@ -825,22 +779,20 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(267, 575);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(200, 467);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(65, 13);
 			this->label8->TabIndex = 43;
-			this->label8->Text = L"Результат: ";
+			this->label8->Text = L"Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚: ";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(19, 575);
-			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label9->Location = System::Drawing::Point(14, 467);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(129, 13);
 			this->label9->TabIndex = 42;
-			this->label9->Text = L"Количество сравнений: ";
+			this->label9->Text = L"ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¹: ";
 			// 
 			// label10
 			// 
@@ -849,7 +801,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(104, 13);
 			this->label10->TabIndex = 41;
-			this->label10->Text = L"Электронная почта";
+			this->label10->Text = L"Ð­Ð»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð°Ñ Ð¿Ð¾Ñ‡Ñ‚Ð°";
 			// 
 			// btnDeletionClient
 			// 
@@ -857,19 +809,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->btnDeletionClient->Name = L"btnDeletionClient";
 			this->btnDeletionClient->Size = System::Drawing::Size(98, 23);
 			this->btnDeletionClient->TabIndex = 39;
-			this->btnDeletionClient->Text = L"Удалить";
+			this->btnDeletionClient->Text = L"Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ";
 			this->btnDeletionClient->UseVisualStyleBackColor = true;
 			this->btnDeletionClient->Click += gcnew System::EventHandler(this, &MyForm::btnDeletionClient_Click);
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(464, 567);
-			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(100, 28);
-			this->button6->TabIndex = 38;
-			this->button6->Text = L"Äîáàâèòü";
-			this->button6->UseVisualStyleBackColor = true;
 			// 
 			// label14
 			// 
@@ -878,7 +820,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(34, 13);
 			this->label14->TabIndex = 37;
-			this->label14->Text = L"ФИО";
+			this->label14->Text = L"Ð¤Ð˜Ðž";
 			// 
 			// label18
 			// 
@@ -887,7 +829,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(65, 13);
 			this->label18->TabIndex = 36;
-			this->label18->Text = L"Должность";
+			this->label18->Text = L"Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ";
 			// 
 			// label19
 			// 
@@ -896,41 +838,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(88, 13);
 			this->label19->TabIndex = 35;
-			this->label19->Text = L"Серия паспорта";
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(733, 454);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(247, 22);
-			this->textBox6->TabIndex = 34;
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(473, 453);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(192, 22);
-			this->textBox7->TabIndex = 33;
-			// 
-			// textBox9
-			// 
-			this->textBox9->Location = System::Drawing::Point(641, 390);
-			this->textBox9->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(132, 22);
-			this->textBox9->TabIndex = 32;
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(17, 517);
-			this->button7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(265, 28);
-			this->button7->TabIndex = 31;
-			this->button7->Text = L"Ïîèñê ïî ýëåêòðîííîé ïî÷òå";
-			this->button7->UseVisualStyleBackColor = true;
+			this->label19->Text = L"Ð¡ÐµÑ€Ð¸Ñ Ð¿Ð°ÑÐ¿Ð¾Ñ€Ñ‚Ð°";
 			// 
 			// ClientsDataGrid
 			// 
@@ -940,54 +848,13 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->ClientsDataGrid->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ClientsDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->ClientsDataGrid->Dock = System::Windows::Forms::DockStyle::Top;
-			this->ClientsDataGrid->Location = System::Drawing::Point(4, 4);
-			this->ClientsDataGrid->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ClientsDataGrid->Location = System::Drawing::Point(3, 3);
 			this->ClientsDataGrid->Name = L"ClientsDataGrid";
 			this->ClientsDataGrid->ReadOnly = true;
 			this->ClientsDataGrid->RowHeadersWidth = 51;
 			this->ClientsDataGrid->RowTemplate->ReadOnly = true;
-			this->ClientsDataGrid->Size = System::Drawing::Size(1179, 340);
+			this->ClientsDataGrid->Size = System::Drawing::Size(882, 276);
 			this->ClientsDataGrid->TabIndex = 30;
-			// 
-			// button15
-			// 
-			this->button15->Location = System::Drawing::Point(17, 470);
-			this->button15->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(209, 28);
-			this->button15->TabIndex = 29;
-			this->button15->Text = L"Ïîèñê ïî ÔÈÎ";
-			this->button15->UseVisualStyleBackColor = true;
-			// 
-			// button16
-			// 
-			this->button16->Location = System::Drawing::Point(195, 421);
-			this->button16->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(215, 28);
-			this->button16->TabIndex = 28;
-			this->button16->Text = L"Ïîèñê ïî äîëæíîñòè";
-			this->button16->UseVisualStyleBackColor = true;
-			// 
-			// button17
-			// 
-			this->button17->Location = System::Drawing::Point(17, 421);
-			this->button17->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button17->Name = L"button17";
-			this->button17->Size = System::Drawing::Size(169, 28);
-			this->button17->TabIndex = 27;
-			this->button17->Text = L"Ïîèñê ïî ïàñïîðòó";
-			this->button17->UseVisualStyleBackColor = true;
-			// 
-			// button18
-			// 
-			this->button18->Location = System::Drawing::Point(17, 370);
-			this->button18->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button18->Name = L"button18";
-			this->button18->Size = System::Drawing::Size(309, 28);
-			this->button18->TabIndex = 26;
-			this->button18->Text = L"Ïîèñê ïî ïîëíîé èíôîðìàöèè";
-			this->button18->UseVisualStyleBackColor = true;
 			// 
 			// tabPage1
 			// 
@@ -1013,45 +880,44 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->tabPage1->Controls->Add(this->searchServiceByTermBtb);
 			this->tabPage1->Controls->Add(this->searchByNameAndType);
 			this->tabPage1->Controls->Add(this->ServicesDataGrid);
-			this->tabPage1->Location = System::Drawing::Point(4, 25);
-			this->tabPage1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Size = System::Drawing::Size(1187, 750);
+			this->tabPage1->Size = System::Drawing::Size(888, 607);
 			this->tabPage1->TabIndex = 2;
-			this->tabPage1->Text = L"Óñëóãè";
+			this->tabPage1->Text = L"Oneoae";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// resultSearchServices2
 			// 
 			this->resultSearchServices2->AutoSize = true;
-			this->resultSearchServices2->Location = System::Drawing::Point(333, 567);
+			this->resultSearchServices2->Location = System::Drawing::Point(250, 461);
+			this->resultSearchServices2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->resultSearchServices2->Name = L"resultSearchServices2";
-			this->resultSearchServices2->Size = System::Drawing::Size(0, 16);
+			this->resultSearchServices2->Size = System::Drawing::Size(0, 13);
 			this->resultSearchServices2->TabIndex = 43;
 			// 
 			// countComparationsServices
 			// 
 			this->countComparationsServices->AutoSize = true;
-			this->countComparationsServices->Location = System::Drawing::Point(181, 567);
+			this->countComparationsServices->Location = System::Drawing::Point(136, 461);
+			this->countComparationsServices->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->countComparationsServices->Name = L"countComparationsServices";
-			this->countComparationsServices->Size = System::Drawing::Size(0, 16);
+			this->countComparationsServices->Size = System::Drawing::Size(0, 13);
 			this->countComparationsServices->TabIndex = 42;
 			// 
 			// button21
 			// 
-			this->button21->Location = System::Drawing::Point(471, 561);
-			this->button21->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button21->Location = System::Drawing::Point(353, 456);
 			this->button21->Name = L"button21";
-			this->button21->Size = System::Drawing::Size(153, 28);
+			this->button21->Size = System::Drawing::Size(115, 23);
 			this->button21->TabIndex = 41;
-			this->button21->Text = L"Îêíî îòëàäêè";
+			this->button21->Text = L"Ieii ioeaaee";
 			this->button21->UseVisualStyleBackColor = true;
 			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(641, 351);
-			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label13->Location = System::Drawing::Point(481, 285);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(74, 13);
 			this->label13->TabIndex = 40;
@@ -1060,18 +926,16 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(677, 433);
-			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label15->Location = System::Drawing::Point(508, 352);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(87, 13);
 			this->label15->TabIndex = 38;
-			this->label15->Text = L"Íàçâàíèå óñëóãè";
+			this->label15->Text = L"Iacaaiea oneoae";
 			// 
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(467, 433);
-			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label16->Location = System::Drawing::Point(350, 352);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(78, 13);
 			this->label16->TabIndex = 37;
@@ -1080,8 +944,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(467, 351);
-			this->label17->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label17->Location = System::Drawing::Point(350, 285);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(62, 13);
 			this->label17->TabIndex = 36;
@@ -1089,10 +952,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// button12
 			// 
-			this->button12->Location = System::Drawing::Point(819, 555);
-			this->button12->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button12->Location = System::Drawing::Point(614, 451);
 			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(100, 28);
+			this->button12->Size = System::Drawing::Size(75, 23);
 			this->button12->TabIndex = 35;
 			this->button12->Text = L"Nio\?aieou";
 			this->button12->UseVisualStyleBackColor = true;
@@ -1100,17 +962,15 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// tBType
 			// 
-			this->tBType->Location = System::Drawing::Point(471, 370);
-			this->tBType->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBType->Location = System::Drawing::Point(353, 301);
 			this->tBType->Name = L"tBType";
-			this->tBType->Size = System::Drawing::Size(132, 22);
+			this->tBType->Size = System::Drawing::Size(100, 20);
 			this->tBType->TabIndex = 34;
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(249, 567);
-			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label11->Location = System::Drawing::Point(187, 461);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(61, 13);
 			this->label11->TabIndex = 33;
@@ -1119,8 +979,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(17, 567);
-			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label12->Location = System::Drawing::Point(13, 461);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(115, 13);
 			this->label12->TabIndex = 32;
@@ -1128,54 +987,48 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// button13
 			// 
-			this->button13->Location = System::Drawing::Point(681, 497);
-			this->button13->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button13->Location = System::Drawing::Point(511, 404);
 			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(100, 28);
+			this->button13->Size = System::Drawing::Size(75, 23);
 			this->button13->TabIndex = 30;
-			this->button13->Text = L"Óäàëèòü";
+			this->button13->Text = L"Oaaeeou";
 			this->button13->UseVisualStyleBackColor = true;
 			// 
 			// button14
 			// 
-			this->button14->Location = System::Drawing::Point(471, 496);
-			this->button14->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button14->Location = System::Drawing::Point(353, 403);
 			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(100, 28);
+			this->button14->Size = System::Drawing::Size(75, 23);
 			this->button14->TabIndex = 29;
-			this->button14->Text = L"Äîáàâèòü";
+			this->button14->Text = L"Aiaaaeou";
 			this->button14->UseVisualStyleBackColor = true;
 			// 
 			// tBName
 			// 
-			this->tBName->Location = System::Drawing::Point(681, 454);
-			this->tBName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBName->Location = System::Drawing::Point(511, 369);
 			this->tBName->Name = L"tBName";
-			this->tBName->Size = System::Drawing::Size(221, 22);
+			this->tBName->Size = System::Drawing::Size(167, 20);
 			this->tBName->TabIndex = 28;
 			// 
 			// tBTerm
 			// 
-			this->tBTerm->Location = System::Drawing::Point(471, 453);
-			this->tBTerm->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBTerm->Location = System::Drawing::Point(353, 368);
 			this->tBTerm->Name = L"tBTerm";
-			this->tBTerm->Size = System::Drawing::Size(176, 22);
+			this->tBTerm->Size = System::Drawing::Size(133, 20);
 			this->tBTerm->TabIndex = 27;
 			// 
 			// tBDivision
 			// 
-			this->tBDivision->Location = System::Drawing::Point(645, 370);
-			this->tBDivision->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tBDivision->Location = System::Drawing::Point(484, 301);
 			this->tBDivision->Name = L"tBDivision";
-			this->tBDivision->Size = System::Drawing::Size(132, 22);
+			this->tBDivision->Size = System::Drawing::Size(100, 20);
 			this->tBDivision->TabIndex = 26;
 			// 
 			// searchByServiceName
 			// 
-			this->searchByServiceName->Location = System::Drawing::Point(21, 511);
-			this->searchByServiceName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchByServiceName->Location = System::Drawing::Point(16, 415);
 			this->searchByServiceName->Name = L"searchByServiceName";
-			this->searchByServiceName->Size = System::Drawing::Size(209, 28);
+			this->searchByServiceName->Size = System::Drawing::Size(157, 23);
 			this->searchByServiceName->TabIndex = 11;
 			this->searchByServiceName->Text = L"Iiene ii iacaaie\? oneoae";
 			this->searchByServiceName->UseVisualStyleBackColor = true;
@@ -1183,21 +1036,19 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// searchByServiceTypeBtn
 			// 
-			this->searchByServiceTypeBtn->Location = System::Drawing::Point(17, 463);
-			this->searchByServiceTypeBtn->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchByServiceTypeBtn->Location = System::Drawing::Point(13, 376);
 			this->searchByServiceTypeBtn->Name = L"searchByServiceTypeBtn";
-			this->searchByServiceTypeBtn->Size = System::Drawing::Size(209, 28);
+			this->searchByServiceTypeBtn->Size = System::Drawing::Size(157, 23);
 			this->searchByServiceTypeBtn->TabIndex = 10;
-			this->searchByServiceTypeBtn->Text = L"Ïîèñê ïî òèïó óñëóãè ";
+			this->searchByServiceTypeBtn->Text = L"Iiene ii oeio oneoae ";
 			this->searchByServiceTypeBtn->UseVisualStyleBackColor = true;
 			this->searchByServiceTypeBtn->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceTypeBtn_Click);
 			// 
 			// divisionSearchBtn
 			// 
-			this->divisionSearchBtn->Location = System::Drawing::Point(17, 353);
-			this->divisionSearchBtn->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->divisionSearchBtn->Location = System::Drawing::Point(13, 287);
 			this->divisionSearchBtn->Name = L"divisionSearchBtn";
-			this->divisionSearchBtn->Size = System::Drawing::Size(253, 28);
+			this->divisionSearchBtn->Size = System::Drawing::Size(190, 23);
 			this->divisionSearchBtn->TabIndex = 9;
 			this->divisionSearchBtn->Text = L"Iiene ii iia\?acaaeaie\?";
 			this->divisionSearchBtn->UseVisualStyleBackColor = true;
@@ -1205,11 +1056,10 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// searchServiceByTermBtb
 			// 
-			this->searchServiceByTermBtb->Location = System::Drawing::Point(17, 427);
-			this->searchServiceByTermBtb->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchServiceByTermBtb->Location = System::Drawing::Point(13, 347);
 			this->searchServiceByTermBtb->Name = L"searchServiceByTermBtb";
 			this->searchServiceByTermBtb->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->searchServiceByTermBtb->Size = System::Drawing::Size(229, 28);
+			this->searchServiceByTermBtb->Size = System::Drawing::Size(172, 23);
 			this->searchServiceByTermBtb->TabIndex = 8;
 			this->searchServiceByTermBtb->Text = L"Iiene ii n\?ieo eniieiaiey";
 			this->searchServiceByTermBtb->UseVisualStyleBackColor = true;
@@ -1217,10 +1067,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// searchByNameAndType
 			// 
-			this->searchByNameAndType->Location = System::Drawing::Point(17, 389);
-			this->searchByNameAndType->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->searchByNameAndType->Location = System::Drawing::Point(13, 316);
 			this->searchByNameAndType->Name = L"searchByNameAndType";
-			this->searchByNameAndType->Size = System::Drawing::Size(309, 28);
+			this->searchByNameAndType->Size = System::Drawing::Size(232, 23);
 			this->searchByNameAndType->TabIndex = 7;
 			this->searchByNameAndType->Text = L"Iiene ii oeio e iacaaie\? oneoae";
 			this->searchByNameAndType->UseVisualStyleBackColor = true;
@@ -1235,23 +1084,71 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->ServicesDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->ServicesDataGrid->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ServicesDataGrid->Location = System::Drawing::Point(0, 0);
-			this->ServicesDataGrid->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->ServicesDataGrid->Name = L"ServicesDataGrid";
 			this->ServicesDataGrid->ReadOnly = true;
 			this->ServicesDataGrid->RowHeadersWidth = 51;
 			this->ServicesDataGrid->RowTemplate->ReadOnly = true;
-			this->ServicesDataGrid->Size = System::Drawing::Size(1187, 340);
+			this->ServicesDataGrid->Size = System::Drawing::Size(888, 276);
 			this->ServicesDataGrid->TabIndex = 6;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(17, 415);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(157, 23);
+			this->button1->TabIndex = 52;
+			this->button1->Text = L"Ïîèñê ïî íàçâàíèþ óñëóãè";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(17, 377);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(157, 23);
+			this->button6->TabIndex = 51;
+			this->button6->Text = L"Ïîèñê ïî òèïó óñëóãè";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(150, 337);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(99, 23);
+			this->button7->TabIndex = 50;
+			this->button7->Text = L"Ïîèñê ïî äàòå";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(17, 337);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(127, 23);
+			this->button8->TabIndex = 49;
+			this->button8->Text = L"Ïîèñê ïî ïàñïîðòó";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(17, 296);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(232, 23);
+			this->button9->TabIndex = 48;
+			this->button9->Text = L"Ïîèñê ïî òèïó è íàçâàíèþ óñëóãè";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(989, 645);
+			this->ClientSize = System::Drawing::Size(742, 524);
 			this->Controls->Add(this->tabControl1);
 			this->Location = System::Drawing::Point(350, 311);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::FormLoad);
@@ -1312,18 +1209,18 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 		DataTable^ tabl = gcnew DataTable();
 		tabl->Rows->Clear();
 		RequestsDataGrid->DataSource = tabl;
-		tabl->Columns->Add("Ïàñïîðò");
-		tabl->Columns->Add("Íàçâàíèå óñëóãè");
-		tabl->Columns->Add("Òèï óñëóãè");
-		tabl->Columns->Add("Äàòà");
+		tabl->Columns->Add("Ianii?o");
+		tabl->Columns->Add("Iacaaiea oneoae");
+		tabl->Columns->Add("Oei oneoae");
+		tabl->Columns->Add("Aaoa");
 		for (int i = 0; i < DataStorage::data.size(); i++) {
 			DataRow^ row = tabl->NewRow();
 			string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
-			row["Ïàñïîðò"] = gcnew String(passport.c_str());
-			row["Íàçâàíèå óñëóãè"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
-			row["Òèï óñëóãè"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+			row["Ianii?o"] = gcnew String(passport.c_str());
+			row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+			row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
 			string date = DataStorage::data[i]->date.day+"." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
-			row["Äàòà"] = gcnew String(date.c_str());
+			row["Aaoa"] = gcnew String(date.c_str());
 			tabl->Rows->Add(row);
 		}
 
@@ -1388,35 +1285,35 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 		clientsHashTable.print();
 		DataTable^ tablClients = gcnew DataTable();
 		ClientsDataGrid->DataSource = tablClients;
-		tablClients->Columns->Add("ФИО");
-		tablClients->Columns->Add("Должность");
+		tablClients->Columns->Add("Ð¤Ð˜Ðž");
+		tablClients->Columns->Add("Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ");
 		tablClients->Columns->Add("email");
-		tablClients->Columns->Add("Пасспорт");
+		tablClients->Columns->Add("ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚");
 		for (int i = 0; i < dataClients.size(); i++) {
 			DataRow^ rowClients = tablClients->NewRow();
-			rowClients["ФИО"] = gcnew String((dataClients[i]->fullname.surname +' '+ dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
-			rowClients["Должность"] = gcnew String(dataClients[i]->job.c_str());
+			rowClients["Ð¤Ð˜Ðž"] = gcnew String((dataClients[i]->fullname.surname +' '+ dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
+			rowClients["Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ"] = gcnew String(dataClients[i]->job.c_str());
 			rowClients["email"] = gcnew String(dataClients[i]->email.c_str());
 			string passportClient = to_string(dataClients[i]->passport.series) + ' ' + to_string(dataClients[i]->passport.number);
 			//rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
-			rowClients["Пасспорт"] = gcnew String(passportClient.c_str());
+			rowClients["ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚"] = gcnew String(passportClient.c_str());
 			tablClients->Rows->Add(rowClients);
 		}
 
 		vector<ServiceEntity*> dataServices = DataStorage::dataServices;
 		DataTable^ tablServices = gcnew DataTable();
 		ServicesDataGrid->DataSource = tablServices;
-		tablServices->Columns->Add("Òèï óñëóãè");
-		tablServices->Columns->Add("Ïîäðàçäåëåíèå");
-		tablServices->Columns->Add("Íàçâàíèå óñëóãè");
-		tablServices->Columns->Add("Ñðîê èñïîëíåíèÿ");
+		tablServices->Columns->Add("Oei oneoae");
+		tablServices->Columns->Add("Iia?acaaeaiea");
+		tablServices->Columns->Add("Iacaaiea oneoae");
+		tablServices->Columns->Add("N?ie eniieiaiey");
 		for (int i = 0; i < dataServices.size(); i++) {
 			DataRow^ rowServices = tablServices->NewRow();
-			rowServices["Òèï óñëóãè"] = gcnew String(dataServices[i]->serviceType.c_str());
-			rowServices["Ïîäðàçäåëåíèå"] = gcnew String(dataServices[i]->division.c_str());
-			rowServices["Íàçâàíèå óñëóãè"] = gcnew String(dataServices[i]->serviceName.c_str());
+			rowServices["Oei oneoae"] = gcnew String(dataServices[i]->serviceType.c_str());
+			rowServices["Iia?acaaeaiea"] = gcnew String(dataServices[i]->division.c_str());
+			rowServices["Iacaaiea oneoae"] = gcnew String(dataServices[i]->serviceName.c_str());
 			string term = to_string(dataServices[i]->term);
-			rowServices["Ñðîê èñïîëíåíèÿ"] = gcnew String(term.c_str());
+			rowServices["N?ie eniieiaiey"] = gcnew String(term.c_str());
 			tablServices->Rows->Add(rowServices);
 		}
 		
@@ -1436,8 +1333,8 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 		treeNodeServices*& rbTreeTerm = DataStorage::rbTreeTerm;
 
 		ServiceEntity* serviceEntity = new ServiceEntity();
-		serviceEntity->division = "Ïîäðàçäåëåíèå";
-		serviceEntity->serviceName = "Íàçâàíèå";
+		serviceEntity->division = "Iia?acaaeaiea";
+		serviceEntity->serviceName = "Iacaaiea";
 		serviceEntity->term = 1;
 		serviceEntity->serviceType = "serviceType";
 
@@ -1470,6 +1367,19 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			insert(rbTreeTerm, value, leaf, serviceEntity);
 		}
 
+		DataClientsStorage::rbtPassport = root_init(DataClientsStorage::rbtNullnode);
+		Node*& rbt = DataClientsStorage::rbtPassport;
+		vector<ClientsEntity*> clients = DataClientsStorage::data;
+		for (int i = 0; i < clients.size(); i++) {
+			string series = to_string(clients[i]->passport.series);
+			string number = to_string(clients[i]->passport.number);
+			string valueText = series + number;
+			RBTData value;
+			value.index = i;
+			value.value = valueText;
+			insertClient(rbt, DataClientsStorage::rbtNullnode, value);
+		}
+
 	}
 private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender, System::EventArgs^ e) {
 	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
@@ -1480,7 +1390,7 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 	int seriesPassport;
 	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -1501,14 +1411,14 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 			vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
 			this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
 			if (result_searchByTypeAndNameOfService[1] != -1) {
-				this->resultSearch->Text = gcnew String("Íàéäåí");
+				this->resultSearch->Text = gcnew String("Iaeaai");
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Íå íàéäåí");
+				this->resultSearch->Text = gcnew String("Ia iaeaai");
 			}
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 
@@ -1522,7 +1432,7 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 	int seriesPassport;
 	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -1552,7 +1462,7 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 			cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
 		
@@ -1562,7 +1472,7 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 private: System::Void save_btn(System::Object^ sender, System::EventArgs^ e) {
 	vector<RequestsEntity*> data = DataStorage::data;
 	writeData(data, "stdrequests1.txt");
-	MessageBox::Show(this, "Äàííûå çàÿâîê óñïåøíî ñîõðàíåíû", "Ñîõðàíåíèå", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "Aaiiua cayaie oniaoii nio?aiaiu", "Nio?aiaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void remove_element(System::Object^ sender, System::EventArgs^ e) {
 	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
@@ -1573,7 +1483,7 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 	int seriesPassport;
 	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try{
@@ -1601,45 +1511,59 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 				int index = DataStorage::indexSearch;
 				RequestsEntity* delElem = DataStorage::data[index];
 				RequestsEntity* lastElem = DataStorage::data.back();
-				listNodeElem* value = new listNodeElem();
-				string valueText = to_string(delElem->passport.series) + to_string(delElem->passport.number);
-				value->index = index;
-				value->value = valueText;
-				bool heightChanged = false;
+				listNodeElem* valuePasport = new listNodeElem();
+				valuePasport->index = index;
+				valuePasport->value = to_string(delElem->passport.series) + to_string(delElem->passport.number);
+				listNodeElem* valueDate = new listNodeElem();
+				valueDate->index = index;
+				valueDate->value = delElem->date.day + "." + delElem->date.month + "." + delElem->date.year;
+				listNodeElem* valueServiceType = new listNodeElem();
+				valueServiceType->index = index;
+				valueServiceType->value = delElem->serviceType;
+				listNodeElem* valueServiceName = new listNodeElem();
+				valueServiceName->index = index;
+				valueServiceName->value = delElem->serviceName;
+				bool heightChangedPassport = false;
+				bool heightChangedServiceType = false;
+				bool heightChangedServiceName = false;
+				bool heightChangedDate = false;
 				requestsHashTable.remove(delElem);
 				updateByPassportTreeNode(avlTreePassport, lastElem, index);
 				updateServiceTypeTreeNode(avlTreeServiceType, lastElem, index);
 				updateServiceNameTreeNode(avlTreeServiceName, lastElem, index);
 				updateByDateTreeNode(avlTreeDate, lastElem, index);
-				delNode(avlTreePassport, value, heightChanged);
+				delNode(avlTreePassport, valuePasport, heightChangedPassport,delElem);
+				delNode(avlTreeServiceType, valueServiceType, heightChangedServiceType, delElem);
+				delNode(avlTreeServiceName, valueServiceName, heightChangedServiceName, delElem);
+				delNode(avlTreeDate, valueDate, heightChangedDate, delElem);
 				DataStorage::data[index] = lastElem;
 				DataStorage::data.pop_back();
 				MessageBox::Show(this, "Çàÿâêà óñïåøíî óäàëåíà", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				DataTable^ tablTest = gcnew DataTable();
 				tablTest->Rows->Clear();
 				RequestsDataGrid->DataSource = tablTest;
-				tablTest->Columns->Add("Ïàñïîðò");
-				tablTest->Columns->Add("Íàçâàíèå óñëóãè");
-				tablTest->Columns->Add("Òèï óñëóãè");
-				tablTest->Columns->Add("Äàòà");
+				tablTest->Columns->Add("Ianii?o");
+				tablTest->Columns->Add("Iacaaiea oneoae");
+				tablTest->Columns->Add("Oei oneoae");
+				tablTest->Columns->Add("Aaoa");
 				for (int i = 0; i < DataStorage::data.size(); i++) {
 					DataRow^ row = tablTest->NewRow();
 					string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
-					row["Ïàñïîðò"] = gcnew String(passport.c_str());
-					row["Íàçâàíèå óñëóãè"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
-					row["Òèï óñëóãè"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+					row["Ianii?o"] = gcnew String(passport.c_str());
+					row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+					row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
 					string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
-					row["Äàòà"] = gcnew String(date.c_str());
+					row["Aaoa"] = gcnew String(date.c_str());
 					tablTest->Rows->Add(row);
 				}
 
 			}
 			else {
-				MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
 		
@@ -1656,7 +1580,7 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 	int seriesPassport;
 	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -1677,16 +1601,16 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 			bool result_searchByDateTreeNode = DataStorage::resultSerch;
 			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 			if (result_searchByDateTreeNode) {
-				this->resultSearch->Text = gcnew String("Íàéäåí");
+				this->resultSearch->Text = gcnew String("Iaeaai");
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Íå íàéäåí");
+				this->resultSearch->Text = gcnew String("Ia iaeaai");
 			}
 			printTree(avlTreeDate, nullptr);
 			cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
 	}
@@ -1702,7 +1626,7 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 	int seriesPassport;
 	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -1723,16 +1647,16 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 			bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
 			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 			if (result_searchByServiceTypeTreeNode) {
-				this->resultSearch->Text = gcnew String("Íàéäåí");
+				this->resultSearch->Text = gcnew String("Iaeaai");
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Íå íàéäåí");
+				this->resultSearch->Text = gcnew String("Ia iaeaai");
 			}
 			printTree(avlTreeServiceType, nullptr);
 			cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
 		
@@ -1749,7 +1673,7 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	int seriesPassport;
 	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -1787,8 +1711,74 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	}
 	
 }
+private: System::Void RequestsDataGrid_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label17_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+    private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void label19_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+
+
+    
+    private: System::Void requestsPage_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+
     
 
+private:System::Void searchByClientPassport_Click(System::Object^ sender, System::EventArgs^ e)
+    {
+        string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+        Fullname fullname = inputFullnameData(fullnamestr);
+        ClientPassport passport = ClientPassport();
+        int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+        int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+        passport.number = passnum;
+        passport.series = passseries;
+        string email = marshal_as<std::string>(this->tBClientEmail->Text);
+        string job = marshal_as<std::string>(this->tBClientJob->Text);
+        ClientsEntity* client = new ClientsEntity();
+        client->passport = passport;
+        client->fullname = fullname;
+        client->email = email;
+        client->job = job;
+        DataClientsStorage::rbtPassport = root_init(DataClientsStorage::rbtNullnode);
+        Node* rbt = DataClientsStorage::rbtPassport;
+        vector<ClientsEntity*> clients = DataClientsStorage::data;
+        for (int i = 0; i < clients.size(); i++) {
+            string series = to_string(clients[i]->passport.series);
+            string number = to_string(clients[i]->passport.number);
+            string valueText = series + number;
+            RBTData value;
+            value.index = i;
+            value.value = valueText;
+            insertClient(rbt, DataClientsStorage::rbtNullnode, value);   
+        }
+        int count = 0;
+        RBTData searchable;
+        searchable.value = to_string(client->passport.series) + to_string(client->passport.number);
+        searchable.index = 0;
+        pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+        bool result = DataClientsStorage::resultSearch;
+        this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+        DataStorage::countComparisons = 0;
+        if (result) {
+            this->resultSearchClient->Text = gcnew String("      ");
+        }
+        else {
+            this->resultSearchClient->Text = gcnew String("         ");
+        }
+        print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
+        cout << endl;
+    }
 private: System::Void btnSearchByClientJob_Click(System::Object^ sender, System::EventArgs^ e) {
     string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
     Fullname fullname = inputFullnameData(fullnamestr);
@@ -1802,7 +1792,7 @@ private: System::Void btnSearchByClientJob_Click(System::Object^ sender, System:
     string email = marshal_as<std::string>(this->tBClientEmai->Text);
     string job = marshal_as<std::string>(this->tBClientJob->Text);
 	if (job.size() == 0 || email.size() == 0 || fullnamestr.size() == 0 || passnumstr.size() == 0 || passserstr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -1823,16 +1813,16 @@ private: System::Void btnSearchByClientJob_Click(System::Object^ sender, System:
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("Найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐ°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("Не найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			/*print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
 			cout << endl;*/
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 
@@ -1876,7 +1866,7 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
 
 	if (email.size() == 0 || fullnamestr.size() == 0 || job.size() == 0) 
 	{
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else if(!isContain)
 	{
@@ -1888,7 +1878,7 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
 			client->email = email;
 			client->job = job;
 			DataClientsStorage::data.push_back(client);
-			//удаление в хеш таблицу с индекоксом или без???
+			//ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ðµ Ð² Ñ…ÐµÑˆ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ Ñ Ð¸Ð½Ð´ÐµÐºÐ¾ÐºÑÐ¾Ð¼ Ð¸Ð»Ð¸ Ð±ÐµÐ·???
 			clientsHashTable.insert(client, DataClientsStorage::data.size()-1);
 			//PASSPORT
 			RBTData dataPassport;
@@ -1916,22 +1906,22 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
 			dataClient.value = clientstr;
 			insertClient(rbtClient, DataClientsStorage::rbtNullnode, dataClient);
 
-			MessageBox::Show(this, "Клиент добавлен", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			MessageBox::Show(this, "ÐšÐ»Ð¸ÐµÐ½Ñ‚ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½", "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			DataTable^ tablTestClient = gcnew DataTable();
 			tablTestClient->Rows->Clear();
 			ClientsDataGrid->DataSource = tablTestClient;
-			tablTestClient->Columns->Add("ФИО");
-			tablTestClient->Columns->Add("Должность");
+			tablTestClient->Columns->Add("Ð¤Ð˜Ðž");
+			tablTestClient->Columns->Add("Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ");
 			tablTestClient->Columns->Add("email");
-			tablTestClient->Columns->Add("Пасспорт");
+			tablTestClient->Columns->Add("ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚");
 			for (int i = 0; i < DataClientsStorage::data.size(); i++) {
 				DataRow^ rowClients = tablTestClient->NewRow();
-				rowClients["ФИО"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
-				rowClients["Должность"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
+				rowClients["Ð¤Ð˜Ðž"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
+				rowClients["Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
 				rowClients["email"] = gcnew String(DataClientsStorage::data[i]->email.c_str());
 				string passportClient = to_string(DataClientsStorage::data[i]->passport.series) + ' ' + to_string(DataClientsStorage::data[i]->passport.number);
 				//rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
-				rowClients["Пасспорт"] = gcnew String(passportClient.c_str());
+				rowClients["ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚"] = gcnew String(passportClient.c_str());
 				tablTestClient->Rows->Add(rowClients);
 			}
 		}
@@ -1941,7 +1931,7 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
 		}
 	}
 	else {
-		MessageBox::Show(this, "Такой клиент уже находится в базе", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Ð¢Ð°ÐºÐ¾Ð¹ ÐºÐ»Ð¸ÐµÐ½Ñ‚ ÑƒÐ¶Ðµ Ð½Ð°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð² Ð±Ð°Ð·Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}			
 }
 
@@ -1953,7 +1943,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå, ïðîâåðüòå ïðàâèëüíîñòü ââåäåííûõ äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1961,7 +1951,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåâåðíûé òèï äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		ServiceEntity* entity = new ServiceEntity();
@@ -1982,10 +1972,10 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Iaeaai");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Íå íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1999,7 +1989,7 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå, ïðîâåðüòå ïðàâèëüíîñòü ââåäåííûõ äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2007,7 +1997,7 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåâåðíûé òèï äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		serviceTerm = stoi(serviceTermStr);
@@ -2030,10 +2020,10 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Iaeaai");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Íå íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -2047,7 +2037,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå, ïðîâåðüòå ïðàâèëüíîñòü ââåäåííûõ äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2055,7 +2045,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåâåðíûé òèï äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		 serviceTerm = stoi(serviceTermStr);
@@ -2078,10 +2068,10 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Iaeaai");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Íå íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -2095,7 +2085,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå, ïðîâåðüòå ïðàâèëüíîñòü ââåäåííûõ äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2103,7 +2093,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Íåâåðíûé òèï äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		Passport passport = Passport();
 		ServiceEntity* entity = new ServiceEntity();
@@ -2124,10 +2114,10 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Iaeaai");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Íå íàéäåí");
+			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -2137,40 +2127,42 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 }
 
 private: System::Void searchByNameAndType_Click(System::Object^ sender, System::EventArgs^ e) {
-	string serviceName = marshal_as<std::string>(this->tBName->Text);
-	string serviceType = marshal_as<std::string>(this->tBType->Text);
-	string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
-	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
+    string serviceName = marshal_as<std::string>(this->tBName->Text);
+    string serviceType = marshal_as<std::string>(this->tBType->Text);
+    string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
+    string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
-	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå, ïðîâåðüòå ïðàâèëüíîñòü ââåäåííûõ äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-	else {
-		int serviceTerm;
-		try {
-			serviceTerm = stoi(serviceTermStr);
-		}
-		catch (exception& err) {
-			MessageBox::Show(this, "Íåâåðíûé òèï äàííûõ", "Îøèáêà", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-		ServiceEntity* entity = new ServiceEntity();
-		entity->division = serviceDivision;
-		entity->serviceType = serviceType;
-		entity->serviceName = serviceName;
-		entity->term = stoi(serviceTermStr);
-		ServicesHashTable servicesHashTable = DataStorage::servicesHashTable;
-		servicesHashTable.printTable();
-		
-		vector<ServiceEntity*> data = DataStorage::dataServices;
-		vector<int> res = servicesHashTable.findItem(entity);
-		this->countComparationsServices->Text = gcnew String(to_string(res[0]).c_str());
-		if (isEqualServices(data[res[2]], entity)) {
-			this->resultSearchServices2->Text = gcnew String("Íàéäåí");
-		}
-		else {
-			this->resultSearchServices2->Text = gcnew String("Íå íàéäåí");
-		}
-		DataStorage::resultSerch = false;
+    if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
+        MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+    }
+    else {
+        int serviceTerm;
+        try {
+            serviceTerm = stoi(serviceTermStr);
+        }
+        catch (exception& err) {
+            MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+        ServiceEntity* entity = new ServiceEntity();
+        entity->division = serviceDivision;
+        entity->serviceType = serviceType;
+        entity->serviceName = serviceName;
+        entity->term = stoi(serviceTermStr);
+        ServicesHashTable servicesHashTable = DataStorage::servicesHashTable;
+        servicesHashTable.printTable();
+
+        vector<ServiceEntity*> data = DataStorage::dataServices;
+        vector<int> res = servicesHashTable.findItem(entity);
+        this->countComparationsServices->Text = gcnew String(to_string(res[0]).c_str());
+        if (isEqualServices(data[res[2]], entity)) {
+            this->resultSearchServices2->Text = gcnew String("Iaeaai");
+        }
+        else {
+            this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
+        }
+        DataStorage::resultSerch = false;
+    }
+}
 private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
 
 }
@@ -2187,17 +2179,16 @@ private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ 
 	debugPrintAvlTree(avlTreeServiceType, nullptr, fout);
 	debugPrintAvlTree(avlTreeServiceName, nullptr, fout);
 	fout.close();
-	MessageBox::Show(this, "Ñòðóêòóðû äàííûõ ñîõðàíåíû â ôàéë debugRequests.txt", "Îòëàäêà", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "No?oeoo?u aaiiuo nio?aiaiu a oaee debugRequests.txt", "Ioeaaea", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void addRequestsBTN_Click(System::Object^ sender, System::EventArgs^ e) {
-	// Äîáàâèòü âàëèäàöèþ ïî äåðåâó äåíèñà è õåø òàáëèöå àíòàèêñà
+	// Aiaaaeou aaeeaaoe? ii aa?aao aaiena e oao oaaeeoa aioaeena
 	vector<RequestsEntity*> data = DataStorage::data;
 	treeNode*& avlTreePassport = DataStorage::avlTreePassport;
 	treeNode*& avlTreeDate = DataStorage::avlTreeDate;
 	treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
 	treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
 	bool heightChanged = false;
-	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
 	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
 	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
@@ -2205,65 +2196,112 @@ private: System::Void addRequestsBTN_Click(System::Object^ sender, System::Event
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-	else {
-		try {
-			seriesPassport = stoi(seriesPassportText);
-			numberPassport = stoi(numberPassportText);
-			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			bool heightChanged = false;
-			DataStorage::data.push_back(entity);
-			requestsHashTable.insert(entity);
-			listNodeElem* valuePasport = new listNodeElem();
-			valuePasport->index = DataStorage::data.size() - 1 ;
-			valuePasport->value = to_string(entity->passport.series) + to_string(entity->passport.number);
-			addNode(avlTreePassport, valuePasport, heightChanged);
-			listNodeElem* valueDate = new listNodeElem();
-			valueDate->index = DataStorage::data.size() - 1;
-			valueDate->value = entity->date.day + "." + entity->date.month + "." + entity->date.year;
-			addNode(avlTreeDate, valueDate, heightChanged);
-			listNodeElem* valueServiceType = new listNodeElem();
-			valueServiceType->index = DataStorage::data.size() - 1;
-			valueServiceType->value = entity->serviceType;
-			addNode(avlTreeServiceType, valueServiceType, heightChanged);
-			listNodeElem* valueServiceName = new listNodeElem();
-			valueServiceName->index = DataStorage::data.size() - 1;
-			valueServiceName->value = entity->serviceName;
-			addNode(avlTreeServiceName, valueServiceName, heightChanged);
-			MessageBox::Show(this, "Çàÿâêà óñïåøíî äîáàâëåíà", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			DataTable^ tablTest2 = gcnew DataTable();
-			tablTest2->Rows->Clear();
-			RequestsDataGrid->DataSource = tablTest2;
-			tablTest2->Columns->Add("Ïàñïîðò");
-			tablTest2->Columns->Add("Íàçâàíèå óñëóãè");
-			tablTest2->Columns->Add("Òèï óñëóãè");
-			tablTest2->Columns->Add("Äàòà");
-			for (int i = 0; i < DataStorage::data.size(); i++) {
-				DataRow^ row = tablTest2->NewRow();
-				string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
-				row["Ïàñïîðò"] = gcnew String(passport.c_str());
-				row["Íàçâàíèå óñëóãè"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
-				row["Òèï óñëóãè"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
-				string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
-				row["Äàòà"] = gcnew String(date.c_str());
-				tablTest2->Rows->Add(row);
+	try {
+		seriesPassport = stoi(seriesPassportText);
+		numberPassport = stoi(numberPassportText);
+		ServicesHashTable servicesHashTable = DataStorage::servicesHashTable;
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = "dsss";
+		entity->serviceType = serviceType;
+		entity->serviceName = serviceName;
+		entity->term = 0;
+		bool flagServices = servicesHashTable.findItemByKey(entity);
+		Node* rbt = DataClientsStorage::rbtPassport;
+		int count = 0;
+		RBTData searchable;
+		searchable.value = seriesPassportText + numberPassportText;
+		searchable.index = 0;
+		pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+		bool flagClient = DataClientsStorage::resultSearch;
+		RequestsHashTable& requestsHashTable = DataStorage::requestsHashTable;
+		requestsHashTable.print();
+		seriesPassport = stoi(seriesPassportText);
+		numberPassport = stoi(numberPassportText);
+		date date = inputDateData(dateString);
+		Passport passport = Passport();
+		passport.number = numberPassport;
+		int jopa = 4;
+		passport.series = seriesPassport;
+		RequestsEntity* requsestsEntity = new RequestsEntity();
+		requsestsEntity->date = date;
+		requsestsEntity->passport = passport;
+		requsestsEntity->serviceName = serviceName;
+		requsestsEntity->serviceType = serviceType;
+		vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(requsestsEntity);
+		if (result_searchByTypeAndNameOfService[1] != -1) {
+			MessageBox::Show(this, "Òàêàÿ çàÿâêà óæå ñóùåñòâóåò", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (!flagClient) {
+			MessageBox::Show(this, "Êëèåíò ñ òàêèìè äàííûìè íå íàéäåí", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (!flagServices) {
+			MessageBox::Show(this, "Óêàçàííûå íàçâàíèå è òèï óñëóãè íå íàéäåíû", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 ) {
+			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else {
+			try {
+				bool heightChanged = false;
+				DataStorage::data.push_back(requsestsEntity);
+				requestsHashTable.insert(requsestsEntity);
+				listNodeElem* valuePasport = new listNodeElem();
+				valuePasport->index = DataStorage::data.size() - 1;
+				valuePasport->value = to_string(requsestsEntity->passport.series) + to_string(requsestsEntity->passport.number);
+				addNode(avlTreePassport, valuePasport, heightChanged);
+				listNodeElem* valueDate = new listNodeElem();
+				valueDate->index = DataStorage::data.size() - 1;
+				valueDate->value = requsestsEntity->date.day + "." + requsestsEntity->date.month + "." + requsestsEntity->date.year;
+				addNode(avlTreeDate, valueDate, heightChanged);
+				listNodeElem* valueServiceType = new listNodeElem();
+				valueServiceType->index = DataStorage::data.size() - 1;
+				valueServiceType->value = entity->serviceType;
+				addNode(avlTreeServiceType, valueServiceType, heightChanged);
+				listNodeElem* valueServiceName = new listNodeElem();
+				valueServiceName->index = DataStorage::data.size() - 1;
+				valueServiceName->value = entity->serviceName;
+				addNode(avlTreeServiceName, valueServiceName, heightChanged);
+				MessageBox::Show(this, "Çàÿâêà óñïåøíî äîáàâëåíà", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				DataTable^ tablTest2 = gcnew DataTable();
+				tablTest2->Rows->Clear();
+				RequestsDataGrid->DataSource = tablTest2;
+				tablTest2->Columns->Add("Ianii?o");
+				tablTest2->Columns->Add("Iacaaiea oneoae");
+				tablTest2->Columns->Add("Oei oneoae");
+				tablTest2->Columns->Add("Aaoa");
+				for (int i = 0; i < DataStorage::data.size(); i++) {
+					DataRow^ row = tablTest2->NewRow();
+					string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
+					row["Ianii?o"] = gcnew String(passport.c_str());
+					row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+					row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+					string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
+					row["Aaoa"] = gcnew String(date.c_str());
+					tablTest2->Rows->Add(row);
+				}
 			}
-		}
-		catch (exception& err) {
-			MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Óäàëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
+			catch (exception& err) {
+				MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
 
+		}
 	}
+	catch (exception& err) {
+		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label10_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
@@ -2277,7 +2315,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	passport.number = passnum;
 	passport.series = passseries;
@@ -2286,7 +2324,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
 	if (isValidateData(passseries, passnum, fullnamestr, email, job)) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2307,16 +2345,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("Найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐ°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("Не найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			//print(rbt, DataClientsStorage::rbtNullnode, 4, 4);
 			//cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 }
@@ -2333,7 +2371,7 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	passport.number = passnum;
 	passport.series = passseries;
@@ -2342,7 +2380,7 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
 	if (isValidateData(passseries, passnum, fullnamestr, email, job)) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2364,16 +2402,16 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("Найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐ°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("Не найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
 			cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 	}
@@ -2393,7 +2431,7 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
@@ -2402,7 +2440,7 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 	string email = marshal_as<std::string>(this->tBClientEmai->Text);
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
 	if (isValidateData(passseries, passnum, fullnamestr, email, job)) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2423,15 +2461,15 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("Найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐ°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("Не найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 }
@@ -2448,14 +2486,14 @@ private: System::Void btnSearchByClient_Click(System::Object^ sender, System::Ev
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	passport.number = passnum;
 	passport.series = passseries;
 	string email = marshal_as<std::string>(this->tBClientEmai->Text);
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
 	if (isValidateData(passseries,passnum,fullnamestr,email,job)) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2479,15 +2517,15 @@ private: System::Void btnSearchByClient_Click(System::Object^ sender, System::Ev
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("Найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐ°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("Не найдено");
+				this->resultSearchClient->Text = gcnew String("ÐÐµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾");
 			}
 			//cout << searchable.value << "\n";
 		}
 			catch (exception& err) {
-				MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
@@ -2509,7 +2547,7 @@ private: System::Void btnDeletionClient_Click(System::Object^ sender, System::Ev
 	string passserstr = to_string(passseries);
 	bool isContains = pre_search(rbtPassport, DataClientsStorage::rbtNullnode, to_string(passport.series) + to_string(passport.number), local);
 	if (job.size() == 0 || email.size() == 0 || fullnamestr.size() == 0 || passnumstr.size() == 0 || passserstr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else 
 	{
@@ -2569,32 +2607,32 @@ private: System::Void btnDeletionClient_Click(System::Object^ sender, System::Ev
 					clientsHashTable.changeIndex(lastElement, index);
 					DataClientsStorage::data[index] = lastElement;
 					DataClientsStorage::data.pop_back();
-					MessageBox::Show(this, "Клиент удален", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+					MessageBox::Show(this, "ÐšÐ»Ð¸ÐµÐ½Ñ‚ ÑƒÐ´Ð°Ð»ÐµÐ½", "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾", MessageBoxButtons::OK, MessageBoxIcon::Information);
 					DataTable^ tablTestClient = gcnew DataTable();
 					tablTestClient->Rows->Clear();
 					ClientsDataGrid->DataSource = tablTestClient;
-					tablTestClient->Columns->Add("ФИО");
-					tablTestClient->Columns->Add("Должность");
+					tablTestClient->Columns->Add("Ð¤Ð˜Ðž");
+					tablTestClient->Columns->Add("Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ");
 					tablTestClient->Columns->Add("email");
-					tablTestClient->Columns->Add("Пасспорт");
+					tablTestClient->Columns->Add("ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚");
 					for (int i = 0; i < DataClientsStorage::data.size(); i++) {
 						DataRow^ rowClients = tablTestClient->NewRow();
-						rowClients["ФИО"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
-						rowClients["Должность"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
+						rowClients["Ð¤Ð˜Ðž"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
+						rowClients["Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
 						rowClients["email"] = gcnew String(DataClientsStorage::data[i]->email.c_str());
 						string passportClient = to_string(DataClientsStorage::data[i]->passport.series) + ' ' + to_string(DataClientsStorage::data[i]->passport.number);
-						rowClients["Пасспорт"] = gcnew String(passportClient.c_str());
+						rowClients["ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚"] = gcnew String(passportClient.c_str());
 						tablTestClient->Rows->Add(rowClients);
 					}
 
 				}
 			}
 			else {
-				MessageBox::Show(this, "Такого клиента нет в базе", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "Ð¢Ð°ÐºÐ¾Ð³Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð° Ð½ÐµÑ‚ Ð² Ð±Ð°Ð·Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию о клиенте", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "ÐÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ, Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð²Ð²ÐµÐ´ÐµÐ½Ð½ÑƒÑŽ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ðµ", "ÐžÑˆÐ¸Ð±ÐºÐ°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 	}
@@ -2615,13 +2653,13 @@ private: System::Void debugClientButton_Click(System::Object^ sender, System::Ev
 	debugPrintRBTClient(rbtEmail, DataClientsStorage::rbtNullnode, fout, 4, 2);
 	debugPrintRBTClient(rbtPassport, DataClientsStorage::rbtNullnode, fout, 4, 2);
 	fout.close(); 
-	MessageBox::Show(this, "Данные сохранены в файл debugClients.txt", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð» debugClients.txt", "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
 }
 private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
 	vector<ClientsEntity*> data = DataClientsStorage::data;
 	writeDataClient(data, "stdclients1.txt");
-	MessageBox::Show(this, "Данные о клиентах сохранены в файл stdclients1", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð¾ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð°Ñ… ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð» stdclients1", "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 };
 }
