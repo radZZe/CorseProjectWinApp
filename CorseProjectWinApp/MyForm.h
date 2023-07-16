@@ -119,6 +119,7 @@ namespace CorseProjectWinApp {
     private: System::Windows::Forms::Button^ button13;
     private: System::Windows::Forms::Button^ button14;
     private: System::Windows::Forms::TextBox^ tBName;
+	private: System::Windows::Forms::TextBox^ tBClientEmail;
 
     private: System::Windows::Forms::TextBox^ tBTerm;
 
@@ -130,6 +131,9 @@ namespace CorseProjectWinApp {
     private: System::Windows::Forms::Button^ searchByServiceTypeBtn;
 
 	private: System::Windows::Forms::Button^ divisionSearchBtn;
+		   private: System::Windows::Forms::Button^ button6;
+private: System::Windows::Forms::Button^ button7;
+	   private: System::Windows::Forms::Button^ button9;
 private: System::Windows::Forms::Button^ searchServiceByTermBtb;
 private: System::Windows::Forms::Button^ searchByNameAndType;
 
@@ -770,11 +774,11 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(473, 390);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(132, 22);
-			this->textBox1->TabIndex = 44;
+			//this->textBox1->Location = System::Drawing::Point(473, 390);
+			//this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			//this->textBox1->Name = L"textBox1";
+			//this->textBox1->Size = System::Drawing::Size(132, 22);
+			//this->textBox1->TabIndex = 44;
 			// 
 			// label8
 			// 
@@ -2290,14 +2294,6 @@ private: System::Void addRequestsBTN_Click(System::Object^ sender, System::Event
 		MessageBox::Show(this, "Íåêîððåêòíûå äàííûå , ïðîâåðüòå ââåäåííóþ èíôîðìàöèþ î çàÿâêå", "Äîáàâëåíèå", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
