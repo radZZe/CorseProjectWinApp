@@ -51,13 +51,18 @@ listServices* deleteListElement(listServices* head, treeNodeElemServices givenDa
     {
         while (runner->next != head && flag == true)
         {
-            listServices* save = new listServices;
-            save->next = runner->next->next;
-            delete runner->next;
-            runner->next = save->next;
-            runner->next->next->previous = runner;
-            runner = runner->next;
-            flag = false;
+            if (runner->data.value == givenData.value) {
+                listServices* save = new listServices;
+                save->next = runner->next->next;
+                delete runner->next;
+                runner->next = save->next;
+                runner->next->next->previous = runner;
+                runner = runner->next;
+                flag = false;
+            }
+            else {
+                runner = runner->next;
+            }
         }
         return head;
     }
@@ -115,6 +120,7 @@ listServices* addInOrder(listServices*& head, treeNodeElemServices element)
         runner->previous = newNode;
         head = newNode;
     }
+    int jopa = 0;
     return head;
 }
 
@@ -150,15 +156,17 @@ bool searchServiceInList(listServices* head, ServiceEntity* element, int &count)
             if (isEqualServices(DataStorage::dataServices[runner->data.index], element)) {
                 flag = true;
                 DataStorage::resultSerch = true;
+                DataStorage::indexSearch = runner->data.index;
                 return flag;
             }
             else {
                 runner = runner->next;
             }
         }
-        if (isEqualServices(DataStorage::dataServices[head->previous->data.index], element)) {
+        if (isEqualServices(DataStorage::dataServices[runner->data.index], element)) {
             flag = true;
             DataStorage::resultSerch = true;
+            DataStorage::indexSearch = runner->data.index;
         }
     }
     return flag;
@@ -173,7 +181,7 @@ listServices* deleteRepeatedElement(listServices*& head)
     }
     else
     {
-        listServices* save = new listServices;
+        listServices* save = new listServices();
         save->next = head->next->next;
         delete head->next;
         head->next = save->next;
@@ -182,6 +190,7 @@ listServices* deleteRepeatedElement(listServices*& head)
     }
     return head;
 }
+
 
 treeNodeServices* initTree(treeNodeServices* leaf)
 {
@@ -215,8 +224,29 @@ void printTreeA(treeNodeServices*& root, int h, treeNodeServices*& leaf)
             {
                 cout << "  ";
             }
-            cout << root->key->data.value << " " << root->key->data.index << " " << root->color << '\n';
+            cout << "| Data: " << root->key->data.value << " Array index: " << root->key->data.index << " Color: " << root->color << " |" << '\n';
             printTreeA(root->left, h + 4, leaf);
+        }
+    }
+}
+
+void debugPrintTreeA(treeNodeServices*& root, int h, treeNodeServices*& leaf, ofstream& fout)
+{
+    if (root == nullptr)
+    {
+        fout << "The tree doesn't exist";
+    }
+    else
+    {
+        if (root != leaf && root != nullptr)
+        {
+            debugPrintTreeA(root->right, h + 4, leaf, fout);
+            for (int i = 1; i <= h; i++)
+            {
+                fout << "  ";
+            }
+            fout << "| Data: " << root->key->data.value << " Array index: " << root->key->data.index << " Color: " << root->color << " |" << '\n';
+            debugPrintTreeA(root->left, h + 4, leaf, fout);
         }
     }
 }
@@ -239,6 +269,65 @@ bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServi
             if (compareData(temp->key->data, element) == 0)
             {
                 return searchServiceInList(temp->key, fullEntity, count);
+
+            }
+            else if (compareData(temp->key->data, element) == -1)
+            {
+                temp = temp->right;
+            }
+            else
+            {
+                temp = temp->left;
+            }
+        }
+        DataStorage::resultSerch = false;
+        return false;
+    }
+}
+
+bool _searchServiceInList(listServices* head, treeNodeElemServices element, int& count) {
+    bool flag = false;
+    listServices* runner;
+    runner = head;
+    if (head == nullptr) {
+        return false;
+    }
+    else {
+        while (runner->next != head && flag == false) {
+            count++;
+            if (runner->data.value == element.value) {
+                flag = true;
+                return flag;
+            }
+            else {
+                runner = runner->next;
+            }
+        }
+        if (head->previous->data.value == element.value) {
+            flag = true;
+        }
+    }
+    return flag;
+}
+
+bool _search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int& count)
+{
+    treeNodeServices* temp = root;
+    if (root == nullptr)
+    {
+        DataStorage::resultSerch = false;
+        cout << "The tree does not exist";
+        return false;
+    }
+    else
+    {
+        while (temp != leaf)
+        {
+            count++;
+            DataStorage::countComparisons = count;
+            if (compareData(temp->key->data, element) == 0)
+            {
+                return _searchServiceInList(temp->key, element, count);
 
             }
             else if (compareData(temp->key->data, element) == -1)
@@ -360,9 +449,8 @@ void insertFixup(treeNodeServices*& root, treeNodeServices*& z, treeNodeServices
     root->color = 'b';
 }
 
-treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, ServiceEntity* fullEntity)
+treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf)
 {
-
     if (root == nullptr)
     {
         return root;
@@ -370,7 +458,7 @@ treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, 
     else
     {
         int count = DataStorage::countComparisons;
-        if (search(root, element, leaf, count, fullEntity))
+        if (_search(root, element, leaf, count))
         {
             treeNodeServices* temp = root;
             while (temp != leaf)
@@ -605,7 +693,7 @@ void deleteElement(treeNodeServices*& root, treeNodeElemServices value, treeNode
         }
         else
         {
-            deleteRepeatedElement(z->key);
+            deleteListElement(z->key, value);
         }
     }
 }
@@ -642,4 +730,157 @@ bool compareTrees(treeNodeServices*& root1, treeNodeServices*& root2, treeNodeSe
         flag = false;
     }
     return flag;
+}
+
+int updateServiceIndexInList(listServices* head, ServiceEntity* element, int& index) {
+    bool flag = false;
+    listServices* runner;
+    runner = head;
+    if (head == nullptr) {
+        return false;
+    }
+    else {
+        while (runner->next != head && flag == false) {
+            if (isEqualServices(DataStorage::dataServices[runner->data.index], element)) {
+                flag = true;
+                runner->data.index = index;
+                return 0;
+            }
+            else {
+                runner = runner->next;
+            }
+        }
+        if (isEqualServices(DataStorage::dataServices[head->previous->data.index], element)) {
+            head->previous->data.index = index;
+        }
+    }
+    return 0;
+}
+
+int updateByServiceNameTreeNode2(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index) {
+    treeNodeElemServices element;
+    element.value = fullEntity->serviceName;
+    treeNodeServices* temp = root;
+    if (root == nullptr)
+    {
+        DataStorage::resultSerch = false;
+        cout << "The tree does not exist";
+        return 0;
+    }
+    else
+    {
+        while (temp != leaf)
+        {
+            if (compareData(temp->key->data, element) == 0)
+            {
+                return updateServiceIndexInList(temp->key, fullEntity, index);
+
+            }
+            else if (compareData(temp->key->data, element) == -1)
+            {
+                temp = temp->right;
+            }
+            else
+            {
+                temp = temp->left;
+            }
+        }
+        return 0;
+    }
+}
+
+int updateByServiceTypeTreeNode2(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index) {
+    treeNodeElemServices element;
+    element.value = fullEntity->serviceType;
+    treeNodeServices* temp = root;
+    if (root == nullptr)
+    {
+        DataStorage::resultSerch = false;
+        cout << "The tree does not exist";
+        return 0;
+    }
+    else
+    {
+        while (temp != leaf)
+        {
+            if (compareData(temp->key->data, element) == 0)
+            {
+                return updateServiceIndexInList(temp->key, fullEntity, index);
+
+            }
+            else if (compareData(temp->key->data, element) == -1)
+            {
+                temp = temp->right;
+            }
+            else
+            {
+                temp = temp->left;
+            }
+        }
+        return 0;
+    }
+}
+
+int updateByServiceDivisionTreeNode(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index) {
+    treeNodeElemServices element;
+    element.value = fullEntity->division;
+    treeNodeServices* temp = root;
+    if (root == nullptr)
+    {
+        DataStorage::resultSerch = false;
+        cout << "The tree does not exist";
+        return 0;
+    }
+    else
+    {
+        while (temp != leaf)
+        {
+            if (compareData(temp->key->data, element) == 0)
+            {
+                return updateServiceIndexInList(temp->key, fullEntity, index);
+
+            }
+            else if (compareData(temp->key->data, element) == -1)
+            {
+                temp = temp->right;
+            }
+            else
+            {
+                temp = temp->left;
+            }
+        }
+        return 0;
+    }
+}
+
+int updateByServiceTermTreeNode(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index) {
+    treeNodeElemServices element;
+    element.value = fullEntity->term;
+    treeNodeServices* temp = root;
+    if (root == nullptr)
+    {
+        DataStorage::resultSerch = false;
+        cout << "The tree does not exist";
+        return 0;
+    }
+    else
+    {
+        while (temp != leaf)
+        {
+            if (compareData(temp->key->data, element) == 0)
+            {
+                return updateServiceIndexInList(temp->key, fullEntity, index);
+
+            }
+            else if (compareData(temp->key->data, element) == -1)
+            {
+                temp = temp->right;
+            }
+            else
+            {
+                temp = temp->left;
+            }
+        }
+        return 0;
+    }
 }
