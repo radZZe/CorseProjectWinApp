@@ -1854,7 +1854,7 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
 		string clientstr = client->fullname.surname + ' ' + client->fullname.name + ' ' + client->fullname.lastname
 			+ ' ' + client->job + ' ' + client->email
 			+ ' ' + to_string(client->passport.series) + to_string(client->passport.number);
-		bool isContain = pre_search(rbtClient, DataClientsStorage::rbtNullnode, clientstr, local);
+		bool isContain = pre_search(rbtPassport, DataClientsStorage::rbtNullnode, passserstr + passnumstr, local);
 
 
 		if (email.size() == 0 || fullnamestr.size() == 0 || job.size() == 0)
@@ -1924,7 +1924,7 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
 			}
 		}
 		else {
-			MessageBox::Show(this, "Некорректные данные, проверьте правильности введённых данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Такой клиент уже есть в справочнике", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 }
@@ -2674,6 +2674,48 @@ private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^
 	}
 }
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+	Fullname fullname = inputFullnameData(fullnamestr);
+	ClientPassport passport = ClientPassport();
+	int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+	int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	passport.number = passnum;
+	passport.series = passseries;
+	string email = marshal_as<std::string>(this->tBClientEmai->Text);
+	string job = marshal_as<std::string>(this->tBClientJob->Text);
+	ClientsEntity* client = new ClientsEntity();
+	client->passport = passport;
+	client->fullname = fullname;
+	client->email = email;
+	client->job = job;
+	DataClientsStorage::rbtPassport = root_init(DataClientsStorage::rbtNullnode);
+	Node* rbt = DataClientsStorage::rbtPassport;
+	vector<ClientsEntity*> clients = DataClientsStorage::data;
+	for (int i = 0; i < clients.size(); i++) {
+		string series = to_string(clients[i]->passport.series);
+		string number = to_string(clients[i]->passport.number);
+		string valueText = series + number;
+		RBTData value;
+		value.index = i;
+		value.value = valueText;
+		insertClient(rbt, DataClientsStorage::rbtNullnode, value);
+	}
+	int count = 0;
+	RBTData searchable;
+	searchable.value = to_string(client->passport.series) + to_string(client->passport.number);
+	searchable.index = 0;
+	pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+	bool result = DataClientsStorage::resultSearch;
+	this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+	DataStorage::countComparisons = 0;
+	if (result) {
+		this->resultSearchClient->Text = gcnew String("Найдено");
+	}
+	else {
+		this->resultSearchClient->Text = gcnew String("Не найдено");
+	}
+	print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
+	cout << endl;
 	
 }
 
@@ -2811,8 +2853,19 @@ private: System::Void btnDeletionClient_Click(System::Object^ sender, System::Ev
 					eraseClient(rbtFullname, DataClientsStorage::rbtNullnode, fullnamedata);
 					eraseClient(rbtPassport, DataClientsStorage::rbtNullnode, passportdata);
 					clientsHashTable.deleteEntity(deletionElem);
-					clientsHashTable.changeIndex(lastElement, index);
+					
 					DataClientsStorage::data[index] = lastElement;
+					int trueindex = index;
+					for (int i = 0; i < DataClientsStorage::data.size(); i++)
+					{
+						if (DataClientsStorage::data[i] == DataClientsStorage::data[index]) {
+							DataClientsStorage::data[i] = lastElement;
+							trueindex = i;
+							break;
+						}
+					}
+					int lastindex = DataClientsStorage::data.size() - 1;
+					clientsHashTable.changeIndex(lastElement, trueindex,lastindex);
 					DataClientsStorage::data.pop_back();
 					MessageBox::Show(this, "Клиент успешно удален", "Удаление", MessageBoxButtons::OK, MessageBoxIcon::Information);
 					DataTable^ tablTestClient = gcnew DataTable();
@@ -2835,7 +2888,7 @@ private: System::Void btnDeletionClient_Click(System::Object^ sender, System::Ev
 				}
 			}
 			else {
-				MessageBox::Show(this, "Некорректные данные, проверьте правильность введённых данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "Такого клиента нет в справочнике", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 		catch (exception& err) {

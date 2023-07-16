@@ -21,7 +21,7 @@ public:
     void debugPrint(ofstream& fout);
     void erase(ClientsEntity* entity);
     bool find(Fullname fullname, string job, string email, ClientPassport passport);
-    void changeIndex(ClientsEntity* clientEntity, int index);
+    void changeIndex(ClientsEntity* clientEntity, int index, int lastindex);
     ~ClientsHashTable();
 private:
     int size;
@@ -29,7 +29,7 @@ private:
     int initsize;
     int occupancy;
     int count;
-    int checkAnotherChainClient(int index);
+    int check(int index);
     //bool isEqualStudentsCodeAndGroupNumber(Fullname firstFullname, Fullname secondFullname, GroupNumber firstGroupNumber, GroupNumber secondGroupNumber);
     void expand();
     int hashFunction(Fullname fullname, string job, string email, ClientPassport passport);

@@ -128,7 +128,15 @@ vector <ClientsEntity*> readFromFileClients(string path) {
         getline(file, str);
         ClientsEntity* newEntity = new ClientsEntity();
         newEntity = inputEntityDataClients(str);
-        data[i] = newEntity;
+        bool noEqual = false;
+        for (int j = 0; j <= i-1; j++)
+        {
+            if (newEntity->passport.series == data[j]->passport.series && newEntity->passport.number == data[j]->passport.number) {
+                noEqual = true;
+            }
+        }
+        if (!noEqual) { data[i] = newEntity; }
+        else { data[i] = nullptr; }
     }
     file.close();
     return data;
