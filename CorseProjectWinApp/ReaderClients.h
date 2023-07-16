@@ -4,33 +4,10 @@
 
 using namespace std;
 
-struct Key {
-	int first;
-	int second;
-	int third;
-};
-
 struct Fullname {
 	string name;
 	string surname;
 	string lastname;
-};
-
-struct GroupNumber {
-	string degree;
-	int number;
-	string speciality;
-};
-
-struct Entity {
-	Key key;
-	Fullname fullname;
-	GroupNumber groupnumber;
-};
-
-struct Element {
-	Entity* entity;
-	int status;
 };
 
 struct RBTData
@@ -52,17 +29,6 @@ struct Node {
 	Node* right;
 	int color;// 1 - Black
 };
-
-//struct ClientsPassport {
-//	int series;
-//	int number;
-//};
-
-//struct date {
-//	string day;
-//	string month;
-//	string year;
-//};
 
 struct ClientPassport {
 	int number;
@@ -90,4 +56,5 @@ ClientsEntity* inputEntityDataClients(string input);
 vector<ClientsEntity*> readFromFileClients(string path);
 
 void writeDataClient(vector<ClientsEntity*> value, string path);
+
 bool isValidateData(int passportSeries, int passportNumber, string fullnamestr, string email, string job);

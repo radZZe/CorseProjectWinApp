@@ -290,11 +290,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchServiceByTermBtb = (gcnew System::Windows::Forms::Button());
 			this->searchByNameAndType = (gcnew System::Windows::Forms::Button());
 			this->ServicesDataGrid = (gcnew System::Windows::Forms::DataGridView());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
+
 			this->tabControl1->SuspendLayout();
 			this->requestsPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
@@ -689,15 +685,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->tBClientPassSeries->Size = System::Drawing::Size(126, 20);
 			this->tBClientPassSeries->TabIndex = 53;
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(17, 415);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(157, 23);
-			this->button1->TabIndex = 52;
-			this->button1->Text = L"ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð¤Ð˜Ðž";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+
 			// 
 			// btnSearchClientByEmail
 			// 
@@ -768,14 +756,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label7->TabIndex = 45;
 			this->label7->Text = L"ÐÐ¾Ð¼ÐµÑ€ Ð¿Ð°ÑÐ¿Ð¾Ñ€Ñ‚Ð°";
 			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(473, 390);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(132, 22);
-			this->textBox1->TabIndex = 44;
-			// 
+
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -1101,46 +1082,8 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(17, 377);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(157, 23);
-			this->button6->TabIndex = 51;
-			this->button6->Text = L"Ïîèñê ïî òèïó óñëóãè";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(150, 337);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(99, 23);
-			this->button7->TabIndex = 50;
-			this->button7->Text = L"Ïîèñê ïî äàòå";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);
-			// 
-			// button8
-			// 
-			this->button8->Location = System::Drawing::Point(17, 337);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(127, 23);
-			this->button8->TabIndex = 49;
-			this->button8->Text = L"Ïîèñê ïî ïàñïîðòó";
-			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
-			// 
-			// button9
-			// 
-			this->button9->Location = System::Drawing::Point(17, 296);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(232, 23);
-			this->button9->TabIndex = 48;
-			this->button9->Text = L"Ïîèñê ïî òèïó è íàçâàíèþ óñëóãè";
-			this->button9->UseVisualStyleBackColor = true;
-			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
-			// 
+
+
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1285,18 +1228,18 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 		clientsHashTable.print();
 		DataTable^ tablClients = gcnew DataTable();
 		ClientsDataGrid->DataSource = tablClients;
-		tablClients->Columns->Add("Ð¤Ð˜Ðž");
-		tablClients->Columns->Add("Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ");
+		tablClients->Columns->Add("ФИО");
+		tablClients->Columns->Add("Должность");
 		tablClients->Columns->Add("email");
-		tablClients->Columns->Add("ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚");
+		tablClients->Columns->Add("Пасспорт");
 		for (int i = 0; i < dataClients.size(); i++) {
 			DataRow^ rowClients = tablClients->NewRow();
-			rowClients["Ð¤Ð˜Ðž"] = gcnew String((dataClients[i]->fullname.surname +' '+ dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
-			rowClients["Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ"] = gcnew String(dataClients[i]->job.c_str());
+			rowClients["ФИО"] = gcnew String((dataClients[i]->fullname.surname +' '+ dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
+			rowClients["Должность"] = gcnew String(dataClients[i]->job.c_str());
 			rowClients["email"] = gcnew String(dataClients[i]->email.c_str());
 			string passportClient = to_string(dataClients[i]->passport.series) + ' ' + to_string(dataClients[i]->passport.number);
 			//rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
-			rowClients["ÐŸÐ°ÑÑÐ¿Ð¾Ñ€Ñ‚"] = gcnew String(passportClient.c_str());
+			rowClients["Пасспорт"] = gcnew String(passportClient.c_str());
 			tablClients->Rows->Add(rowClients);
 		}
 
@@ -1743,7 +1686,7 @@ private:System::Void searchByClientPassport_Click(System::Object^ sender, System
         int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
         passport.number = passnum;
         passport.series = passseries;
-        string email = marshal_as<std::string>(this->tBClientEmail->Text);
+        string email = marshal_as<std::string>(this->tBClientEmai->Text);
         string job = marshal_as<std::string>(this->tBClientJob->Text);
         ClientsEntity* client = new ClientsEntity();
         client->passport = passport;
@@ -2291,14 +2234,7 @@ private: System::Void addRequestsBTN_Click(System::Object^ sender, System::Event
 	}
 	
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label10_Click_1(System::Object^ sender, System::EventArgs^ e) {

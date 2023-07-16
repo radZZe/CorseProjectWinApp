@@ -284,57 +284,6 @@ void ClientsHashTable::insert(ClientsEntity* entity,int index) {
     expand();
 }
 
-void ClientsHashTable::erase(ClientsEntity* entity)
-{
-    int hash = hashFunction(entity->fullname,entity->job, entity->email, entity->passport);
-    int current = 0;
-    int j = 1;
-    if (isEqualElementsClients(table[hash]->value, entity) || table[hash]->status == 0) {
-        current = hash;
-    }
-    else {
-        current = resolve(hash, entity, "ERASE");
-    }
-
-    if (isEqualElementsClients(table[current]->value, entity))
-    {
-        this->count--;
-        this->occupancy = (this->count / this->size) * 100;
-        expand();
-        j++;
-        int hash = hashFunction(entity->fullname, entity->job, entity->email, entity->passport);
-        int next = secondaryHashFunction(hash, j);
-        int valid = current;
-        while (table[next]->status == 1) {
-            if (j < this->size && hashFunction(table[next]->value->fullname, table[next]->value->job, table[next]->value->email, table[next]->value->passport) == hash)
-            {
-                valid = next;
-            }
-                j++;
-                next = secondaryHashFunction(hash, j);
-            
-        }
-        if (current != valid)
-        {
-            table[current]->value = table[valid]->value;
-            table[valid]->value = nullptr;
-            table[valid]->status = 0;
-            table[valid]->index = -1;
-        }
-        else
-        {
-            table[current]->value = nullptr;
-            table[current]->status = 0;
-            table[current]->index = -1;
-        }
-    }
-    else
-    {
-        cout << "The element to be removed was not in the table\n";
-    }
-
-}
-
 void ClientsHashTable::deleteEntity(ClientsEntity* entityClient)
 {
     this->count--;

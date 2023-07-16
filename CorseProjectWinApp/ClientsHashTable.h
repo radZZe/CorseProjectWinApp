@@ -19,7 +19,6 @@ public:
     void deleteEntity(ClientsEntity* entity);
     void print();
     void debugPrint(ofstream& fout);
-    void erase(ClientsEntity* entity);
     bool find(Fullname fullname, string job, string email, ClientPassport passport);
     void changeIndex(ClientsEntity* clientEntity, int index);
     ~ClientsHashTable();
