@@ -168,7 +168,7 @@ void ServicesHashTable::htInsertA(ServiceEntity* item, string type, int index)
     this->filled++;
     if (type == "basic")
     {
-        resizeTable(calculateOccupancy(), item, "jopa", index);
+        resizeTable(calculateOccupancy(), item, "resize", index);
     }
 
     int hash = hashFun(item);

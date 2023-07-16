@@ -63,7 +63,7 @@ void writeData(vector<ServiceEntity*>  value, string dir) {
     ofstream  fout(dir);
     fout << value.size() << "\n";
     for (int i = 0; i < value.size(); i++) {
-        fout << value[i]->serviceType << value[i]->division << "$" << value[i]->serviceName << "$" << value[i]->serviceName << "$" << value[i]->term << "\n";
+        fout << value[i]->serviceType << "$" << value[i]->division << "$" << value[i]->serviceName << "$" <<  value[i]->term << "\n";
     }
 
     fout.close();
