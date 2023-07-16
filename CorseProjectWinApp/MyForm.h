@@ -110,14 +110,18 @@ namespace CorseProjectWinApp {
     private: System::Windows::Forms::Label^ label15;
     private: System::Windows::Forms::Label^ label16;
     private: System::Windows::Forms::Label^ label17;
-    private: System::Windows::Forms::Button^ button12;
+	private: System::Windows::Forms::Button^ button12;
+
+
     private: System::Windows::Forms::TextBox^ tBType;
 
     private: System::Windows::Forms::Label^ label11;
     private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Button^ deleteServiceBTN;
 
-    private: System::Windows::Forms::Button^ button13;
-    private: System::Windows::Forms::Button^ button14;
+
+	private: System::Windows::Forms::Button^ addService;
+
     private: System::Windows::Forms::TextBox^ tBName;
 
     private: System::Windows::Forms::TextBox^ tBTerm;
@@ -177,8 +181,9 @@ private: System::Windows::Forms::Button^ button17;
     private: System::Windows::Forms::Button^ btnSearchByClientJob;
     private: System::Windows::Forms::Button^ btnSearchByClientPassport;
     private: System::Windows::Forms::Button^ btnSearchByClient;
-	private: System::Windows::Forms::Button^ button19;    private: System::Windows::Forms::Button^ button21;
-    private: System::Windows::Forms::Label^ resultSearchServices;
+	private: System::Windows::Forms::Button^ button19;
+private: System::Windows::Forms::Button^ saveDebugServices;
+	private: System::Windows::Forms::Label^ resultSearchServices;
     private: System::Windows::Forms::Label^ countServices;
     private: System::Windows::Forms::Label^ countComparationsServices;
     private: System::Windows::Forms::Label^ resultSearchServices2;
@@ -242,6 +247,11 @@ private: System::Windows::Forms::Button^ button5;
 			this->passportSearchBTN = (gcnew System::Windows::Forms::Button());
 			this->searchByTypeAndNameOfServiceBTN = (gcnew System::Windows::Forms::Button());
 			this->clientsPage = (gcnew System::Windows::Forms::TabPage());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
@@ -256,7 +266,7 @@ private: System::Windows::Forms::Button^ button5;
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->resultSearchServices2 = (gcnew System::Windows::Forms::Label());
 			this->countComparationsServices = (gcnew System::Windows::Forms::Label());
-			this->button21 = (gcnew System::Windows::Forms::Button());
+			this->saveDebugServices = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label16 = (gcnew System::Windows::Forms::Label());
@@ -265,8 +275,8 @@ private: System::Windows::Forms::Button^ button5;
 			this->tBType = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->deleteServiceBTN = (gcnew System::Windows::Forms::Button());
+			this->addService = (gcnew System::Windows::Forms::Button());
 			this->tBName = (gcnew System::Windows::Forms::TextBox());
 			this->tBTerm = (gcnew System::Windows::Forms::TextBox());
 			this->tBDivision = (gcnew System::Windows::Forms::TextBox());
@@ -276,11 +286,6 @@ private: System::Windows::Forms::Button^ button5;
 			this->searchServiceByTermBtb = (gcnew System::Windows::Forms::Button());
 			this->searchByNameAndType = (gcnew System::Windows::Forms::Button());
 			this->ServicesDataGrid = (gcnew System::Windows::Forms::DataGridView());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->requestsPage->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->RequestsDataGrid))->BeginInit();
@@ -298,10 +303,11 @@ private: System::Windows::Forms::Button^ button5;
 			this->tabControl1->Controls->Add(this->requestsPage);
 			this->tabControl1->Controls->Add(this->clientsPage);
 			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Location = System::Drawing::Point(-5, -3);
+			this->tabControl1->Location = System::Drawing::Point(-7, -4);
+			this->tabControl1->Margin = System::Windows::Forms::Padding(4);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(896, 633);
+			this->tabControl1->Size = System::Drawing::Size(1195, 779);
 			this->tabControl1->SizeMode = System::Windows::Forms::TabSizeMode::FillToRight;
 			this->tabControl1->TabIndex = 0;
 			// 
@@ -333,10 +339,11 @@ private: System::Windows::Forms::Button^ button5;
 			this->requestsPage->Controls->Add(this->dateSearchBTN);
 			this->requestsPage->Controls->Add(this->passportSearchBTN);
 			this->requestsPage->Controls->Add(this->searchByTypeAndNameOfServiceBTN);
-			this->requestsPage->Location = System::Drawing::Point(4, 22);
+			this->requestsPage->Location = System::Drawing::Point(4, 25);
+			this->requestsPage->Margin = System::Windows::Forms::Padding(4);
 			this->requestsPage->Name = L"requestsPage";
-			this->requestsPage->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->requestsPage->Size = System::Drawing::Size(888, 607);
+			this->requestsPage->Padding = System::Windows::Forms::Padding(4);
+			this->requestsPage->Size = System::Drawing::Size(1187, 750);
 			this->requestsPage->TabIndex = 0;
 			this->requestsPage->Text = L"Заявки";
 			this->requestsPage->UseVisualStyleBackColor = true;
@@ -344,26 +351,25 @@ private: System::Windows::Forms::Button^ button5;
 			// resultSearchServices
 			// 
 			this->resultSearchServices->AutoSize = true;
-			this->resultSearchServices->Location = System::Drawing::Point(263, 460);
-			this->resultSearchServices->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->resultSearchServices->Location = System::Drawing::Point(351, 566);
 			this->resultSearchServices->Name = L"resultSearchServices";
-			this->resultSearchServices->Size = System::Drawing::Size(0, 13);
+			this->resultSearchServices->Size = System::Drawing::Size(0, 16);
 			this->resultSearchServices->TabIndex = 28;
 			// 
 			// countServices
 			// 
 			this->countServices->AutoSize = true;
-			this->countServices->Location = System::Drawing::Point(143, 460);
-			this->countServices->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->countServices->Location = System::Drawing::Point(191, 566);
 			this->countServices->Name = L"countServices";
-			this->countServices->Size = System::Drawing::Size(0, 13);
+			this->countServices->Size = System::Drawing::Size(0, 16);
 			this->countServices->TabIndex = 27;
 			// 
 			// button19
 			// 
-			this->button19->Location = System::Drawing::Point(350, 460);
+			this->button19->Location = System::Drawing::Point(467, 566);
+			this->button19->Margin = System::Windows::Forms::Padding(4);
 			this->button19->Name = L"button19";
-			this->button19->Size = System::Drawing::Size(115, 23);
+			this->button19->Size = System::Drawing::Size(153, 28);
 			this->button19->TabIndex = 26;
 			this->button19->Text = L"Окно отладки";
 			this->button19->UseVisualStyleBackColor = true;
@@ -371,9 +377,10 @@ private: System::Windows::Forms::Button^ button5;
 			// 
 			// saveBtn
 			// 
-			this->saveBtn->Location = System::Drawing::Point(611, 460);
+			this->saveBtn->Location = System::Drawing::Point(815, 566);
+			this->saveBtn->Margin = System::Windows::Forms::Padding(4);
 			this->saveBtn->Name = L"saveBtn";
-			this->saveBtn->Size = System::Drawing::Size(75, 23);
+			this->saveBtn->Size = System::Drawing::Size(100, 28);
 			this->saveBtn->TabIndex = 25;
 			this->saveBtn->Text = L"Сохранить";
 			this->saveBtn->UseVisualStyleBackColor = true;
@@ -382,74 +389,83 @@ private: System::Windows::Forms::Button^ button5;
 			// resultSearch
 			// 
 			this->resultSearch->AutoSize = true;
-			this->resultSearch->Location = System::Drawing::Point(266, 460);
+			this->resultSearch->Location = System::Drawing::Point(355, 566);
+			this->resultSearch->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->resultSearch->Name = L"resultSearch";
-			this->resultSearch->Size = System::Drawing::Size(0, 13);
+			this->resultSearch->Size = System::Drawing::Size(0, 16);
 			this->resultSearch->TabIndex = 24;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(478, 294);
+			this->label2->Location = System::Drawing::Point(637, 362);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(91, 13);
+			this->label2->Size = System::Drawing::Size(115, 16);
 			this->label2->TabIndex = 23;
 			this->label2->Text = L"Номер паспорта";
 			// 
 			// tBSeriesPassport
 			// 
-			this->tBSeriesPassport->Location = System::Drawing::Point(350, 310);
+			this->tBSeriesPassport->Location = System::Drawing::Point(467, 382);
+			this->tBSeriesPassport->Margin = System::Windows::Forms::Padding(4);
 			this->tBSeriesPassport->Name = L"tBSeriesPassport";
-			this->tBSeriesPassport->Size = System::Drawing::Size(100, 20);
+			this->tBSeriesPassport->Size = System::Drawing::Size(132, 22);
 			this->tBSeriesPassport->TabIndex = 22;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(200, 460);
+			this->label6->Location = System::Drawing::Point(267, 566);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(59, 13);
+			this->label6->Size = System::Drawing::Size(77, 16);
 			this->label6->TabIndex = 21;
 			this->label6->Text = L"Результат";
 			// 
 			// countComparisons
 			// 
 			this->countComparisons->AutoSize = true;
-			this->countComparisons->Location = System::Drawing::Point(146, 460);
+			this->countComparisons->Location = System::Drawing::Point(195, 566);
+			this->countComparisons->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->countComparisons->Name = L"countComparisons";
-			this->countComparisons->Size = System::Drawing::Size(0, 13);
+			this->countComparisons->Size = System::Drawing::Size(0, 16);
 			this->countComparisons->TabIndex = 20;
 			// 
 			// numberOfComparisons
 			// 
 			this->numberOfComparisons->AutoSize = true;
-			this->numberOfComparisons->Location = System::Drawing::Point(14, 460);
+			this->numberOfComparisons->Location = System::Drawing::Point(19, 566);
+			this->numberOfComparisons->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->numberOfComparisons->Name = L"numberOfComparisons";
-			this->numberOfComparisons->Size = System::Drawing::Size(123, 13);
+			this->numberOfComparisons->Size = System::Drawing::Size(159, 16);
 			this->numberOfComparisons->TabIndex = 19;
 			this->numberOfComparisons->Text = L"Количество сравнений";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(608, 294);
+			this->label5->Location = System::Drawing::Point(811, 362);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(33, 13);
+			this->label5->Size = System::Drawing::Size(39, 16);
 			this->label5->TabIndex = 18;
 			this->label5->Text = L"Дата";
 			// 
 			// tBDate
 			// 
-			this->tBDate->Location = System::Drawing::Point(611, 310);
+			this->tBDate->Location = System::Drawing::Point(815, 382);
+			this->tBDate->Margin = System::Windows::Forms::Padding(4);
 			this->tBDate->Name = L"tBDate";
-			this->tBDate->Size = System::Drawing::Size(100, 20);
+			this->tBDate->Size = System::Drawing::Size(132, 22);
 			this->tBDate->TabIndex = 17;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(508, 413);
+			this->button3->Location = System::Drawing::Point(677, 508);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 16;
 			this->button3->Text = L"Удалить";
 			this->button3->UseVisualStyleBackColor = true;
@@ -457,10 +473,10 @@ private: System::Windows::Forms::Button^ button5;
 			// 
 			// addRequestsBTN
 			// 
-			this->addRequestsBTN->Location = System::Drawing::Point(350, 413);
-			this->addRequestsBTN->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->addRequestsBTN->Location = System::Drawing::Point(467, 508);
+			this->addRequestsBTN->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->addRequestsBTN->Name = L"addRequestsBTN";
-			this->addRequestsBTN->Size = System::Drawing::Size(72, 19);
+			this->addRequestsBTN->Size = System::Drawing::Size(96, 23);
 			this->addRequestsBTN->TabIndex = 15;
 			this->addRequestsBTN->Text = L"Добавить";
 			this->addRequestsBTN->UseVisualStyleBackColor = true;
@@ -469,56 +485,63 @@ private: System::Windows::Forms::Button^ button5;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(505, 361);
+			this->label4->Location = System::Drawing::Point(673, 444);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(93, 13);
+			this->label4->Size = System::Drawing::Size(121, 16);
 			this->label4->TabIndex = 14;
 			this->label4->Text = L"Название услуги";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(347, 361);
+			this->label3->Location = System::Drawing::Point(463, 444);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(62, 13);
+			this->label3->Size = System::Drawing::Size(80, 16);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"Тип услуги";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(347, 294);
+			this->label1->Location = System::Drawing::Point(463, 362);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(88, 13);
+			this->label1->Size = System::Drawing::Size(112, 16);
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"Серия паспорта";
 			// 
 			// tBServiceName
 			// 
-			this->tBServiceName->Location = System::Drawing::Point(508, 378);
+			this->tBServiceName->Location = System::Drawing::Point(677, 465);
+			this->tBServiceName->Margin = System::Windows::Forms::Padding(4);
 			this->tBServiceName->Name = L"tBServiceName";
-			this->tBServiceName->Size = System::Drawing::Size(167, 20);
+			this->tBServiceName->Size = System::Drawing::Size(221, 22);
 			this->tBServiceName->TabIndex = 10;
 			// 
 			// tBServiceType
 			// 
-			this->tBServiceType->Location = System::Drawing::Point(350, 377);
+			this->tBServiceType->Location = System::Drawing::Point(467, 464);
+			this->tBServiceType->Margin = System::Windows::Forms::Padding(4);
 			this->tBServiceType->Name = L"tBServiceType";
-			this->tBServiceType->Size = System::Drawing::Size(133, 20);
+			this->tBServiceType->Size = System::Drawing::Size(176, 22);
 			this->tBServiceType->TabIndex = 9;
 			// 
 			// tBNumberPassport
 			// 
-			this->tBNumberPassport->Location = System::Drawing::Point(481, 310);
+			this->tBNumberPassport->Location = System::Drawing::Point(641, 382);
+			this->tBNumberPassport->Margin = System::Windows::Forms::Padding(4);
 			this->tBNumberPassport->Name = L"tBNumberPassport";
-			this->tBNumberPassport->Size = System::Drawing::Size(100, 20);
+			this->tBNumberPassport->Size = System::Drawing::Size(132, 22);
 			this->tBNumberPassport->TabIndex = 8;
 			// 
 			// searchByServiceNameBTN
 			// 
-			this->searchByServiceNameBTN->Location = System::Drawing::Point(13, 413);
+			this->searchByServiceNameBTN->Location = System::Drawing::Point(17, 508);
+			this->searchByServiceNameBTN->Margin = System::Windows::Forms::Padding(4);
 			this->searchByServiceNameBTN->Name = L"searchByServiceNameBTN";
-			this->searchByServiceNameBTN->Size = System::Drawing::Size(157, 23);
+			this->searchByServiceNameBTN->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceNameBTN->TabIndex = 6;
 			this->searchByServiceNameBTN->Text = L"Поиск по названию услуги";
 			this->searchByServiceNameBTN->UseVisualStyleBackColor = true;
@@ -532,20 +555,22 @@ private: System::Windows::Forms::Button^ button5;
 			this->RequestsDataGrid->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->RequestsDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->RequestsDataGrid->Dock = System::Windows::Forms::DockStyle::Top;
-			this->RequestsDataGrid->Location = System::Drawing::Point(3, 3);
+			this->RequestsDataGrid->Location = System::Drawing::Point(4, 4);
+			this->RequestsDataGrid->Margin = System::Windows::Forms::Padding(4);
 			this->RequestsDataGrid->Name = L"RequestsDataGrid";
 			this->RequestsDataGrid->ReadOnly = true;
 			this->RequestsDataGrid->RowHeadersWidth = 51;
 			this->RequestsDataGrid->RowTemplate->ReadOnly = true;
-			this->RequestsDataGrid->Size = System::Drawing::Size(882, 276);
+			this->RequestsDataGrid->Size = System::Drawing::Size(1179, 340);
 			this->RequestsDataGrid->TabIndex = 5;
 			this->RequestsDataGrid->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::RequestsDataGrid_CellContentClick);
 			// 
 			// searchByTypeOfServiceBTN
 			// 
-			this->searchByTypeOfServiceBTN->Location = System::Drawing::Point(13, 375);
+			this->searchByTypeOfServiceBTN->Location = System::Drawing::Point(17, 462);
+			this->searchByTypeOfServiceBTN->Margin = System::Windows::Forms::Padding(4);
 			this->searchByTypeOfServiceBTN->Name = L"searchByTypeOfServiceBTN";
-			this->searchByTypeOfServiceBTN->Size = System::Drawing::Size(157, 23);
+			this->searchByTypeOfServiceBTN->Size = System::Drawing::Size(209, 28);
 			this->searchByTypeOfServiceBTN->TabIndex = 4;
 			this->searchByTypeOfServiceBTN->Text = L"Поиск по типу услуги";
 			this->searchByTypeOfServiceBTN->UseVisualStyleBackColor = true;
@@ -553,9 +578,10 @@ private: System::Windows::Forms::Button^ button5;
 			// 
 			// dateSearchBTN
 			// 
-			this->dateSearchBTN->Location = System::Drawing::Point(146, 335);
+			this->dateSearchBTN->Location = System::Drawing::Point(195, 412);
+			this->dateSearchBTN->Margin = System::Windows::Forms::Padding(4);
 			this->dateSearchBTN->Name = L"dateSearchBTN";
-			this->dateSearchBTN->Size = System::Drawing::Size(99, 23);
+			this->dateSearchBTN->Size = System::Drawing::Size(132, 28);
 			this->dateSearchBTN->TabIndex = 3;
 			this->dateSearchBTN->Text = L"Поиск по дате";
 			this->dateSearchBTN->UseVisualStyleBackColor = true;
@@ -563,9 +589,10 @@ private: System::Windows::Forms::Button^ button5;
 			// 
 			// passportSearchBTN
 			// 
-			this->passportSearchBTN->Location = System::Drawing::Point(13, 335);
+			this->passportSearchBTN->Location = System::Drawing::Point(17, 412);
+			this->passportSearchBTN->Margin = System::Windows::Forms::Padding(4);
 			this->passportSearchBTN->Name = L"passportSearchBTN";
-			this->passportSearchBTN->Size = System::Drawing::Size(127, 23);
+			this->passportSearchBTN->Size = System::Drawing::Size(169, 28);
 			this->passportSearchBTN->TabIndex = 2;
 			this->passportSearchBTN->Text = L"Поиск по паспорту";
 			this->passportSearchBTN->UseVisualStyleBackColor = true;
@@ -573,9 +600,10 @@ private: System::Windows::Forms::Button^ button5;
 			// 
 			// searchByTypeAndNameOfServiceBTN
 			// 
-			this->searchByTypeAndNameOfServiceBTN->Location = System::Drawing::Point(13, 294);
+			this->searchByTypeAndNameOfServiceBTN->Location = System::Drawing::Point(17, 362);
+			this->searchByTypeAndNameOfServiceBTN->Margin = System::Windows::Forms::Padding(4);
 			this->searchByTypeAndNameOfServiceBTN->Name = L"searchByTypeAndNameOfServiceBTN";
-			this->searchByTypeAndNameOfServiceBTN->Size = System::Drawing::Size(232, 23);
+			this->searchByTypeAndNameOfServiceBTN->Size = System::Drawing::Size(309, 28);
 			this->searchByTypeAndNameOfServiceBTN->TabIndex = 1;
 			this->searchByTypeAndNameOfServiceBTN->Text = L"Поиск по типу и названию услуги";
 			this->searchByTypeAndNameOfServiceBTN->UseVisualStyleBackColor = true;
@@ -599,74 +627,137 @@ private: System::Windows::Forms::Button^ button5;
 			this->clientsPage->Controls->Add(this->label18);
 			this->clientsPage->Controls->Add(this->label19);
 			this->clientsPage->Controls->Add(this->ClientsDataGrid);
-			this->clientsPage->Location = System::Drawing::Point(4, 22);
+			this->clientsPage->Location = System::Drawing::Point(4, 25);
+			this->clientsPage->Margin = System::Windows::Forms::Padding(4);
 			this->clientsPage->Name = L"clientsPage";
-			this->clientsPage->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
-			this->clientsPage->Size = System::Drawing::Size(888, 607);
+			this->clientsPage->Padding = System::Windows::Forms::Padding(4);
+			this->clientsPage->Size = System::Drawing::Size(1187, 750);
 			this->clientsPage->TabIndex = 1;
 			this->clientsPage->Text = L"Eeeaiou";
 			this->clientsPage->UseVisualStyleBackColor = true;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(23, 511);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(209, 28);
+			this->button1->TabIndex = 52;
+			this->button1->Text = L"Поиск по названию услуги";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(23, 464);
+			this->button6->Margin = System::Windows::Forms::Padding(4);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(209, 28);
+			this->button6->TabIndex = 51;
+			this->button6->Text = L"Поиск по типу услуги";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(200, 415);
+			this->button7->Margin = System::Windows::Forms::Padding(4);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(132, 28);
+			this->button7->TabIndex = 50;
+			this->button7->Text = L"Поиск по дате";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(23, 415);
+			this->button8->Margin = System::Windows::Forms::Padding(4);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(169, 28);
+			this->button8->TabIndex = 49;
+			this->button8->Text = L"Поиск по паспорту";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(23, 364);
+			this->button9->Margin = System::Windows::Forms::Padding(4);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(309, 28);
+			this->button9->TabIndex = 48;
+			this->button9->Text = L"Поиск по типу и названию услуги";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
+			// 
 			// button20
 			// 
-			this->button20->Location = System::Drawing::Point(616, 425);
+			this->button20->Location = System::Drawing::Point(821, 523);
+			this->button20->Margin = System::Windows::Forms::Padding(4);
 			this->button20->Name = L"button20";
-			this->button20->Size = System::Drawing::Size(115, 23);
+			this->button20->Size = System::Drawing::Size(153, 28);
 			this->button20->TabIndex = 47;
 			this->button20->Text = L"Ieii ioeaaee";
 			this->button20->UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(639, 462);
+			this->button4->Location = System::Drawing::Point(852, 569);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->Size = System::Drawing::Size(100, 28);
 			this->button4->TabIndex = 46;
-			this->button4->Text = L"Nio?aieou";
+			this->button4->Text = L"Nio\?aieou";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(478, 301);
+			this->label7->Location = System::Drawing::Point(637, 370);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(73, 13);
+			this->label7->Size = System::Drawing::Size(81, 16);
 			this->label7->TabIndex = 45;
-			this->label7->Text = L"Iiia? ianii?oa";
+			this->label7->Text = L"Iiia\? ianii\?oa";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(200, 467);
+			this->label8->Location = System::Drawing::Point(267, 575);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(63, 13);
+			this->label8->Size = System::Drawing::Size(76, 16);
 			this->label8->TabIndex = 43;
-			this->label8->Text = L"?acoeuoao";
+			this->label8->Text = L"\?acoeuoao";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(14, 467);
+			this->label9->Location = System::Drawing::Point(19, 575);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(123, 13);
+			this->label9->Size = System::Drawing::Size(145, 16);
 			this->label9->TabIndex = 42;
-			this->label9->Text = L"Eiee?anoai n?aaiaiee: ";
+			this->label9->Text = L"Eiee\?anoai n\?aaiaiee: ";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(352, 409);
+			this->label10->Location = System::Drawing::Point(469, 503);
+			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(96, 13);
+			this->label10->Size = System::Drawing::Size(111, 16);
 			this->label10->TabIndex = 41;
-			this->label10->Text = L"Yeaeo?iiiay ii?oa";
+			this->label10->Text = L"Yeaeo\?iiiay ii\?oa";
 			this->label10->Click += gcnew System::EventHandler(this, &MyForm::label10_Click);
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(506, 462);
+			this->button5->Location = System::Drawing::Point(675, 569);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 23);
+			this->button5->Size = System::Drawing::Size(100, 28);
 			this->button5->TabIndex = 39;
 			this->button5->Text = L"Oaaeeou";
 			this->button5->UseVisualStyleBackColor = true;
@@ -674,29 +765,32 @@ private: System::Windows::Forms::Button^ button5;
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(547, 352);
+			this->label14->Location = System::Drawing::Point(729, 433);
+			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(25, 13);
+			this->label14->Size = System::Drawing::Size(29, 16);
 			this->label14->TabIndex = 37;
 			this->label14->Text = L"OEI";
 			// 
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(352, 352);
+			this->label18->Location = System::Drawing::Point(469, 433);
+			this->label18->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(60, 13);
+			this->label18->Size = System::Drawing::Size(62, 16);
 			this->label18->TabIndex = 36;
-			this->label18->Text = L"Aie?iinou";
+			this->label18->Text = L"Aie\?iinou";
 			// 
 			// label19
 			// 
 			this->label19->AutoSize = true;
-			this->label19->Location = System::Drawing::Point(352, 301);
+			this->label19->Location = System::Drawing::Point(469, 370);
+			this->label19->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(83, 13);
+			this->label19->Size = System::Drawing::Size(97, 16);
 			this->label19->TabIndex = 35;
-			this->label19->Text = L"Na?ey ianii?oa";
+			this->label19->Text = L"Na\?ey ianii\?oa";
 			this->label19->Click += gcnew System::EventHandler(this, &MyForm::label19_Click);
 			// 
 			// ClientsDataGrid
@@ -707,19 +801,20 @@ private: System::Windows::Forms::Button^ button5;
 			this->ClientsDataGrid->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ClientsDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->ClientsDataGrid->Dock = System::Windows::Forms::DockStyle::Top;
-			this->ClientsDataGrid->Location = System::Drawing::Point(3, 3);
+			this->ClientsDataGrid->Location = System::Drawing::Point(4, 4);
+			this->ClientsDataGrid->Margin = System::Windows::Forms::Padding(4);
 			this->ClientsDataGrid->Name = L"ClientsDataGrid";
 			this->ClientsDataGrid->ReadOnly = true;
 			this->ClientsDataGrid->RowHeadersWidth = 51;
 			this->ClientsDataGrid->RowTemplate->ReadOnly = true;
-			this->ClientsDataGrid->Size = System::Drawing::Size(882, 276);
+			this->ClientsDataGrid->Size = System::Drawing::Size(1179, 340);
 			this->ClientsDataGrid->TabIndex = 30;
 			// 
 			// tabPage1
 			// 
 			this->tabPage1->Controls->Add(this->resultSearchServices2);
 			this->tabPage1->Controls->Add(this->countComparationsServices);
-			this->tabPage1->Controls->Add(this->button21);
+			this->tabPage1->Controls->Add(this->saveDebugServices);
 			this->tabPage1->Controls->Add(this->label13);
 			this->tabPage1->Controls->Add(this->label15);
 			this->tabPage1->Controls->Add(this->label16);
@@ -728,8 +823,8 @@ private: System::Windows::Forms::Button^ button5;
 			this->tabPage1->Controls->Add(this->tBType);
 			this->tabPage1->Controls->Add(this->label11);
 			this->tabPage1->Controls->Add(this->label12);
-			this->tabPage1->Controls->Add(this->button13);
-			this->tabPage1->Controls->Add(this->button14);
+			this->tabPage1->Controls->Add(this->deleteServiceBTN);
+			this->tabPage1->Controls->Add(this->addService);
 			this->tabPage1->Controls->Add(this->tBName);
 			this->tabPage1->Controls->Add(this->tBTerm);
 			this->tabPage1->Controls->Add(this->tBDivision);
@@ -739,9 +834,10 @@ private: System::Windows::Forms::Button^ button5;
 			this->tabPage1->Controls->Add(this->searchServiceByTermBtb);
 			this->tabPage1->Controls->Add(this->searchByNameAndType);
 			this->tabPage1->Controls->Add(this->ServicesDataGrid);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Location = System::Drawing::Point(4, 25);
+			this->tabPage1->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Size = System::Drawing::Size(888, 607);
+			this->tabPage1->Size = System::Drawing::Size(1187, 750);
 			this->tabPage1->TabIndex = 2;
 			this->tabPage1->Text = L"Oneoae";
 			this->tabPage1->UseVisualStyleBackColor = true;
@@ -749,189 +845,209 @@ private: System::Windows::Forms::Button^ button5;
 			// resultSearchServices2
 			// 
 			this->resultSearchServices2->AutoSize = true;
-			this->resultSearchServices2->Location = System::Drawing::Point(250, 461);
-			this->resultSearchServices2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->resultSearchServices2->Location = System::Drawing::Point(333, 567);
 			this->resultSearchServices2->Name = L"resultSearchServices2";
-			this->resultSearchServices2->Size = System::Drawing::Size(0, 13);
+			this->resultSearchServices2->Size = System::Drawing::Size(0, 16);
 			this->resultSearchServices2->TabIndex = 43;
 			// 
 			// countComparationsServices
 			// 
 			this->countComparationsServices->AutoSize = true;
-			this->countComparationsServices->Location = System::Drawing::Point(136, 461);
-			this->countComparationsServices->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->countComparationsServices->Location = System::Drawing::Point(181, 567);
 			this->countComparationsServices->Name = L"countComparationsServices";
-			this->countComparationsServices->Size = System::Drawing::Size(0, 13);
+			this->countComparationsServices->Size = System::Drawing::Size(0, 16);
 			this->countComparationsServices->TabIndex = 42;
 			// 
-			// button21
+			// saveDebugServices
 			// 
-			this->button21->Location = System::Drawing::Point(353, 456);
-			this->button21->Name = L"button21";
-			this->button21->Size = System::Drawing::Size(115, 23);
-			this->button21->TabIndex = 41;
-			this->button21->Text = L"Ieii ioeaaee";
-			this->button21->UseVisualStyleBackColor = true;
+			this->saveDebugServices->Location = System::Drawing::Point(471, 561);
+			this->saveDebugServices->Margin = System::Windows::Forms::Padding(4);
+			this->saveDebugServices->Name = L"saveDebugServices";
+			this->saveDebugServices->Size = System::Drawing::Size(153, 28);
+			this->saveDebugServices->TabIndex = 41;
+			this->saveDebugServices->Text = L"Окно отладки";
+			this->saveDebugServices->UseVisualStyleBackColor = true;
+			this->saveDebugServices->Click += gcnew System::EventHandler(this, &MyForm::saveDebugServices_Click);
 			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(481, 285);
+			this->label13->Location = System::Drawing::Point(641, 351);
+			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(78, 13);
+			this->label13->Size = System::Drawing::Size(113, 16);
 			this->label13->TabIndex = 40;
-			this->label13->Text = L"Iia?acaaeaiea";
+			this->label13->Text = L"Подразделение";
 			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(508, 352);
+			this->label15->Location = System::Drawing::Point(677, 433);
+			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(89, 13);
+			this->label15->Size = System::Drawing::Size(124, 16);
 			this->label15->TabIndex = 38;
-			this->label15->Text = L"Iacaaiea oneoae";
+			this->label15->Text = L"Название услуги ";
 			// 
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(350, 352);
+			this->label16->Location = System::Drawing::Point(467, 433);
+			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(88, 13);
+			this->label16->Size = System::Drawing::Size(123, 16);
 			this->label16->TabIndex = 37;
-			this->label16->Text = L"N?ie eniieiaiey ";
+			this->label16->Text = L"Срок исполнения ";
 			// 
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(350, 285);
+			this->label17->Location = System::Drawing::Point(467, 351);
+			this->label17->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(64, 13);
+			this->label17->Size = System::Drawing::Size(80, 16);
 			this->label17->TabIndex = 36;
-			this->label17->Text = L"Oei oneoae";
+			this->label17->Text = L"Тип услуги";
 			this->label17->Click += gcnew System::EventHandler(this, &MyForm::label17_Click);
 			// 
 			// button12
 			// 
-			this->button12->Location = System::Drawing::Point(614, 451);
+			this->button12->Location = System::Drawing::Point(819, 555);
+			this->button12->Margin = System::Windows::Forms::Padding(4);
 			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(75, 23);
+			this->button12->Size = System::Drawing::Size(100, 28);
 			this->button12->TabIndex = 35;
-			this->button12->Text = L"Nio?aieou";
+			this->button12->Text = L"Сохранить";
 			this->button12->UseVisualStyleBackColor = true;
 			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
 			// 
 			// tBType
 			// 
-			this->tBType->Location = System::Drawing::Point(353, 301);
+			this->tBType->Location = System::Drawing::Point(471, 370);
+			this->tBType->Margin = System::Windows::Forms::Padding(4);
 			this->tBType->Name = L"tBType";
-			this->tBType->Size = System::Drawing::Size(100, 20);
+			this->tBType->Size = System::Drawing::Size(132, 22);
 			this->tBType->TabIndex = 34;
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(187, 461);
+			this->label11->Location = System::Drawing::Point(249, 567);
+			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(63, 13);
+			this->label11->Size = System::Drawing::Size(77, 16);
 			this->label11->TabIndex = 33;
-			this->label11->Text = L"?acoeuoao";
+			this->label11->Text = L"Результат";
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(13, 461);
+			this->label12->Location = System::Drawing::Point(17, 567);
+			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(123, 13);
+			this->label12->Size = System::Drawing::Size(165, 16);
 			this->label12->TabIndex = 32;
-			this->label12->Text = L"Eiee?anoai n?aaiaiee: ";
+			this->label12->Text = L"Количество сравнений: ";
 			// 
-			// button13
+			// deleteServiceBTN
 			// 
-			this->button13->Location = System::Drawing::Point(511, 404);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(75, 23);
-			this->button13->TabIndex = 30;
-			this->button13->Text = L"Oaaeeou";
-			this->button13->UseVisualStyleBackColor = true;
+			this->deleteServiceBTN->Location = System::Drawing::Point(681, 497);
+			this->deleteServiceBTN->Margin = System::Windows::Forms::Padding(4);
+			this->deleteServiceBTN->Name = L"deleteServiceBTN";
+			this->deleteServiceBTN->Size = System::Drawing::Size(100, 28);
+			this->deleteServiceBTN->TabIndex = 30;
+			this->deleteServiceBTN->Text = L"Удалить";
+			this->deleteServiceBTN->UseVisualStyleBackColor = true;
+			this->deleteServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::deleteServiceBTN_Click);
 			// 
-			// button14
+			// addService
 			// 
-			this->button14->Location = System::Drawing::Point(353, 403);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(75, 23);
-			this->button14->TabIndex = 29;
-			this->button14->Text = L"Aiaaaeou";
-			this->button14->UseVisualStyleBackColor = true;
+			this->addService->Location = System::Drawing::Point(471, 496);
+			this->addService->Margin = System::Windows::Forms::Padding(4);
+			this->addService->Name = L"addService";
+			this->addService->Size = System::Drawing::Size(100, 28);
+			this->addService->TabIndex = 29;
+			this->addService->Text = L"Добавить";
+			this->addService->UseVisualStyleBackColor = true;
+			this->addService->Click += gcnew System::EventHandler(this, &MyForm::addService_Click);
 			// 
 			// tBName
 			// 
-			this->tBName->Location = System::Drawing::Point(511, 369);
+			this->tBName->Location = System::Drawing::Point(681, 454);
+			this->tBName->Margin = System::Windows::Forms::Padding(4);
 			this->tBName->Name = L"tBName";
-			this->tBName->Size = System::Drawing::Size(167, 20);
+			this->tBName->Size = System::Drawing::Size(221, 22);
 			this->tBName->TabIndex = 28;
 			// 
 			// tBTerm
 			// 
-			this->tBTerm->Location = System::Drawing::Point(353, 368);
+			this->tBTerm->Location = System::Drawing::Point(471, 453);
+			this->tBTerm->Margin = System::Windows::Forms::Padding(4);
 			this->tBTerm->Name = L"tBTerm";
-			this->tBTerm->Size = System::Drawing::Size(133, 20);
+			this->tBTerm->Size = System::Drawing::Size(176, 22);
 			this->tBTerm->TabIndex = 27;
 			// 
 			// tBDivision
 			// 
-			this->tBDivision->Location = System::Drawing::Point(484, 301);
+			this->tBDivision->Location = System::Drawing::Point(645, 370);
+			this->tBDivision->Margin = System::Windows::Forms::Padding(4);
 			this->tBDivision->Name = L"tBDivision";
-			this->tBDivision->Size = System::Drawing::Size(100, 20);
+			this->tBDivision->Size = System::Drawing::Size(132, 22);
 			this->tBDivision->TabIndex = 26;
 			// 
 			// searchByServiceName
 			// 
-			this->searchByServiceName->Location = System::Drawing::Point(16, 415);
+			this->searchByServiceName->Location = System::Drawing::Point(21, 511);
+			this->searchByServiceName->Margin = System::Windows::Forms::Padding(4);
 			this->searchByServiceName->Name = L"searchByServiceName";
-			this->searchByServiceName->Size = System::Drawing::Size(157, 23);
+			this->searchByServiceName->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceName->TabIndex = 11;
-			this->searchByServiceName->Text = L"Iiene ii iacaaie? oneoae";
+			this->searchByServiceName->Text = L"Поиск по названию услуги";
 			this->searchByServiceName->UseVisualStyleBackColor = true;
 			this->searchByServiceName->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceName_Click);
 			// 
 			// searchByServiceTypeBtn
 			// 
-			this->searchByServiceTypeBtn->Location = System::Drawing::Point(13, 376);
+			this->searchByServiceTypeBtn->Location = System::Drawing::Point(17, 463);
+			this->searchByServiceTypeBtn->Margin = System::Windows::Forms::Padding(4);
 			this->searchByServiceTypeBtn->Name = L"searchByServiceTypeBtn";
-			this->searchByServiceTypeBtn->Size = System::Drawing::Size(157, 23);
+			this->searchByServiceTypeBtn->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceTypeBtn->TabIndex = 10;
-			this->searchByServiceTypeBtn->Text = L"Iiene ii oeio oneoae ";
+			this->searchByServiceTypeBtn->Text = L"Поиск по типу услуги ";
 			this->searchByServiceTypeBtn->UseVisualStyleBackColor = true;
 			this->searchByServiceTypeBtn->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceTypeBtn_Click);
 			// 
 			// divisionSearchBtn
 			// 
-			this->divisionSearchBtn->Location = System::Drawing::Point(13, 287);
+			this->divisionSearchBtn->Location = System::Drawing::Point(17, 353);
+			this->divisionSearchBtn->Margin = System::Windows::Forms::Padding(4);
 			this->divisionSearchBtn->Name = L"divisionSearchBtn";
-			this->divisionSearchBtn->Size = System::Drawing::Size(190, 23);
+			this->divisionSearchBtn->Size = System::Drawing::Size(253, 28);
 			this->divisionSearchBtn->TabIndex = 9;
-			this->divisionSearchBtn->Text = L"Iiene ii iia?acaaeaie?";
+			this->divisionSearchBtn->Text = L"Поиск по подразделению";
 			this->divisionSearchBtn->UseVisualStyleBackColor = true;
 			this->divisionSearchBtn->Click += gcnew System::EventHandler(this, &MyForm::divisionSearchBtn_Click);
 			// 
 			// searchServiceByTermBtb
 			// 
-			this->searchServiceByTermBtb->Location = System::Drawing::Point(13, 347);
+			this->searchServiceByTermBtb->Location = System::Drawing::Point(17, 427);
+			this->searchServiceByTermBtb->Margin = System::Windows::Forms::Padding(4);
 			this->searchServiceByTermBtb->Name = L"searchServiceByTermBtb";
 			this->searchServiceByTermBtb->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->searchServiceByTermBtb->Size = System::Drawing::Size(172, 23);
+			this->searchServiceByTermBtb->Size = System::Drawing::Size(229, 28);
 			this->searchServiceByTermBtb->TabIndex = 8;
-			this->searchServiceByTermBtb->Text = L"Iiene ii n?ieo eniieiaiey";
+			this->searchServiceByTermBtb->Text = L"Поиск по сроку исполнения";
 			this->searchServiceByTermBtb->UseVisualStyleBackColor = true;
 			this->searchServiceByTermBtb->Click += gcnew System::EventHandler(this, &MyForm::searchServiceByTermBtb_Click);
 			// 
 			// searchByNameAndType
 			// 
-			this->searchByNameAndType->Location = System::Drawing::Point(13, 316);
+			this->searchByNameAndType->Location = System::Drawing::Point(17, 389);
+			this->searchByNameAndType->Margin = System::Windows::Forms::Padding(4);
 			this->searchByNameAndType->Name = L"searchByNameAndType";
-			this->searchByNameAndType->Size = System::Drawing::Size(232, 23);
+			this->searchByNameAndType->Size = System::Drawing::Size(309, 28);
 			this->searchByNameAndType->TabIndex = 7;
-			this->searchByNameAndType->Text = L"Iiene ii oeio e iacaaie? oneoae";
+			this->searchByNameAndType->Text = L"Поиск по типу и названию услуги";
 			this->searchByNameAndType->UseVisualStyleBackColor = true;
 			this->searchByNameAndType->Click += gcnew System::EventHandler(this, &MyForm::searchByNameAndType_Click);
 			// 
@@ -944,71 +1060,23 @@ private: System::Windows::Forms::Button^ button5;
 			this->ServicesDataGrid->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->ServicesDataGrid->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ServicesDataGrid->Location = System::Drawing::Point(0, 0);
+			this->ServicesDataGrid->Margin = System::Windows::Forms::Padding(4);
 			this->ServicesDataGrid->Name = L"ServicesDataGrid";
 			this->ServicesDataGrid->ReadOnly = true;
 			this->ServicesDataGrid->RowHeadersWidth = 51;
 			this->ServicesDataGrid->RowTemplate->ReadOnly = true;
-			this->ServicesDataGrid->Size = System::Drawing::Size(888, 276);
+			this->ServicesDataGrid->Size = System::Drawing::Size(1187, 340);
 			this->ServicesDataGrid->TabIndex = 6;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(17, 415);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(157, 23);
-			this->button1->TabIndex = 52;
-			this->button1->Text = L"Поиск по названию услуги";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(17, 377);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(157, 23);
-			this->button6->TabIndex = 51;
-			this->button6->Text = L"Поиск по типу услуги";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(150, 337);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(99, 23);
-			this->button7->TabIndex = 50;
-			this->button7->Text = L"Поиск по дате";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);
-			// 
-			// button8
-			// 
-			this->button8->Location = System::Drawing::Point(17, 337);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(127, 23);
-			this->button8->TabIndex = 49;
-			this->button8->Text = L"Поиск по паспорту";
-			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
-			// 
-			// button9
-			// 
-			this->button9->Location = System::Drawing::Point(17, 296);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(232, 23);
-			this->button9->TabIndex = 48;
-			this->button9->Text = L"Поиск по типу и названию услуги";
-			this->button9->UseVisualStyleBackColor = true;
-			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(742, 524);
+			this->ClientSize = System::Drawing::Size(989, 645);
 			this->Controls->Add(this->tabControl1);
 			this->Location = System::Drawing::Point(350, 311);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::FormLoad);
@@ -1109,17 +1177,17 @@ private: System::Windows::Forms::Button^ button5;
 		vector<ServiceEntity*> dataServices = DataStorage::dataServices;
 		DataTable^ tablServices = gcnew DataTable();
 		ServicesDataGrid->DataSource = tablServices;
-		tablServices->Columns->Add("Oei oneoae");
-		tablServices->Columns->Add("Iia?acaaeaiea");
-		tablServices->Columns->Add("Iacaaiea oneoae");
-		tablServices->Columns->Add("N?ie eniieiaiey");
+		tablServices->Columns->Add("Тип услуги");
+		tablServices->Columns->Add("Подразделение");
+		tablServices->Columns->Add("Название услуги");
+		tablServices->Columns->Add("Срок исполнения");
 		for (int i = 0; i < dataServices.size(); i++) {
 			DataRow^ rowServices = tablServices->NewRow();
-			rowServices["Oei oneoae"] = gcnew String(dataServices[i]->serviceType.c_str());
-			rowServices["Iia?acaaeaiea"] = gcnew String(dataServices[i]->division.c_str());
-			rowServices["Iacaaiea oneoae"] = gcnew String(dataServices[i]->serviceName.c_str());
+			rowServices["Тип услуги"] = gcnew String(dataServices[i]->serviceType.c_str());
+			rowServices["Подразделение"] = gcnew String(dataServices[i]->division.c_str());
+			rowServices["Название услуги"] = gcnew String(dataServices[i]->serviceName.c_str());
 			string term = to_string(dataServices[i]->term);
-			rowServices["N?ie eniieiaiey"] = gcnew String(term.c_str());
+			rowServices["Срок исполнения"] = gcnew String(term.c_str());
 			tablServices->Rows->Add(rowServices);
 		}
 		
@@ -1138,39 +1206,39 @@ private: System::Windows::Forms::Button^ button5;
 		DataStorage::rbTreeTerm = initTree(leaf);
 		treeNodeServices*& rbTreeTerm = DataStorage::rbTreeTerm;
 
-		ServiceEntity* serviceEntity = new ServiceEntity();
-		serviceEntity->division = "Iia?acaaeaiea";
-		serviceEntity->serviceName = "Iacaaiea";
+		/*ServiceEntity* serviceEntity = new ServiceEntity();
+		serviceEntity->division = "division";
+		serviceEntity->serviceName = "servicceName";
 		serviceEntity->term = 1;
-		serviceEntity->serviceType = "serviceType";
+		serviceEntity->serviceType = "serviceType";*/
 
 		for (int i = 0; i < dataServices.size(); i++) {
 			string valueText = dataServices[i]->division;
 			treeNodeElemServices value;
 			value.index = i;
 			value.value = valueText;
-			insert(rbTreeDivision, value, leaf, serviceEntity);
+			insert(rbTreeDivision, value, leaf);
 		}
 		for (int i = 0; i < dataServices.size(); i++) {
 			string valueText = dataServices[i]->serviceType;
 			treeNodeElemServices value;
 			value.index = i;
 			value.value = valueText;
-			insert(rbTreeType, value, leaf, serviceEntity);
+			insert(rbTreeType, value, leaf);
 		}
 		for (int i = 0; i < dataServices.size(); i++) {
 			string valueText = dataServices[i]->serviceName;
 			treeNodeElemServices value;
 			value.index = i;
 			value.value = valueText;
-			insert(rbTreeName, value, leaf, serviceEntity);
+			insert(rbTreeName, value, leaf);
 		}
 		for (int i = 0; i < dataServices.size(); i++) {
 			string valueText = to_string(dataServices[i]->term);
 			treeNodeElemServices value;
 			value.index = i;
 			value.value = valueText;
-			insert(rbTreeTerm, value, leaf, serviceEntity);
+			insert(rbTreeTerm, value, leaf);
 		}
 
 	}
@@ -1750,7 +1818,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1758,7 +1826,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		ServiceEntity* entity = new ServiceEntity();
@@ -1779,10 +1847,10 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Iaeaai");
+			this->resultSearchServices2->Text = gcnew String("Найден");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
+			this->resultSearchServices2->Text = gcnew String("не найден");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1796,7 +1864,7 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1804,35 +1872,35 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		serviceTerm = stoi(serviceTermStr);
-		Passport passport = Passport();
+
 		ServiceEntity* entity = new ServiceEntity();
 		entity->division = serviceDivision;
 		entity->serviceName = serviceName;
 		entity->term = serviceTerm;
 		entity->serviceType = serviceType;
 		treeNodeServices* leaf = DataStorage::rbTreeLeaf;
-		treeNodeServices* rbTreeDivision = DataStorage::rbTreeType;
+		treeNodeServices* rbTreeType = DataStorage::rbTreeType;
 		vector<ServiceEntity*> data = DataStorage::dataServices;
 
 		int count = 0;
 		treeNodeElemServices searchable;
 		searchable.value = entity->serviceType;
 		searchable.index = 0;
-		search(rbTreeDivision, searchable, leaf, count, entity);
+		search(rbTreeType, searchable, leaf, count, entity);
 		bool result = DataStorage::resultSerch;
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Iaeaai");
+			this->resultSearchServices2->Text = gcnew String("Найден");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
+			this->resultSearchServices2->Text = gcnew String("не найден");
 		}
-		printTreeA(rbTreeDivision, 8, leaf);
+		printTreeA(rbTreeType, 8, leaf);
 		cout << endl;
 	}
 }
@@ -1844,7 +1912,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1852,7 +1920,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		 serviceTerm = stoi(serviceTermStr);
@@ -1875,10 +1943,10 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Iaeaai");
+			this->resultSearchServices2->Text = gcnew String("Найден");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
+			this->resultSearchServices2->Text = gcnew String("Не найден");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1892,7 +1960,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1900,7 +1968,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		Passport passport = Passport();
 		ServiceEntity* entity = new ServiceEntity();
@@ -1921,10 +1989,10 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Iaeaai");
+			this->resultSearchServices2->Text = gcnew String("Найден");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
+			this->resultSearchServices2->Text = gcnew String("Не найден");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1940,7 +2008,7 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
     string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
     if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-        MessageBox::Show(this, "Iaei??aeoiua aaiiua, i?iaa?uoa i?aaeeuiinou aaaaaiiuo aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
     }
     else {
         int serviceTerm;
@@ -1948,7 +2016,7 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
             serviceTerm = stoi(serviceTermStr);
         }
         catch (exception& err) {
-            MessageBox::Show(this, "Iaaa?iue oei aaiiuo", "Ioeaea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
         ServiceEntity* entity = new ServiceEntity();
         entity->division = serviceDivision;
@@ -1961,17 +2029,23 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
         vector<ServiceEntity*> data = DataStorage::dataServices;
         vector<int> res = servicesHashTable.findItem(entity);
         this->countComparationsServices->Text = gcnew String(to_string(res[0]).c_str());
-        if (isEqualServices(data[res[2]], entity)) {
-            this->resultSearchServices2->Text = gcnew String("Iaeaai");
-        }
-        else {
-            this->resultSearchServices2->Text = gcnew String("Ia iaeaai");
-        }
+		if (res[2] != -1) {
+			if (isEqualServices(data[res[2]], entity)) {
+						this->resultSearchServices2->Text = gcnew String("Найден");
+					}
+					else {
+						this->resultSearchServices2->Text = gcnew String("Не найден");
+					}
+		}
+        
         DataStorage::resultSerch = false;
     }
 }
-private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
 
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+	vector<ServiceEntity*> data = DataStorage::dataServices;
+	writeData(data, "stdoutservices.txt");
+	MessageBox::Show(this, "Услуши успешно сохранены", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
 	treeNode*& avlTreePassport = DataStorage::avlTreePassport;
@@ -2073,6 +2147,216 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label10_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void addService_Click(System::Object^ sender, System::EventArgs^ e) {
+	vector<ServiceEntity*> data = DataStorage::dataServices;
+	treeNodeServices*& leaf = DataStorage::rbTreeLeaf;
+	treeNodeServices*& rbTreeDivision = DataStorage::rbTreeDivision;
+	treeNodeServices*& rbTreeType = DataStorage::rbTreeType;
+	treeNodeServices*& rbTreeName = DataStorage::rbTreeName;
+	treeNodeServices*& rbTreeTerm = DataStorage::rbTreeTerm;
+
+	ServicesHashTable servicesHashTable = DataStorage::servicesHashTable;
+	string serviceName = marshal_as<std::string>(this->tBName->Text);
+	string serviceType = marshal_as<std::string>(this->tBType->Text);
+	string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
+	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
+
+	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
+		MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		int serviceTerm;
+		try {
+			serviceTerm = stoi(serviceTermStr);
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+
+
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = serviceDivision;
+		entity->serviceName = serviceName;
+		entity->term = serviceTerm;
+		entity->serviceType = serviceType;
+
+		treeNodeElemServices type;
+		type.index = DataStorage::dataServices.size();
+		type.value = serviceType;
+		int count = 0;
+
+		treeNodeElemServices name;
+		name.index = DataStorage::dataServices.size();
+		name.value = serviceName;
+
+		bool isType = search(rbTreeType, type, leaf, count, entity);
+		bool isName = search(rbTreeName, name, leaf, count, entity);
+		if (!isType && !isName) {
+			DataStorage::dataServices.push_back(entity);
+			int index = DataStorage::dataServices.size() - 1;
+			DataStorage::servicesHashTable.htInsertA(entity, "insert", index);
+
+			treeNodeElemServices division;
+			division.index = index;
+			division.value = serviceDivision;
+			insert(rbTreeDivision, division, leaf);
+
+			insert(rbTreeType, type, leaf);
+
+			insert(rbTreeName, name, leaf);
+
+			treeNodeElemServices term;
+			term.index = index;
+			term.value = serviceTermStr;
+			insert(rbTreeTerm, term, leaf);
+
+			MessageBox::Show(this, "Услуга добавлена", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			DataTable^ tablServices = gcnew DataTable();
+			tablServices->Rows->Clear();
+			ServicesDataGrid->DataSource = tablServices;
+			tablServices->Columns->Add("Тип услуги");
+			tablServices->Columns->Add("Подразделение");
+			tablServices->Columns->Add("Название услуги");
+			tablServices->Columns->Add("Срок исполнения");
+			for (int i = 0; i < DataStorage::dataServices.size(); i++) {
+				DataRow^ rowServices = tablServices->NewRow();
+				rowServices["Тип услуги"] = gcnew String(DataStorage::dataServices[i]->serviceType.c_str());
+				rowServices["Подразделение"] = gcnew String(DataStorage::dataServices[i]->division.c_str());
+				rowServices["Название услуги"] = gcnew String(DataStorage::dataServices[i]->serviceName.c_str());
+				string term = to_string(DataStorage::dataServices[i]->term);
+				rowServices["Срок исполнения"] = gcnew String(term.c_str());
+				tablServices->Rows->Add(rowServices);
+			}
+		}
+		else
+		{
+			MessageBox::Show(this, "Такая комбинация типа и названия уже содежится в базе данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		
+	}
+}
+
+private: System::Void deleteServiceBTN_Click(System::Object^ sender, System::EventArgs^ e) {
+	vector<ServiceEntity*> data = DataStorage::dataServices;
+	treeNodeServices*& leaf = DataStorage::rbTreeLeaf;
+	treeNodeServices*& rbTreeDivision = DataStorage::rbTreeDivision;
+	treeNodeServices*& rbTreeType = DataStorage::rbTreeType;
+	treeNodeServices*& rbTreeName = DataStorage::rbTreeName;
+	treeNodeServices*& rbTreeTerm = DataStorage::rbTreeTerm;
+
+	ServicesHashTable servicesHashTable = DataStorage::servicesHashTable;
+	string serviceName = marshal_as<std::string>(this->tBName->Text);
+	string serviceType = marshal_as<std::string>(this->tBType->Text);
+	string serviceDivision = marshal_as<std::string>(this->tBDivision->Text);
+	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
+
+	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
+		MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else {
+		int serviceTerm;
+		try {
+			serviceTerm = stoi(serviceTermStr);
+		}
+		catch (exception& err) {
+			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = serviceDivision;
+		entity->serviceName = serviceName;
+		entity->term = serviceTerm;
+		entity->serviceType = serviceType;
+
+		int count = 0;
+		treeNodeElemServices searchable;
+		searchable.value = entity->division;
+		searchable.index = 0;
+		search(rbTreeDivision, searchable, leaf, count, entity);
+		bool result = DataStorage::resultSerch;
+		if (result) {
+			int index = DataStorage::indexSearch;
+			ServiceEntity* delElem = DataStorage::dataServices[index];
+			ServiceEntity* lastElem = DataStorage::dataServices.back();
+			listNodeElem* value = new listNodeElem();
+
+			treeNodeElemServices type;
+			type.index = index;
+			type.value = serviceType;
+
+			treeNodeElemServices name;
+			name.index = index;
+			name.value = serviceName;
+
+			treeNodeElemServices division;
+			division.index = index;
+			division.value = serviceDivision;
+
+			treeNodeElemServices term;
+			term.index = index;
+			term.value = serviceTermStr;
+
+			
+			updateByServiceNameTreeNode2(rbTreeName, leaf, lastElem, index);
+			updateByServiceTypeTreeNode2(rbTreeType, leaf, lastElem, index);
+			updateByServiceDivisionTreeNode(rbTreeDivision, leaf, lastElem, index);
+			updateByServiceTermTreeNode(rbTreeTerm, leaf, lastElem, index);
+
+			deleteElement(rbTreeType, type, leaf, entity);
+			deleteElement(rbTreeName, name, leaf, entity);
+			deleteElement(rbTreeDivision, division, leaf, entity);
+			deleteElement(rbTreeTerm, term, leaf, entity);
+			servicesHashTable.deleteItem(delElem);
+
+			DataStorage::dataServices[index] = lastElem;
+			DataStorage::dataServices.pop_back();
+
+			MessageBox::Show(this, "Услуга удалена", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			DataTable^ tablServices = gcnew DataTable();
+			tablServices->Rows->Clear();
+			ServicesDataGrid->DataSource = tablServices;
+			tablServices->Columns->Add("Тип услуги");
+			tablServices->Columns->Add("Подразделение");
+			tablServices->Columns->Add("Название услуги");
+			tablServices->Columns->Add("Срок исполнения");
+			for (int i = 0; i < DataStorage::dataServices.size(); i++) {
+				DataRow^ rowServices = tablServices->NewRow();
+				rowServices["Тип услуги"] = gcnew String(DataStorage::dataServices[i]->serviceType.c_str());
+				rowServices["Подразделение"] = gcnew String(DataStorage::dataServices[i]->division.c_str());
+				rowServices["Название услуги"] = gcnew String(DataStorage::dataServices[i]->serviceName.c_str());
+				string term = to_string(DataStorage::dataServices[i]->term);
+				rowServices["Срок исполнения"] = gcnew String(term.c_str());
+				tablServices->Rows->Add(rowServices);
+			}
+			DataStorage::servicesHashTable = servicesHashTable;
+		}
+		else {
+			MessageBox::Show(this, "Удаляемый элемент не найден", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		}
+}
+
+private: System::Void saveDebugServices_Click(System::Object^ sender, System::EventArgs^ e) {
+	treeNodeServices*& rbTreeDivision = DataStorage::rbTreeDivision;
+	treeNodeServices*& rbTreeName = DataStorage::rbTreeName;
+	treeNodeServices*& rbTreeType = DataStorage::rbTreeType;
+	treeNodeServices*& rbTreeTerm = DataStorage::rbTreeTerm;
+	treeNodeServices*& leaf = DataStorage::rbTreeLeaf;
+	ServicesHashTable servicesHashTable = DataStorage::servicesHashTable;
+	ofstream fout("debugServices.txt");
+
+	DataStorage::servicesHashTable.debugPrintTable(fout);
+	fout << endl << endl << endl;
+	debugPrintTreeA(DataStorage::rbTreeDivision, 4, leaf, fout);
+	fout << endl << endl << endl;
+	debugPrintTreeA(DataStorage::rbTreeName, 4, leaf, fout);
+	fout << endl << endl << endl;
+	debugPrintTreeA(DataStorage::rbTreeType, 4, leaf, fout);
+	fout << endl << endl << endl;
+	debugPrintTreeA(DataStorage::rbTreeTerm, 4, leaf, fout);
+
+	fout.close();
+	MessageBox::Show(this, "Дебаг-информация сохранена в файл debugRequests.txt", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 };
 }

@@ -25,4 +25,5 @@ public:
     void htInsertA(ServiceEntity* item, string type, int index);
     void deleteItem(ServiceEntity* item);
     void printTable();
+    void debugPrintTable(ofstream& fout);
 };
