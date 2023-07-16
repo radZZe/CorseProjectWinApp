@@ -3,7 +3,7 @@ using namespace std;
 
 vector<RequestsEntity*> DataStorage::data = readFromFile("stdrequests.txt");
 vector<ServiceEntity*> DataStorage::dataServices = readServicesFromFile("stdservices.txt");
-RequestsHashTable DataStorage::requestsHashTable = RequestsHashTable(data.size());
+RequestsHashTable DataStorage::requestsHashTable = RequestsHashTable(data.size()*1.8);
 ServicesHashTable DataStorage::servicesHashTable = ServicesHashTable(dataServices.size() * 2);
 int DataStorage::countComparisons = 0;
 treeNodeServices* DataStorage::rbTreeDivision = nullptr;

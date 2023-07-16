@@ -31,6 +31,13 @@ int RequestsHashTable::isPrime(int num) {
     return 1;
 }
 
+int RequestsHashTable::gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
 int RequestsHashTable::countDigits(long int key)
 {
     int count = 0;
@@ -70,6 +77,7 @@ int RequestsHashTable::firstHashFunction(int key)
         startPos = 4;
         int result = getNthDigit(keySquare, startPos) * 10 + getNthDigit(keySquare, startPos + 1);
         //cout << "INSERT: firstHash =" << result << "dataToKey = " << key << endl;
+        int test = 5;
         if (result > this->size) result = result % this->size;
         return result;
     }
@@ -83,40 +91,53 @@ int RequestsHashTable::firstHashFunction(int key)
 }
 
 int RequestsHashTable::doubleHashFunc(int  key) {
-    if (isPrime(this->size)) {
-        return (1 + key) % (this->size - 2);
+
+    int prime = 31; // Простое число, можно выбрать другое простое число
+    int stepSize = prime - (key % prime); // Шаг размером prime минус остаток от деления ключа на prime
+
+    // Проверяем, что шаг размером stepSize и величина хеш-таблицы tableSize взаимно просты
+    while (gcd(stepSize, this->size) != 1) {
+        stepSize++; // Увеличиваем шаг, пока не найдём взаимно простые значения
     }
-    else {
-        int test = (1 + key ) % this->size;
-        return test;
-    }
+
+    return stepSize;
+
 }
 
 int RequestsHashTable::secondHashFunction(int j, int first, int second) { // вторичная хеш функция 
-    return (first + j * second) % this->size;
+    int result = (first + j * second) % this->size;
+    return result;
 }
 
 int  RequestsHashTable::dataToKey(string serviceName, string serviceType, Passport passport,date date) {
     int result = 0;
     for (int i = 0; i < serviceName.size(); i++) {
+        cout << abs(serviceName[i]) << " + ";
         result += abs(serviceName[i]);
     }
     for (int i = 0; i < serviceType.size(); i++) {
+        cout << abs(serviceType[i]) << " + ";
         result += abs(serviceType[i]);
     }
     string passportSeries = to_string(passport.series);
     string passportNumber = to_string(passport.number);
     for (int i = 0; i < passportSeries.size(); i++) {
         char num = passportSeries[i];
+        cout << num << " + ";
         result += num;
     }
     for (int i = 0; i < passportNumber.size(); i++) {
         char num = passportNumber[i];
+        cout << num << " + ";
         result += num;
     }
     result += stoi(date.day);
+    cout << stoi(date.day) << " + ";
     result += stoi(date.month);
+    cout << stoi(date.month) << " + ";
     result += stoi(date.year);
+    cout << stoi(date.year) << " = ";
+    cout << result;
     return result;
 };
 
@@ -194,11 +215,13 @@ void RequestsHashTable::shiftElements(int secondHash, int delIndex, RequestsEnti
     int counter = 1;
     do {
         if (data[index]->status != 0) {
-            if (isEqualFirstHash(data[index]->value, value)) tempIndex = index;
+            if (isEqualFirstHash(data[index]->value, value)) { 
+                tempIndex = index; 
+            }
         }
         index = secondHashFunction(counter, delIndex, secondHash);
         counter++;
-    } while (counter <= size && data[index]->status != 0);
+    } while (counter <= size);
     data[delIndex]->value = data[tempIndex]->value;
     data[delIndex]->status = data[tempIndex]->status;
     data[tempIndex]->value = nullptr;

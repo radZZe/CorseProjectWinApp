@@ -19,7 +19,7 @@ ClientPassport inputPassportClients(string input) {
         }
     }
     int series = stoi(input.substr(0, 4));
-    int number = stoi(input.substr(4 + 1, (input.length()) - 4));
+    int number = stoi(input.substr(4 , (input.length()) - 4));
     //return { series,number };
     passport.number = number;
     passport.series = series;

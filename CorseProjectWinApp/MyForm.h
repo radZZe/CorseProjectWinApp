@@ -1173,6 +1173,19 @@ private: System::Windows::Forms::Button^ button5;
 			insert(rbTreeTerm, value, leaf, serviceEntity);
 		}
 
+		DataClientsStorage::rbtPassport = root_init(DataClientsStorage::rbtNullnode);
+		Node*& rbt = DataClientsStorage::rbtPassport;
+		vector<ClientsEntity*> clients = DataClientsStorage::data;
+		for (int i = 0; i < clients.size(); i++) {
+			string series = to_string(clients[i]->passport.series);
+			string number = to_string(clients[i]->passport.number);
+			string valueText = series + number;
+			RBTData value;
+			value.index = i;
+			value.value = valueText;
+			insertClient(rbt, DataClientsStorage::rbtNullnode, value);
+		}
+
 	}
 private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender, System::EventArgs^ e) {
 	string  serviceName = marshal_as<std::string>(this->tBServiceName->Text);
@@ -1246,10 +1259,10 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 			bool result_searchByPassportTreeNode = DataStorage::resultSerch;
 			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 			if (result_searchByPassportTreeNode) {
-				this->resultSearch->Text = gcnew String("Iaeaai");
+				this->resultSearch->Text = gcnew String("Найден");
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Ia iaeaai");
+				this->resultSearch->Text = gcnew String("Не найден");
 			}
 			printTree(avlTreePassport, nullptr);
 			cout << endl;
@@ -1276,7 +1289,7 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 	int seriesPassport;
 	int numberPassport;
 	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try{
@@ -1304,20 +1317,31 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 				int index = DataStorage::indexSearch;
 				RequestsEntity* delElem = DataStorage::data[index];
 				RequestsEntity* lastElem = DataStorage::data.back();
-				listNodeElem* value = new listNodeElem();
-				string valueText = to_string(delElem->passport.series) + to_string(delElem->passport.number);
-				value->index = index;
-				value->value = valueText;
+				listNodeElem* valuePasport = new listNodeElem();
+				valuePasport->index = index;
+				valuePasport->value = to_string(delElem->passport.series) + to_string(delElem->passport.number);
+				listNodeElem* valueDate = new listNodeElem();
+				valueDate->index = index;
+				valueDate->value = delElem->date.day + "." + delElem->date.month + "." + delElem->date.year;
+				listNodeElem* valueServiceType = new listNodeElem();
+				valueServiceType->index = index;
+				valueServiceType->value = delElem->serviceType;
+				listNodeElem* valueServiceName = new listNodeElem();
+				valueServiceName->index = index;
+				valueServiceName->value = delElem->serviceName;
 				bool heightChanged = false;
 				requestsHashTable.remove(delElem);
 				updateByPassportTreeNode(avlTreePassport, lastElem, index);
 				updateServiceTypeTreeNode(avlTreeServiceType, lastElem, index);
 				updateServiceNameTreeNode(avlTreeServiceName, lastElem, index);
 				updateByDateTreeNode(avlTreeDate, lastElem, index);
-				delNode(avlTreePassport, value, heightChanged);
+				delNode(avlTreePassport, valuePasport, heightChanged);
+				delNode(avlTreeServiceType, valueServiceType, heightChanged);
+				delNode(avlTreeServiceName, valueServiceName, heightChanged);
+				delNode(avlTreeDate, valueDate, heightChanged);
 				DataStorage::data[index] = lastElem;
 				DataStorage::data.pop_back();
-				MessageBox::Show(this, "Cayaea oniaoii oaaeaia", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				MessageBox::Show(this, "Заявка успешно удалена", "Удаление", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				DataTable^ tablTest = gcnew DataTable();
 				tablTest->Rows->Clear();
 				RequestsDataGrid->DataSource = tablTest;
@@ -1338,11 +1362,11 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 
 			}
 			else {
-				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
 		
@@ -1602,7 +1626,6 @@ private: System::Void btnSearchByClientJob_Click(System::Object^ sender, System:
     cout << endl;
 }
 
-
 private: System::Void btnSearchBuClientFullname_Click(System::Object^ sender, System::EventArgs^ e) {
     string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
     Fullname fullname = inputFullnameData(fullnamestr);
@@ -1741,7 +1764,6 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
     DataClientsStorage::clientsHashTable.print();
     DataStorage::requestsHashTable.print();
 }
-
 
 private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 	string serviceName = marshal_as<std::string>(this->tBName->Text);
@@ -1996,7 +2018,6 @@ private: System::Void addRequestsBTN_Click(System::Object^ sender, System::Event
 	treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
 	treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
 	bool heightChanged = false;
-	RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
 	string serviceName = marshal_as<std::string>(this->tBServiceName->Text);
 	string serviceType = marshal_as<std::string>(this->tBServiceType->Text);
 	string dateString = marshal_as<std::string>(this->tBDate->Text);
@@ -2004,63 +2025,100 @@ private: System::Void addRequestsBTN_Click(System::Object^ sender, System::Event
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
-		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-	else {
-		try {
-			seriesPassport = stoi(seriesPassportText);
-			numberPassport = stoi(numberPassportText);
-			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			bool heightChanged = false;
-			DataStorage::data.push_back(entity);
-			requestsHashTable.insert(entity);
-			listNodeElem* valuePasport = new listNodeElem();
-			valuePasport->index = DataStorage::data.size() - 1;
-			valuePasport->value = to_string(entity->passport.series) + to_string(entity->passport.number);
-			addNode(avlTreePassport, valuePasport, heightChanged);
-			listNodeElem* valueDate = new listNodeElem();
-			valueDate->index = DataStorage::data.size() - 1;
-			valueDate->value = entity->date.day + "." + entity->date.month + "." + entity->date.year;
-			addNode(avlTreeDate, valueDate, heightChanged);
-			listNodeElem* valueServiceType = new listNodeElem();
-			valueServiceType->index = DataStorage::data.size() - 1;
-			valueServiceType->value = entity->serviceType;
-			addNode(avlTreeServiceType, valueServiceType, heightChanged);
-			listNodeElem* valueServiceName = new listNodeElem();
-			valueServiceName->index = DataStorage::data.size() - 1;
-			valueServiceName->value = entity->serviceName;
-			addNode(avlTreeServiceName, valueServiceName, heightChanged);
-			MessageBox::Show(this, "Cayaea oniaoii aiaaaeaia", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			DataTable^ tablTest2 = gcnew DataTable();
-			tablTest2->Rows->Clear();
-			RequestsDataGrid->DataSource = tablTest2;
-			tablTest2->Columns->Add("Ianii?o");
-			tablTest2->Columns->Add("Iacaaiea oneoae");
-			tablTest2->Columns->Add("Oei oneoae");
-			tablTest2->Columns->Add("Aaoa");
-			for (int i = 0; i < DataStorage::data.size(); i++) {
-				DataRow^ row = tablTest2->NewRow();
-				string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
-				row["Ianii?o"] = gcnew String(passport.c_str());
-				row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
-				row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
-				string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
-				row["Aaoa"] = gcnew String(date.c_str());
-				tablTest2->Rows->Add(row);
-			}
+	try {
+		seriesPassport = stoi(seriesPassportText);
+		numberPassport = stoi(numberPassportText);
+		ServicesHashTable servicesHashTable = DataStorage::servicesHashTable;
+		ServiceEntity* entity = new ServiceEntity();
+		entity->division = "dsss";
+		entity->serviceType = serviceType;
+		entity->serviceName = serviceName;
+		entity->term = 0;
+		bool flagServices = servicesHashTable.findItemByKey(entity);
+		Node* rbt = DataClientsStorage::rbtPassport;
+		int count = 0;
+		RBTData searchable;
+		searchable.value = seriesPassportText + numberPassportText;
+		searchable.index = 0;
+		pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+		bool flagClient = DataClientsStorage::resultSearch;
+		RequestsHashTable& requestsHashTable = DataStorage::requestsHashTable;
+		requestsHashTable.print();
+		seriesPassport = stoi(seriesPassportText);
+		numberPassport = stoi(numberPassportText);
+		date date = inputDateData(dateString);
+		Passport passport = Passport();
+		passport.number = numberPassport;
+		int jopa = 4;
+		passport.series = seriesPassport;
+		RequestsEntity* requsestsEntity = new RequestsEntity();
+		requsestsEntity->date = date;
+		requsestsEntity->passport = passport;
+		requsestsEntity->serviceName = serviceName;
+		requsestsEntity->serviceType = serviceType;
+		vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(requsestsEntity);
+		if (result_searchByTypeAndNameOfService[1] != -1) {
+			MessageBox::Show(this, "Такая заявка уже существует", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
-		catch (exception& err) {}
+		else if (!flagClient) {
+			MessageBox::Show(this, "Клиент с такими данными не найден", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (!flagServices) {
+			MessageBox::Show(this, "Указанные название и тип услуги не найдены", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 ) {
+			MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else {
+			try {
+				bool heightChanged = false;
+				DataStorage::data.push_back(requsestsEntity);
+				requestsHashTable.insert(requsestsEntity);
+				listNodeElem* valuePasport = new listNodeElem();
+				valuePasport->index = DataStorage::data.size() - 1;
+				valuePasport->value = to_string(requsestsEntity->passport.series) + to_string(requsestsEntity->passport.number);
+				addNode(avlTreePassport, valuePasport, heightChanged);
+				listNodeElem* valueDate = new listNodeElem();
+				valueDate->index = DataStorage::data.size() - 1;
+				valueDate->value = requsestsEntity->date.day + "." + requsestsEntity->date.month + "." + requsestsEntity->date.year;
+				addNode(avlTreeDate, valueDate, heightChanged);
+				listNodeElem* valueServiceType = new listNodeElem();
+				valueServiceType->index = DataStorage::data.size() - 1;
+				valueServiceType->value = entity->serviceType;
+				addNode(avlTreeServiceType, valueServiceType, heightChanged);
+				listNodeElem* valueServiceName = new listNodeElem();
+				valueServiceName->index = DataStorage::data.size() - 1;
+				valueServiceName->value = entity->serviceName;
+				addNode(avlTreeServiceName, valueServiceName, heightChanged);
+				MessageBox::Show(this, "Заявка успешно добавлена", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				DataTable^ tablTest2 = gcnew DataTable();
+				tablTest2->Rows->Clear();
+				RequestsDataGrid->DataSource = tablTest2;
+				tablTest2->Columns->Add("Ianii?o");
+				tablTest2->Columns->Add("Iacaaiea oneoae");
+				tablTest2->Columns->Add("Oei oneoae");
+				tablTest2->Columns->Add("Aaoa");
+				for (int i = 0; i < DataStorage::data.size(); i++) {
+					DataRow^ row = tablTest2->NewRow();
+					string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
+					row["Ianii?o"] = gcnew String(passport.c_str());
+					row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+					row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+					string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
+					row["Aaoa"] = gcnew String(date.c_str());
+					tablTest2->Rows->Add(row);
+				}
+			}
+			catch (exception& err) {
+				MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
 
+		}
 	}
+	catch (exception& err) {
+		MessageBox::Show(this, "Некорректные данные , проверьте введенную информацию о заявке", "Добавление", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
