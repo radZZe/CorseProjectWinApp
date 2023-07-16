@@ -9,8 +9,9 @@ listServices* initListServices();
 treeNodeServices* initLeaf();
 
 bool isLastElement(listServices*& head);
+int compareTerm(treeNodeElemServices one, treeNodeElemServices two);
 
-listServices* deleteListElement(listServices* head, treeNodeElemServices givenData);
+listServices* deleteListElement(listServices* head, ServiceEntity* givenData);
 bool searchServiceInList(listServices* head, ServiceEntity* element, int& count);
 void printList(listServices* head);
 int compareData(treeNodeElemServices key1, treeNodeElemServices key2);
@@ -57,3 +58,9 @@ int updateByServiceTermTreeNode(treeNodeServices*& root, treeNodeServices*& leaf
 bool _searchServiceInList(listServices* head, treeNodeElemServices element, int& count);
 
 bool _search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int& count);
+
+void deleteTerm(treeNodeServices*& root, treeNodeElemServices value, treeNodeServices*& leaf, ServiceEntity* fullEntity);
+treeNodeServices* insertTerm(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf);
+bool _searchTerm(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int& count);
+bool searchTerm(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int& count, ServiceEntity* fullEntity);
+void debugPrintList(listServices* head, ofstream& fout);
