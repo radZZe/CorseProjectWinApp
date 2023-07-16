@@ -1,1 +1,134 @@
-@@@@@@@@@@@@@@@@@
+index: 0| value: Иванов Иван Иванович Студент vanek@mail.ru 3333 555555 |status: 1|firstHash: 7 |secondHash: 0 |Array index: 2
+index: 1| value: Давыдов Антон Игоревич Студент davydov.an@students.dvfu.ru 2222 333333 |status: 1|firstHash: 1 |secondHash: 1 |Array index: 1
+index: 2| value: Раздобаров Данила Андреевич Студент razdobarov.da@students.dvfu.ru 1111 555555 |status: 1|firstHash: 2 |secondHash: 2 |Array index: 0
+index: 3| value: Раздобаров Андрей Валерьевич Студент batek@mail.ru 7777 999999 |status: 1|firstHash: 2 |secondHash: 3 |Array index: 6
+index: 4| value: Зайкин Бадя Игоревич Преподаватель animal@yandex.ru 3232 980980 |status: 1|firstHash: 1 |secondHash: 4 |Array index: 8
+index: 5| value: Скурихин Евгений Евгеньевич Преподаватель ded@mail.ru 1717 789798 |status: 1|firstHash: 5 |secondHash: 5 |Array index: 5
+index: 6| value: Старцев Денис Алексеевич Студент denis@mail.ru 101 765765 |status: 1|firstHash: 5 |secondHash: 6 |Array index: 7
+index: 7| value: Зиновьев Павел Владимирович Преподаватель cherep@mail.ru 1212 567567 |status: 1|firstHash: 3 |secondHash: 7 |Array index: 3
+index: 8| value: -  |status: 0
+index: 9| value: Раздобаров Джонни Данилович Студент ultrakaban2003@mail.ru 7373 654654 |status: 1|firstHash: 3 |secondHash: 9 |Array index: 9
+                       0000000000000000 | B
+
+                Старцев Денис Алексеевич (1)|index: 7| R
+
+                       0000000000000000 | B
+
+            Скурихин Евгений Евгеньевич (1)|index: 5| B
+
+                       0000000000000000 | B
+
+                Раздобаров Джонни Данилович (1)|index: 4| R
+
+                       0000000000000000 | B
+
+        Раздобаров Данила Андреевич (1)|index: 0| R
+
+                   0000000000000000 | B
+
+            Раздобаров Андрей Валерьевич (1)|index: 6| B
+
+                   0000000000000000 | B
+
+    Иванов Иван Иванович (1)|index: 2| B
+
+                   0000000000000000 | B
+
+            Зиновьев Павел Владимирович (1)|index: 3| B
+
+                   0000000000000000 | B
+
+        Зайкин Бадя Игоревич (1)|index: 8| R
+
+                   0000000000000000 | B
+
+            Давыдов Антон Игоревич (1)|index: 1| B
+
+                   0000000000000000 | B
+
+           0000000000000000 | B
+
+    Студент (1)|index: 0|->Студент (1)|index: 1|->Студент (1)|index: 2|->Студент (1)|index: 6|->Студент (1)|index: 7|->Студент (1)|index: 4| B
+
+               0000000000000000 | B
+
+        Преподаватель (1)|index: 3|->Преподаватель (1)|index: 5|->Преподаватель (1)|index: 8| R
+
+               0000000000000000 | B
+
+               0000000000000000 | B
+
+        vanek@mail.ru (1)|index: 2| B
+
+                   0000000000000000 | B
+
+            ultrakaban2003@mail.ru (1)|index: 4| R
+
+                   0000000000000000 | B
+
+    razdobarov.da@students.dvfu.ru (1)|index: 0| B
+
+                       0000000000000000 | B
+
+                denis@mail.ru (1)|index: 7| R
+
+                       0000000000000000 | B
+
+            ded@mail.ru (1)|index: 5| B
+
+                   0000000000000000 | B
+
+        davydov.an@students.dvfu.ru (1)|index: 1| R
+
+                       0000000000000000 | B
+
+                cherep@mail.ru (1)|index: 3| R
+
+                       0000000000000000 | B
+
+            batek@mail.ru (1)|index: 6| B
+
+                       0000000000000000 | B
+
+                animal@yandex.ru (1)|index: 8| R
+
+                       0000000000000000 | B
+
+                   0000000000000000 | B
+
+            7777999999 (1)|index: 6| B
+
+                       0000000000000000 | B
+
+                7373654654 (1)|index: 4| R
+
+                       0000000000000000 | B
+
+        3333555555 (1)|index: 2| R
+
+                   0000000000000000 | B
+
+            3232980980 (1)|index: 8| B
+
+                   0000000000000000 | B
+
+    2222333333 (1)|index: 1| B
+
+                   0000000000000000 | B
+
+            1717789798 (1)|index: 5| B
+
+                   0000000000000000 | B
+
+        1212567567 (1)|index: 3| R
+
+                   0000000000000000 | B
+
+            1111555555 (1)|index: 0| B
+
+                       0000000000000000 | B
+
+                101765765 (1)|index: 7| R
+
+                       0000000000000000 | B
+

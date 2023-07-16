@@ -218,7 +218,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 #pragma region Windows Form Designer generated code
 
 		/// <summary>
-		/// O?aaoaiue iaoia aey iiaaa??ee eiino?oeoi?a — ia eciaiyeoa 
+		/// O?aaoaiue iaoia aey iiaaa??ee eiino?oeoi?a пїЅ ia eciaiyeoa 
 		/// niaa??eiia yoiai iaoiaa n iiiiuu? ?aaaeoi?a eiaa.
 		/// </summary>
 		void InitializeComponent(void)
@@ -355,10 +355,10 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->requestsPage->Location = System::Drawing::Point(4, 25);
 			this->requestsPage->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->requestsPage->Name = L"requestsPage";
-			this->requestsPage->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->requestsPage->Size = System::Drawing::Size(1187, 750);
+			this->requestsPage->Padding = System::Windows::Forms::Padding(2);
+			this->requestsPage->Size = System::Drawing::Size(888, 607);
 			this->requestsPage->TabIndex = 0;
-			this->requestsPage->Text = L"Заявки";
+			this->requestsPage->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->requestsPage->UseVisualStyleBackColor = true;
 			// 
 			// resultSearchServices
@@ -385,6 +385,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->button19->Size = System::Drawing::Size(153, 28);
 			this->button19->TabIndex = 26;
 			this->button19->Text = L"Ieii ioeaaee";
+
 			this->button19->UseVisualStyleBackColor = true;
 			this->button19->Click += gcnew System::EventHandler(this, &MyForm::button19_Click);
 			// 
@@ -432,7 +433,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label6->Location = System::Drawing::Point(267, 566);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(78, 16);
+			this->label6->Size = System::Drawing::Size(59, 13);
 			this->label6->TabIndex = 21;
 			this->label6->Text = L"?acoeuoao";
 			// 
@@ -451,7 +452,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->numberOfComparisons->Location = System::Drawing::Point(19, 566);
 			this->numberOfComparisons->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->numberOfComparisons->Name = L"numberOfComparisons";
-			this->numberOfComparisons->Size = System::Drawing::Size(140, 16);
+			this->numberOfComparisons->Size = System::Drawing::Size(123, 13);
 			this->numberOfComparisons->TabIndex = 19;
 			this->numberOfComparisons->Text = L"Eiee?anoai n?aaiaiee";
 			// 
@@ -461,7 +462,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label5->Location = System::Drawing::Point(811, 362);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(40, 16);
+			this->label5->Size = System::Drawing::Size(33, 13);
 			this->label5->TabIndex = 18;
 			this->label5->Text = L"Aaoa";
 			// 
@@ -501,6 +502,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label4->Location = System::Drawing::Point(673, 444);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
+
 			this->label4->Size = System::Drawing::Size(110, 16);
 			this->label4->TabIndex = 14;
 			this->label4->Text = L"Iacaaiea oneoae";
@@ -650,75 +652,79 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->clientsPage->Location = System::Drawing::Point(4, 25);
 			this->clientsPage->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->clientsPage->Name = L"clientsPage";
-			this->clientsPage->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->clientsPage->Size = System::Drawing::Size(1187, 750);
+			this->clientsPage->Padding = System::Windows::Forms::Padding(2);
+			this->clientsPage->Size = System::Drawing::Size(888, 607);
 			this->clientsPage->TabIndex = 1;
-			this->clientsPage->Text = L"Клиенты";
+			this->clientsPage->Text = L"ГЉГ«ГЁГҐГ­ГІГ»";
 			this->clientsPage->UseVisualStyleBackColor = true;
 			// 
 			// btnAddClient
 			// 
-			this->btnAddClient->Location = System::Drawing::Point(529, 503);
-			this->btnAddClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnAddClient->Location = System::Drawing::Point(397, 409);
+			this->btnAddClient->Margin = System::Windows::Forms::Padding(2);
 			this->btnAddClient->Name = L"btnAddClient";
 			this->btnAddClient->Size = System::Drawing::Size(100, 23);
 			this->btnAddClient->TabIndex = 60;
-			this->btnAddClient->Text = L"?”???±?°????N‚N?";
+			this->btnAddClient->Text = L"Г„Г®ГЎГ ГўГЁГІГј";
 			this->btnAddClient->UseVisualStyleBackColor = true;
 			this->btnAddClient->Click += gcnew System::EventHandler(this, &MyForm::btnAddClient_Click);
 			// 
 			// resultSearchClient
 			// 
 			this->resultSearchClient->AutoSize = true;
-			this->resultSearchClient->Location = System::Drawing::Point(285, 466);
+			this->resultSearchClient->Location = System::Drawing::Point(270, 468);
+			this->resultSearchClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->resultSearchClient->Name = L"resultSearchClient";
-			this->resultSearchClient->Size = System::Drawing::Size(0, 16);
+			//this->resultSearchClient->Text = "333";
+			this->resultSearchClient->Size = System::Drawing::Size(0, 13);
 			this->resultSearchClient->TabIndex = 59;
 			// 
 			// countOfCompareClients
 			// 
 			this->countOfCompareClients->AutoSize = true;
-			this->countOfCompareClients->Location = System::Drawing::Point(135, 466);
+			this->countOfCompareClients->Location = System::Drawing::Point(158, 468);
+			this->countOfCompareClients->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->countOfCompareClients->Name = L"countOfCompareClients";
-			this->countOfCompareClients->Size = System::Drawing::Size(0, 16);
+			//this->countOfCompareClients->Text = "111";
+			this->countOfCompareClients->Size = System::Drawing::Size(0, 13);
 			this->countOfCompareClients->TabIndex = 58;
 			// 
 			// tBClientEmai
-			// 
-			this->tBClientEmai->Location = System::Drawing::Point(504, 476);
-			this->tBClientEmai->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			//
+			this->tBClientEmai->Location = System::Drawing::Point(378, 387);
+			this->tBClientEmai->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientEmai->Name = L"tBClientEmai";
 			this->tBClientEmai->Size = System::Drawing::Size(127, 22);
 			this->tBClientEmai->TabIndex = 57;
 			// 
 			// tBClientFullname
 			// 
-			this->tBClientFullname->Location = System::Drawing::Point(663, 437);
-			this->tBClientFullname->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tBClientFullname->Location = System::Drawing::Point(497, 355);
+			this->tBClientFullname->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientFullname->Name = L"tBClientFullname";
 			this->tBClientFullname->Size = System::Drawing::Size(135, 22);
 			this->tBClientFullname->TabIndex = 56;
 			// 
 			// tBClientJob
 			// 
-			this->tBClientJob->Location = System::Drawing::Point(504, 437);
-			this->tBClientJob->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tBClientJob->Location = System::Drawing::Point(378, 355);
+			this->tBClientJob->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientJob->Name = L"tBClientJob";
 			this->tBClientJob->Size = System::Drawing::Size(127, 22);
 			this->tBClientJob->TabIndex = 55;
 			// 
 			// tBClientPassNum
 			// 
-			this->tBClientPassNum->Location = System::Drawing::Point(663, 386);
-			this->tBClientPassNum->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tBClientPassNum->Location = System::Drawing::Point(497, 314);
+			this->tBClientPassNum->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientPassNum->Name = L"tBClientPassNum";
 			this->tBClientPassNum->Size = System::Drawing::Size(135, 22);
 			this->tBClientPassNum->TabIndex = 54;
 			// 
 			// tBClientPassSeries
 			// 
-			this->tBClientPassSeries->Location = System::Drawing::Point(504, 386);
-			this->tBClientPassSeries->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tBClientPassSeries->Location = System::Drawing::Point(378, 314);
+			this->tBClientPassSeries->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientPassSeries->Name = L"tBClientPassSeries";
 			this->tBClientPassSeries->Size = System::Drawing::Size(127, 22);
 			this->tBClientPassSeries->TabIndex = 53;
@@ -736,30 +742,30 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// btnSearchClientByEmail
 			// 
-			this->btnSearchClientByEmail->Location = System::Drawing::Point(16, 464);
-			this->btnSearchClientByEmail->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnSearchClientByEmail->Location = System::Drawing::Point(12, 377);
+			this->btnSearchClientByEmail->Margin = System::Windows::Forms::Padding(2);
 			this->btnSearchClientByEmail->Name = L"btnSearchClientByEmail";
 			this->btnSearchClientByEmail->Size = System::Drawing::Size(157, 23);
 			this->btnSearchClientByEmail->TabIndex = 51;
-			this->btnSearchClientByEmail->Text = L"?Y????N??? ???? ????N‡N‚?µ";
+			this->btnSearchClientByEmail->Text = L"ГЏГ® ГЇГ®Г·ГІГҐ";
 			this->btnSearchClientByEmail->UseVisualStyleBackColor = true;
 			this->btnSearchClientByEmail->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
 			// 
 			// btnSearchByClientJob
 			// 
-			this->btnSearchByClientJob->Location = System::Drawing::Point(148, 425);
-			this->btnSearchByClientJob->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnSearchByClientJob->Location = System::Drawing::Point(111, 345);
+			this->btnSearchByClientJob->Margin = System::Windows::Forms::Padding(2);
 			this->btnSearchByClientJob->Name = L"btnSearchByClientJob";
 			this->btnSearchByClientJob->Size = System::Drawing::Size(136, 23);
 			this->btnSearchByClientJob->TabIndex = 50;
-			this->btnSearchByClientJob->Text = L"?Y????N??? ???? ?????»?¶????N?N‚??";
+			this->btnSearchByClientJob->Text = L"ГЏГ® Г¤Г®Г«Г¦Г­Г®Г±ГІГЁ";
 			this->btnSearchByClientJob->UseVisualStyleBackColor = true;
 			this->btnSearchByClientJob->Click += gcnew System::EventHandler(this, &MyForm::button7_Click_1);
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(16, 425);
-			this->button8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button8->Location = System::Drawing::Point(12, 345);
+			this->button8->Margin = System::Windows::Forms::Padding(2);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(127, 23);
 			this->button8->TabIndex = 49;
@@ -769,12 +775,12 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// btnSearchByClient
 			// 
-			this->btnSearchByClient->Location = System::Drawing::Point(16, 383);
-			this->btnSearchByClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnSearchByClient->Location = System::Drawing::Point(12, 311);
+			this->btnSearchByClient->Margin = System::Windows::Forms::Padding(2);
 			this->btnSearchByClient->Name = L"btnSearchByClient";
 			this->btnSearchByClient->Size = System::Drawing::Size(232, 23);
 			this->btnSearchByClient->TabIndex = 48;
-			this->btnSearchByClient->Text = L"?Y????N??? ???? ?????»??N‹?? ???°????N‹??";
+			this->btnSearchByClient->Text = L"ГЏГ® ГЇГ®Г«Г­Г»Г¬ Г¤Г Г­Г­Г»Г¬";
 			this->btnSearchByClient->UseVisualStyleBackColor = true;
 			this->btnSearchByClient->Click += gcnew System::EventHandler(this, &MyForm::btnSearchByClient_Click);
 			// 
@@ -785,18 +791,18 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(153, 28);
 			this->button20->TabIndex = 47;
-			this->button20->Text = L"????N…N€?°????N‚N?";
+			this->button20->Text = L"????NпїЅNпїЅ?пїЅ????NпїЅN?";
 			this->button20->UseVisualStyleBackColor = true;
 			this->button20->Click += gcnew System::EventHandler(this, &MyForm::button20_Click);
 			// 
 			// debugClientButton
 			// 
-			this->debugClientButton->Location = System::Drawing::Point(672, 544);
-			this->debugClientButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->debugClientButton->Location = System::Drawing::Point(504, 442);
+			this->debugClientButton->Margin = System::Windows::Forms::Padding(2);
 			this->debugClientButton->Name = L"debugClientButton";
 			this->debugClientButton->Size = System::Drawing::Size(115, 23);
 			this->debugClientButton->TabIndex = 46;
-			this->debugClientButton->Text = L"?z?????? ??N‚?»?°??????";
+			this->debugClientButton->Text = L"ГЋГЄГ­Г® Г®ГІГ«Г Г¤ГЄГЁ";
 			this->debugClientButton->UseVisualStyleBackColor = true;
 			this->debugClientButton->Click += gcnew System::EventHandler(this, &MyForm::debugClientButton_Click);
 			// 
@@ -807,7 +813,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(204, 16);
 			this->label7->TabIndex = 45;
-			this->label7->Text = L"???????µN€ ???°N?????N€N‚?°";
+			this->label7->Text = L"ГЌГ®Г¬ГҐГ°";
 			// 
 			// label8
 			// 
@@ -817,7 +823,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(148, 16);
 			this->label8->TabIndex = 43;
-			this->label8->Text = L"? ?µ?·N??»N?N‚?°N‚: ";
+			this->label8->Text = L"ГђГҐГ§ГіГ«ГјГІГ ГІ: ";
 			// 
 			// label9
 			// 
@@ -827,7 +833,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(297, 16);
 			this->label9->TabIndex = 42;
-			this->label9->Text = L"?s???»??N‡?µN?N‚???? N?N€?°?????µ??????: ";
+			this->label9->Text = L"ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г°Г ГўГ­ГҐГ­ГЁГ©: ";
 			// 
 			// label10
 			// 
@@ -836,16 +842,16 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(253, 16);
 			this->label10->TabIndex = 41;
-			this->label10->Text = L"?­?»?µ??N‚N€???????°N? ????N‡N‚?°";
+			this->label10->Text = L"email";
 			// 
 			// btnDeletionClient
 			// 
-			this->btnDeletionClient->Location = System::Drawing::Point(532, 544);
-			this->btnDeletionClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnDeletionClient->Location = System::Drawing::Point(399, 442);
+			this->btnDeletionClient->Margin = System::Windows::Forms::Padding(2);
 			this->btnDeletionClient->Name = L"btnDeletionClient";
 			this->btnDeletionClient->Size = System::Drawing::Size(99, 23);
 			this->btnDeletionClient->TabIndex = 39;
-			this->btnDeletionClient->Text = L"?????°?»??N‚N?";
+			this->btnDeletionClient->Text = L"Г“Г¤Г Г«ГЁГІГј";
 			this->btnDeletionClient->UseVisualStyleBackColor = true;
 			this->btnDeletionClient->Click += gcnew System::EventHandler(this, &MyForm::btnDeletionClient_Click);
 			// 
@@ -856,7 +862,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(47, 16);
 			this->label14->TabIndex = 37;
-			this->label14->Text = L"?¤???z";
+			this->label14->Text = L"Г”Г€ГЋ";
 			// 
 			// label18
 			// 
@@ -865,7 +871,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(152, 16);
 			this->label18->TabIndex = 36;
-			this->label18->Text = L"?”???»?¶????N?N‚N?";
+			this->label18->Text = L"Г„Г®Г«Г¦Г­Г®Г±ГІГј";
 			// 
 			// label19
 			// 
@@ -874,7 +880,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(194, 16);
 			this->label19->TabIndex = 35;
-			this->label19->Text = L"???µN€??N? ???°N?????N€N‚?°";
+			this->label19->Text = L"Г‘ГҐГ°ГЁГї";
 			// 
 			// ClientsDataGrid
 			// 
@@ -895,6 +901,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// 
 			// tabPage1
 			// 
+
 			this->servicesPage->Controls->Add(this->resultSearchServices2);
 			this->servicesPage->Controls->Add(this->countComparationsServices);
 			this->servicesPage->Controls->Add(this->saveDebugServices);
@@ -922,8 +929,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->servicesPage->Name = L"tabPage1";
 			this->servicesPage->Size = System::Drawing::Size(1187, 750);
 			this->servicesPage->TabIndex = 2;
-			this->servicesPage->Text = L"Услуги";
+			this->servicesPage->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->servicesPage->UseVisualStyleBackColor = true;
+
 			// 
 			// resultSearchServices2
 			// 
@@ -948,7 +956,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->saveDebugServices->Name = L"saveDebugServices";
 			this->saveDebugServices->Size = System::Drawing::Size(153, 28);
 			this->saveDebugServices->TabIndex = 41;
-			this->saveDebugServices->Text = L"Окно отладки";
+			this->saveDebugServices->Text = L"пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->saveDebugServices->UseVisualStyleBackColor = true;
 			this->saveDebugServices->Click += gcnew System::EventHandler(this, &MyForm::saveDebugServices_Click);
 			// 
@@ -960,7 +968,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(141, 20);
 			this->label13->TabIndex = 40;
-			this->label13->Text = L"Подразделение";
+			this->label13->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			// 
 			// label15
 			// 
@@ -970,7 +978,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(151, 20);
 			this->label15->TabIndex = 38;
-			this->label15->Text = L"Название услуги";
+			this->label15->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ";
 			// 
 			// label16
 			// 
@@ -980,7 +988,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(150, 20);
 			this->label16->TabIndex = 37;
-			this->label16->Text = L"Срок исполнения";
+			this->label16->Text = L"пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			// 
 			// label17
 			// 
@@ -990,7 +998,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(100, 20);
 			this->label17->TabIndex = 36;
-			this->label17->Text = L"Тип услуги";
+			this->label17->Text = L"пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ";
 			// 
 			// button12
 			// 
@@ -999,7 +1007,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(100, 28);
 			this->button12->TabIndex = 35;
-			this->button12->Text = L"Сохранить";
+			this->button12->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->button12->UseVisualStyleBackColor = true;
 			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
 			// 
@@ -1019,7 +1027,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(100, 20);
 			this->label11->TabIndex = 33;
-			this->label11->Text = L"Результат:";
+			this->label11->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ:";
 			// 
 			// label12
 			// 
@@ -1029,7 +1037,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(203, 20);
 			this->label12->TabIndex = 32;
-			this->label12->Text = L"Количество сравнений:";
+			this->label12->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ:";
 			// 
 			// deleteServiceBTN
 			// 
@@ -1038,7 +1046,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->deleteServiceBTN->Name = L"deleteServiceBTN";
 			this->deleteServiceBTN->Size = System::Drawing::Size(100, 28);
 			this->deleteServiceBTN->TabIndex = 30;
-			this->deleteServiceBTN->Text = L"Удалить";
+			this->deleteServiceBTN->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->deleteServiceBTN->UseVisualStyleBackColor = true;
 			this->deleteServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::deleteServiceBTN_Click);
 			// 
@@ -1049,7 +1057,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->addService->Name = L"addService";
 			this->addService->Size = System::Drawing::Size(100, 28);
 			this->addService->TabIndex = 29;
-			this->addService->Text = L"Добавить";
+			this->addService->Text = L"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->addService->UseVisualStyleBackColor = true;
 			this->addService->Click += gcnew System::EventHandler(this, &MyForm::addService_Click);
 			// 
@@ -1084,7 +1092,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchByServiceName->Name = L"searchByServiceName";
 			this->searchByServiceName->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceName->TabIndex = 11;
-			this->searchByServiceName->Text = L"Поиск по названию услуги";
+			this->searchByServiceName->Text = L"пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->searchByServiceName->UseVisualStyleBackColor = true;
 			this->searchByServiceName->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceName_Click);
 			// 
@@ -1095,7 +1103,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchByServiceTypeBtn->Name = L"searchByServiceTypeBtn";
 			this->searchByServiceTypeBtn->Size = System::Drawing::Size(209, 28);
 			this->searchByServiceTypeBtn->TabIndex = 10;
-			this->searchByServiceTypeBtn->Text = L"Поиск по типу услуги";
+			this->searchByServiceTypeBtn->Text = L"пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->searchByServiceTypeBtn->UseVisualStyleBackColor = true;
 			this->searchByServiceTypeBtn->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceTypeBtn_Click);
 			// 
@@ -1106,7 +1114,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->divisionSearchBtn->Name = L"divisionSearchBtn";
 			this->divisionSearchBtn->Size = System::Drawing::Size(253, 28);
 			this->divisionSearchBtn->TabIndex = 9;
-			this->divisionSearchBtn->Text = L"Поиск по подразделению";
+			this->divisionSearchBtn->Text = L"пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->divisionSearchBtn->UseVisualStyleBackColor = true;
 			this->divisionSearchBtn->Click += gcnew System::EventHandler(this, &MyForm::divisionSearchBtn_Click);
 			// 
@@ -1118,7 +1126,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchServiceByTermBtb->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->searchServiceByTermBtb->Size = System::Drawing::Size(229, 28);
 			this->searchServiceByTermBtb->TabIndex = 8;
-			this->searchServiceByTermBtb->Text = L"Поиск по сроку исполнения";
+			this->searchServiceByTermBtb->Text = L"пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->searchServiceByTermBtb->UseVisualStyleBackColor = true;
 			this->searchServiceByTermBtb->Click += gcnew System::EventHandler(this, &MyForm::searchServiceByTermBtb_Click);
 			// 
@@ -1129,7 +1137,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchByNameAndType->Name = L"searchByNameAndType";
 			this->searchByNameAndType->Size = System::Drawing::Size(309, 28);
 			this->searchByNameAndType->TabIndex = 7;
-			this->searchByNameAndType->Text = L"Поиск по типу и названию услуги";
+			this->searchByNameAndType->Text = L"пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ";
 			this->searchByNameAndType->UseVisualStyleBackColor = true;
 			this->searchByNameAndType->Click += gcnew System::EventHandler(this, &MyForm::searchByNameAndType_Click);
 			// 
@@ -1219,18 +1227,18 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 		DataTable^ tabl = gcnew DataTable();
 		tabl->Rows->Clear();
 		RequestsDataGrid->DataSource = tabl;
-		tabl->Columns->Add("Ianii?o");
-		tabl->Columns->Add("Iacaaiea oneoae");
-		tabl->Columns->Add("Oei oneoae");
-		tabl->Columns->Add("Aaoa");
+		tabl->Columns->Add("ГЏГ Г±ГЇГ®Г°ГІ");
+		tabl->Columns->Add("ГЌГ Г§ГўГ Г­ГЁГҐ ГіГ±Г«ГіГЈГЁ");
+		tabl->Columns->Add("Г’ГЁГЇ ГіГ±Г«ГіГЈГЁ");
+		tabl->Columns->Add("Г„Г ГІГ ");
 		for (int i = 0; i < DataStorage::data.size(); i++) {
 			DataRow^ row = tabl->NewRow();
 			string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
-			row["Ianii?o"] = gcnew String(passport.c_str());
-			row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
-			row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+			row["ГЏГ Г±ГЇГ®Г°ГІ"] = gcnew String(passport.c_str());
+			row["ГЌГ Г§ГўГ Г­ГЁГҐ ГіГ±Г«ГіГЈГЁ"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+			row["Г’ГЁГЇ ГіГ±Г«ГіГЈГЁ"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
 			string date = DataStorage::data[i]->date.day+"." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
-			row["Aaoa"] = gcnew String(date.c_str());
+			row["Г„Г ГІГ "] = gcnew String(date.c_str());
 			tabl->Rows->Add(row);
 		}
 
@@ -1295,35 +1303,35 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 		clientsHashTable.print();
 		DataTable^ tablClients = gcnew DataTable();
 		ClientsDataGrid->DataSource = tablClients;
-		tablClients->Columns->Add("?¤???z");
-		tablClients->Columns->Add("?”???»?¶????N?N‚N?");
+		tablClients->Columns->Add("?пїЅ???z");
+		tablClients->Columns->Add("?пїЅ???пїЅ?пїЅ????N?NпїЅN?");
 		tablClients->Columns->Add("email");
-		tablClients->Columns->Add("?Y?°N?N?????N€N‚");
+		tablClients->Columns->Add("?Y?пїЅN?N?????NпїЅNпїЅ");
 		for (int i = 0; i < dataClients.size(); i++) {
 			DataRow^ rowClients = tablClients->NewRow();
-			rowClients["?¤???z"] = gcnew String((dataClients[i]->fullname.surname +' '+ dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
-			rowClients["?”???»?¶????N?N‚N?"] = gcnew String(dataClients[i]->job.c_str());
+			rowClients["?пїЅ???z"] = gcnew String((dataClients[i]->fullname.surname +' '+ dataClients[i]->fullname.name + ' ' + dataClients[i]->fullname.lastname).c_str());
+			rowClients["?пїЅ???пїЅ?пїЅ????N?NпїЅN?"] = gcnew String(dataClients[i]->job.c_str());
 			rowClients["email"] = gcnew String(dataClients[i]->email.c_str());
 			string passportClient = to_string(dataClients[i]->passport.series) + ' ' + to_string(dataClients[i]->passport.number);
 			//rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
-			rowClients["?Y?°N?N?????N€N‚"] = gcnew String(passportClient.c_str());
+			rowClients["?Y?пїЅN?N?????NпїЅNпїЅ"] = gcnew String(passportClient.c_str());
 			tablClients->Rows->Add(rowClients);
 		}
 
 		vector<ServiceEntity*> dataServices = DataStorage::dataServices;
 		DataTable^ tablServices = gcnew DataTable();
 		ServicesDataGrid->DataSource = tablServices;
-		tablServices->Columns->Add("Тип услуги");
-		tablServices->Columns->Add("Подразделение");
-		tablServices->Columns->Add("Название услуги");
-		tablServices->Columns->Add("Срок исполнения");
+		tablServices->Columns->Add("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
+		tablServices->Columns->Add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+		tablServices->Columns->Add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
+		tablServices->Columns->Add("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 		for (int i = 0; i < dataServices.size(); i++) {
 			DataRow^ rowServices = tablServices->NewRow();
-			rowServices["Тип услуги"] = gcnew String(dataServices[i]->serviceType.c_str());
-			rowServices["Подразделение"] = gcnew String(dataServices[i]->division.c_str());
-			rowServices["Название услуги"] = gcnew String(dataServices[i]->serviceName.c_str());
+			rowServices["пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(dataServices[i]->serviceType.c_str());
+			rowServices["пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(dataServices[i]->division.c_str());
+			rowServices["пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(dataServices[i]->serviceName.c_str());
 			string term = to_string(dataServices[i]->term);
-			rowServices["Срок исполнения"] = gcnew String(term.c_str());
+			rowServices["пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(term.c_str());
 			tablServices->Rows->Add(rowServices);
 		}
 		
@@ -1386,7 +1394,7 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 || !hasOnlyNonAlphanumeric(serviceName) || !hasOnlyNonAlphanumeric(serviceType) || !hasOnlyDigitsAndDots(dateString)) {
 		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
@@ -1394,25 +1402,31 @@ private: System::Void searchByTypeAndNameOfService_Click(System::Object^ sender,
 			seriesPassport = stoi(seriesPassportText);
 			numberPassport = stoi(numberPassportText);
 			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			int jopa = 4;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
-			requestsHashTable.print();
-			vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
-			this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
-			if (result_searchByTypeAndNameOfService[1] != -1) {
-				this->resultSearch->Text = gcnew String("Iaeaai");
+			if (stoi(date.month) > 12) {
+				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Ia iaeaai");
+				Passport passport = Passport();
+				passport.number = numberPassport;
+				int jopa = 4;
+				passport.series = seriesPassport;
+				RequestsEntity* entity = new RequestsEntity();
+				entity->date = date;
+				entity->passport = passport;
+				entity->serviceName = serviceName;
+				entity->serviceType = serviceType;
+				RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+				requestsHashTable.print();
+				vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(entity);
+				this->countComparisons->Text = gcnew String(to_string(result_searchByTypeAndNameOfService[0]).c_str());
+				if (result_searchByTypeAndNameOfService[1] != -1) {
+					this->resultSearch->Text = gcnew String("Iaeaai");
+				}
+				else {
+					this->resultSearch->Text = gcnew String("Ia iaeaai");
+				}
 			}
+			
 		}
 		catch (exception& err) {
 			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1428,7 +1442,7 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 || !hasOnlyNonAlphanumeric(serviceName) || !hasOnlyNonAlphanumeric(serviceType) || !hasOnlyDigitsAndDots(dateString)) {
 		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
@@ -1436,27 +1450,33 @@ private: System::Void passportSearchBTN_Click(System::Object^ sender, System::Ev
 			seriesPassport = stoi(seriesPassportText);
 			numberPassport = stoi(numberPassportText);
 			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			treeNode* avlTreePassport = DataStorage::avlTreePassport;
-			int count = 0;
-			searchByPassportTreeNode(avlTreePassport, entity, count);
-			bool result_searchByPassportTreeNode = DataStorage::resultSerch;
-			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-			if (result_searchByPassportTreeNode) {
-				this->resultSearch->Text = gcnew String("Iaeaai");
+			if (stoi(date.month) > 12) {
+				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Ia iaeaai");
+				Passport passport = Passport();
+				passport.number = numberPassport;
+				passport.series = seriesPassport;
+				RequestsEntity* entity = new RequestsEntity();
+				entity->date = date;
+				entity->passport = passport;
+				entity->serviceName = serviceName;
+				entity->serviceType = serviceType;
+				treeNode* avlTreePassport = DataStorage::avlTreePassport;
+				int count = 0;
+				searchByPassportTreeNode(avlTreePassport, entity, count);
+				bool result_searchByPassportTreeNode = DataStorage::resultSerch;
+				this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+				if (result_searchByPassportTreeNode) {
+					this->resultSearch->Text = gcnew String("Iaeaai");
+				}
+				else {
+					this->resultSearch->Text = gcnew String("Ia iaeaai");
+				}
+				printTree(avlTreePassport, nullptr);
+				cout << endl;
 			}
-			printTree(avlTreePassport, nullptr);
-			cout << endl;
+			
 		}
 		catch (exception& err) {
 			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1479,7 +1499,7 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 || !hasOnlyNonAlphanumeric(serviceName) || !hasOnlyNonAlphanumeric(serviceType) || !hasOnlyDigitsAndDots(dateString)) {
 		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
@@ -1487,77 +1507,85 @@ private: System::Void remove_element(System::Object^ sender, System::EventArgs^ 
 			seriesPassport = stoi(seriesPassportText);
 			numberPassport = stoi(numberPassportText);
 			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			DataStorage dataStorage = DataStorage();
-			treeNode*& avlTreePassport = DataStorage::avlTreePassport;
-			treeNode*& avlTreeDate = DataStorage::avlTreeDate;
-			treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
-			treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
-			RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
-			int count = 0;
-			searchByPassportTreeNode(avlTreePassport, entity, count);
-			bool result_searchByPassportTreeNode = DataStorage::resultSerch;
-			if (result_searchByPassportTreeNode) {
-				int index = DataStorage::indexSearch;
-				RequestsEntity* delElem = DataStorage::data[index];
-				RequestsEntity* lastElem = DataStorage::data.back();
-				listNodeElem* valuePasport = new listNodeElem();
-				valuePasport->index = index;
-				valuePasport->value = to_string(delElem->passport.series) + to_string(delElem->passport.number);
-				listNodeElem* valueDate = new listNodeElem();
-				valueDate->index = index;
-				valueDate->value = delElem->date.day + "." + delElem->date.month + "." + delElem->date.year;
-				listNodeElem* valueServiceType = new listNodeElem();
-				valueServiceType->index = index;
-				valueServiceType->value = delElem->serviceType;
-				listNodeElem* valueServiceName = new listNodeElem();
-				valueServiceName->index = index;
-				valueServiceName->value = delElem->serviceName;
-				bool heightChangedPassport = false;
-				bool heightChangedServiceType = false;
-				bool heightChangedServiceName = false;
-				bool heightChangedDate = false;
-				requestsHashTable.remove(delElem);
-				updateByPassportTreeNode(avlTreePassport, lastElem, index);
-				updateServiceTypeTreeNode(avlTreeServiceType, lastElem, index);
-				updateServiceNameTreeNode(avlTreeServiceName, lastElem, index);
-				updateByDateTreeNode(avlTreeDate, lastElem, index);
-				delNode(avlTreePassport, valuePasport, heightChangedPassport,delElem);
-				delNode(avlTreeServiceType, valueServiceType, heightChangedServiceType, delElem);
-				delNode(avlTreeServiceName, valueServiceName, heightChangedServiceName, delElem);
-				delNode(avlTreeDate, valueDate, heightChangedDate, delElem);
-				DataStorage::data[index] = lastElem;
-				DataStorage::data.pop_back();
-				MessageBox::Show(this, "Cayaea oniaoii oaaeaia", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				DataTable^ tablTest = gcnew DataTable();
-				tablTest->Rows->Clear();
-				RequestsDataGrid->DataSource = tablTest;
-				tablTest->Columns->Add("Ianii?o");
-				tablTest->Columns->Add("Iacaaiea oneoae");
-				tablTest->Columns->Add("Oei oneoae");
-				tablTest->Columns->Add("Aaoa");
-				for (int i = 0; i < DataStorage::data.size(); i++) {
-					DataRow^ row = tablTest->NewRow();
-					string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
-					row["Ianii?o"] = gcnew String(passport.c_str());
-					row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
-					row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
-					string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
-					row["Aaoa"] = gcnew String(date.c_str());
-					tablTest->Rows->Add(row);
-				}
-
+			if (stoi(date.month) > 12) {
+				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			else {
-				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				Passport passport = Passport();
+				passport.number = numberPassport;
+				passport.series = seriesPassport;
+				RequestsEntity* entity = new RequestsEntity();
+				entity->date = date;
+				entity->passport = passport;
+				entity->serviceName = serviceName;
+				entity->serviceType = serviceType;
+				DataStorage dataStorage = DataStorage();
+				treeNode*& avlTreePassport = DataStorage::avlTreePassport;
+				treeNode*& avlTreeDate = DataStorage::avlTreeDate;
+				treeNode*& avlTreeServiceType = DataStorage::avlTreeServiceType;
+				treeNode*& avlTreeServiceName = DataStorage::avlTreeServiceName;
+				RequestsHashTable requestsHashTable = DataStorage::requestsHashTable;
+				int count = 0;
+				searchByPassportTreeNode(avlTreePassport, entity, count);
+				bool result_searchByPassportTreeNode = DataStorage::resultSerch;
+				if (result_searchByPassportTreeNode) {
+					int index = DataStorage::indexSearch;
+					RequestsEntity* delElem = DataStorage::data[index];
+					RequestsEntity* lastElem = DataStorage::data.back();
+					listNodeElem* valuePasport = new listNodeElem();
+					valuePasport->index = index;
+					valuePasport->value = to_string(delElem->passport.series) + to_string(delElem->passport.number);
+					listNodeElem* valueDate = new listNodeElem();
+					valueDate->index = index;
+					valueDate->value = delElem->date.day + "." + delElem->date.month + "." + delElem->date.year;
+					listNodeElem* valueServiceType = new listNodeElem();
+					valueServiceType->index = index;
+					valueServiceType->value = delElem->serviceType;
+					listNodeElem* valueServiceName = new listNodeElem();
+					valueServiceName->index = index;
+					valueServiceName->value = delElem->serviceName;
+					bool heightChangedPassport = false;
+					bool heightChangedServiceType = false;
+					bool heightChangedServiceName = false;
+					bool heightChangedDate = false;
+					requestsHashTable.remove(delElem);
+					if (index != DataStorage::data.size() - 1) {
+						updateByPassportTreeNode(avlTreePassport, lastElem, index);
+						updateServiceTypeTreeNode(avlTreeServiceType, lastElem, index);
+						updateServiceNameTreeNode(avlTreeServiceName, lastElem, index);
+						updateByDateTreeNode(avlTreeDate, lastElem, index);
+					}
+					delNode(avlTreePassport, valuePasport, heightChangedPassport, delElem);
+					delNode(avlTreeServiceType, valueServiceType, heightChangedServiceType, delElem);
+					delNode(avlTreeServiceName, valueServiceName, heightChangedServiceName, delElem);
+					delNode(avlTreeDate, valueDate, heightChangedDate, delElem);
+					DataStorage::data[index] = lastElem;
+					DataStorage::data.pop_back();
+					MessageBox::Show(this, "Cayaea oniaoii oaaeaia", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
+					DataTable^ tablTest = gcnew DataTable();
+					tablTest->Rows->Clear();
+					RequestsDataGrid->DataSource = tablTest;
+					tablTest->Columns->Add("Ianii?o");
+					tablTest->Columns->Add("Iacaaiea oneoae");
+					tablTest->Columns->Add("Oei oneoae");
+					tablTest->Columns->Add("Aaoa");
+					for (int i = 0; i < DataStorage::data.size(); i++) {
+						DataRow^ row = tablTest->NewRow();
+						string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
+						row["Ianii?o"] = gcnew String(passport.c_str());
+						row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+						row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+						string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
+						row["Aaoa"] = gcnew String(date.c_str());
+						tablTest->Rows->Add(row);
+					}
+
+				}
+				else {
+					MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				}
 			}
+			
 		}
 		catch (exception& err) {
 			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1576,7 +1604,7 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 || !hasOnlyNonAlphanumeric(serviceName) || !hasOnlyNonAlphanumeric(serviceType) || !hasOnlyDigitsAndDots(dateString)) {
 		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
@@ -1584,27 +1612,33 @@ private: System::Void dateSearchBTN_Click(System::Object^ sender, System::EventA
 			seriesPassport = stoi(seriesPassportText);
 			numberPassport = stoi(numberPassportText);
 			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			treeNode* avlTreeDate = DataStorage::avlTreeDate;
-			int count = 0;
-			searchByDateTreeNode(avlTreeDate, entity, count);
-			bool result_searchByDateTreeNode = DataStorage::resultSerch;
-			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-			if (result_searchByDateTreeNode) {
-				this->resultSearch->Text = gcnew String("Iaeaai");
+			if (stoi(date.month) > 12) {
+				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Ia iaeaai");
+				Passport passport = Passport();
+				passport.number = numberPassport;
+				passport.series = seriesPassport;
+				RequestsEntity* entity = new RequestsEntity();
+				entity->date = date;
+				entity->passport = passport;
+				entity->serviceName = serviceName;
+				entity->serviceType = serviceType;
+				treeNode* avlTreeDate = DataStorage::avlTreeDate;
+				int count = 0;
+				searchByDateTreeNode(avlTreeDate, entity, count);
+				bool result_searchByDateTreeNode = DataStorage::resultSerch;
+				this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+				if (result_searchByDateTreeNode) {
+					this->resultSearch->Text = gcnew String("Iaeaai");
+				}
+				else {
+					this->resultSearch->Text = gcnew String("Ia iaeaai");
+				}
+				printTree(avlTreeDate, nullptr);
+				cout << endl;
 			}
-			printTree(avlTreeDate, nullptr);
-			cout << endl;
+			
 		}
 		catch (exception& err) {
 			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1622,7 +1656,7 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 || !hasOnlyNonAlphanumeric(serviceName) || !hasOnlyNonAlphanumeric(serviceType) || !hasOnlyDigitsAndDots(dateString)) {
 		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
@@ -1630,27 +1664,33 @@ private: System::Void searchByTypeOfServiceBTN_Click(System::Object^ sender, Sys
 			seriesPassport = stoi(seriesPassportText);
 			numberPassport = stoi(numberPassportText);
 			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			treeNode* avlTreeServiceType = DataStorage::avlTreeServiceType;
-			int count = 0;
-			searchByServiceTypeTreeNode(avlTreeServiceType, entity, count);
-			bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
-			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-			if (result_searchByServiceTypeTreeNode) {
-				this->resultSearch->Text = gcnew String("Iaeaai");
+			if (stoi(date.month) > 12) {
+				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Ia iaeaai");
+				Passport passport = Passport();
+				passport.number = numberPassport;
+				passport.series = seriesPassport;
+				RequestsEntity* entity = new RequestsEntity();
+				entity->date = date;
+				entity->passport = passport;
+				entity->serviceName = serviceName;
+				entity->serviceType = serviceType;
+				treeNode* avlTreeServiceType = DataStorage::avlTreeServiceType;
+				int count = 0;
+				searchByServiceTypeTreeNode(avlTreeServiceType, entity, count);
+				bool result_searchByServiceTypeTreeNode = DataStorage::resultSerch;
+				this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+				if (result_searchByServiceTypeTreeNode) {
+					this->resultSearch->Text = gcnew String("Iaeaai");
+				}
+				else {
+					this->resultSearch->Text = gcnew String("Ia iaeaai");
+				}
+				printTree(avlTreeServiceType, nullptr);
+				cout << endl;
 			}
-			printTree(avlTreeServiceType, nullptr);
-			cout << endl;
+			
 		}
 		catch (exception& err) {
 			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1669,7 +1709,7 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 	string numberPassportText = marshal_as<std::string>(this->tBNumberPassport->Text);
 	int seriesPassport;
 	int numberPassport;
-	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0) {
+	if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 || !hasOnlyNonAlphanumeric(serviceName) || !hasOnlyNonAlphanumeric(serviceType) || !hasOnlyDigitsAndDots(dateString)) {
 		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
@@ -1677,28 +1717,34 @@ private: System::Void searchByServiceNameBTN_Click(System::Object^ sender, Syste
 			seriesPassport = stoi(seriesPassportText);
 			numberPassport = stoi(numberPassportText);
 			date date = inputDateData(dateString);
-			Passport passport = Passport();
-			passport.number = numberPassport;
-			passport.series = seriesPassport;
-			RequestsEntity* entity = new RequestsEntity();
-			entity->date = date;
-			entity->passport = passport;
-			entity->serviceName = serviceName;
-			entity->serviceType = serviceType;
-			treeNode* avlTreeServiceName = DataStorage::avlTreeServiceName;
-			bool heightChanged = false;
-			int count = 0;
-			searchByServiceNameTreeNode(avlTreeServiceName, entity, count);
-			bool result_searchByServiceNameTreeNode = DataStorage::resultSerch;
-			this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
-			if (result_searchByServiceNameTreeNode) {
-				this->resultSearch->Text = gcnew String("Iaeaai");
+			if (stoi(date.month) > 12) {
+				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 			else {
-				this->resultSearch->Text = gcnew String("Ia iaeaai");
+				Passport passport = Passport();
+				passport.number = numberPassport;
+				passport.series = seriesPassport;
+				RequestsEntity* entity = new RequestsEntity();
+				entity->date = date;
+				entity->passport = passport;
+				entity->serviceName = serviceName;
+				entity->serviceType = serviceType;
+				treeNode* avlTreeServiceName = DataStorage::avlTreeServiceName;
+				bool heightChanged = false;
+				int count = 0;
+				searchByServiceNameTreeNode(avlTreeServiceName, entity, count);
+				bool result_searchByServiceNameTreeNode = DataStorage::resultSerch;
+				this->countComparisons->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
+				if (result_searchByServiceNameTreeNode) {
+					this->resultSearch->Text = gcnew String("Iaeaai");
+				}
+				else {
+					this->resultSearch->Text = gcnew String("Ia iaeaai");
+				}
+				printTree(avlTreeServiceName, nullptr);
+				cout << endl;
 			}
-			printTree(avlTreeServiceName, nullptr);
-			cout << endl;
+			
 		}
 		catch (exception& err) {
 			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -1740,7 +1786,7 @@ private:System::Void searchByClientPassport_Click(System::Object^ sender, System
         int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
         passport.number = passnum;
         passport.series = passseries;
-        string email = marshal_as<std::string>(this->tBClientEmail->Text);
+        string email = marshal_as<std::string>(this->tBClientEmai->Text);
         string job = marshal_as<std::string>(this->tBClientJob->Text);
         ClientsEntity* client = new ClientsEntity();
         client->passport = passport;
@@ -1768,7 +1814,7 @@ private:System::Void searchByClientPassport_Click(System::Object^ sender, System
         this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
         DataStorage::countComparisons = 0;
         if (result) {
-            this->resultSearchClient->Text = gcnew String("      ");
+            this->resultSearchClient->Text = gcnew String("ГЌГ Г©Г¤ГҐГ­Г®");
         }
         else {
             this->resultSearchClient->Text = gcnew String("         ");
@@ -1780,16 +1826,23 @@ private: System::Void btnSearchByClientJob_Click(System::Object^ sender, System:
     string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
     Fullname fullname = inputFullnameData(fullnamestr);
     ClientPassport passport = ClientPassport();
-    int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
-    int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	int passnum;
+	int passseries;
+	try {
+		passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+		passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	}
+	catch(exception &err){
+		MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
     passport.number = passnum;
     passport.series = passseries;
     string email = marshal_as<std::string>(this->tBClientEmai->Text);
     string job = marshal_as<std::string>(this->tBClientJob->Text);
-	if (job.size() == 0 || email.size() == 0 || fullnamestr.size() == 0 || passnumstr.size() == 0 || passserstr.size() == 0) {
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	if (!isValidateData(marshal_as<std::string>(this->tBClientPassNum->Text), marshal_as<std::string>(this->tBClientPassSeries->Text),fullnamestr,email,job)) {
+		MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -1810,16 +1863,16 @@ private: System::Void btnSearchByClientJob_Click(System::Object^ sender, System:
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("ГЌГ Г©Г¤ГҐГ­Г®");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("???µ ???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("ГЌГҐ Г­Г Г©Г¤ГҐГ­Г®");
 			}
 			/*print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
 			cout << endl;*/
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 
@@ -1843,93 +1896,110 @@ private: System::Void btnAddClient_Click(System::Object^ sender, System::EventAr
 	string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
 	Fullname fullname = inputFullnameData(fullnamestr);
 	ClientPassport passport = ClientPassport();
-	int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
-	int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	int passnum;
+	int passseries;
+	try {
+		passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+		passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	}
+	catch (exception& err)
+	{
+		MessageBox::Show(this, "ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г»ГҐ Г¤Г Г­Г­Г»ГҐ, ГЇГ°Г®ГўГҐГ°ГјГІГҐ ГЇГ°Г ГўГЁГ«ГјГ­Г®Г±ГІГЁ ГўГўГҐГ¤ВёГ­Г­Г»Гµ Г¤Г Г­Г­Г»Гµ", "ГЋГёГЁГЎГЄГ ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
 	passport.number = passnum;
 	passport.series = passseries;
 	string email = marshal_as<std::string>(this->tBClientEmai->Text);
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
-	ClientsEntity* client = new ClientsEntity();
-	client->passport = passport;
-	client->fullname = fullname;
-	client->email = email;
-	client->job = job;
-	int local = 0;
-	string clientstr = client->fullname.surname + ' ' + client->fullname.name + ' ' + client->fullname.lastname
-		+ ' ' + client->job + ' ' + client->email
-		+ ' ' + to_string(client->passport.series) + to_string(client->passport.number);
-	bool isContain = pre_search(rbtPassport, DataClientsStorage::rbtNullnode, to_string(passport.series) + to_string(passport.number), local);
-
-
-	if (email.size() == 0 || fullnamestr.size() == 0 || job.size() == 0) 
-	{
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-	else if(!isContain)
-	{
-		try
-		{
-			ClientsEntity* client = new ClientsEntity();
-			client->passport = passport;
-			client->fullname = fullname;
-			client->email = email;
-			client->job = job;
-			DataClientsStorage::data.push_back(client);
-			//N????°?»?µ?????µ ?? N…?µN? N‚?°?±?»??N†N? N? ???????µ??????N????? ???»?? ?±?µ?·???
-			clientsHashTable.insert(client, DataClientsStorage::data.size()-1);
-			//PASSPORT
-			RBTData dataPassport;
-			dataPassport.index = DataClientsStorage::data.size() - 1;
-			dataPassport.value = to_string(passport.series) + to_string(passport.number);
-			insertClient(rbtPassport, DataClientsStorage::rbtNullnode, dataPassport);
-			//JOB
-			RBTData dataJob;
-			dataJob.index = DataClientsStorage::data.size() - 1;
-			dataJob.value = job;
-			insertClient(rbtJob, DataClientsStorage::rbtNullnode, dataJob);
-			//Email
-			RBTData dataEmail;
-			dataEmail.index = DataClientsStorage::data.size() - 1;
-			dataEmail.value = email;
-			insertClient(rbtEmail, DataClientsStorage::rbtNullnode, dataEmail);
-			//Fullname
-			RBTData dataFullname;
-			dataFullname.index = DataClientsStorage::data.size() - 1;
-			dataFullname.value = fullnamestr;
-			insertClient(rbtFullname, DataClientsStorage::rbtNullnode, dataFullname);
-			//Client
-			RBTData dataClient;
-			dataClient.index = DataClientsStorage::data.size() - 1;
-			dataClient.value = clientstr;
-			insertClient(rbtClient, DataClientsStorage::rbtNullnode, dataClient);
-
-			MessageBox::Show(this, "?s?»???µ??N‚ ?????±?°???»?µ??", "??N????µN?????", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			DataTable^ tablTestClient = gcnew DataTable();
-			tablTestClient->Rows->Clear();
-			ClientsDataGrid->DataSource = tablTestClient;
-			tablTestClient->Columns->Add("?¤???z");
-			tablTestClient->Columns->Add("?”???»?¶????N?N‚N?");
-			tablTestClient->Columns->Add("email");
-			tablTestClient->Columns->Add("?Y?°N?N?????N€N‚");
-			for (int i = 0; i < DataClientsStorage::data.size(); i++) {
-				DataRow^ rowClients = tablTestClient->NewRow();
-				rowClients["?¤???z"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
-				rowClients["?”???»?¶????N?N‚N?"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
-				rowClients["email"] = gcnew String(DataClientsStorage::data[i]->email.c_str());
-				string passportClient = to_string(DataClientsStorage::data[i]->passport.series) + ' ' + to_string(DataClientsStorage::data[i]->passport.number);
-				//rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
-				rowClients["?Y?°N?N?????N€N‚"] = gcnew String(passportClient.c_str());
-				tablTestClient->Rows->Add(rowClients);
-			}
-		}
-		catch (exception& e)
-		{
-
-		}
+	string passnumstr = to_string(passnum);
+	string passserstr = to_string(passseries);
+	if (!isValidateData(marshal_as<std::string>(this->tBClientPassNum->Text), marshal_as<std::string>(this->tBClientPassSeries->Text), fullnamestr, email, job)) {
+		MessageBox::Show(this, "ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г»ГҐ Г¤Г Г­Г­Г»ГҐ, ГЇГ°Г®ГўГҐГ°ГјГІГҐ ГЇГ°Г ГўГЁГ«ГјГ­Г®Г±ГІГЁ ГўГўГҐГ¤ВёГ­Г­Г»Гµ Г¤Г Г­Г­Г»Гµ", "ГЋГёГЁГЎГЄГ ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
-		MessageBox::Show(this, "???°?????? ???»???µ??N‚ N??¶?µ ???°N…??????N‚N?N? ?? ?±?°?·?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}			
+		ClientsEntity* client = new ClientsEntity();
+		client->passport = passport;
+		client->fullname = fullname;
+		client->email = email;
+		client->job = job;
+		int local = 0;
+		string clientstr = client->fullname.surname + ' ' + client->fullname.name + ' ' + client->fullname.lastname
+			+ ' ' + client->job + ' ' + client->email
+			+ ' ' + to_string(client->passport.series) + to_string(client->passport.number);
+		bool isContain = pre_search(rbtPassport, DataClientsStorage::rbtNullnode, passserstr + passnumstr, local);
+
+
+		if (email.size() == 0 || fullnamestr.size() == 0 || job.size() == 0)
+		{
+			MessageBox::Show(this, "ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г»ГҐ Г¤Г Г­Г­Г»ГҐ, ГЇГ°Г®ГўГҐГ°ГјГІГҐ ГЇГ°Г ГўГЁГ«ГјГ­Г®Г±ГІГЁ ГўГўГҐГ¤ВёГ­Г­Г»Гµ Г¤Г Г­Г­Г»Гµ", "ГЋГёГЁГЎГЄГ ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else if (!isContain)
+		{
+			try
+			{
+				ClientsEntity* client = new ClientsEntity();
+				client->passport = passport;
+				client->fullname = fullname;
+				client->email = email;
+				client->job = job;
+				DataClientsStorage::data.push_back(client);
+				//N????В°?В»?Вµ?????Вµ ?? NвЂ¦?ВµN? NвЂљ?В°?В±?В»??NвЂ N? N? ???????Вµ??????N????? ???В»?? ?В±?Вµ?В·???
+				clientsHashTable.insert(client, DataClientsStorage::data.size() - 1);
+				//PASSPORT
+				RBTData dataPassport;
+				dataPassport.index = DataClientsStorage::data.size() - 1;
+				dataPassport.value = to_string(passport.series) + to_string(passport.number);
+				insertClient(rbtPassport, DataClientsStorage::rbtNullnode, dataPassport);
+				//JOB
+				RBTData dataJob;
+				dataJob.index = DataClientsStorage::data.size() - 1;
+				dataJob.value = job;
+				insertClient(rbtJob, DataClientsStorage::rbtNullnode, dataJob);
+				//Email
+				RBTData dataEmail;
+				dataEmail.index = DataClientsStorage::data.size() - 1;
+				dataEmail.value = email;
+				insertClient(rbtEmail, DataClientsStorage::rbtNullnode, dataEmail);
+				//Fullname
+				RBTData dataFullname;
+				dataFullname.index = DataClientsStorage::data.size() - 1;
+				dataFullname.value = fullnamestr;
+				insertClient(rbtFullname, DataClientsStorage::rbtNullnode, dataFullname);
+				//Client
+				RBTData dataClient;
+				dataClient.index = DataClientsStorage::data.size() - 1;
+				dataClient.value = clientstr;
+				insertClient(rbtClient, DataClientsStorage::rbtNullnode, dataClient);
+
+				MessageBox::Show(this, "ГЉГ«ГЁГҐГ­ГІ ГіГ±ГЇГҐГёГ­Г® Г¤Г®ГЎГ ГўГ«ГҐГ­", "Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				DataTable^ tablTestClient = gcnew DataTable();
+				tablTestClient->Rows->Clear();
+				ClientsDataGrid->DataSource = tablTestClient;
+				tablTestClient->Columns->Add("Г”Г€ГЋ");
+				tablTestClient->Columns->Add("Г„Г®Г«Г¦Г­Г®Г±ГІГј");
+				tablTestClient->Columns->Add("email");
+				tablTestClient->Columns->Add("ГЏГ Г±Г±ГЇГ®Г°ГІ");
+				for (int i = 0; i < DataClientsStorage::data.size(); i++) {
+					DataRow^ rowClients = tablTestClient->NewRow();
+					rowClients["Г”Г€ГЋ"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
+					rowClients["Г„Г®Г«Г¦Г­Г®Г±ГІГј"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
+					rowClients["email"] = gcnew String(DataClientsStorage::data[i]->email.c_str());
+					string passportClient = to_string(DataClientsStorage::data[i]->passport.series) + ' ' + to_string(DataClientsStorage::data[i]->passport.number);
+					//rowClients["Ianii?oiua aaiiua"] = gcnew String(passport.c_str());
+					rowClients["ГЏГ Г±Г±ГЇГ®Г°ГІ"] = gcnew String(passportClient.c_str());
+					tablTestClient->Rows->Add(rowClients);
+				}
+			}
+			catch (exception& e)
+			{
+
+			}
+		}
+		else {
+			MessageBox::Show(this, "Г’Г ГЄГ®Г© ГЄГ«ГЁГҐГ­ГІ ГіГ¦ГҐ ГҐГ±ГІГј Гў Г±ГЇГ°Г ГўГ®Г·Г­ГЁГЄГҐ", "Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
+
+
 }
 
 
@@ -1940,7 +2010,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1948,7 +2018,7 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		ServiceEntity* entity = new ServiceEntity();
@@ -1969,10 +2039,10 @@ private: System::Void divisionSearchBtn_Click(System::Object^ sender, System::Ev
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Не найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -1986,7 +2056,7 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -1994,7 +2064,7 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		serviceTerm = stoi(serviceTermStr);
@@ -2017,10 +2087,10 @@ private: System::Void searchByServiceTypeBtn_Click(System::Object^ sender, Syste
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Не найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		printTreeA(rbTreeType, 8, leaf);
 		cout << endl;
@@ -2034,7 +2104,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2042,7 +2112,7 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 		serviceTerm = stoi(serviceTermStr);
@@ -2065,10 +2135,10 @@ private: System::Void searchByServiceName_Click(System::Object^ sender, System::
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Не найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -2082,7 +2152,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2090,7 +2160,7 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		Passport passport = Passport();
 		ServiceEntity* entity = new ServiceEntity();
@@ -2111,10 +2181,10 @@ private: System::Void searchServiceByTermBtb_Click(System::Object^ sender, Syste
 		this->countComparationsServices->Text = gcnew String(to_string(DataStorage::countComparisons).c_str());
 		DataStorage::countComparisons = 0;
 		if (result) {
-			this->resultSearchServices2->Text = gcnew String("Найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		else {
-			this->resultSearchServices2->Text = gcnew String("Не найден");
+			this->resultSearchServices2->Text = gcnew String("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
 		}
 		printTreeA(rbTreeDivision, 8, leaf);
 		cout << endl;
@@ -2130,7 +2200,7 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2138,7 +2208,7 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
 			serviceTerm = stoi(serviceTermStr);
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		ServiceEntity* entity = new ServiceEntity();
 		entity->division = serviceDivision;
@@ -2154,10 +2224,10 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
 		this->countComparationsServices->Text = gcnew String(to_string(res[0]).c_str());
 		if (res[2] != -1) {
 			if (isEqualServices(data[res[2]], entity)) {
-				this->resultSearchServices2->Text = gcnew String("Найден");
+				this->resultSearchServices2->Text = gcnew String("пїЅпїЅпїЅпїЅпїЅпїЅ");
 			}
 			else {
-				this->resultSearchServices2->Text = gcnew String("Не найден");
+				this->resultSearchServices2->Text = gcnew String("пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
 			}
 		}
 		servicesHashTable.printTable();
@@ -2168,7 +2238,7 @@ private: System::Void searchByNameAndType_Click(System::Object^ sender, System::
 private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
 	vector<ServiceEntity*> data = DataStorage::dataServices;
 	writeData(data, "stdservices.txt");
-	MessageBox::Show(this, "Данные услуг успешно сохранены", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
 	treeNode*& avlTreePassport = DataStorage::avlTreePassport;
@@ -2222,73 +2292,82 @@ private: System::Void addRequestsBTN_Click(System::Object^ sender, System::Event
 		seriesPassport = stoi(seriesPassportText);
 		numberPassport = stoi(numberPassportText);
 		date date = inputDateData(dateString);
-		Passport passport = Passport();
-		passport.number = numberPassport;
-		int jopa = 4;
-		passport.series = seriesPassport;
-		RequestsEntity* requsestsEntity = new RequestsEntity();
-		requsestsEntity->date = date;
-		requsestsEntity->passport = passport;
-		requsestsEntity->serviceName = serviceName;
-		requsestsEntity->serviceType = serviceType;
-		vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(requsestsEntity);
-		if (result_searchByTypeAndNameOfService[1] != -1) {
-			MessageBox::Show(this, "Oaeay cayaea o?a nouanoaoao", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-		else if (!flagClient) {
-			MessageBox::Show(this, "Eeeaio n oaeeie aaiiuie ia iaeaai", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-		else if (!flagServices) {
-			MessageBox::Show(this, "Oeacaiiua iacaaiea e oei oneoae ia iaeaaiu", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-		else if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 ) {
-			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		if (stoi(date.month) > 12) {
+			MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Oaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		else {
-			try {
-				bool heightChanged = false;
-				DataStorage::data.push_back(requsestsEntity);
-				requestsHashTable.insert(requsestsEntity);
-				listNodeElem* valuePasport = new listNodeElem();
-				valuePasport->index = DataStorage::data.size() - 1;
-				valuePasport->value = to_string(requsestsEntity->passport.series) + to_string(requsestsEntity->passport.number);
-				addNode(avlTreePassport, valuePasport, heightChanged);
-				listNodeElem* valueDate = new listNodeElem();
-				valueDate->index = DataStorage::data.size() - 1;
-				valueDate->value = requsestsEntity->date.day + "." + requsestsEntity->date.month + "." + requsestsEntity->date.year;
-				addNode(avlTreeDate, valueDate, heightChanged);
-				listNodeElem* valueServiceType = new listNodeElem();
-				valueServiceType->index = DataStorage::data.size() - 1;
-				valueServiceType->value = entity->serviceType;
-				addNode(avlTreeServiceType, valueServiceType, heightChanged);
-				listNodeElem* valueServiceName = new listNodeElem();
-				valueServiceName->index = DataStorage::data.size() - 1;
-				valueServiceName->value = entity->serviceName;
-				addNode(avlTreeServiceName, valueServiceName, heightChanged);
-				MessageBox::Show(this, "Cayaea oniaoii aiaaaeaia", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				DataTable^ tablTest2 = gcnew DataTable();
-				tablTest2->Rows->Clear();
-				RequestsDataGrid->DataSource = tablTest2;
-				tablTest2->Columns->Add("Ianii?o");
-				tablTest2->Columns->Add("Iacaaiea oneoae");
-				tablTest2->Columns->Add("Oei oneoae");
-				tablTest2->Columns->Add("Aaoa");
-				for (int i = 0; i < DataStorage::data.size(); i++) {
-					DataRow^ row = tablTest2->NewRow();
-					string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
-					row["Ianii?o"] = gcnew String(passport.c_str());
-					row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
-					row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
-					string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
-					row["Aaoa"] = gcnew String(date.c_str());
-					tablTest2->Rows->Add(row);
-				}
+			Passport passport = Passport();
+			passport.number = numberPassport;
+			int jopa = 4;
+			passport.series = seriesPassport;
+			RequestsEntity* requsestsEntity = new RequestsEntity();
+			requsestsEntity->date = date;
+			requsestsEntity->passport = passport;
+			requsestsEntity->serviceName = serviceName;
+			requsestsEntity->serviceType = serviceType;
+			vector<int> result_searchByTypeAndNameOfService = requestsHashTable.search(requsestsEntity);
+			treeNode* avlTreePassport = DataStorage::avlTreePassport;
+			int count = 0;
+			searchByPassportTreeNodeFIX(avlTreePassport, requsestsEntity, count);
+			if (result_searchByTypeAndNameOfService[1] != -1 || DataStorage::resultSerch == true) {
+				MessageBox::Show(this, "Г’Г ГЄГ Гї Г§Г ГїГўГЄГ  ГіГ¦ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ", "Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
-			catch (exception& err) {
+			else if (!flagClient) {
+				MessageBox::Show(this, "ГЉГ«ГЁГҐГ­ГІ Г± ГІГ ГЄГЁГ¬ГЁ Г¤Г Г­Г­Г»Г¬ГЁ Г­ГҐ Г­Г Г©Г¤ГҐГ­", "Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else if (!flagServices) {
+				MessageBox::Show(this, "Г“ГЄГ Г§Г Г­Г­Г»ГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГЁ ГІГЁГЇ ГіГ±Г«ГіГЈГЁ Г­ГҐ Г­Г Г©Г¤ГҐГ­Г»", "Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else if (serviceName.size() == 0 || serviceType.size() == 0 || dateString.size() == 0 || seriesPassportText.size() == 0 || numberPassportText.size() == 0 || !hasOnlyNonAlphanumeric(serviceName) || !hasOnlyNonAlphanumeric(serviceType) || !hasOnlyDigitsAndDots(dateString)) {
 				MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
+			else {
+				try {
+					bool heightChanged = false;
+					DataStorage::data.push_back(requsestsEntity);
+					requestsHashTable.insert(requsestsEntity);
+					listNodeElem* valuePasport = new listNodeElem();
+					valuePasport->index = DataStorage::data.size() - 1;
+					valuePasport->value = to_string(requsestsEntity->passport.series) + to_string(requsestsEntity->passport.number);
+					addNode(avlTreePassport, valuePasport, heightChanged);
+					listNodeElem* valueDate = new listNodeElem();
+					valueDate->index = DataStorage::data.size() - 1;
+					valueDate->value = requsestsEntity->date.day + "." + requsestsEntity->date.month + "." + requsestsEntity->date.year;
+					addNode(avlTreeDate, valueDate, heightChanged);
+					listNodeElem* valueServiceType = new listNodeElem();
+					valueServiceType->index = DataStorage::data.size() - 1;
+					valueServiceType->value = entity->serviceType;
+					addNode(avlTreeServiceType, valueServiceType, heightChanged);
+					listNodeElem* valueServiceName = new listNodeElem();
+					valueServiceName->index = DataStorage::data.size() - 1;
+					valueServiceName->value = entity->serviceName;
+					addNode(avlTreeServiceName, valueServiceName, heightChanged);
+					MessageBox::Show(this, "Cayaea oniaoii aiaaaeaia", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Information);
+					DataTable^ tablTest2 = gcnew DataTable();
+					tablTest2->Rows->Clear();
+					RequestsDataGrid->DataSource = tablTest2;
+					tablTest2->Columns->Add("Ianii?o");
+					tablTest2->Columns->Add("Iacaaiea oneoae");
+					tablTest2->Columns->Add("Oei oneoae");
+					tablTest2->Columns->Add("Aaoa");
+					for (int i = 0; i < DataStorage::data.size(); i++) {
+						DataRow^ row = tablTest2->NewRow();
+						string passport = to_string(DataStorage::data[i]->passport.series) + " " + to_string(DataStorage::data[i]->passport.number);
+						row["Ianii?o"] = gcnew String(passport.c_str());
+						row["Iacaaiea oneoae"] = gcnew String(DataStorage::data[i]->serviceName.c_str());
+						row["Oei oneoae"] = gcnew String(DataStorage::data[i]->serviceType.c_str());
+						string date = DataStorage::data[i]->date.day + "." + DataStorage::data[i]->date.month + "." + DataStorage::data[i]->date.year;
+						row["Aaoa"] = gcnew String(date.c_str());
+						tablTest2->Rows->Add(row);
+					}
+				}
+				catch (exception& err) {
+					MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				}
 
+			}
 		}
+		
 	}
 	catch (exception& err) {
 		MessageBox::Show(this, "Iaei??aeoiua aaiiua , i?iaa?uoa aaaaaiio? eioi?iaoe? i cayaea", "Aiaaaeaiea", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -2314,7 +2393,7 @@ private: System::Void addService_Click(System::Object^ sender, System::EventArgs
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Проверьте правильность введенных данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2356,31 +2435,31 @@ private: System::Void addService_Click(System::Object^ sender, System::EventArgs
 				term.value = serviceTermStr;
 				insertTerm(rbTreeTerm, term, leaf);
 
-				MessageBox::Show(this, "Услуга успешно добавлена", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				DataTable^ tablServices = gcnew DataTable();
 				tablServices->Rows->Clear();
 				ServicesDataGrid->DataSource = tablServices;
-				tablServices->Columns->Add("Тип услуги");
-				tablServices->Columns->Add("Подразделение");
-				tablServices->Columns->Add("Название услуги");
-				tablServices->Columns->Add("Срок исполнения");
+				tablServices->Columns->Add("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
+				tablServices->Columns->Add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+				tablServices->Columns->Add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
+				tablServices->Columns->Add("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 				for (int i = 0; i < DataStorage::dataServices.size(); i++) {
 					DataRow^ rowServices = tablServices->NewRow();
-					rowServices["Тип услуги"] = gcnew String(DataStorage::dataServices[i]->serviceType.c_str());
-					rowServices["Подразделение"] = gcnew String(DataStorage::dataServices[i]->division.c_str());
-					rowServices["Название услуги"] = gcnew String(DataStorage::dataServices[i]->serviceName.c_str());
+					rowServices["пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(DataStorage::dataServices[i]->serviceType.c_str());
+					rowServices["пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(DataStorage::dataServices[i]->division.c_str());
+					rowServices["пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(DataStorage::dataServices[i]->serviceName.c_str());
 					string term = to_string(DataStorage::dataServices[i]->term);
-					rowServices["Срок исполнения"] = gcnew String(term.c_str());
+					rowServices["пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(term.c_str());
 					tablServices->Rows->Add(rowServices);
 				}
 			}
 			else
 			{
-				MessageBox::Show(this, "Такая услуга уже существует", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 
@@ -2404,7 +2483,7 @@ private: System::Void deleteServiceBTN_Click(System::Object^ sender, System::Eve
 	string serviceTermStr = marshal_as<std::string>(this->tBTerm->Text);
 
 	if (serviceName.size() == 0 || serviceType.size() == 0 || serviceDivision.size() == 0 || serviceTermStr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте введенную информацию об услуге", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		int serviceTerm;
@@ -2451,7 +2530,6 @@ private: System::Void deleteServiceBTN_Click(System::Object^ sender, System::Eve
 					updateByServiceTermTreeNode(rbTreeTerm, leaf, lastElem, index);
 				}
 
-
 				deleteElement(rbTreeType, type, leaf, entity);
 				deleteElement(rbTreeName, name, leaf, entity);
 				deleteElement(rbTreeDivision, division, leaf, entity);
@@ -2461,31 +2539,31 @@ private: System::Void deleteServiceBTN_Click(System::Object^ sender, System::Eve
 				DataStorage::dataServices[index] = lastElem;
 				DataStorage::dataServices.pop_back();
 
-				MessageBox::Show(this, "Услуга успешно удалена", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				DataTable^ tablServices = gcnew DataTable();
 				tablServices->Rows->Clear();
 				ServicesDataGrid->DataSource = tablServices;
-				tablServices->Columns->Add("Тип услуги");
-				tablServices->Columns->Add("Подразделение");
-				tablServices->Columns->Add("Название услуги");
-				tablServices->Columns->Add("Срок исполнения");
+				tablServices->Columns->Add("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
+				tablServices->Columns->Add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+				tablServices->Columns->Add("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
+				tablServices->Columns->Add("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
 				for (int i = 0; i < DataStorage::dataServices.size(); i++) {
 					DataRow^ rowServices = tablServices->NewRow();
-					rowServices["Тип услуги"] = gcnew String(DataStorage::dataServices[i]->serviceType.c_str());
-					rowServices["Подразделение"] = gcnew String(DataStorage::dataServices[i]->division.c_str());
-					rowServices["Название услуги"] = gcnew String(DataStorage::dataServices[i]->serviceName.c_str());
+					rowServices["пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(DataStorage::dataServices[i]->serviceType.c_str());
+					rowServices["пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(DataStorage::dataServices[i]->division.c_str());
+					rowServices["пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(DataStorage::dataServices[i]->serviceName.c_str());
 					string term = to_string(DataStorage::dataServices[i]->term);
-					rowServices["Срок исполнения"] = gcnew String(term.c_str());
+					rowServices["пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"] = gcnew String(term.c_str());
 					tablServices->Rows->Add(rowServices);
 				}
 				DataStorage::servicesHashTable = servicesHashTable;
 			}
 			else {
-				MessageBox::Show(this, "Удаляемая услуга не содержится в базе данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "Неверный тип данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 		
 	}
@@ -2511,7 +2589,7 @@ private: System::Void saveDebugServices_Click(System::Object^ sender, System::Ev
 	debugPrintTreeA(DataStorage::rbTreeTerm, 4, leaf, fout);
 
 	fout.close();
-	MessageBox::Show(this, "Структуры даннх успешно сохранены в файл debugServices.txt", "Успешно", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ debugServices.txt", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2522,11 +2600,11 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	int passseries;
 	try {
 		passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
-		passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+		passseries = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	passport.number = passnum;
 	passport.series = passseries;
@@ -2534,8 +2612,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
-	if (isValidateData(passseries, passnum, fullnamestr, email, job)) {
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	if (!isValidateData(marshal_as<std::string>(this->tBClientPassNum->Text), marshal_as<std::string>(this->tBClientPassNum->Text), fullnamestr, email, job)) {
+		MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2556,16 +2634,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("ГЌГ Г©Г¤ГҐГ­Г®");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("???µ ???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("ГЌГҐ Г­Г Г©Г¤ГҐГ­Г®");
 			}
 			//print(rbt, DataClientsStorage::rbtNullnode, 4, 4);
 			//cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 }
@@ -2582,7 +2660,7 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	passport.number = passnum;
 	passport.series = passseries;
@@ -2590,8 +2668,8 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
-	if (isValidateData(passseries, passnum, fullnamestr, email, job)) {
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	if (!isValidateData(marshal_as<std::string>(this->tBClientPassNum->Text), marshal_as<std::string>(this->tBClientPassSeries->Text), fullnamestr, email, job)) {
+		MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2613,24 +2691,21 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("???пїЅ?????пїЅ????");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("???µ ???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("???пїЅ ???пїЅ?????пїЅ????");
 			}
 			print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
 			cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 	}
 }
 private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
-
-}
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 	string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
 	Fullname fullname = inputFullnameData(fullnamestr);
 	ClientPassport passport = ClientPassport();
@@ -2642,7 +2717,7 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
@@ -2650,8 +2725,8 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 	passport.series = passseries;
 	string email = marshal_as<std::string>(this->tBClientEmai->Text);
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
-	if (isValidateData(passseries, passnum, fullnamestr, email, job)) {
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	if (!isValidateData(marshal_as<std::string>(this->tBClientPassNum->Text), marshal_as<std::string>(this->tBClientPassSeries->Text), fullnamestr, email, job)) {
+		MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2672,17 +2747,62 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("ГЌГ Г©Г¤ГҐГ­Г®");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("???µ ???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("ГЌГҐ Г­Г Г©Г¤ГҐГ­Г®");
 			}
 			cout << endl;
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
+	Fullname fullname = inputFullnameData(fullnamestr);
+	ClientPassport passport = ClientPassport();
+	int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+	int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	passport.number = passnum;
+	passport.series = passseries;
+	string email = marshal_as<std::string>(this->tBClientEmai->Text);
+	string job = marshal_as<std::string>(this->tBClientJob->Text);
+	ClientsEntity* client = new ClientsEntity();
+	client->passport = passport;
+	client->fullname = fullname;
+	client->email = email;
+	client->job = job;
+	DataClientsStorage::rbtPassport = root_init(DataClientsStorage::rbtNullnode);
+	Node* rbt = DataClientsStorage::rbtPassport;
+	vector<ClientsEntity*> clients = DataClientsStorage::data;
+	for (int i = 0; i < clients.size(); i++) {
+		string series = to_string(clients[i]->passport.series);
+		string number = to_string(clients[i]->passport.number);
+		string valueText = series + number;
+		RBTData value;
+		value.index = i;
+		value.value = valueText;
+		insertClient(rbt, DataClientsStorage::rbtNullnode, value);
+	}
+	int count = 0;
+	RBTData searchable;
+	searchable.value = to_string(client->passport.series) + to_string(client->passport.number);
+	searchable.index = 0;
+	pre_search(rbt, DataClientsStorage::rbtNullnode, searchable.value, count);
+	bool result = DataClientsStorage::resultSearch;
+	this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
+	DataStorage::countComparisons = 0;
+	if (result) {
+		this->resultSearchClient->Text = gcnew String("ГЌГ Г©Г¤ГҐГ­Г®");
+	}
+	else {
+		this->resultSearchClient->Text = gcnew String("ГЌГҐ Г­Г Г©Г¤ГҐГ­Г®");
+	}
+	print(rbt, DataClientsStorage::rbtNullnode, 4, 2);
+	cout << endl;
+	
 }
 
 private: System::Void btnSearchByClient_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2697,14 +2817,14 @@ private: System::Void btnSearchByClient_Click(System::Object^ sender, System::Ev
 	}
 	catch (exception& err)
 	{
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	passport.number = passnum;
 	passport.series = passseries;
 	string email = marshal_as<std::string>(this->tBClientEmai->Text);
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
-	if (isValidateData(passseries,passnum,fullnamestr,email,job)) {
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	if (!isValidateData(marshal_as<std::string>(this->tBClientPassNum->Text), marshal_as<std::string>(this->tBClientPassSeries->Text),fullnamestr,email,job)) {
+		MessageBox::Show(this, "???Вµ????NЛ†NЛ†?Вµ??NвЂљ??NвЂ№?Вµ ???В°????NвЂ№?Вµ, ??NЛ†?????ВµNЛ†N?NвЂљ?Вµ ?????Вµ???Вµ????N?NZ ????NвЂћ??NЛ†???В°NвЂ ??NZ ?? ???В»???Вµ??NвЂљ?Вµ", "?zN????В±???В°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else {
 		try {
@@ -2728,15 +2848,15 @@ private: System::Void btnSearchByClient_Click(System::Object^ sender, System::Ev
 			this->countOfCompareClients->Text = gcnew String(to_string(DataClientsStorage::countComparisons).c_str());
 			DataStorage::countComparisons = 0;
 			if (result) {
-				this->resultSearchClient->Text = gcnew String("???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("???пїЅ?????пїЅ????");
 			}
 			else {
-				this->resultSearchClient->Text = gcnew String("???µ ???°?????µ????");
+				this->resultSearchClient->Text = gcnew String("???пїЅ ???пїЅ?????пїЅ????");
 			}
 			//cout << searchable.value << "\n";
 		}
 			catch (exception& err) {
-				MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 
@@ -2756,20 +2876,24 @@ private: System::Void btnDeletionClient_Click(System::Object^ sender, System::Ev
 	int local = 0;
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
-	bool isContains = pre_search(rbtPassport, DataClientsStorage::rbtNullnode, to_string(passport.series) + to_string(passport.number), local);
+	Node*& rbtClient = DataClientsStorage::rbtClient;
+	ClientsEntity* client = new ClientsEntity();
+	client->passport = passport;
+	client->fullname = fullname;
+	client->email = email;
+	client->job = job;
+	string clientstr = client->fullname.surname + ' ' + client->fullname.name + ' ' + client->fullname.lastname
+		+ ' ' + client->job + ' ' + client->email
+		+ ' ' + to_string(client->passport.series) + to_string(client->passport.number);
+	bool isContains = pre_search(rbtClient, DataClientsStorage::rbtNullnode, clientstr, local);
 	if (job.size() == 0 || email.size() == 0 || fullnamestr.size() == 0 || passnumstr.size() == 0 || passserstr.size() == 0) {
-		MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageBox::Show(this, "???пїЅ????NпїЅNпїЅ?пїЅ??NпїЅ??NпїЅ?пїЅ ???пїЅ????NпїЅ?пїЅ, ??NпїЅ?????пїЅNпїЅN?NпїЅ?пїЅ ?????пїЅ???пїЅ????N?NZ ????NпїЅ??NпїЅ???пїЅNпїЅ??NZ ?? ???пїЅ???пїЅ??NпїЅ?пїЅ", "?zN????пїЅ???пїЅ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else 
 	{
 		try 
 		{
 			if (isContains) {
-				ClientsEntity* client = new ClientsEntity();
-				client->passport = passport;
-				client->fullname = fullname;
-				client->email = email;
-				client->job = job;
 				vector<ClientsEntity*>& clients = DataClientsStorage::data;
 				ClientsHashTable& clientsHashTable = DataClientsStorage::clientsHashTable;
 				Node*& rbtClient = DataClientsStorage::rbtClient;
@@ -2815,35 +2939,46 @@ private: System::Void btnDeletionClient_Click(System::Object^ sender, System::Ev
 					eraseClient(rbtFullname, DataClientsStorage::rbtNullnode, fullnamedata);
 					eraseClient(rbtPassport, DataClientsStorage::rbtNullnode, passportdata);
 					clientsHashTable.deleteEntity(deletionElem);
-					clientsHashTable.changeIndex(lastElement, index);
+					
 					DataClientsStorage::data[index] = lastElement;
+					int trueindex = index;
+					for (int i = 0; i < DataClientsStorage::data.size(); i++)
+					{
+						if (DataClientsStorage::data[i] == DataClientsStorage::data[index]) {
+							DataClientsStorage::data[i] = lastElement;
+							trueindex = i;
+							break;
+						}
+					}
+					int lastindex = DataClientsStorage::data.size() - 1;
+					clientsHashTable.changeIndex(lastElement, trueindex,lastindex);
 					DataClientsStorage::data.pop_back();
-					MessageBox::Show(this, "?s?»???µ??N‚ N????°?»?µ??", "??N????µN?????", MessageBoxButtons::OK, MessageBoxIcon::Information);
+					MessageBox::Show(this, "ГЉГ«ГЁГҐГ­ГІ ГіГ±ГЇГҐГёГ­Г® ГіГ¤Г Г«ГҐГ­", "Г“Г¤Г Г«ГҐГ­ГЁГҐ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 					DataTable^ tablTestClient = gcnew DataTable();
 					tablTestClient->Rows->Clear();
 					ClientsDataGrid->DataSource = tablTestClient;
-					tablTestClient->Columns->Add("?¤???z");
-					tablTestClient->Columns->Add("?”???»?¶????N?N‚N?");
+					tablTestClient->Columns->Add("Г”Г€ГЋ");
+					tablTestClient->Columns->Add("Г„Г®Г«Г¦Г­Г®Г±ГІГј");
 					tablTestClient->Columns->Add("email");
-					tablTestClient->Columns->Add("?Y?°N?N?????N€N‚");
+					tablTestClient->Columns->Add("ГЏГ Г±Г±ГЇГ®Г°ГІ");
 					for (int i = 0; i < DataClientsStorage::data.size(); i++) {
 						DataRow^ rowClients = tablTestClient->NewRow();
-						rowClients["?¤???z"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
-						rowClients["?”???»?¶????N?N‚N?"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
+						rowClients["Г”Г€ГЋ"] = gcnew String((DataClientsStorage::data[i]->fullname.surname + ' ' + DataClientsStorage::data[i]->fullname.name + ' ' + DataClientsStorage::data[i]->fullname.lastname).c_str());
+						rowClients["Г„Г®Г«Г¦Г­Г®Г±ГІГј"] = gcnew String(DataClientsStorage::data[i]->job.c_str());
 						rowClients["email"] = gcnew String(DataClientsStorage::data[i]->email.c_str());
 						string passportClient = to_string(DataClientsStorage::data[i]->passport.series) + ' ' + to_string(DataClientsStorage::data[i]->passport.number);
-						rowClients["?Y?°N?N?????N€N‚"] = gcnew String(passportClient.c_str());
+						rowClients["ГЏГ Г±Г±ГЇГ®Г°ГІ"] = gcnew String(passportClient.c_str());
 						tablTestClient->Rows->Add(rowClients);
 					}
 
 				}
 			}
 			else {
-				MessageBox::Show(this, "???°???????? ???»???µ??N‚?° ???µN‚ ?? ?±?°?·?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				MessageBox::Show(this, "Г’Г ГЄГ®ГЈГ® ГЄГ«ГЁГҐГ­ГІГ  Г­ГҐГІ Гў Г±ГЇГ°Г ГўГ®Г·Г­ГЁГЄГҐ", "ГЋГёГЁГЎГЄГ ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			}
 		}
 		catch (exception& err) {
-			MessageBox::Show(this, "???µ????N€N€?µ??N‚??N‹?µ ???°????N‹?µ, ??N€?????µN€N?N‚?µ ?????µ???µ????N?NZ ????N„??N€???°N†??NZ ?? ???»???µ??N‚?µ", "?zN????±???°", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show(this, "ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г»ГҐ Г¤Г Г­Г­Г»ГҐ, ГЇГ°Г®ГўГҐГ°ГјГІГҐ ГЇГ°Г ГўГЁГ«ГјГ­Г®Г±ГІГј ГўГўГҐГ¤ВёГ­Г­Г»Гµ Г¤Г Г­Г­Г»Гµ", "ГЋГёГЁГЎГЄГ ", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 
 	}
@@ -2864,14 +2999,18 @@ private: System::Void debugClientButton_Click(System::Object^ sender, System::Ev
 	debugPrintRBTClient(rbtEmail, DataClientsStorage::rbtNullnode, fout, 4, 2);
 	debugPrintRBTClient(rbtPassport, DataClientsStorage::rbtNullnode, fout, 4, 2);
 	fout.close(); 
-	MessageBox::Show(this, "?”?°????N‹?µ N???N…N€?°???µ??N‹ ?? N„?°???» debugClients.txt", "??N????µN?????", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "?пїЅ?пїЅ????NпїЅ?пїЅ N???NпїЅNпїЅ?пїЅ???пїЅ??NпїЅ ?? NпїЅ?пїЅ???пїЅ debugClients.txt", "??N????пїЅN?????", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
 }
 private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
 	vector<ClientsEntity*> data = DataClientsStorage::data;
 	writeDataClient(data, "stdclients1.txt");
-	MessageBox::Show(this, "?”?°????N‹?µ ?? ???»???µ??N‚?°N… N???N…N€?°???µ??N‹ ?? N„?°???» stdclients1", "??N????µN?????", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	MessageBox::Show(this, "Г„Г Г­Г­Г»ГҐ ГЄГ«ГЁГҐГ­ГІГ®Гў ГіГ±ГЇГҐГёГ­Г® Г±Г®ГµГ°Г Г­ГҐГ­Г»", "Г‘Г®ГµГ°Г Г­ГЁГҐ", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
