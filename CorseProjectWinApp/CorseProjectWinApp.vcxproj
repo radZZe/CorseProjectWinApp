@@ -155,7 +155,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="debugClients.txt" />
     <Text Include="stdclients.txt" />
+    <Text Include="stdclients1.txt" />
     <Text Include="stdservices.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

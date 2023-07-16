@@ -1,8 +1,12 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <fstream>
+#include <string>
+#include <sstream>
 //#include <Windows.h>
 #include "RBT.h"
+#include"ReaderClients.h"
 #include "DataClientsStorage.h"
 
 
@@ -101,10 +105,10 @@ List_node* list_insert(List_node*& root, RBTData value)
 	}
 	else {
 		List_node* temp = root;
-		while ((temp->next != root) && (comparator(temp->key.value, value.value) != 0)) {
+		while ((temp->next != root) && (comparator(temp->key.value, value.value) == 0 && temp->key.index != value.index)) {
 			temp = temp->next;
 		}
-		if (comparator(temp->key.value, value.value) == 0) {
+		if (comparator(temp->key.value, value.value) == 0 && temp->key.index == value.index) {
 			temp->cnt++;
 		}
 		else {
@@ -115,23 +119,37 @@ List_node* list_insert(List_node*& root, RBTData value)
 	return root;
 }
 
-List_node* list_erase(List_node*& root, string value)
+List_node* list_erase(List_node*& root, RBTData datavalue)
 {
-	if (root != nullptr) {
-		if ((root->cnt == 1) && (comparator(root->key.value, value) == 0))
+	bool deleted = false;
+	string value = datavalue.value;
+	int index = datavalue.index;
+	if (root != nullptr && !deleted) {
+		//if ((root->cnt == 1) && (comparator(root->key.value, value) == 0) && index == root->key.index)//root == 1
+		//{
+		//	//List_node* temp = root.
+		//	root->cnt--;
+		//	delete root;
+		//	root = nullptr;
+		//	return root;
+		//}
+		if (root->next == root && (comparator(root->key.value, value) == 0) && index == root->key.index && !deleted)
 		{
+			deleted = true;
 			root->cnt--;
 			delete root;
 			root = nullptr;
 			return root;
 		}
-		if ((root->cnt >= 2) && (comparator(root->key.value, value) == 0))
+		if ((root->cnt >= 2) && (comparator(root->key.value, value) == 0) && index == root->key.index && !deleted)
 		{
+			deleted = true;
 			root->cnt--;
 			return root;
 		}
-		if ((root->next != root) && (comparator(root->key.value, value) == 0) && (root->cnt == 1))
+		if (!deleted && (root->next != root) && (comparator(root->key.value, value) == 0) && index == root->key.index && (root->cnt == 1))
 		{
+			deleted = true;
 			List_node* temp = root;
 			while (temp->next != root) { temp = temp->next; }
 			List_node* buffer = root;
@@ -142,13 +160,15 @@ List_node* list_erase(List_node*& root, string value)
 
 		}
 		List_node* temp = root;
-		while (temp->next != root) {
-			if (comparator(temp->next->key.value, value) == 0) {
-				if (temp->next->cnt >= 2) {
+		while (temp->next != root && !deleted) {
+			if (comparator(temp->next->key.value, value) == 0 && !deleted)  {
+				if (temp->next->cnt >= 2 && index == temp->next->key.index) {
+					deleted = true;
 					temp->next->cnt--;
 					return root;
 				}
-				else {
+				else if(index == temp->next->key.index && !deleted) {
+					deleted = true;
 					List_node* buffer = temp->next;
 					temp->next = buffer->next;
 					delete buffer;
@@ -243,21 +263,39 @@ Node* null_init() {
 	return nullnode;
 }
 
-bool pre_search(Node* root, Node* nullnode, string value, int& count) {
+bool searchByFieldClient(Node* root, Node* nullnode, RBTData datavalue, int& count )
+{
 	Node* temp = root;
 	DataClientsStorage::resultSearch = false;
 	while (temp != nullnode) {
 		count++;
 		DataClientsStorage::countComparisons = count;
-		if (comparator(temp->data->key.value, value) == 0) { 
-			DataClientsStorage::resultSearch = true; 
-			return true; }
-		if (comparator(value, temp->data->key.value) == 1) { 
-			temp = temp->right; 
+		if (comparator(temp->data->key.value, datavalue.value) == 0 && temp->data->key.index == datavalue.index)
+		{
+			DataClientsStorage::index = temp->data->key.index;
+			DataClientsStorage::resultSearch = true;
+			return true;
 		}
-		else { 
-			temp = temp->left; 
-		}
+		if (comparator(datavalue.value, temp->data->key.value) == 1) { temp = temp->right; }
+		else { temp = temp->left; }
+	}
+	DataClientsStorage::resultSearch = false;
+	return false;
+}
+
+bool pre_search(Node* root, Node* nullnode,string value, int& count) {
+	Node* temp = root;
+	DataClientsStorage::resultSearch = false;
+	while (temp != nullnode) {
+		count++;
+		DataClientsStorage::countComparisons = count;
+		if (comparator(temp->data->key.value, value) == 0) 
+		{ 
+		DataClientsStorage::index = temp->data->key.index;
+		DataClientsStorage::resultSearch = true;
+		return true; }
+		if (comparator(value, temp->data->key.value) == 1) { temp = temp->right; }
+		else { temp = temp->left; }
 	}
 	DataClientsStorage::resultSearch = false;
 	return false;
@@ -476,7 +514,7 @@ Node* right_min(Node* element, Node* nullnode) {
 	return element;
 }
 
-Node* memory_erase(Node*& root, Node* nullnode, string input) {
+Node* memory_erase(Node*& root, Node* nullnode, RBTData value) {
 	//Key key = parse_key(input);
 	Node* temp = root;
 	//Node* z = nullnode;
@@ -486,9 +524,10 @@ Node* memory_erase(Node*& root, Node* nullnode, string input) {
 		return root;
 	}
 	while (temp->data->cnt > 1) {
-		list_erase(temp->data, input);
+		list_erase(temp->data, value);
 	}
-	list_erase(temp->data, input);
+	// ���� ��� ���������� ���� ��� �������� ���� �������
+	list_erase(temp->data, value);
 	temp->left = nullptr;
 	temp->right = nullptr;
 	temp->parent = nullptr;
@@ -499,7 +538,9 @@ Node* memory_erase(Node*& root, Node* nullnode, string input) {
 	return nullptr;
 }
 
-Node* erase(Node*& root, Node* nullnode, string input) {
+Node* eraseClient(Node*& root, Node* nullnode, RBTData datavalue) {
+	string input = datavalue.value;
+	int index = datavalue.index;
 	if (root == nullptr) { cout << "Element is not exist" << '\n'; return nullptr; }
 	//Key key = parse_key(input);
 	Node* temp = root;
@@ -516,8 +557,8 @@ Node* erase(Node*& root, Node* nullnode, string input) {
 		cout << "Couldn't find key in the tree" << endl;
 		return root;
 	}
-	if (z->data->cnt > 1) {
-		list_erase(z->data, input);
+	if (z->data->next != z->data) {
+		list_erase(z->data, datavalue);
 	}
 	else {
 		y = z;
@@ -548,7 +589,7 @@ Node* erase(Node*& root, Node* nullnode, string input) {
 			y->left->parent = y;
 			y->color = z->color;
 		}
-		list_erase(z->data, input);
+		list_erase(z->data, datavalue);
 		delete z;
 		if (y_original_color == 1) {
 			erase_balance(root, nullnode, element);
@@ -580,7 +621,10 @@ void pre_memory_pull_up(Node*& root, Node* nullnode) {
 	if (root->right != nullnode) {
 		pre_memory_pull_up(root->right, nullnode);
 	}
-	memory_erase(root, nullnode, root->data->key.value);
+	RBTData value;
+	value.value = root->data->key.value;
+	value.index = -1;
+	memory_erase(root, nullnode, value);
 
 }
 void memory_pull_up(Node*& root, Node* nullnode)
@@ -639,78 +683,356 @@ void print(Node* root, Node* nullnode, int h, int ln) {
 	}
 }
 
-//int searchByPassport(Node* root, Node* nullnode, ClientsEntity* value, int& count)
-//{
-//	List_node* list = list_init();
-//	list->key = value->passport.number + value->passport.series;
-//	Node* temp = root;
-//	if (root == nullptr)
-//	{
-//		cout << "The tree does not exist";
-//		return false;
-//	}
-//	else
-//	{
-//		while (temp != nullnode)
-//		{
-//			if (comparator(temp->data->key, list->key) == 1) {
-//				count++;
-//				if (temp->left != nullnode) {
-//					searchByPassport(temp->left,nullnode, value, count);
-//				}
-//				else {
-//					DataClientsStorage::countComparisons = count;
-//					DataClientsStorage::resultSearch = false;
-//					return 0;
-//				}
-//			}
-//			else if (comparator(temp->data->key,list->key) == -1) {
-//				count++;
-//				if (temp->right != nullnode) {
-//					searchByPassport(temp->right, nullnode, value, count);
-//				}
-//				else {
-//					DataClientsStorage::countComparisons = count;
-//					DataClientsStorage::resultSearch = false;
-//					return 0;
-//				}
+int updateTreeNode(Node* root, Node* nullnode, ClientsEntity* input, string comparable, int& index) {
+
+	if (root != nullnode) {
+		if (comparator(root->data->key.value, comparable) == 1) {
+			if (root->left != nullnode) {
+				updateTreeNode(root->left,nullnode, input,comparable, index);
+			}
+			else {
+				return 0;
+			}
+		}
+		else if (comparator(root->data->key.value, comparable) == -1) {
+			if (root->right != nullnode) {
+				updateTreeNode(root->right, nullnode, input, comparable, index);
+			}
+			else {
+				return 0;
+			}
+		}
+		else {
+			
+			if (isEqualElementsClients(input, DataClientsStorage::data[root->data->key.index]) )
+			{
+				root->data->key.index = index;
+				return 0;
+			}
+			else {
+				List_node* temp = root->data;
+				while (temp->next->key.index != root->data->key.index) {
+					if (isEqualElementsClients(input, DataClientsStorage::data[temp->next->key.index])) {
+						temp->next->key.index = index;
+						return 0;
+					}
+					temp = temp->next;
+				}
+				if (isEqualElementsClients(input, DataClientsStorage::data[root->data->key.index])) {
+					temp->key.index = index;
+					return 0;
+				}
+				if (root->left != nullnode) {
+					updateTreeNode(root->left,nullnode, input, comparable, index);
+				}
+				if (root->right != nullnode) {
+					updateTreeNode(root->right, nullnode, input, comparable, index);
+				}
+			}
+
+		}
+	}
+	else {
+		return 0;
+	}
+}
+
+//int updateJobTreeNode(Node* root, Node* nullnode, string input, int& index) {
+//	RBTData datavalue;
+//	datavalue.value = input;
+//	datavalue.index = index;
+//	if (root != nullnode) {
+//		if (comparator(root->data->key.value, input) == 1) {
+//			if (root->left != nullnode) {
+//				updateJobTreeNode(root->left, nullnode, input, index);
 //			}
 //			else {
-//				if (isEqualElements(value, DataClientsStorage::data[temp->data->key->index])) {
-//					count++;
-//					DataClientsStorage::countComparisons = count;
-//					DataClientsStorage::resultSerch = true;
-//					return 0;
-//				}
-//				else {
-//					listNode* temp = pointer->head;
-//					while (temp->ptr->field->index != pointer->head->field->index) {
-//						count++;
-//						if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-//
-//							DataStorage::countComparisons = count;
-//							DataStorage::resultSerch = true;
-//							return 0;;
-//						}
-//						temp = temp->ptr;
-//					}
-//					count++;
-//					if (isEqualElements(givenValue, DataStorage::data[temp->field->index])) {
-//
-//						DataStorage::countComparisons = count;
-//						DataStorage::resultSerch = true;
-//						return 0;
-//					}
-//					if (pointer->leftChild != nullptr) {
-//						searchByPassportTreeNode(pointer->leftChild, givenValue, count);
-//					}
-//					if (pointer->rightChild != nullptr) {
-//						searchByPassportTreeNode(pointer->rightChild, givenValue, count);
-//					}
-//				}
-//
+//				return 0;
 //			}
 //		}
-//		return false;
+//		else if (comparator(root->data->key.value, input) == -1) {
+//			if (root->right != nullnode) {
+//				updateJobTreeNode(root->right, nullnode, input, index);
+//			}
+//			else {
+//				return 0;
+//			}
+//		}
+//		else {
+//			if (input == DataClientsStorage::data[root->data->key.index]->job)
+//			{
+//				root->data->key.index = index;
+//				return 0;
+//			}
+//			else {
+//				List_node* temp = root->data;
+//				while (temp->next->key.index != root->data->key.index) {
+//					if (input == DataClientsStorage::data[root->data->key.index]->job) {
+//						temp->key.index = index;
+//						return 0;
+//					}
+//					temp = temp->next;
+//				}
+//				if (input == DataClientsStorage::data[root->data->key.index]->job) {
+//					temp->key.index = index;
+//					return 0;
+//				}
+//				if (root->left != nullnode) {
+//					updateJobTreeNode(root->left, nullnode, input, index);
+//				}
+//				if (root->right != nullnode) {
+//					updateJobTreeNode(root->right, nullnode, input, index);
+//				}
+//			}
+//
+//		}
+//	}
+//	else {
+//		return 0;
 //	}
 //}
+//
+//int updateEmailTreeNode(Node* root, Node* nullnode, string input, int& index) {
+//	RBTData datavalue;
+//	datavalue.value = input;
+//	datavalue.index = index;
+//	if (root != nullnode) {
+//		if (comparator(root->data->key.value, input) == 1) {
+//			if (root->left != nullnode) {
+//				updateEmailTreeNode(root->left, nullnode, input, index);
+//			}
+//			else {
+//				return 0;
+//			}
+//		}
+//		else if (comparator(root->data->key.value, input) == -1) {
+//			if (root->right != nullnode) {
+//				updateEmailTreeNode(root->right, nullnode, input, index);
+//			}
+//			else {
+//				return 0;
+//			}
+//		}
+//		else {
+//			if (input == DataClientsStorage::data[root->data->key.index]->email)
+//			{
+//				root->data->key.index = index;
+//				return 0;
+//			}
+//			else {
+//				List_node* temp = root->data;
+//				while (temp->next->key.index != root->data->key.index) {
+//					if (input == DataClientsStorage::data[root->data->key.index]->email) {
+//						temp->key.index = index;
+//						return 0;
+//					}
+//					temp = temp->next;
+//				}
+//				if (input == DataClientsStorage::data[root->data->key.index]->email) {
+//					temp->key.index = index;
+//					return 0;
+//				}
+//				if (root->left != nullnode) {
+//					updateEmailTreeNode(root->left, nullnode, input, index);
+//				}
+//				if (root->right != nullnode) {
+//					updateEmailTreeNode(root->right, nullnode, input, index);
+//				}
+//			}
+//
+//		}
+//	}
+//	else {
+//		return 0;
+//	}
+//}
+//
+//int updateFullnameTreeNode(Node* root, Node* nullnode, string input, int& index) {
+//	RBTData datavalue;
+//	datavalue.value = input;
+//	datavalue.index = index;
+//	if (root != nullnode) {
+//		if (comparator(root->data->key.value, input) == 1) {
+//			if (root->left != nullnode) {
+//				updateFullnameTreeNode(root->left, nullnode, input, index);
+//			}
+//			else {
+//				return 0;
+//			}
+//		}
+//		else if (comparator(root->data->key.value, input) == -1) {
+//			if (root->right != nullnode) {
+//				updateFullnameTreeNode(root->right, nullnode, input, index);
+//			}
+//			else {
+//				return 0;
+//			}
+//		}
+//		else {
+//			if (input == DataClientsStorage::data[root->data->key.index]->fullname.surname + ' ' 
+//				+ DataClientsStorage::data[root->data->key.index]->fullname.name + ' '
+//				+ DataClientsStorage::data[root->data->key.index]->fullname.lastname) 
+//			{
+//				root->data->key.index = index;
+//				return 0;
+//			}
+//			else {
+//				List_node* temp = root->data;
+//				while (temp->next->key.index != root->data->key.index) {
+//					if (input == DataClientsStorage::data[root->data->key.index]->fullname.surname + ' '
+//						+ DataClientsStorage::data[root->data->key.index]->fullname.name + ' '
+//						+ DataClientsStorage::data[root->data->key.index]->fullname.lastname) {
+//						temp->key.index = index;
+//						return 0;
+//					}
+//					temp = temp->next;
+//				}
+//				if (input == DataClientsStorage::data[root->data->key.index]->fullname.surname + ' '
+//					+ DataClientsStorage::data[root->data->key.index]->fullname.name + ' '
+//					+ DataClientsStorage::data[root->data->key.index]->fullname.lastname) {
+//					temp->key.index = index;
+//					return 0;
+//				}
+//				if (root->left != nullnode) {
+//					updateFullnameTreeNode(root->left, nullnode, input, index);
+//				}
+//				if (root->right != nullnode) {
+//					updateFullnameTreeNode(root->right, nullnode, input, index);
+//				}
+//			}
+//
+//		}
+//	}
+//	else {
+//		return 0;
+//	}
+//}
+//
+//int updateClientTreeNode(Node* root, Node* nullnode, string input, int& index) {
+//	RBTData datavalue;
+//	datavalue.value = input;
+//	datavalue.index = index;
+//	if (root != nullnode) {
+//		if (comparator(root->data->key.value, input) == 1) {
+//			if (root->left != nullnode) {
+//				updateClientTreeNode(root->left, nullnode, input, index);
+//			}
+//			else {
+//				return 0;
+//			}
+//		}
+//		else if (comparator(root->data->key.value, input) == -1) {
+//			if (root->right != nullnode) {
+//				updateClientTreeNode(root->right, nullnode, input, index);
+//			}
+//			else {
+//				return 0;
+//			}
+//		}
+//		else {
+//			if (input == (DataClientsStorage::data[root->data->key.index]->fullname.surname + ' ' + DataClientsStorage::data[root->data->key.index]->fullname.name + ' '
+//				+ DataClientsStorage::data[root->data->key.index]->fullname.lastname + ' ' + DataClientsStorage::data[root->data->key.index]->job + ' ' + DataClientsStorage::data[root->data->key.index]->email
+//				+ ' ' + to_string(DataClientsStorage::data[root->data->key.index]->passport.series) + to_string(DataClientsStorage::data[root->data->key.index]->passport.number)))
+//			{
+//				root->data->key.index = index;
+//				return 0;
+//			}
+//			else {
+//				List_node* temp = root->data;
+//				while (temp->next->key.index != root->data->key.index) {
+//					if (input == (DataClientsStorage::data[root->data->key.index]->fullname.surname + ' ' + DataClientsStorage::data[root->data->key.index]->fullname.name + ' '
+//						+ DataClientsStorage::data[root->data->key.index]->fullname.lastname + ' ' + DataClientsStorage::data[root->data->key.index]->job + ' ' + DataClientsStorage::data[root->data->key.index]->email
+//						+ ' ' + to_string(DataClientsStorage::data[root->data->key.index]->passport.series) + to_string(DataClientsStorage::data[root->data->key.index]->passport.number))) {
+//						temp->key.index = index;
+//						return 0;
+//					}
+//					temp = temp->next;
+//				}
+//				if (input == (DataClientsStorage::data[root->data->key.index]->fullname.surname + ' ' + DataClientsStorage::data[root->data->key.index]->fullname.name + ' '
+//					+ DataClientsStorage::data[root->data->key.index]->fullname.lastname + ' ' + DataClientsStorage::data[root->data->key.index]->job + ' ' + DataClientsStorage::data[root->data->key.index]->email
+//					+ ' ' + to_string(DataClientsStorage::data[root->data->key.index]->passport.series) + to_string(DataClientsStorage::data[root->data->key.index]->passport.number))) {
+//					temp->key.index = index;
+//					return 0;
+//				}
+//				if (root->left != nullnode) {
+//					updateClientTreeNode(root->left, nullnode, input, index);
+//				}
+//				if (root->right != nullnode) {
+//					updateClientTreeNode(root->right, nullnode, input, index);
+//				}
+//			}
+//
+//		}
+//	}
+//	else {
+//		return 0;
+//	}
+//}
+
+void debugPrintList(List_node* root,ofstream& fout)
+{
+	//system("chcp 1251 > nul");
+	if (root == nullptr) {
+		fout << "List is empty";
+		fout << endl;
+	}
+	else {
+		List_node* temp = root; string tempstr;
+		while (temp->next != root) {
+			fout << temp->key.value << " (" << temp->cnt << ")|index: "<< to_string(temp->key.index) << "|->";
+			temp = temp->next;
+		}
+		fout << temp->key.value << " (" << temp->cnt << ")|index: " << to_string(temp->key.index);
+	}
+}
+
+void debugPrintRBTClient(Node* root, Node* nullnode,ofstream& fout,int h, int ln)
+{
+	if ((root != nullnode) && (root != nullptr)) {
+		debugPrintRBTClient(root->right, nullnode,fout, h + 4, ln);
+		for (int i = 1; i <= h; i++)fout << ' ';
+		debugPrintList(root->data,fout);
+		if (root->color) {
+			fout << "| B";
+			for (size_t i = 0; i < ln; i++)
+			{
+				fout << '\n';
+			}
+		}
+		else {
+			//SetConsoleTextAttribute(hConsole, 12);
+			fout << "| R";
+			//SetConsoleTextAttribute(hConsole, 15);
+			for (size_t i = 0; i < ln; i++)
+			{
+				fout << '\n';
+			}
+		}
+		debugPrintRBTClient(root->left, nullnode,fout, h + 4, ln);
+		return;
+
+	}
+	if (root == nullnode) {
+		/*if ((root->parent == nullnode) || (root->parent == nullptr)) {
+			cout << "RBT is empty" << '\n';
+			return;
+		}*/
+		if (root->parent == nullptr) {
+			fout << "RBT is empty" << '\n';
+			return;
+		}
+
+		for (int i = 0; i < h + 3; i++)fout << ' ';
+		fout << nullnode->left << " | B";
+		for (size_t i = 0; i < ln; i++)
+		{
+			fout << '\n';
+		}
+		return;
+	}
+	if (root == nullptr) {
+		fout << "RBT is empty" << '\n';
+		return;
+	}
+
+}

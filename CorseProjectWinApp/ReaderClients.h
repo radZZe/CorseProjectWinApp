@@ -76,6 +76,8 @@ struct ClientsEntity {
 	string job;
 };
 
+//struct 
+
 bool isEqualElementsClients(ClientsEntity* first, ClientsEntity* second);
 //date inputDateData(string input);
 
@@ -87,4 +89,5 @@ ClientsEntity* inputEntityDataClients(string input);
 
 vector<ClientsEntity*> readFromFileClients(string path);
 
-void writeData(vector<ClientsEntity*> value, string path);
+void writeDataClient(vector<ClientsEntity*> value, string path);
+bool isValidateData(int passportSeries, int passportNumber, string fullnamestr, string email, string job);

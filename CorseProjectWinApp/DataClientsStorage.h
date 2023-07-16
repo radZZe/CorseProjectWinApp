@@ -19,6 +19,7 @@ public:
 	static Node* rbtNullnode;
 	static Node* rbtClient;
 	static bool resultSearch;
+	static int index;
 	void removeElement(ClientsEntity* value);
 private:
 	Node* nullnode = null_init();
