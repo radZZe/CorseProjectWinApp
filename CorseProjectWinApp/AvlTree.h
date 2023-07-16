@@ -24,6 +24,7 @@ void delNode(treeNode*& pointer, listNodeElem* key, bool& heightChanged,Requests
 void _nodeCounter(treeNode* pointer, int& count);
 void whichSubtreeIsBigger(treeNode* pointer);
 int searchByPassportTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count);
+int searchByPassportTreeNodeFIX(treeNode* pointer, RequestsEntity* givenValue, int& count);
 int searchByDateTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count);
 int searchByServiceNameTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count);
 int searchByServiceTypeTreeNode(treeNode* pointer, RequestsEntity* givenValue, int& count);
