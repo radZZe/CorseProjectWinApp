@@ -90,4 +90,5 @@ ClientsEntity* inputEntityDataClients(string input);
 vector<ClientsEntity*> readFromFileClients(string path);
 
 void writeDataClient(vector<ClientsEntity*> value, string path);
-bool isValidateData(int passportSeries, int passportNumber, string fullnamestr, string email, string job);
+
+bool isValidateData(string passSerstr, string passNumstr, string fullnamestr, string email, string job);

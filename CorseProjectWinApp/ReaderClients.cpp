@@ -128,17 +128,24 @@ vector <ClientsEntity*> readFromFileClients(string path) {
         getline(file, str);
         ClientsEntity* newEntity = new ClientsEntity();
         newEntity = inputEntityDataClients(str);
-        data[i] = newEntity;
+        bool noEqual = false;
+        for (int j = 0; j <= i-1; j++)
+        {
+            if (newEntity->passport.series == data[j]->passport.series && newEntity->passport.number == data[j]->passport.number) {
+                noEqual = true;
+            }
+        }
+        if (!noEqual) { data[i] = newEntity; }
+        else { data[i] = nullptr; }
     }
     file.close();
     return data;
 }
 
-bool isValidateData(int passportSeries, int passportNumber, string fullnamestr, string email, string job)
+bool isValidateData(string passSerstr, string passNumstr, string fullnamestr, string email, string job)
 {
     try {
-        string passSerstr = to_string(passportSeries);
-        string passNumstr = to_string(passportNumber);
+
         if (passNumstr.size() == 0 || passSerstr.size() == 0 || fullnamestr.size() == 0 || email.size() == 0 || job.size() == 0)
         {
             return false;
@@ -148,24 +155,26 @@ bool isValidateData(int passportSeries, int passportNumber, string fullnamestr, 
         'R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z'
         ,'X','C','V','B','N','M','0','1','2','3','4','5','6','7','8','9','-',
         '_','!','#','$','%','^','&','*','(',')','+','=','[',']','{','}','<',
-        '>','?','/','|','~','\\','.' };
+        '>','?','/','|','~','\\','.',' ','@'};
         set<char>digits = { '0','1','2','3','4','5','6','7','8','9' };
         bool isValidPassport = true;
         for (size_t i = 0; i < passSerstr.size(); i++)
         {
-            if (digits.find(passSerstr[i]) == digits.end())
+            if (int(passSerstr[i]) <= 47 || int(passSerstr[i]) >= 59)//48-58 это ASCII-коды цифр
             {
-                isValidPassport = isValidPassport && false;
+                isValidPassport = false;
+                break;
             }
         }
         for (size_t i = 0; i < passNumstr.size(); i++)
         {
-            if (digits.find(passNumstr[i]) == digits.end())
+            if (int(passNumstr[i]) <= 47 || int(passNumstr[i]) >= 59)//48-58 это ASCII-коды цифр
             {
-                isValidPassport = isValidPassport && false;
+                isValidPassport = false;
+                break;
             }
         }
-        bool flag = true;
+        bool flag = isValidPassport;
         for (int i = 0; i < email.size(); i++)
         {
             if (letters.find(email[i]) == letters.end()) {
@@ -178,7 +187,7 @@ bool isValidateData(int passportSeries, int passportNumber, string fullnamestr, 
         {
             if (email[i] == '@') sobaka = true;
         }
-        flag = flag && sobaka && isValidPassport;
+        flag = flag && sobaka;
         return flag;
     }
     catch (exception& err)
