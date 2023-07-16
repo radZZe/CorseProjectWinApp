@@ -1,0 +1,59 @@
+index: 0| value: Промежуточная аттестация Услуги студенческого офиса Оформление перезачета дисциплин 14 |status: 1| 1st hash: 0 | Array indx = 2
+index: 1| value: -  |status: 0
+index: 2| value: -  |status: 0
+index: 3| value: Студенческие справки и документы Услуги студенческого офиса Справка о периоде обучения с оценками 1 |status: 1| 1st hash: 3 | Array indx = 0
+index: 4| value: Уведомление о временном выезде Услуги кампуса Уведомление о временном выезде 3 |status: 1| 1st hash: 4 | Array indx = 8
+index: 5| value: Студенческие справки и документы Услуги кампуса Пропуск на автомобиль 3 |status: 1| 1st hash: 5 | Array indx = 1
+index: 6| value: -  |status: 0
+index: 7| value: Отчисление по инициативе обучающегося Услуги студенческого офиса Отчисление по собственному желанию 1 |status: 1| 1st hash: 7 | Array indx = 7
+index: 8| value: Изменение паспортных данных Услуги студенческого офиса Изменение паспортных данных 14 |status: 1| 1st hash: 8 | Array indx = 9
+index: 9| value: -  |status: 0
+index: 10| value: -  |status: 0
+index: 11| value: -  |status: 0
+index: 12| value: Заявление о предоставлении каникул Подать заявление выпускника Заявление о предоставлении каникул 30 |status: 1| 1st hash: 12 | Array indx = 3
+index: 13| value: Ремонт в комнате Услуги кампуса Ремонт в комнате 7 |status: 1| 1st hash: 12 | Array indx = 4
+index: 14| value: -  |status: 0
+index: 15| value: -  |status: 0
+index: 16| value: -  |status: 0
+index: 17| value: -  |status: 0
+index: 18| value: Заявление для иностранцев о правильном написании имен Подать заявление выпускника Заявление для иностранцев о правильном написании имен 30 |status: 1| 1st hash: 18 | Array indx = 5
+index: 19| value: Оформление отпуска Услуги студенческого офиса Оформление академического отпуска 7 |status: 1| 1st hash: 19 | Array indx = 6
+
+
+
+                        | Data: Уведомление о временном выезде Array index: 8 Color: r |
+                | Data: Студенческие справки и документы Array index: 1 Color: b |
+                        | Data: Ремонт в комнате Array index: 4 Color: r |
+        | Data: Промежуточная аттестация Array index: 2 Color: b |
+                                | Data: Оформление отпуска Array index: 6 Color: r |
+                        | Data: Отчисление по инициативе обучающегося Array index: 7 Color: b |
+                                | Data: Изменение паспортных данных Array index: 9 Color: r |
+                | Data: Заявление о предоставлении каникул Array index: 3 Color: r |
+                        | Data: Заявление для иностранцев о правильном написании имен Array index: 5 Color: b |
+
+
+
+                                | Data: Уведомление о временном выезде Array index: 8 Color: r |
+                        | Data: Справка о периоде обучения с оценками Array index: 0 Color: b |
+                                | Data: Ремонт в комнате Array index: 4 Color: r |
+                | Data: Пропуск на автомобиль Array index: 1 Color: r |
+                        | Data: Оформление перезачета дисциплин Array index: 2 Color: b |
+        | Data: Оформление академического отпуска Array index: 6 Color: b |
+                        | Data: Отчисление по собственному желанию Array index: 7 Color: b |
+                                | Data: Изменение паспортных данных Array index: 9 Color: r |
+                | Data: Заявление о предоставлении каникул Array index: 3 Color: r |
+                        | Data: Заявление для иностранцев о правильном написании имен Array index: 5 Color: b |
+
+
+
+                | Data: Услуги студенческого офиса Array index: 9 Color: r |
+        | Data: Услуги кампуса Array index: 8 Color: b |
+                | Data: Подать заявление выпускника Array index: 5 Color: r |
+
+
+
+                        | Data: 7 Array index: 6 Color: r |
+                | Data: 30 Array index: 5 Color: b |
+                        | Data: 3 Array index: 8 Color: r |
+        | Data: 14 Array index: 9 Color: b |
+                | Data: 1 Array index: 7 Color: b |

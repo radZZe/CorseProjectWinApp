@@ -62,6 +62,24 @@ void ServicesHashTable::printTable()
     }
 }
 
+void ServicesHashTable::debugPrintTable(ofstream& fout)
+{
+    for (int i = 0; i < this->table.size(); i++)
+    {
+        if (this->table[i].status == 1)
+        {
+            int hash = hashFun(this->table[i].value);
+            fout << "index: " << i << "| value: " << this->table[i].value->division << " " << this->table[i].value->serviceType << " " << this->table[i].value->serviceName << " " << this->table[i].value->term << " |status: 1|"
+                << " 1st hash: " << to_string(hash) << " | Array indx = " << this->table[i].index << endl;
+        }
+        else
+        {
+            fout << "index: " << i << "| value: - "
+                << " |status: 0" << endl;
+        }
+    }
+}
+
 int ServicesHashTable::findPlace(int hash)
 {
     int step = 1;
@@ -92,7 +110,7 @@ void ServicesHashTable::insertResolveCollision(ServiceEntity* item, string type,
     tableEntity newEntity;
     newEntity.status = 1;
     newEntity.value = item;
-    newEntity.status = 1;
+    newEntity.index = id;
     int step = 1;
     int rehash = secHashFun(hash, step);
 
@@ -242,6 +260,8 @@ void ServicesHashTable::deleteItem(ServiceEntity* item)
                 this->table[valid] = emptyEntity;
             }
         }
+
+        int jopa = 0;
     }
 
     if (deletableIndx == -1)
@@ -275,34 +295,37 @@ vector<int> ServicesHashTable::findItem(ServiceEntity* item)
     int step = 1;
     int hash = hashFun(item);
 
-    if (isEqualServices(this->table[hash].value, item) != 1)
-    {
-        int rehash = secHashFun(hash, step);
-        while (step < this->size && isEqualServices(this->table[rehash].value, item) != 1)
-        {
-            step++;
-            rehash = secHashFun(hash, step);
-        }
-        current = rehash;
-    }
-    else
-    {
-        current = hash;
-    }
-    result.push_back(step);
-    if (this->table[current].status == 1 && isEqualServices(this->table[current].value, item) == 1)
-    {
-        //DataStorage::resultSerch = true;
-        result.push_back(1);
-        result.push_back(this->table[current].index);
-        return result;
-    }
-    else
-    {
-        result.push_back(0);
-        //DataStorage::resultSerch = false;
-        return result;
-    }
+            if (isEqualServices(this->table[hash].value, item) != 1)
+                {
+                    int rehash = secHashFun(hash, step);
+                    while (step < this->size && isEqualServices(this->table[rehash].value, item) != 1)
+                    {
+                        step++;
+                        rehash = secHashFun(hash, step);
+                    }
+                    current = rehash;
+                }
+                else
+                {
+                    current = hash;
+                }
+                result.push_back(step);
+                if (this->table[current].status == 1 && isEqualServices(this->table[current].value, item) == 1)
+                {
+                    //DataStorage::resultSerch = true;
+                    result.push_back(1);
+                    result.push_back(this->table[current].index);
+                    return result;
+                }
+                else
+                {
+                    result.push_back(0);
+                    result.push_back(-1);
+                    //DataStorage::resultSerch = false;
+                    return result;
+                }
+    
+    
 }
 
 bool ServicesHashTable::findItemByKey(ServiceEntity* item) {

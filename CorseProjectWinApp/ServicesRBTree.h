@@ -24,6 +24,7 @@ treeNodeServices* initTree(treeNodeServices* leaf);
 treeNodeServices* findMaxLeft(treeNodeServices* rootLeft, treeNodeServices* leaf);
 
 void printTreeA(treeNodeServices*& root, int h, treeNodeServices*& leaf);
+void debugPrintTreeA(treeNodeServices*& root, int h, treeNodeServices*& leaf, ofstream& fout);
 
 bool search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int& count, ServiceEntity* fullEntity);
 
@@ -32,7 +33,7 @@ void rightRotate(treeNodeServices*& root, treeNodeServices* x, treeNodeServices*
 
 void insertFixup(treeNodeServices*& root, treeNodeServices*& z, treeNodeServices*& leaf);
 
-treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, ServiceEntity* fullEntity);
+treeNodeServices* insert(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf);
 
 void transplant(treeNodeServices*& root, treeNodeServices*& u, treeNodeServices*& v, treeNodeServices*& leaf);
 void deleteFixup(treeNodeServices*& root, treeNodeServices*& x, treeNodeServices*& leaf);
@@ -42,3 +43,17 @@ void deleteElement(treeNodeServices*& root, treeNodeElemServices value, treeNode
 void deleteTree(treeNodeServices*& root, treeNodeServices* leaf, ServiceEntity* fullEntity);
 
 bool compareTrees(treeNodeServices*& root1, treeNodeServices*& root2, treeNodeServices* leaf, bool& flag);
+
+int updateServiceIndexInList(listServices* head, ServiceEntity* element, int& index);
+
+int updateByServiceNameTreeNode2(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index);
+
+int updateByServiceTypeTreeNode2(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index);
+
+int updateByServiceDivisionTreeNode(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index);
+
+int updateByServiceTermTreeNode(treeNodeServices*& root, treeNodeServices*& leaf, ServiceEntity* fullEntity, int& index);
+
+bool _searchServiceInList(listServices* head, treeNodeElemServices element, int& count);
+
+bool _search(treeNodeServices*& root, treeNodeElemServices element, treeNodeServices*& leaf, int& count);
