@@ -69,22 +69,20 @@ int RequestsHashTable::firstHashFunction(int key)
     if (this->size <= 10) {
         startPos = 5;
         int result = getNthDigit(keySquare, startPos);
-        //cout << "INSERT: firstHash =" << result << "dataToKey = " << key << endl;
         if (result > this->size) result = result % this->size;
         return result;
     }
     else if (this->size <= 100 && this->size > 10) {
         startPos = 4;
         int result = getNthDigit(keySquare, startPos) * 10 + getNthDigit(keySquare, startPos + 1);
-        //cout << "INSERT: firstHash =" << result << "dataToKey = " << key << endl;
-        int test = 5;
         if (result > this->size) result = result % this->size;
         return result;
     }
     else if (this->size <= 1000 && this->size > 100) {
         startPos = 3;
-        int result = getNthDigit(keySquare, startPos) * 100 + getNthDigit(keySquare, startPos + 1) * 10 + getNthDigit(keySquare, startPos + 2);
-        //cout << "INSERT: firstHash =" << result << "dataToKey = " << key << endl;
+        int result = getNthDigit(keySquare, startPos) * 100 
+            + getNthDigit(keySquare, startPos + 1) * 10 
+            + getNthDigit(keySquare, startPos + 2);
         if (result > this->size) result = result % this->size;
         return result;
     }
@@ -187,8 +185,6 @@ void RequestsHashTable::insert(RequestsEntity* value) {
     else {
         insertCollision(counter, index, key, value);
     }
-
-
 
 }
 
@@ -326,6 +322,7 @@ vector<int> RequestsHashTable::search(RequestsEntity* value) {
         return result;
     }
 }
+
 
 void RequestsHashTable::print() {
     for (int i = 0; i < size; i++) {
