@@ -353,7 +353,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->requestsPage->Controls->Add(this->searchByTypeAndNameOfServiceBTN);
 			this->requestsPage->Location = System::Drawing::Point(4, 22);
 			this->requestsPage->Name = L"requestsPage";
-			this->requestsPage->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->requestsPage->Padding = System::Windows::Forms::Padding(2);
 			this->requestsPage->Size = System::Drawing::Size(888, 607);
 			this->requestsPage->TabIndex = 0;
 			this->requestsPage->Text = L"Заявки";
@@ -410,9 +410,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(478, 294);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(73, 13);
+			this->label2->Size = System::Drawing::Size(65, 13);
 			this->label2->TabIndex = 23;
-			this->label2->Text = L"Iiia? ianii?oa";
+			this->label2->Text = L"Iiia\? ianii\?oa";
 			// 
 			// tBSeriesPassport
 			// 
@@ -426,9 +426,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label6->AutoSize = true;
 			this->label6->Location = System::Drawing::Point(200, 460);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(63, 13);
+			this->label6->Size = System::Drawing::Size(61, 13);
 			this->label6->TabIndex = 21;
-			this->label6->Text = L"?acoeuoao";
+			this->label6->Text = L"\?acoeuoao";
 			// 
 			// countComparisons
 			// 
@@ -443,7 +443,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->numberOfComparisons->AutoSize = true;
 			this->numberOfComparisons->Location = System::Drawing::Point(14, 460);
 			this->numberOfComparisons->Name = L"numberOfComparisons";
-			this->numberOfComparisons->Size = System::Drawing::Size(117, 13);
+			this->numberOfComparisons->Size = System::Drawing::Size(123, 13);
 			this->numberOfComparisons->TabIndex = 19;
 			this->numberOfComparisons->Text = L"Количество сравнений";
 			// 
@@ -489,7 +489,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label4->AutoSize = true;
 			this->label4->Location = System::Drawing::Point(505, 361);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(89, 13);
+			this->label4->Size = System::Drawing::Size(87, 13);
 			this->label4->TabIndex = 14;
 			this->label4->Text = L"Iacaaiea oneoae";
 			// 
@@ -498,7 +498,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(347, 361);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(64, 13);
+			this->label3->Size = System::Drawing::Size(62, 13);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"Oei oneoae";
 			// 
@@ -507,9 +507,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(347, 294);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(83, 13);
+			this->label1->Size = System::Drawing::Size(77, 13);
 			this->label1->TabIndex = 11;
-			this->label1->Text = L"Na?ey ianii?oa";
+			this->label1->Text = L"Na\?ey ianii\?oa";
 			// 
 			// tBServiceName
 			// 
@@ -538,7 +538,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchByServiceNameBTN->Name = L"searchByServiceNameBTN";
 			this->searchByServiceNameBTN->Size = System::Drawing::Size(157, 23);
 			this->searchByServiceNameBTN->TabIndex = 6;
-			this->searchByServiceNameBTN->Text = L"Iiene ii iacaaie? oneoae";
+			this->searchByServiceNameBTN->Text = L"Iiene ii iacaaie\? oneoae";
 			this->searchByServiceNameBTN->UseVisualStyleBackColor = true;
 			this->searchByServiceNameBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceNameBTN_Click);
 			// 
@@ -584,7 +584,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->passportSearchBTN->Name = L"passportSearchBTN";
 			this->passportSearchBTN->Size = System::Drawing::Size(127, 23);
 			this->passportSearchBTN->TabIndex = 2;
-			this->passportSearchBTN->Text = L"Iiene ii ianii?oo";
+			this->passportSearchBTN->Text = L"Iiene ii ianii\?oo";
 			this->passportSearchBTN->UseVisualStyleBackColor = true;
 			this->passportSearchBTN->Click += gcnew System::EventHandler(this, &MyForm::passportSearchBTN_Click);
 			// 
@@ -594,7 +594,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchByTypeAndNameOfServiceBTN->Name = L"searchByTypeAndNameOfServiceBTN";
 			this->searchByTypeAndNameOfServiceBTN->Size = System::Drawing::Size(232, 23);
 			this->searchByTypeAndNameOfServiceBTN->TabIndex = 1;
-			this->searchByTypeAndNameOfServiceBTN->Text = L"Iiene ii oeio e iacaaie? oneoae";
+			this->searchByTypeAndNameOfServiceBTN->Text = L"Iiene ii oeio e iacaaie\? oneoae";
 			this->searchByTypeAndNameOfServiceBTN->UseVisualStyleBackColor = true;
 			this->searchByTypeAndNameOfServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::searchByTypeAndNameOfService_Click);
 			// 
@@ -626,16 +626,17 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->clientsPage->Controls->Add(this->ClientsDataGrid);
 			this->clientsPage->Location = System::Drawing::Point(4, 22);
 			this->clientsPage->Name = L"clientsPage";
-			this->clientsPage->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->clientsPage->Padding = System::Windows::Forms::Padding(2);
 			this->clientsPage->Size = System::Drawing::Size(888, 607);
 			this->clientsPage->TabIndex = 1;
 			this->clientsPage->Text = L"Клиенты";
 			this->clientsPage->UseVisualStyleBackColor = true;
+			this->clientsPage->Click += gcnew System::EventHandler(this, &MyForm::clientsPage_Click);
 			// 
 			// btnAddClient
 			// 
 			this->btnAddClient->Location = System::Drawing::Point(397, 409);
-			this->btnAddClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAddClient->Margin = System::Windows::Forms::Padding(2);
 			this->btnAddClient->Name = L"btnAddClient";
 			this->btnAddClient->Size = System::Drawing::Size(75, 19);
 			this->btnAddClient->TabIndex = 60;
@@ -649,7 +650,6 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->resultSearchClient->Location = System::Drawing::Point(270, 468);
 			this->resultSearchClient->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->resultSearchClient->Name = L"resultSearchClient";
-			//this->resultSearchClient->Text = "333";
 			this->resultSearchClient->Size = System::Drawing::Size(0, 13);
 			this->resultSearchClient->TabIndex = 59;
 			// 
@@ -659,14 +659,13 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->countOfCompareClients->Location = System::Drawing::Point(158, 468);
 			this->countOfCompareClients->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->countOfCompareClients->Name = L"countOfCompareClients";
-			//this->countOfCompareClients->Text = "111";
 			this->countOfCompareClients->Size = System::Drawing::Size(0, 13);
 			this->countOfCompareClients->TabIndex = 58;
 			// 
 			// tBClientEmai
 			// 
 			this->tBClientEmai->Location = System::Drawing::Point(378, 387);
-			this->tBClientEmai->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tBClientEmai->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientEmai->Name = L"tBClientEmai";
 			this->tBClientEmai->Size = System::Drawing::Size(96, 20);
 			this->tBClientEmai->TabIndex = 57;
@@ -674,7 +673,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// tBClientFullname
 			// 
 			this->tBClientFullname->Location = System::Drawing::Point(497, 355);
-			this->tBClientFullname->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tBClientFullname->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientFullname->Name = L"tBClientFullname";
 			this->tBClientFullname->Size = System::Drawing::Size(102, 20);
 			this->tBClientFullname->TabIndex = 56;
@@ -682,7 +681,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// tBClientJob
 			// 
 			this->tBClientJob->Location = System::Drawing::Point(378, 355);
-			this->tBClientJob->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tBClientJob->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientJob->Name = L"tBClientJob";
 			this->tBClientJob->Size = System::Drawing::Size(96, 20);
 			this->tBClientJob->TabIndex = 55;
@@ -690,7 +689,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// tBClientPassNum
 			// 
 			this->tBClientPassNum->Location = System::Drawing::Point(497, 314);
-			this->tBClientPassNum->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tBClientPassNum->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientPassNum->Name = L"tBClientPassNum";
 			this->tBClientPassNum->Size = System::Drawing::Size(102, 20);
 			this->tBClientPassNum->TabIndex = 54;
@@ -698,7 +697,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// tBClientPassSeries
 			// 
 			this->tBClientPassSeries->Location = System::Drawing::Point(378, 314);
-			this->tBClientPassSeries->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tBClientPassSeries->Margin = System::Windows::Forms::Padding(2);
 			this->tBClientPassSeries->Name = L"tBClientPassSeries";
 			this->tBClientPassSeries->Size = System::Drawing::Size(96, 20);
 			this->tBClientPassSeries->TabIndex = 53;
@@ -706,7 +705,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(12, 408);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(118, 19);
 			this->button1->TabIndex = 52;
@@ -717,7 +716,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// btnSearchClientByEmail
 			// 
 			this->btnSearchClientByEmail->Location = System::Drawing::Point(12, 377);
-			this->btnSearchClientByEmail->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnSearchClientByEmail->Margin = System::Windows::Forms::Padding(2);
 			this->btnSearchClientByEmail->Name = L"btnSearchClientByEmail";
 			this->btnSearchClientByEmail->Size = System::Drawing::Size(118, 19);
 			this->btnSearchClientByEmail->TabIndex = 51;
@@ -728,7 +727,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// btnSearchByClientJob
 			// 
 			this->btnSearchByClientJob->Location = System::Drawing::Point(111, 345);
-			this->btnSearchByClientJob->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnSearchByClientJob->Margin = System::Windows::Forms::Padding(2);
 			this->btnSearchByClientJob->Name = L"btnSearchByClientJob";
 			this->btnSearchByClientJob->Size = System::Drawing::Size(102, 19);
 			this->btnSearchByClientJob->TabIndex = 50;
@@ -739,7 +738,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// button8
 			// 
 			this->button8->Location = System::Drawing::Point(12, 345);
-			this->button8->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button8->Margin = System::Windows::Forms::Padding(2);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(95, 19);
 			this->button8->TabIndex = 49;
@@ -750,7 +749,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// btnSearchByClient
 			// 
 			this->btnSearchByClient->Location = System::Drawing::Point(12, 311);
-			this->btnSearchByClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnSearchByClient->Margin = System::Windows::Forms::Padding(2);
 			this->btnSearchByClient->Name = L"btnSearchByClient";
 			this->btnSearchByClient->Size = System::Drawing::Size(174, 19);
 			this->btnSearchByClient->TabIndex = 48;
@@ -761,7 +760,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// button20
 			// 
 			this->button20->Location = System::Drawing::Point(504, 409);
-			this->button20->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button20->Margin = System::Windows::Forms::Padding(2);
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(115, 23);
 			this->button20->TabIndex = 47;
@@ -772,7 +771,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			// debugClientButton
 			// 
 			this->debugClientButton->Location = System::Drawing::Point(504, 442);
-			this->debugClientButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->debugClientButton->Margin = System::Windows::Forms::Padding(2);
 			this->debugClientButton->Name = L"debugClientButton";
 			this->debugClientButton->Size = System::Drawing::Size(86, 19);
 			this->debugClientButton->TabIndex = 46;
@@ -786,7 +785,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label7->Location = System::Drawing::Point(515, 300);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(179, 13);
+			this->label7->Size = System::Drawing::Size(41, 13);
 			this->label7->TabIndex = 45;
 			this->label7->Text = L"Номер";
 			// 
@@ -795,7 +794,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label8->AutoSize = true;
 			this->label8->Location = System::Drawing::Point(200, 467);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(130, 13);
+			this->label8->Size = System::Drawing::Size(65, 13);
 			this->label8->TabIndex = 43;
 			this->label8->Text = L"Результат: ";
 			// 
@@ -804,7 +803,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label9->AutoSize = true;
 			this->label9->Location = System::Drawing::Point(14, 467);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(256, 13);
+			this->label9->Size = System::Drawing::Size(129, 13);
 			this->label9->TabIndex = 42;
 			this->label9->Text = L"Количество сравнений: ";
 			// 
@@ -814,14 +813,14 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label10->Location = System::Drawing::Point(394, 374);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(220, 13);
+			this->label10->Size = System::Drawing::Size(31, 13);
 			this->label10->TabIndex = 41;
 			this->label10->Text = L"email";
 			// 
 			// btnDeletionClient
 			// 
 			this->btnDeletionClient->Location = System::Drawing::Point(399, 442);
-			this->btnDeletionClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnDeletionClient->Margin = System::Windows::Forms::Padding(2);
 			this->btnDeletionClient->Name = L"btnDeletionClient";
 			this->btnDeletionClient->Size = System::Drawing::Size(74, 19);
 			this->btnDeletionClient->TabIndex = 39;
@@ -835,7 +834,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label14->Location = System::Drawing::Point(534, 342);
 			this->label14->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(47, 13);
+			this->label14->Size = System::Drawing::Size(34, 13);
 			this->label14->TabIndex = 37;
 			this->label14->Text = L"ФИО";
 			// 
@@ -845,7 +844,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label18->Location = System::Drawing::Point(395, 338);
 			this->label18->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(133, 13);
+			this->label18->Size = System::Drawing::Size(65, 13);
 			this->label18->TabIndex = 36;
 			this->label18->Text = L"Должность";
 			// 
@@ -855,7 +854,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label19->Location = System::Drawing::Point(395, 300);
 			this->label19->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label19->Name = L"label19";
-			this->label19->Size = System::Drawing::Size(169, 13);
+			this->label19->Size = System::Drawing::Size(38, 13);
 			this->label19->TabIndex = 35;
 			this->label19->Text = L"Серия";
 			// 
@@ -930,7 +929,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->saveDebugServices->Name = L"saveDebugServices";
 			this->saveDebugServices->Size = System::Drawing::Size(115, 23);
 			this->saveDebugServices->TabIndex = 41;
-			this->saveDebugServices->Text = L"???? ???????";
+			this->saveDebugServices->Text = L"\?\?\?\? \?\?\?\?\?\?\?";
 			this->saveDebugServices->UseVisualStyleBackColor = true;
 			this->saveDebugServices->Click += gcnew System::EventHandler(this, &MyForm::saveDebugServices_Click);
 			// 
@@ -948,9 +947,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label15->AutoSize = true;
 			this->label15->Location = System::Drawing::Point(508, 352);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(111, 13);
+			this->label15->Size = System::Drawing::Size(97, 13);
 			this->label15->TabIndex = 38;
-			this->label15->Text = L"???????? ?????? ";
+			this->label15->Text = L"\?\?\?\?\?\?\?\? \?\?\?\?\?\? ";
 			// 
 			// label16
 			// 
@@ -1001,9 +1000,9 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->label12->AutoSize = true;
 			this->label12->Location = System::Drawing::Point(13, 461);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(149, 13);
+			this->label12->Size = System::Drawing::Size(130, 13);
 			this->label12->TabIndex = 32;
-			this->label12->Text = L"?????????? ?????????: ";
+			this->label12->Text = L"\?\?\?\?\?\?\?\?\?\? \?\?\?\?\?\?\?\?\?: ";
 			// 
 			// deleteServiceBTN
 			// 
@@ -1011,7 +1010,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->deleteServiceBTN->Name = L"deleteServiceBTN";
 			this->deleteServiceBTN->Size = System::Drawing::Size(75, 23);
 			this->deleteServiceBTN->TabIndex = 30;
-			this->deleteServiceBTN->Text = L"???????";
+			this->deleteServiceBTN->Text = L"\?\?\?\?\?\?\?";
 			this->deleteServiceBTN->UseVisualStyleBackColor = true;
 			this->deleteServiceBTN->Click += gcnew System::EventHandler(this, &MyForm::deleteServiceBTN_Click);
 			// 
@@ -1021,7 +1020,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->addService->Name = L"addService";
 			this->addService->Size = System::Drawing::Size(75, 23);
 			this->addService->TabIndex = 29;
-			this->addService->Text = L"????????";
+			this->addService->Text = L"\?\?\?\?\?\?\?\?";
 			this->addService->UseVisualStyleBackColor = true;
 			this->addService->Click += gcnew System::EventHandler(this, &MyForm::addService_Click);
 			// 
@@ -1062,7 +1061,7 @@ private: System::Windows::Forms::TextBox^ tBClientEmai;
 			this->searchByServiceTypeBtn->Name = L"searchByServiceTypeBtn";
 			this->searchByServiceTypeBtn->Size = System::Drawing::Size(157, 23);
 			this->searchByServiceTypeBtn->TabIndex = 10;
-			this->searchByServiceTypeBtn->Text = L"????? ?? ???? ?????? ";
+			this->searchByServiceTypeBtn->Text = L"\?\?\?\?\? \?\? \?\?\?\? \?\?\?\?\?\? ";
 			this->searchByServiceTypeBtn->UseVisualStyleBackColor = true;
 			this->searchByServiceTypeBtn->Click += gcnew System::EventHandler(this, &MyForm::searchByServiceTypeBtn_Click);
 			// 
@@ -2777,31 +2776,45 @@ private: System::Void btnSearchByClient_Click(System::Object^ sender, System::Ev
 	}
 
 private: System::Void btnDeletionClient_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	vector<ClientsEntity*>& clients = DataClientsStorage::data;
+	Node*& rbtClient = DataClientsStorage::rbtClient;
+	Node*& rbtNullnode = DataClientsStorage::rbtNullnode;
+	Node*& rbtPassport = DataClientsStorage::rbtPassport;
+	Node*& rbtJob = DataClientsStorage::rbtJob;
+	Node*& rbtEmail = DataClientsStorage::rbtEmail;
+	Node*& rbtFullname = DataClientsStorage::rbtFullname;
+	ClientsHashTable& clientsHashTable = DataClientsStorage::clientsHashTable;
 	string fullnamestr = marshal_as<std::string>(this->tBClientFullname->Text);
 	Fullname fullname = inputFullnameData(fullnamestr);
 	ClientPassport passport = ClientPassport();
-	int passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
-	int passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	int passnum;
+	int passseries;
+	try {
+		passnum = stoi(marshal_as<std::string>(this->tBClientPassNum->Text));
+		passseries = stoi(marshal_as<std::string>(this->tBClientPassSeries->Text));
+	}
+	catch (exception& err)
+	{
+		MessageBox::Show(this, "Некорректные данные, проверьте правильности введённых данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
 	passport.number = passnum;
 	passport.series = passseries;
 	string email = marshal_as<std::string>(this->tBClientEmai->Text);
 	string job = marshal_as<std::string>(this->tBClientJob->Text);
-	Node*& rbtPassport = DataClientsStorage::rbtPassport;
-	int local = 0;
 	string passnumstr = to_string(passnum);
 	string passserstr = to_string(passseries);
-	Node*& rbtClient = DataClientsStorage::rbtClient;
 	ClientsEntity* client = new ClientsEntity();
 	client->passport = passport;
 	client->fullname = fullname;
 	client->email = email;
 	client->job = job;
+	int local = 0;
 	string clientstr = client->fullname.surname + ' ' + client->fullname.name + ' ' + client->fullname.lastname
-		+ ' ' + client->job + ' ' + client->email
-		+ ' ' + to_string(client->passport.series) + to_string(client->passport.number);
+		+ ' ' + client->job + ' ' + client->email +' '+passserstr + passnumstr ;
 	bool isContains = pre_search(rbtClient, DataClientsStorage::rbtNullnode, clientstr, local);
-	if (job.size() == 0 || email.size() == 0 || fullnamestr.size() == 0 || passnumstr.size() == 0 || passserstr.size() == 0) {
-		MessageBox::Show(this, "Некорректные данные, проверьте правильность введённых данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	if (!isValidateData(marshal_as<std::string>(this->tBClientPassNum->Text), marshal_as<std::string>(this->tBClientPassSeries->Text), fullnamestr, email, job)) {
+		MessageBox::Show(this, "Некорректные данные, проверьте правильности введённых данных", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 	else 
 	{
@@ -2836,7 +2849,7 @@ private: System::Void btnDeletionClient_Click(System::Object^ sender, System::Ev
 						' ' + lastElement->fullname.name + ' ' + lastElement->fullname.lastname + ' ' + lastElement->job + ' '
 						+ lastElement->email + ' ' + to_string(lastElement->passport.series) + to_string(lastElement->passport.number), index);
 					ofstream fout("debugClients.txt");
-					fout << "@@@@@@@@@@@@@@@@@\n";
+					//out << "@@@@@@@@@@@@@@@@@\n";
 					//debugPrintRBTClient(rbtJob, DataClientsStorage::rbtNullnode, fout, 4, 2);
 					string clientToText = client->fullname.surname + ' ' + client->fullname.name + ' '
 						+ client->fullname.lastname + ' ' + client->job + ' ' + client->email
@@ -2921,6 +2934,8 @@ private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ 
 	writeDataClient(data, "stdclients1.txt");
 	MessageBox::Show(this, "Данные клиентов успешно сохранены", "Сохрание", MessageBoxButtons::OK, MessageBoxIcon::Information);
 
+}
+private: System::Void clientsPage_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
