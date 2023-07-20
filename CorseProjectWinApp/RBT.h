@@ -35,3 +35,5 @@ int updateTreeNode(Node* root, Node* nullnode, ClientsEntity* input,string compa
 //int updateFullnameTreeNode(Node* root, Node* nullnode, string input, int& index);
 void debugPrintRBTClient(Node* root, Node* nullnode, ofstream& fout, int h, int ln);
 void debugPrintList(List_node* root, ofstream& fout);
+void addInList(List_node* root);
+bool searchBy(Node* root, Node* nullnode, string value, int& count);

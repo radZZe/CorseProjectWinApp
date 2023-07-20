@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SearchForm.cpp" />
     <ClCompile Include="ServicesHashTable.cpp" />
     <ClCompile Include="DataClientsStorage.cpp" />
     <ClCompile Include="ServicesRBTree.cpp" />
@@ -146,12 +147,18 @@
     <ClInclude Include="ReaderRequests.h" />
     <ClInclude Include="ReaderServices.h" />
     <ClInclude Include="RequestsHashTable.h" />
+    <ClInclude Include="SearchForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ServicesHashTable.h" />
     <ClInclude Include="ServicesRBTree.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

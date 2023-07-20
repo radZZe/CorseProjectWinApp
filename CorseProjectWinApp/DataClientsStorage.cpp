@@ -8,6 +8,7 @@ using namespace std;
 vector<ClientsEntity*> DataClientsStorage::data = readFromFileClients("stdclients.txt");
 ClientsHashTable DataClientsStorage::clientsHashTable = ClientsHashTable(data.size());
 int DataClientsStorage::countComparisons = 0;
+vector<int> DataClientsStorage::founded;
 //Node* DataClientsStorage::nullnode = null_init();
 //Node* DataClientsStorage::rbt = root_init(DataClientsStorage::nullnode);
 bool DataClientsStorage::resultSearch = false;

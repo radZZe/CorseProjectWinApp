@@ -142,6 +142,77 @@ vector <ClientsEntity*> readFromFileClients(string path) {
     return data;
 }
 
+bool isValidatePassport(string passSerstr, string passNumstr)
+{
+    if (passNumstr.size() == 0 || passSerstr.size() == 0)
+    {
+        return false;
+    }
+    
+    set<char>digits = { '0','1','2','3','4','5','6','7','8','9' };
+    bool isValidPassport = true;
+    for (size_t i = 0; i < passSerstr.size(); i++)
+    {
+        if (int(passSerstr[i]) <= 47 || int(passSerstr[i]) >= 59)//48-58 это ASCII-коды цифр
+        {
+            isValidPassport = false;
+            break;
+        }
+    }
+    for (size_t i = 0; i < passNumstr.size(); i++)
+    {
+        if (int(passNumstr[i]) <= 47 || int(passNumstr[i]) >= 59)//48-58 это ASCII-коды цифр
+        {
+            isValidPassport = false;
+            break;
+        }
+    }
+    return isValidPassport;
+}
+
+bool isValidateEmail(string email)
+{
+    if (email.size() == 0)
+    {
+        return false;
+    }
+    bool flag = true;
+    set<char>letters = { 'q','w','e','r','t','y','u','i','o','p','a','s',
+    'd','f','g','h','j','k','l','z','x','c','v','b','n','m','Q','W','E',
+    'R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z'
+    ,'X','C','V','B','N','M','0','1','2','3','4','5','6','7','8','9','-',
+    '_','!','#','$','%','^','&','*','(',')','+','=','[',']','{','}','<',
+    '>','?','/','|','~','\\','.',' ','@' };
+    for (int i = 0; i < email.size(); i++)
+    {
+        if (letters.find(email[i]) == letters.end()) {
+            flag = flag && false;
+        }
+    }
+    if (!flag)return false;
+    bool sobaka = false;
+    for (int i = 0; i < email.size(); i++)
+    {
+        if (email[i] == '@') sobaka = true;
+    }
+    flag = flag && sobaka;
+    return flag;
+}
+
+bool isValidateFullnameOrJob(string fullnamestr)
+{
+    set<char>forbidden = {'0','1','2','3','4','5','6','7','8','9',
+        '_','!','#','$','%','^','&','*','(',')','+','=','[',']','{','}','<',
+        '>','?','/','|','~','\\','.','@' };
+    for (int i = 0; i < fullnamestr.size(); i++)
+    {
+        if (forbidden.find(fullnamestr[i]) != forbidden.end()) {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool isValidateData(string passSerstr, string passNumstr, string fullnamestr, string email, string job)
 {
     try {

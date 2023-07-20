@@ -9,6 +9,7 @@ static class DataClientsStorage
 public:
 	static vector<ClientsEntity*>data;
 	static ClientsHashTable clientsHashTable;
+	static vector<int>founded;
 	static int countComparisons;
 	//Node* nullnode = null_init();
 	//Node* root = root_init(nullnode);

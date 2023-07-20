@@ -1,4 +1,5 @@
 #include "MyForm.h"
+#include "SearchForm.h"
 #include <vector>
 
 using namespace System;

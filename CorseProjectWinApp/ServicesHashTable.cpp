@@ -34,9 +34,9 @@ int ServicesHashTable::hashFun(ServiceEntity* item)
 
     for (int i = 0; i < data.size() - 1; i++) {
         result += abs(int(data[i])) + abs(int(data[i + 1]));
-        cout << abs(int(data[i])) + abs(int(data[i + 1])) << " + ";
+        //cout << abs(int(data[i])) + abs(int(data[i + 1])) << " + ";
     }
-    cout << " = " << result;
+   // cout << " = " << result;
     int test = result % this->size;
     return result % this->size;
 }

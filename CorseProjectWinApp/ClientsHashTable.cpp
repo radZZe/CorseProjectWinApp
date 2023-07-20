@@ -299,7 +299,7 @@ void ClientsHashTable::deleteEntity(ClientsEntity* entityClient)
     this->count--;
     this->occupancy = (this->count / this->size) * 100;
     //resizeTable(calculateOccupancy(), item, "jopa", -1);
-    expand();
+    
     int hash = hashFunction(entityClient->fullname, entityClient->job, entityClient->email, entityClient->passport);;
     int deletableIndx = -1;
     int possible;
@@ -382,6 +382,8 @@ void ClientsHashTable::deleteEntity(ClientsEntity* entityClient)
         expand();
 
     }
+    ///
+    expand();
 }
 
 int ClientsHashTable::check(int index) {

@@ -301,6 +301,37 @@ bool pre_search(Node* root, Node* nullnode,string value, int& count) {
 	return false;
 }
 
+void addInList(List_node* root)
+{
+	List_node* temp = root;
+	while (temp->next != root) {
+		DataClientsStorage::founded.push_back(temp->key.index);
+		temp = temp->next;
+	}
+	DataClientsStorage::founded.push_back(temp->key.index);
+	return;
+}
+
+bool searchBy(Node* root, Node* nullnode, string value, int& count)
+{
+	Node* temp = root;
+	DataClientsStorage::resultSearch = false;
+	while (temp != nullnode)
+	{
+		count++;
+		DataClientsStorage::countComparisons = count;
+		if (comparator(temp->data->key.value, value) == 0) {
+			DataClientsStorage::resultSearch = true;
+			addInList(temp->data);
+			return true;
+		}
+		if (comparator(value, temp->data->key.value) == 1) { temp = temp->right; }
+		else { temp = temp->left; }
+	}
+	DataClientsStorage::resultSearch = false;
+	return false;
+}
+
 void rightRotate(Node* element, Node*& root, Node* nullnode) {
 	Node* y = element->left;
 	element->left = y->right;
